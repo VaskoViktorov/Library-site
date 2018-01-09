@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Library.Web</title>
+    <title>РБ Михалаки Георгиев</title>
+    <link rel="shortcut icon" href="images/SiteImages/favicon.png" />
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"
             type="text/javascript"></script>
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -27,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Library.Web</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Library</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -46,14 +48,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - Library.Web</p>
+            <p>&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
         </footer>
     </div>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -69,9 +71,22 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-        
     </environment>
-
     @RenderSection("Scripts", required: false)
+@section Scripts
+{   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.image-popup-vertical-fit').magnificPopup({
+                type: 'image',
+                closeOnContentClick: true,
+                mainClass: 'mfp-img-mobile',
+                image: {
+                    verticalFit: true
+                }
+            });          
+        });
+    </script>
+}
 </body>
 </html>

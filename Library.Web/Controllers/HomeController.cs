@@ -62,6 +62,9 @@ namespace Library.Web.Controllers
         public IActionResult Services()
             => View();
 
+        public IActionResult Test()
+            => View();
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
