@@ -59,7 +59,13 @@ ol {
         margin-right: 5px;
         font-weight: bold;
     }
-
+.img-border {
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.img-border:hover {
+    border-color: lightgray;
+}
 .p-0-3 {
     padding: 0 3px;
 }
@@ -69,23 +75,28 @@ ol {
 }
 
 .width-150 {
-    width: 150px;
+    max-height: 150px;
+    max-width: 150px;
 }
 
-.width-48pr {
-    width: 48%;
+.width-46pr {
+    width: 46%;
 }
-
+.mr-t-b-25 {
+    margin: 25px 0;
+}
 .mr-8 {
     margin-right: 8px;
 }
-
+.mb-30 {
+    margin-bottom: 30px;
+}
 #floater {
     position: absolute;
     top: 100px;
     right: 1px;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 120px;
     border: 1px solid rgb(105,143,0);
     -webkit-transition: all 2s ease-in-out;
@@ -98,7 +109,7 @@ ol {
     box-sizing: border-box;
 }
 #floater p {
-   padding-top: 19px;
+    font-size: 1.2em;
    font-weight: bold;
 }
 /*Google Map Settings*/
@@ -199,11 +210,69 @@ ol {
         opacity: 0.8;
         cursor: pointer;
     }
+/* Submenu*/
+.dropdown-submenu {
+    position: relative;
+}
 
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #ccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+.dropdown-submenu:hover > a:after {
+        border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+        float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+}
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
+    }
+
+    #floater {
+        width: 10px;
+        height: 10px;     
+    }
+    #floater p {
+        font-size: 1em;
+        position: relative;
+        top: -9px;
+        left: -8px;
     }
 }

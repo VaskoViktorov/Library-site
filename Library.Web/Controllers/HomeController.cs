@@ -62,6 +62,9 @@ namespace Library.Web.Controllers
         public IActionResult Services()
             => View();
 
+        public IActionResult Vidin()
+            => View();
+
         public IActionResult Test()
             => View();
 
