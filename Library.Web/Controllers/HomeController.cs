@@ -15,17 +15,8 @@ namespace Library.Web.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
         public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
+        {        
             return View();
         }
 
@@ -63,6 +54,24 @@ namespace Library.Web.Controllers
             => View();
 
         public IActionResult Vidin()
+            => View();
+
+        public IActionResult ForTheStudents()
+            => View();
+
+        public IActionResult ForTheEnthusiasts()
+            => View();
+
+        public IActionResult ProgramForKids()
+            => View();
+
+        public IActionResult Internet()
+            => View();
+
+        public IActionResult Editions()
+            => View();
+
+        public IActionResult Links()
             => View();
 
         public IActionResult Test()

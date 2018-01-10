@@ -1,0 +1,57 @@
+﻿@model AdminUsersListingViewModel
+@{
+    ViewData["Title"] = "User Administration";
+}
+<h1 class="text-center mr-t-b-25">@ViewData["Title"]</h1>
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Current Roles</th>
+            <th>E-mail</th>        
+            <th>Roles & Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>
+                    @if (Model.UserRoles.ContainsKey(user.Id))
+                    {
+                        var rolesInDictionary = Model.UserRoles.Where(c => c.Key == user.Id).Select(c => c.Value);
+
+                        foreach (var roles in rolesInDictionary)
+                        {
+                            foreach (var role in roles)
+                            {                                
+                                <small>@role</small>
+                            }                         
+                        }
+                    }
+                </td>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-controller="Users" asp-action="AddToRole" method="post">
+
+                        <div class="row">
+                            <div class="col-md-8">
+
+                                <input type="hidden" name="UserId" value="@user.Id" />
+                                <select name="Role" asp-items="@Model.Roles" class="form-control"></select>
+                            </div>
+                            <div class="col-md-1 text-left mr-8">
+                                <input class="btn btn-sm btn-info " type="submit" value="Add" name="add" />
+                                
+                            </div>
+                            <div class="col-md-1 text-left mr-8">
+                                <input class="btn btn-sm btn-danger" type="submit" value="Remove" name="remove" />
+                            </div>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

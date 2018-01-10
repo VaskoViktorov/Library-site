@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Library.Data
+﻿namespace Library.Data
 {
    public class DataConstants
     {
@@ -10,5 +6,25 @@ namespace Library.Data
         public const int UserNameMaxLength = 50;
         public const int UserFullNameMinLength = 6;
         public const int UserFullNameMaxLength = 250;
+
+        public const int SubscriptionNameMinLength = 2;
+        public const int SubscriptionNameMaxLength = 200;
+        public const int SubscriptionDepartmentMinLength = 5;
+        public const int SubscriptionDepartmentMaxLength = 100;
+
+        public const int BookAuthorFirstNameMinLength = 2;
+        public const int BookAuthorFirstNameMaxLength = 100;
+        public const int BookAuthorLastNameMinLength = 2;
+        public const int BookAuthorLastNameMaxLength = 100;
+        public const int BookTitleMinLength = 1;
+        public const int BookTitleMaxLength = 300;
+        public const int BookDescriptionMinLength = 10;
+        public const int BookDescriptionMaxLength = 1000;
+        public const int BookCityMinLength = 2;
+        public const int BookCityMaxLength = 150;
+        public const int BookPressMinLength = 2;
+        public const int BookPressMaxLength = 150;
+        public const int BookImageUrlMinLength = 2;
+        public const int BookImageUrlMaxLength = 800;
     }
 }

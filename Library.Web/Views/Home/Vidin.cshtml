@@ -150,27 +150,31 @@
             <p>СТОЯНОВ, Димитър и др. Пътеводител на гр. Видин. / Димитър Стоянов, Юрдан Велев. – Видин: Печатница Яким Божинов, 1927, - 105 с.: със снимки.</p>
             <p>ЯРЪМОВ, Хари и др. Летопис на видинския спорт. 1878-1978. / Хари Яръмов, Христо Лишков. – Видин: ОС на БСФС, ДА, (1978). – 33 с.: със снимки.</p>
         </div>  
-        <a id="btn1" class="btn btn-default txt-btn" onclick="showhide()"><span>Покажи</span></a>  
+        <a id="btn1" class="btn btn-default" onclick="showhide()"><span>Покажи</span></a>  
     </div>
 </div>
 
 @section Scripts {
-    <script>
-        function showhide() {
-            var div = document.getElementById("newpost");
-            if (div.style.display === "block") {
-                div.style.display = "none";
+<script type="text/javascript">
+    function showhide() {
 
-            } else {
-                div.style.display = "block";
-            }
-            if ($('#bt1').hasClass('txt-btn')) {
-                $('#bt1').removeClass("txt-btn");
-                $('span').text("Покажи");
-            } else {
-                $('#bt1').addClass("txt-btn");
-                $('span').text("Скрии");
-            }
+        var div = document.getElementById("newpost");
+
+        if (div.style.display === "block") {
+            div.style.display = "none";
+        } else {
+            div.style.display = "block";
         }
-    </script>
+    }
+</script>
+<script type="text/javascript">
+    $('#btn1').on('click',
+        function() {
+            if ($(this).find('span').text() === "Скрии") {
+                $(this).find('span').text('Покажи');
+            } else {
+                $(this).find('span').text('Скрии');
+            }
+        });
+</script>
 }

@@ -73,24 +73,18 @@
 
                 routes.MapRoute(
                     name: "editArticle",
-                    template: "blog/articles/edit/{id}",
-                    defaults: new { area = "Blog", controller = "Articles", action = "Edit" });
+                    template: "libraryblog/subscriptions/edit/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Subscriptions", action = "Edit" });
 
                 routes.MapRoute(
                     name: "deleteArticle",
-                    template: "blog/articles/delete/{id}",
-                    defaults: new { area = "Blog", controller = "Articles", action = "Delete" });
+                    template: "libraryblog/subscriptions/delete/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Subscriptions", action = "Delete" });
 
                 routes.MapRoute(
                     name: "destroyArticle",
-                    template: "blog/articles/destroy/{id}",
-                    defaults: new { area = "Blog", controller = "Articles", action = "Destroy" });
-
-                routes.MapRoute(
-                    name: "articleDetails",
-                    template: "blog/articles/{id}/{title}",
-                    defaults: new { area = "Blog", controller = "Articles", action = "Details" });
-
+                    template: "libraryblog/subscriptions/destroy/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Subscriptions", action = "Destroy" });
 
                 routes.MapRoute(
                     name: "areas",

@@ -27,12 +27,12 @@
                     .Run(async () =>
                     {
                         var roleNameAdmin = WebConstants.AdministratorRole;
-                        var roleNameBlogAuthor = WebConstants.BlogAuthorRole;
+                        var roleNameLibrarianAuthor = WebConstants.LibrarianAuthorRole;
 
                         var roles = new[]
                         {
                             roleNameAdmin,
-                            roleNameBlogAuthor
+                            roleNameLibrarianAuthor
                         };
 
                         foreach (var role in roles)

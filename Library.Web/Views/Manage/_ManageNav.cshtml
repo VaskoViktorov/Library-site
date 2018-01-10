@@ -1,4 +1,4 @@
-﻿@using Library.Web.Views.Manage
+﻿@using Library.Data.Models
 @inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

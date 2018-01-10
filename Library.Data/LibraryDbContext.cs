@@ -13,6 +13,8 @@
 
         public DbSet<Article> Articles { get; set; }
 
+        public DbSet<Subscription> Subscriptions { get; set; }
+
         public DbSet<Image> Images { get; set; }
 
         public DbSet<Book> Books { get; set; }

@@ -1,0 +1,18 @@
+﻿@model SubscriptionFormModel
+
+@{
+    ViewData["Title"] = "Create Subscription";
+}
+
+<h1 class="text-center mr-t-b-25">Създай Абонамент</h1>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        @Html.Partial("_SubscriptionForm", Model)
+    </div>
+</div>
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

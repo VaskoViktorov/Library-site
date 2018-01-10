@@ -1,0 +1,90 @@
+﻿@model SubscriptionListingViewModel
+@{
+    ViewData["Title"] = "Subscriptions";
+}
+
+<h2 class="text-center mr-t-b-25">Абонаменти</h2>
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th colspan="2" class="bold text-center">ВЕСТНИЦИ</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>
+                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Създай</a>
+
+                        </th>
+                    }
+                </tr>
+                <tr>
+                    <th>Наименувание</th>
+                    <th>Получава се в:</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>Действия:</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var newspaper in Model.Newspapers)
+                {
+                    <tr>
+                        <td>@newspaper.Name</td>
+                        <td>@newspaper.Department</td>
+                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                        {
+                            <td>
+                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Редактирай</a>
+                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Изтрии</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th colspan="2" class="bold text-center">СПИСАНИЯ</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>
+                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Създай</a>
+
+                        </th>
+                    }
+                </tr>
+
+                <tr>
+                    <th>Наименувание</th>
+                    <th>Получава се в:</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>Действия:</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var magazine in Model.Magazines)
+                {
+                    <tr>
+                        <td>@magazine.Name</td>
+                        <td>@magazine.Department</td>
+                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                        {
+                            <td>
+                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Редактирай</a>
+                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Изтрии</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
