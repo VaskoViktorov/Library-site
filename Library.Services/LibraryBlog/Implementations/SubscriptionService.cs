@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using AutoMapper.QueryableExtensions;
-using Library.Services.LibraryBlog.Models.Subscriptions;
-using Microsoft.EntityFrameworkCore;
-
-namespace Library.Services.LibraryBlog.Implementations
+﻿namespace Library.Services.LibraryBlog.Implementations
 {
-    using System.Threading.Tasks;
+    using AutoMapper.QueryableExtensions;
     using Data;
     using Data.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Models.Subscriptions;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
 
     public class SubscriptionService : ISubscriptionService
     {
@@ -19,7 +19,7 @@ namespace Library.Services.LibraryBlog.Implementations
             this.db = db;
         }
 
-        public async Task Create(string name, string department, SubscriptionType type)
+        public async Task CreateAsync(string name, string department, SubscriptionType type)
         {
             var subscription = new Subscription
             {
@@ -32,7 +32,7 @@ namespace Library.Services.LibraryBlog.Implementations
             await this.db.SaveChangesAsync();
         }
 
-        public async Task Edit(int id, string name, string department, SubscriptionType type)
+        public async Task EditAsync(int id, string name, string department, SubscriptionType type)
         {
             var subscription = await this.db.Subscriptions.FindAsync(id);
 
@@ -48,7 +48,7 @@ namespace Library.Services.LibraryBlog.Implementations
             await this.db.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             var subscription = await this.db.Subscriptions.FindAsync(id);
 
@@ -62,7 +62,7 @@ namespace Library.Services.LibraryBlog.Implementations
             await this.db.SaveChangesAsync();
         }
 
-        public async Task<SubscriptionServiceModel> ById(int id)
+        public async Task<SubscriptionServiceModel> ByIdAsync(int id)
             => await this.db
                 .Subscriptions
                 .Where(a => a.Id == id)

@@ -1,16 +1,16 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using Services.LibraryBlog;
-    using Models;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Models.Subscriptions;
+    using Services.LibraryBlog;
     using System.Threading.Tasks;
 
     public class SubscriptionsController : BaseController
     {
-        private const string ModelName = "Абонаментът";
+        private const string ModelName = "Абонамента";
 
         private readonly ISubscriptionService subscriptions;
 
@@ -36,20 +36,21 @@
         {
             if (await this.subscriptions.UniqueCheckAsync(model.Name))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataAlreadyExistsText, model.Name));
+                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataAlreadyExistsText, ModelName, model.Name));
 
                 return this.RedirectToAction(nameof(this.Create));
             }
-            await this.subscriptions.Create(model.Name, model.Department, model.Type);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName));
+            await this.subscriptions.CreateAsync(model.Name, model.Department, model.Type);
+
+            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, string.Empty));
 
             return this.RedirectToAction(nameof(this.Subscriptions));
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var subscription = await this.subscriptions.ById(id);
+            var subscription = await this.subscriptions.ByIdAsync(id);
 
             if (subscription == null)
             {
@@ -68,9 +69,9 @@
         [ValidateModelState]
         public async Task<IActionResult> Edit(int id, SubscriptionFormModel model)
         {
-            await this.subscriptions.Edit(id, model.Name, model.Department, model.Type);
+            await this.subscriptions.EditAsync(id, model.Name, model.Department, model.Type);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName));
+            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, string.Empty));
 
             return this.RedirectToAction(nameof(this.Subscriptions));
         }
@@ -80,9 +81,9 @@
 
         public async Task<IActionResult> Destroy(int id)
         {
-            await this.subscriptions.Delete(id);
+            await this.subscriptions.DeleteAsync(id);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataDeleteCommentText, ModelName));
+            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataDeleteCommentText, ModelName, string.Empty));
 
             return this.RedirectToAction(nameof(this.Subscriptions));
         }

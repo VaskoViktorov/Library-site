@@ -26,5 +26,7 @@
         public const int BookPressMaxLength = 150;
         public const int BookImageUrlMinLength = 2;
         public const int BookImageUrlMaxLength = 800;
+        public const int BookGenreMinLength = 2;
+        public const int BookGenreMaxLength = 100;
     }
 }

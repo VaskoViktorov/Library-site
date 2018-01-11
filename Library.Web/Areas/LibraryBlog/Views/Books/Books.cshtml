@@ -1,0 +1,39 @@
+﻿@model BookListingViewModel
+@{
+    ViewData["Title"] = "Subscriptions";
+}
+
+<h2 class="text-center mr-t-b-25">Книги</h2>
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+        {
+            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Books" asp-action="Create">Създай</a>
+        }
+        @foreach (var book in Model.Books)
+        {
+            <div class="min-h-150 mr-t-b-25">
+                <a class="image-popup-vertical-fit" href="@book.ImageUrl" Title="@book.BookTitle">
+                    <img src="@book.ImageUrl" class="width-150 img-border float-left mr-r-15" alt="@book.BookTitle" />
+                </a>
+                <p class="bold">@book.BookTitle</p>
+                <small class="author-text">@book.AuthorFirstName @book.AuthorLastName</small>
+                <p class="mr-t-40 author-text">Отдел "@book.Department.DepartmentsToBgLang()"</p>
+                <div class="mr-t-10">
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+        {
+
+            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Редактирай</a>
+            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Изтрии</a>
+
+
+}
+                    <a class="btn-sm btn-info" asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">Подробности</a>
+                </div>
+            </div>
+    }
+    </div>
+    </div>

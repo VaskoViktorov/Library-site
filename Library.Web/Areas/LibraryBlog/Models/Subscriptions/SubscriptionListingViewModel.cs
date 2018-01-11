@@ -1,4 +1,4 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Models
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
 {
     using System.Collections.Generic;
     using Services.LibraryBlog.Models.Subscriptions;

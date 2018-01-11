@@ -1,4 +1,4 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Models
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
 {
     using System.ComponentModel.DataAnnotations;
     using Data.Models;

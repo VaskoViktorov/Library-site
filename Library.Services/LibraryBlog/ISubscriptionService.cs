@@ -8,13 +8,13 @@
 
     public interface ISubscriptionService
     {
-        Task Create(string name, string department, SubscriptionType type);
+        Task CreateAsync(string name, string department, SubscriptionType type);
 
-        Task Edit(int id, string name, string department, SubscriptionType type);
+        Task EditAsync(int id, string name, string department, SubscriptionType type);
 
-        Task Delete(int id);
+        Task DeleteAsync(int id);
 
-        Task<SubscriptionServiceModel> ById(int id);
+        Task<SubscriptionServiceModel> ByIdAsync(int id);
 
         Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync();
 

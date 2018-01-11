@@ -89,6 +89,19 @@ ol {
 .mr-t-b-25 {
     margin: 25px 0;
 }
+.mr-r-15 {
+    margin-right: 15px;
+}
+.mr-t-10 {
+    margin-top: 10px;
+}
+.mr-t-40 {
+    margin-top: 40px;
+}
+.author-text {
+    color: gray; 
+    font-style: italic;
+}
 .mr-8 {
     margin-right: 8px;
 }
