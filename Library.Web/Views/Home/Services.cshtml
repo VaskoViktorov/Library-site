@@ -101,6 +101,14 @@
 
 @section Scripts {
     <script type="text/javascript">
+
+        function scrollToAnchor(aid, num = 0) {
+
+            var aTag = $("div[id='" + aid + "']");
+
+            $('html,body').animate({ scrollTop: aTag.offset().top - num - 50 });
+        };
+
         $("#link1").click(function () {
             scrollToAnchor('scroll-id1');
         });
@@ -135,6 +143,6 @@
 
         $("#link9").click(function () {
             scrollToAnchor('scroll-id9');
-        });             
+        });
     </script>
 }

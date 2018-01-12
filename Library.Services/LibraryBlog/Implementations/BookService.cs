@@ -14,6 +14,8 @@ namespace Library.Services.LibraryBlog.Implementations
     using System.Linq;
     using System.Threading.Tasks;
 
+    using static ServicesConstants;
+
     class BookService : IBookService
     {
         private readonly LibraryDbContext db;
@@ -83,7 +85,7 @@ namespace Library.Services.LibraryBlog.Implementations
                 FileExtensions.DeleteImage(book.ImageUrl);
                 book.ImageUrl = imageUrl;
             }
-            
+
             await this.db.SaveChangesAsync();
         }
 
@@ -94,12 +96,12 @@ namespace Library.Services.LibraryBlog.Implementations
             if (book == null)
             {
                 return;
-            }          
+            }
             this.db.Books.Remove(book);
 
             await this.db.SaveChangesAsync();
 
-           FileExtensions.DeleteImage(book.ImageUrl);
+            FileExtensions.DeleteImage(book.ImageUrl);
         }
 
         public async Task<BookServiceModel> ByIdAsync(int id)
@@ -109,11 +111,50 @@ namespace Library.Services.LibraryBlog.Implementations
                 .ProjectTo<BookServiceModel>()
                 .FirstOrDefaultAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync()
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(int page = 1)
             => await this.db
                 .Books
-                .OrderBy(a => a.Date)                
+                .OrderBy(b => b.Date)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
                 .ProjectTo<BookListingServiceModel>()
-                .ToListAsync();       
+                .ToListAsync();
+
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1)
+            => await this.db
+                .Books
+                .OrderBy(b => b.Date)
+                .Where(b => b.Department == DepartmentType.Kids)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                .ProjectTo<BookListingServiceModel>()
+                .ToListAsync();
+
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(int page = 1)
+            => await this.db
+                .Books
+                .OrderBy(b => b.Date)
+                .Where(b => b.Department == DepartmentType.Land)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+                .ProjectTo<BookListingServiceModel>()
+                .ToListAsync();
+
+        public async Task<int> TotalAsync()
+        => await this.db
+                    .Books
+                    .CountAsync();
+
+        public async Task<int> TotalForKidsAsync()
+            => await this.db
+                .Books
+                .Where(b => b.Department == DepartmentType.Kids)
+                .CountAsync();
+
+        public async Task<int> TotalForLandAsync()
+           => await this.db
+               .Books
+               .Where(b => b.Department == DepartmentType.Land)
+               .CountAsync();
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Infrastructure.Extensions
+﻿using System.Linq;
+
+namespace Library.Web.Infrastructure.Extensions
 {
     using System;
     using Data.Models;
@@ -14,6 +16,18 @@
 
         public static bool IsNullOrWhiteSpace(string text)
             => string.IsNullOrWhiteSpace(text);
+
+        public static string LimitStringLenght(this string text)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                if (text.Length > 60)
+                {
+                    return text.Substring(0, 60)+"...";                   
+                }
+            }
+            return text;
+        }
 
         public static string DepartmentsToBgLang(this DepartmentType text)
         {

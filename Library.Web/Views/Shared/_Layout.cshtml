@@ -9,7 +9,7 @@
             type="text/javascript"></script>
     <link rel="stylesheet" href="~/css/magnific-popup.css">
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -66,7 +66,7 @@
                             Детски свят<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="">Нови книги</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">Нови книги</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">Програма за работа с деца</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="">Медиатека</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">Безопасен интернет</a></li>
@@ -79,7 +79,7 @@
                             Роден край<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="">Нови книги</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">Нови книги</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">Видин</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">Издания</a></li>
                         </ul>
@@ -108,29 +108,33 @@
                         <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Потребители</a></li>
                     }
                 </ul>
-            @await Html.PartialAsync("_LoginPartial")
-        </div>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
         </div>
     </nav>
-<div class="container body-content">
-    @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
-    {
-        <div class="alert alert-success">
-            @TempData[WebConstants.TempDataSuccessMessageKey]
+    <div class="container body-content">
+        @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+        {
+            <div class="alert alert-success">
+                @TempData[WebConstants.TempDataSuccessMessageKey]
+            </div>
+        }
+        @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
+        {
+            <div class="alert alert-warning">
+                @TempData[WebConstants.TempDataWarningMessageKey]
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-2"> @await Component.InvokeAsync("LatestBooks") </div>
+            <div class="col-md-8"> @RenderBody()</div>
+            <div class="col-md-2"></div>
         </div>
-    }
-    @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
-    {
-        <div class="alert alert-warning">
-            @TempData[WebConstants.TempDataWarningMessageKey]
-        </div>
-    }
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
-    </footer>
-</div>
+        <hr />
+        <footer>
+            <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
+        </footer>
+    </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

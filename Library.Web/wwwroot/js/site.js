@@ -31,7 +31,4 @@ $(window).scroll(function () {
     $('#floater').css({ 'top': top + 'px' });
 });
 
-function scrollToAnchor(aid, num = 0) {
-    var aTag = $("div[id='" + aid + "']");
-    $('html,body').animate({ scrollTop: aTag.offset().top - num - 50 });
-}
+

@@ -1,4 +1,7 @@
-﻿namespace Library.Web.Infrastructure.Extensions
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
+
+namespace Library.Web.Infrastructure.Extensions
 {
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 

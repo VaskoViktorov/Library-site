@@ -2,62 +2,85 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h2>Details</h2>
-
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th colspan="12" class="bold text-center">Книги</th>
+<div class="row mr-t-40">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="row">
+            <img src="@Model.Book.ImageUrl" class="width-46pr img-border float-left mr-r-15" alt="@Model.Book.BookTitle" />
+            <h3 style="margin: 0;">@Model.Book.BookTitle</h3>
+            <p class="author-text mr-t-10">Автор: @Model.Book.AuthorFirstName @Model.Book.AuthorLastName</p>
+            <p class="mr-t-40">Намери в Отдел "@Model.Book.Department.DepartmentsToBgLang()"</p>
+            <table class="table-condensed mr-t-40">
+                <tbody>
+                    <tr class="br-t">
+                        <th>Издател</th>
+                        <td>@Model.Book.Press</td>
+                    </tr>
+                    <tr class="br-t">
+                        <th>Град</th>
+                        <td>
+                            @if (Model.Book.CityIssued == null)
+                            {
+                                <span>-</span>
+                            }
+                            else
+                            {
+                                @Model.Book.CityIssued
+                            }
+                        </td>
+                    </tr>
+                    <tr class="br-t">
+                        <th>Брой страници</th>
+                        <td>
+                            @if (Model.Book.Pages == 0)
+                            {
+                                <span>-</span>
+                            }
+                            else
+                            {
+                                @Model.Book.Pages
+                            }
+                        </td>
+                    </tr>
+                    <tr class="br-t">
+                        <th>Година на издаване</th>
+                        <td>@Model.Book.PublishDate.Year г.</td>
+                    </tr>
+                    <tr class="br-t">
+                        <th>Размери</th>
+                        <td>
+                            @if (Model.Book.Size == 0)
+                            {
+                                <span>-</span>
+                            }
+                            else
+                            {
+                                @Model.Book.Size
+                            }
+                        </td>
+                    </tr>
+                    <tr class="br-t">
+                        <th>Жанр</th>
+                        <td>@Model.Book.Genre</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            @if (Model.Book.BookDescription != null)
+            {
+                <h4 class="bold text-center">Кратко описание</h4>
+                <p>@Model.Book.BookDescription</p>
+            }
+        </div>
+        <div class="text-center mr-t-10">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
-                <th>
-                    <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Books" asp-action="Create">Създай</a>
-
-                </th>
+                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">Редактирай</a>
+                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete">Изтрии</a>
             }
-        </tr>
-        <tr>
-            <th>Име</th>
-            <th>Фамилия</th>
-            <th>Заглавие</th>
-            <th>Описание</th>
-            <th>Град</th>
-            <th>Печатница</th>
-            <th>Отдел</th>
-            <th>Дата</th>
-            <th>Страници</th>
-            <th>Размер</th>
-            <th>Жанр</th>
-            <th>Изображение</th>
-            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-            {
-                <th>Действия:</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
+            <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
+        </div>
+    </div>
+</div>
 
-            <tr>
-                <td>@Model.Book.AuthorFirstName</td>
-                <td>@Model.Book.AuthorLastName</td>
-                <td>@Model.Book.BookTitle</td>
-                <td>@Model.Book.BookDescription</td>
-                <td>@Model.Book.CityIssued</td>
-                <td>@Model.Book.Press</td>
-                <td>@Model.Book.Department.DepartmentsToBgLang()</td>
-                <td>@Model.Book.PublishDate</td>
-                <td>@Model.Book.Pages</td>
-                <td>@Model.Book.Size</td>
-                <td>@Model.Book.Genre</td>
-                <td><img src="@Model.Book.ImageUrl" class="width-150 img-border" /></td>
-                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                {
-                    <td>
-                        <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">Редактирай</a>
-                        <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete">Изтрии</a>
-                    </td>
-                }
-            </tr>        
-    </tbody>
-</table>

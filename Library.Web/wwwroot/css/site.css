@@ -15,7 +15,10 @@
     font-size: 20px;
     line-height: 1.4;
 }
-
+/* Pagination*/
+ul.pagination li.page-item a.disabled {
+    pointer-events: none !important;
+}
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
@@ -27,7 +30,20 @@
 }
 
 /* Custom css*/
-
+.h-60 {
+     height: 60px;
+}
+.br-t {
+    border-top: 1px solid lightgray;
+}
+.vertical-align-top {
+    vertical-align: top;
+}
+body div .container .body-content {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 98% !important;
+}
 /*Static pages*/
 .vertical-align-middle {
     vertical-align: middle !important;
@@ -291,5 +307,26 @@ ol {
         position: relative;
         top: -9px;
         left: -8px;
+    }
+}
+@media (min-width: 1200px) {
+    .container{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+       
+    }
+    div .navbar-collapse {
+        margin-right: 5% !important;
+    }
+    div .navbar-header {
+        margin-left: 5% !important;
+    }
+}
+@media (min-width: 992px) {
+    .container{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
     }
 }

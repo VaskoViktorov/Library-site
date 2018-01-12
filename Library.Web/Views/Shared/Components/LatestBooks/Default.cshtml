@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Library.Data.Models.Book>
+    ViewData["Title"] = "_NewestBookPartial";
+}
+
+<h2>_NewestBookPartial</h2>
+<ul class="list-unstyled">
+    @foreach(var book in Model)
+    {
+    <li>
+        @book.BookTitle
+    </li>
+    }
+</ul>

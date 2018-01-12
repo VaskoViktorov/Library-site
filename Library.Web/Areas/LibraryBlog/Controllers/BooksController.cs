@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 
 namespace Library.Web.Areas.LibraryBlog.Controllers
@@ -25,10 +26,30 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Books()
+        public async Task<IActionResult> Books(int page = 1)
+        => this.View(new BookListingViewModel
+        {
+            Books = await this.books.AllBooksAsync(page),
+            TotalBooks = await this.books.TotalAsync(),
+            CurrentPage = page
+        });
+
+        [AllowAnonymous]
+        public async Task<IActionResult> BooksForKids(int page = 1)
             => this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksAsync(),               
+                Books = await this.books.AllBooksForChildrenAsync(page),
+                TotalBooks = await this.books.TotalForKidsAsync(),
+                CurrentPage = page
+            });
+
+        [AllowAnonymous]
+        public async Task<IActionResult> BooksForLand(int page = 1)
+            => this.View(new BookListingViewModel
+            {
+                Books = await this.books.AllBooksForLandLandAsync(page),
+                TotalBooks = await this.books.TotalForLandAsync(),
+                CurrentPage = page
             });
 
         [AllowAnonymous]
@@ -52,9 +73,9 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
                 return this.RedirectToAction(nameof(this.Create));
             }
-            
+
             var startupPath = Path.GetFullPath(".\\");
-            var guid = Guid.NewGuid();           
+            var guid = Guid.NewGuid();
             var filePath = $"{startupPath}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
 
             if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
@@ -103,16 +124,16 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 CityIssued = book.CityIssued,
                 Press = book.Press,
                 Department = book.Department,
-                PublishDate = book.PublishDate,              
+                PublishDate = book.PublishDate,
                 Pages = book.Pages,
                 Size = book.Size,
-                Genre = book.Genre,               
+                Genre = book.Genre,
             });
         }
 
         [HttpPost]
         [ValidateModelState]
-        public async Task<IActionResult> Edit(int id,BookFormModel model)
+        public async Task<IActionResult> Edit(int id, BookFormModel model)
         {
             string savePath = null;
 
@@ -128,7 +149,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                     return this.RedirectToAction(nameof(this.Create));
                 }
 
-                savePath = $"/images/BookCovers/{guid}.jpg";              
+                savePath = $"/images/BookCovers/{guid}.jpg";
             }
 
             await this.books.EditAsync(
