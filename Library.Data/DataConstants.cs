@@ -12,10 +12,8 @@
         public const int SubscriptionDepartmentMinLength = 5;
         public const int SubscriptionDepartmentMaxLength = 100;
 
-        public const int BookAuthorFirstNameMinLength = 2;
-        public const int BookAuthorFirstNameMaxLength = 100;
-        public const int BookAuthorLastNameMinLength = 2;
-        public const int BookAuthorLastNameMaxLength = 100;
+        public const int BookAuthorNameMinLength = 2;
+        public const int BookAuthorNameMaxLength = 100;
         public const int BookTitleMinLength = 1;
         public const int BookTitleMaxLength = 300;
         public const int BookDescriptionMinLength = 10;
@@ -28,5 +26,10 @@
         public const int BookImageUrlMaxLength = 800;
         public const int BookGenreMinLength = 2;
         public const int BookGenreMaxLength = 100;
+
+        public const int ArticleTitleMinLength = 2;
+        public const int ArticleTitleMaxLength = 300;
+        public const int ArticleDescriptionMinLength = 10;
+        public const int ArticleDescriptionMaxLength = 5000;
     }
 }

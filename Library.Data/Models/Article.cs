@@ -1,16 +1,22 @@
 ﻿namespace Library.Data.Models
 {
     using System;
-    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using static DataConstants;
 
     public class Article
     {
-        public int Id { get; set; }   
+        public int Id { get; set; }
 
-        public List<Image> Images { get; set; } = new List<Image>();
-
+        [Required]
+        [MinLength(ArticleTitleMinLength)]
+        [MaxLength(ArticleTitleMaxLength)]
         public string Title { get; set; }
 
+        [Required]
+        [MinLength(ArticleDescriptionMinLength)]
+        [MaxLength(ArticleDescriptionMaxLength)]
         public string Description { get; set; }
 
         public DateTime ReleaseDate { get; set; }
@@ -19,6 +25,9 @@
 
         public string AuthorName { get; set; }
 
-        public ArticleType Type { get; set; }
+        [Required]
+        public DepartmentType Type { get; set; }
+
+        public Gallery Gallery { get; set; }
     }
 }

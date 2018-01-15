@@ -30,11 +30,15 @@ namespace Library.Data.Migrations
 
                     b.Property<DateTime>("CreateDate");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(5000);
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300);
 
                     b.Property<int>("Type");
 
@@ -48,11 +52,7 @@ namespace Library.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AuthorFirstName")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<string>("AuthorLastName")
+                    b.Property<string>("AuthorName")
                         .IsRequired()
                         .HasMaxLength(100);
 
@@ -91,28 +91,19 @@ namespace Library.Data.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Library.Data.Models.Contributor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Contributors");
-                });
-
             modelBuilder.Entity("Library.Data.Models.Gallery", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("ArticleId");
+
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ArticleId")
+                        .IsUnique();
 
                     b.ToTable("Galleries");
                 });
@@ -122,15 +113,11 @@ namespace Library.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ArticleId");
-
                     b.Property<int>("GalleryId");
 
-                    b.Property<byte[]>("ImageString");
+                    b.Property<string>("ImagePath");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ArticleId");
 
                     b.HasIndex("GalleryId");
 
@@ -344,13 +331,16 @@ namespace Library.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Library.Data.Models.Image", b =>
+            modelBuilder.Entity("Library.Data.Models.Gallery", b =>
                 {
                     b.HasOne("Library.Data.Models.Article", "Article")
-                        .WithMany("Images")
-                        .HasForeignKey("ArticleId")
+                        .WithOne("Gallery")
+                        .HasForeignKey("Library.Data.Models.Gallery", "ArticleId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
 
+            modelBuilder.Entity("Library.Data.Models.Image", b =>
+                {
                     b.HasOne("Library.Data.Models.Gallery", "Gallery")
                         .WithMany("Images")
                         .HasForeignKey("GalleryId")

@@ -7,9 +7,7 @@ namespace Library.Services.LibraryBlog.Models.Books
     {
         public int Id { get; set; }
 
-        public string AuthorFirstName { get; set; }
-
-        public string AuthorLastName { get; set; }
+        public string AuthorName { get; set; }
 
         public string BookTitle { get; set; }
 

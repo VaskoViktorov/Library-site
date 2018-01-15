@@ -5,6 +5,7 @@
     using System;
 
     using static Services.ServicesConstants;
+
     public class BookListingViewModel
     {
         public IEnumerable<BookListingServiceModel> Books { get; set; }

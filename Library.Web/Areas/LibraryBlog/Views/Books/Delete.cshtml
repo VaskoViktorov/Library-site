@@ -3,5 +3,5 @@
     ViewData["Title"] = "Delete Subscription";
 }
 <h1 class="mr-t-b-25">Сигурен ли си, че искаш да изтриеш книгата?</h1>
-<a asp-area="LibraryBlog" asp-action="Destroy" class="btn btn-danger">Да</a>
-<a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Books">Обратно</a>
+<a asp-area="LibraryBlog"  asp-controller="Books" asp-action="Destroy" class="btn btn-danger">Да</a>
+<a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Обратно</a>

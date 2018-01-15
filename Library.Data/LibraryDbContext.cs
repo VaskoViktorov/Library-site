@@ -21,17 +21,15 @@
 
         public DbSet<Gallery> Galleries { get; set; }
 
-        public DbSet<Contributor> Contributors { get; set; }
-
         public DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
-                .Entity<Image>()
-                .HasOne(a => a.Article)
-                .WithMany(u => u.Images)
-                .HasForeignKey(a => a.ArticleId);
+                .Entity<Article>()
+                .HasOne(a => a.Gallery)
+                .WithOne(u => u.Article)        
+                .HasForeignKey<Gallery>(b => b.ArticleId);
 
             builder
                 .Entity<Image>()

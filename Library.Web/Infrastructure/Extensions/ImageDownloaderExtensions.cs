@@ -1,8 +1,4 @@
-﻿
-
-using System.Linq;
-
-namespace Library.Web.Infrastructure.Extensions
+﻿namespace Library.Web.Infrastructure.Extensions
 {
     using System.IO;
     using System.Net;

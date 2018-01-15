@@ -1,0 +1,21 @@
+﻿@model ArticleListingViewModel
+
+@foreach (var article in Model.Articles)
+{
+    <div class="book-box col-md-12 min-h-150 mr-t-b-25">
+        <a class="image-popup-vertical-fit" href="#" Title="#">
+            <img src="#" class="width-150 img-border float-left mr-r-15" alt="#" />
+        </a>
+        <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+            <p class="bold h-60">@article.Title</p>
+            <p class="author-text">Отдел "@article.Description.LimitStringLenght()</p>
+        </a>
+        <div class="mr-t-10">
+            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+            {
+                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit" asp-route-id="@article.Id">Промени</a>
+                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete" asp-route-id="@article.Id">Изтрии</a>
+            }
+        </div>
+    </div>
+}

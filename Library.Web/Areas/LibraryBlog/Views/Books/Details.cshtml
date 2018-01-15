@@ -3,12 +3,14 @@
     ViewData["Title"] = "Details";
 }
 <div class="row mr-t-40">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="row">
-            <img src="@Model.Book.ImageUrl" class="width-46pr img-border float-left mr-r-15" alt="@Model.Book.BookTitle" />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <a class="image-popup-vertical-fit" href="@Model.Book.ImageUrl" title="@Model.Book.BookTitle">
+                <img src="@Model.Book.ImageUrl" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10" alt="@Model.Book.BookTitle" />
+            </a>
             <h3 style="margin: 0;">@Model.Book.BookTitle</h3>
-            <p class="author-text mr-t-10">Автор: @Model.Book.AuthorFirstName @Model.Book.AuthorLastName</p>
+            <p class="author-text mr-t-10">Автор: @Model.Book.AuthorName</p>
             <p class="mr-t-40">Намери в Отдел "@Model.Book.Department.DepartmentsToBgLang()"</p>
             <table class="table-condensed mr-t-40">
                 <tbody>
@@ -66,21 +68,27 @@
                 </tbody>
             </table>
         </div>
-        <div class="row">
-            @if (Model.Book.BookDescription != null)
-            {
-                <h4 class="bold text-center">Кратко описание</h4>
-                <p>@Model.Book.BookDescription</p>
-            }
+        <div class="col-md-1"></div>
+        <div class="row max-w-750">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                @if (Model.Book.BookDescription != null)
+                {
+                    <h4 class="bold text-center mr-t-b-25">Кратко описание</h4>
+                    <p>@Model.Book.BookDescription</p>
+                }
+            </div>
         </div>
-        <div class="text-center mr-t-10">
-            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-            {
-                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">Редактирай</a>
-                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete">Изтрии</a>
-            }
-            <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
+        <div class=" row text-center mr-t-10">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                {
+                    <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">Редактирай</a>
+                    <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete">Изтрии</a>
+                }
+                <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
+            </div>
         </div>
     </div>
 </div>
-

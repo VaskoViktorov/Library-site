@@ -1,28 +1,20 @@
-﻿using System.Linq;
-namespace Library.Web.ViewComponents
+﻿namespace Library.Web.ViewComponents
 {
-    using Data;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
+    using Services.ViewComponents;
+    using Microsoft.AspNetCore.Mvc;   
     using System.Threading.Tasks;
-
 
     public class LatestBooksViewComponent : ViewComponent
     {
-        private readonly LibraryDbContext db;
+        private readonly ILatestBooksService books;
 
-        public LatestBooksViewComponent(LibraryDbContext db)
+        public LatestBooksViewComponent(ILatestBooksService books)
         {
-            this.db = db;
+            this.books = books;
         }
-        public async Task<IViewComponentResult> InvokeAsync(int howMany = 3)
-        {
-            var books = await db.Books
-                .OrderByDescending(b => b.Date)
-                .Take(howMany)
-                .ToListAsync();
-            return View(books);
-        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        => View(await books.LatestBooks());
+        
     }
 
 }

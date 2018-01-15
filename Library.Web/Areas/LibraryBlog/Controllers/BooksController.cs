@@ -67,7 +67,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         [ValidateModelState]
         public async Task<IActionResult> Create(BookFormModel model)
         {
-            if (await this.books.UniqueCheckAsync(model.BookTitle, model.AuthorLastName))
+            if (await this.books.UniqueCheckAsync(model.BookTitle, model.AuthorName))
             {
                 this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataAlreadyExistsText, ModelName, model.BookTitle));
 
@@ -87,8 +87,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             var savePath = $"/images/BookCovers/{guid}.jpg";
 
             await this.books.CreateAsync(
-                model.AuthorFirstName,
-                model.AuthorLastName,
+                model.AuthorName,
                 model.BookTitle,
                 model.BookDescription,
                 model.CityIssued,
@@ -117,8 +116,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             return this.View(new BookFormModel
             {
-                AuthorFirstName = book.AuthorFirstName,
-                AuthorLastName = book.AuthorLastName,
+                AuthorName = book.AuthorName,
                 BookTitle = book.BookTitle,
                 BookDescription = book.BookDescription,
                 CityIssued = book.CityIssued,
@@ -154,8 +152,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             await this.books.EditAsync(
                 id,
-                model.AuthorFirstName,
-                model.AuthorLastName,
+                model.AuthorName,
                 model.BookTitle,
                 model.BookDescription,
                 model.CityIssued,

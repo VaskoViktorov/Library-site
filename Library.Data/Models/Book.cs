@@ -10,14 +10,9 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(BookAuthorFirstNameMinLength)]
-        [MaxLength(BookAuthorFirstNameMaxLength)]
-        public string AuthorFirstName { get; set; }
-
-        [Required]
-        [MinLength(BookAuthorLastNameMinLength)]
-        [MaxLength(BookAuthorLastNameMaxLength)]
-        public string AuthorLastName { get; set; }
+        [MinLength(BookAuthorNameMinLength)]
+        [MaxLength(BookAuthorNameMaxLength)]
+        public string AuthorName { get; set; }
 
         [Required]
         [MinLength(BookTitleMinLength)]

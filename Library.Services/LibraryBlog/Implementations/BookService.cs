@@ -25,13 +25,12 @@ namespace Library.Services.LibraryBlog.Implementations
             this.db = db;
         }
 
-        public async Task CreateAsync(string authorFirstName, string authorLastName, string bookTitle, string bookDescription, string cityIssued,
+        public async Task CreateAsync(string authorName, string bookTitle, string bookDescription, string cityIssued,
             string press, DepartmentType department, DateTime publishDate, DateTime date, int pages, int size, string genre, string imageUrl)
         {
             var book = new Book
             {
-                AuthorFirstName = authorFirstName,
-                AuthorLastName = authorLastName,
+                AuthorName = authorName,
                 BookTitle = bookTitle,
                 BookDescription = bookDescription,
                 CityIssued = cityIssued,
@@ -49,9 +48,9 @@ namespace Library.Services.LibraryBlog.Implementations
             await this.db.SaveChangesAsync();
         }
 
-        public async Task<bool> UniqueCheckAsync(string bookTitle, string authorLastName)
+        public async Task<bool> UniqueCheckAsync(string bookTitle, string authorName)
         {
-            if (await this.db.Books.AnyAsync(b => b.BookTitle == bookTitle && b.AuthorLastName == authorLastName))
+            if (await this.db.Books.AnyAsync(b => b.BookTitle == bookTitle && b.AuthorName == authorName))
             {
                 return true;
             }
@@ -59,7 +58,7 @@ namespace Library.Services.LibraryBlog.Implementations
             return false;
         }
 
-        public async Task EditAsync(int id, string authorFirstName, string authorLastName, string bookTitle, string bookDescription, string cityIssued,
+        public async Task EditAsync(int id, string authorName, string bookTitle, string bookDescription, string cityIssued,
             string press, DepartmentType department, DateTime publishDate, int pages, int size, string genre, string imageUrl)
         {
             var book = await this.db.Books.FindAsync(id);
@@ -69,8 +68,7 @@ namespace Library.Services.LibraryBlog.Implementations
                 return;
             }
 
-            book.AuthorFirstName = authorFirstName;
-            book.AuthorLastName = authorLastName;
+            book.AuthorName = authorName;
             book.BookTitle = bookTitle;
             book.BookDescription = bookDescription;
             book.CityIssued = cityIssued;

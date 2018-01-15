@@ -17,9 +17,9 @@ namespace Library.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AuthorName = table.Column<string>(nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(maxLength: 5000, nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
-                    Title = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(maxLength: 300, nullable: false),
                     Type = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -74,48 +74,22 @@ namespace Library.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AuthorFirstName = table.Column<string>(nullable: true),
-                    AuthorLastName = table.Column<string>(nullable: true),
-                    BookDescription = table.Column<string>(nullable: true),
-                    BookTitle = table.Column<string>(nullable: true),
-                    CityIssued = table.Column<string>(nullable: true),
+                    AuthorName = table.Column<string>(maxLength: 100, nullable: false),
+                    BookDescription = table.Column<string>(maxLength: 1000, nullable: true),
+                    BookTitle = table.Column<string>(maxLength: 300, nullable: false),
+                    CityIssued = table.Column<string>(maxLength: 150, nullable: true),
                     Date = table.Column<DateTime>(nullable: false),
-                    ImageUrl = table.Column<string>(nullable: true),
+                    Department = table.Column<int>(nullable: false),
+                    Genre = table.Column<string>(maxLength: 100, nullable: false),
+                    ImageUrl = table.Column<string>(maxLength: 800, nullable: true),
                     Pages = table.Column<int>(nullable: false),
-                    Press = table.Column<string>(nullable: true),
+                    Press = table.Column<string>(maxLength: 150, nullable: true),
                     PublishDate = table.Column<DateTime>(nullable: false),
-                    Size = table.Column<double>(nullable: false)
+                    Size = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Contributors",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Description = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Contributors", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Galleries",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Galleries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -149,6 +123,26 @@ namespace Library.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Subscriptions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Galleries",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ArticleId = table.Column<int>(nullable: false),
+                    Title = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Galleries", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Galleries_Articles_ArticleId",
+                        column: x => x.ArticleId,
+                        principalTable: "Articles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -263,19 +257,12 @@ namespace Library.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ArticleId = table.Column<int>(nullable: false),
                     GalleryId = table.Column<int>(nullable: false),
-                    ImageString = table.Column<byte[]>(nullable: true)
+                    ImagePath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Images_Articles_ArticleId",
-                        column: x => x.ArticleId,
-                        principalTable: "Articles",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Images_Galleries_GalleryId",
                         column: x => x.GalleryId,
@@ -324,9 +311,10 @@ namespace Library.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_ArticleId",
-                table: "Images",
-                column: "ArticleId");
+                name: "IX_Galleries_ArticleId",
+                table: "Galleries",
+                column: "ArticleId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Images_GalleryId",
@@ -355,9 +343,6 @@ namespace Library.Data.Migrations
                 name: "Books");
 
             migrationBuilder.DropTable(
-                name: "Contributors");
-
-            migrationBuilder.DropTable(
                 name: "Images");
 
             migrationBuilder.DropTable(
@@ -373,10 +358,10 @@ namespace Library.Data.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Articles");
+                name: "Galleries");
 
             migrationBuilder.DropTable(
-                name: "Galleries");
+                name: "Articles");
         }
     }
 }

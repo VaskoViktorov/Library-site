@@ -1,0 +1,47 @@
+﻿
+@model ArticleFormModel
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ReleaseDate"></label>
+        <input asp-for="ReleaseDate" class="form-control" />
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+    </div>
+ 
+    <div class="form-group">
+        <div class="row mr-l-0">
+            <label asp-for="Type"></label>
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Kids))Детски
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Rent))Заемна
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Read))Читални
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Check))Справочен
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Art))Изкуство
+        </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Land))Краезнание
+        </div>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-info">Запази</button>
+    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Books">Обратно</a>
+</form>

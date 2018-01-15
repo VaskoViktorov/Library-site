@@ -9,8 +9,7 @@
     public interface IBookService
     {
         Task CreateAsync(
-            string authorFirstName,
-            string authorLastName,
+            string authorName,
             string bookTitle,
             string bookDescription,
             string cityIssued,
@@ -23,12 +22,11 @@
             string genre,
             string imageUrl);
 
-        Task<bool> UniqueCheckAsync(string bookTitle, string authorLastName);
+        Task<bool> UniqueCheckAsync(string bookTitle, string authorName);
 
         Task EditAsync(
             int id,
-            string authorFirstName,
-            string authorLastName,
+            string authorName,
             string bookTitle,
             string bookDescription,
             string cityIssued,

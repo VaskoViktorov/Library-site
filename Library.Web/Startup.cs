@@ -71,6 +71,26 @@
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "viewArticle",
+                    template: "libraryblog/articles/articles",
+                    defaults: new { area = "LibraryBlog", controller = "Articles", action = "Articles" });
+
+                routes.MapRoute(
+                    name: "editArticle",
+                    template: "libraryblog/articles/edit/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Articles", action = "Edit" });
+
+                routes.MapRoute(
+                    name: "deleteArticle",
+                    template: "libraryblog/articles/delete/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Articles", action = "Delete" });
+
+                routes.MapRoute(
+                    name: "destroyArticle",
+                    template: "libraryblog/articles/destroy/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Articles", action = "Destroy" });
+
+                routes.MapRoute(
                     name: "viewBooks",
                     template: "libraryblog/books/books",
                     defaults: new { area = "LibraryBlog", controller = "Books", action = "Books" });

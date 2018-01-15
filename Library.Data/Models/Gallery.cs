@@ -9,5 +9,9 @@
         public string Title { get; set; }
 
         public List<Image> Images { get; set; } = new List<Image>();
+
+        public int ArticleId { get; set; }
+
+        public Article Article { get; set; }
     }
 }
