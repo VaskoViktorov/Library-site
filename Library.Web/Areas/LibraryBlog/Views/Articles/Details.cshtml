@@ -3,23 +3,25 @@
     ViewData["Title"] = "Details";
 }
 <div class="row mr-t-40">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <h3 style="margin: 0;">@Model.Article.Title</h3>
-            <p class="mr-t-40">Отдел "@Model.Article.Type.DepartmentsToBgLang()"</p>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="row max-w-750">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <p>@Model.Article.Description</p>
-                <p class="mr-t-40">@Model.Article.ReleaseDate</p>
+<div class="col-md-12">
+        <h2 class="text-center">@Model.Article.Title</h2>
+        <div class="row max-w-750 mr-10-auto">
+
+            <p class="text-justify">@Model.Article.Description</p>
+            <div class="text-left" style="float: right">
+                <p>Публикувано на: @Model.Article.ReleaseDate.ToShortDateString()</p>
+                <p>Автор: <span class="author-text">@Model.Article.AuthorName</span></p>
             </div>
         </div>
-        <div class=" row text-center mr-t-10">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
+            <div class="row max-w-750 mr-10-auto">
+                @foreach (var img in Model.Article.Gallery.Images)
+                {
+                    <a class="image-popup-vertical-fit" href="@img.ImagePath" Title="@Model.Article.Title">
+                        <img src="@img.ImagePath" class="width-150 img-border mr-r-15 mr-t-b-25" alt="@Model.Article.Title" />
+                    </a>
+                }
+            </div>
+            <div class="row max-w-750 text-center mr-10-auto">
                 @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                 {
                     <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit">Редактирай</a>
@@ -27,6 +29,6 @@
                 }
                 <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
             </div>
-        </div>
+        
     </div>
 </div>

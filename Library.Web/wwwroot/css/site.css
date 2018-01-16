@@ -37,19 +37,19 @@
     top: 0;
 }
 
-        .rslides li:first-child {
-            position: relative;
-            display: block;
-            float: left;
-        }
+.rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+}
 
-    .rslides img {
-        display: block;
-        height: auto;
-        float: left;
-        width: 100%;
-        border: 0;
-    }
+.rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+}
 /* Pagination*/
 ul.pagination li.page-item a.disabled {
     pointer-events: none !important;
@@ -65,6 +65,15 @@ ul.pagination li.page-item a.disabled {
 }
 
 /* Custom css*/
+.mr-10-auto {
+    margin: 10px auto;
+}
+.mr-0-auto {
+    margin: 0 auto;
+}
+.width-60pr {
+    width: 60%;
+}
 .mr-l-10 {
     margin-left: 10px;
 }

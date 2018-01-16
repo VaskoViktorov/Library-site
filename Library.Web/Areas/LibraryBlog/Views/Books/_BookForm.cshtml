@@ -1,4 +1,6 @@
 ﻿@model BookFormModel
+@{
+}
 
 <form method="post">
     <div class="form-group">
@@ -13,7 +15,7 @@
     </div>
     <div class="form-group">
         <label asp-for="BookDescription"></label>
-        <input asp-for="BookDescription" class="form-control" />
+        <textarea rows="10" asp-for="BookDescription" class="form-control" ></textarea>
         <span asp-validation-for="BookDescription" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -52,17 +54,17 @@
     </div>
     <div class="form-group">
         <label asp-for="PublishDate"></label>
-        <input asp-for="PublishDate" class="form-control" />
+        <input asp-for="PublishDate" class="form-control"/>
         <span asp-validation-for="PublishDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Pages"></label>
-        <input asp-for="Pages" class="form-control" />
+        <input asp-for="Pages" class="form-control"/>
         <span asp-validation-for="Pages" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Size"></label>
-        <input asp-for="Size" class="form-control" />
+        <input asp-for="Size" class="form-control"/>
         <span asp-validation-for="Size" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -72,7 +74,7 @@
     </div>
     <div class="form-group">
         <label asp-for="ImageUrl"></label>
-        <input asp-for="ImageUrl" class="form-control" />
+        <input asp-for="ImageUrl" class="form-control" value="@null"/>
         <span asp-validation-for="ImageUrl" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-info">Запази</button>

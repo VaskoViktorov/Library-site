@@ -34,7 +34,8 @@
         [Required]
         public DepartmentType Department { get; set; }
 
-        public DateTime PublishDate { get; set; }
+        [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}$|0")]
+        public int PublishDate { get; set; }
 
         public DateTime Date { get; set; }
 

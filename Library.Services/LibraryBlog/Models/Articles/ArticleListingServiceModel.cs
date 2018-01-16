@@ -1,4 +1,6 @@
-﻿namespace Library.Services.LibraryBlog.Models.Articles
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Library.Services.LibraryBlog.Models.Articles
 {
     using Common.Mapping;
     using Data.Models;
@@ -13,5 +15,7 @@
         public string Title { get; set; }
 
         public string Description { get; set; }
+
+        public Gallery Gallery { get; set; }
     }
 }

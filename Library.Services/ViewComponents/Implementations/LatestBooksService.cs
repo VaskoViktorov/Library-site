@@ -23,6 +23,7 @@
            => await this.db
                .Books
                .OrderByDescending(b => b.Id)
+               .Where(b => b.ImageUrl != "\\images\\BookCovers\\default.jpg")
                .Take(LatestBooksAmount)
                .ProjectTo<LatestBookServiceModel>()
                .ToListAsync();

@@ -1,4 +1,7 @@
-﻿namespace Library.Web
+﻿using System.IO;
+using Microsoft.Extensions.FileProviders;
+
+namespace Library.Web
 {
     using AutoMapper;
     using Data;
@@ -25,6 +28,10 @@
         {
             services.AddDbContext<LibraryDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IFileProvider>(
+            new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
 
             services
                 .AddIdentity<User, IdentityRole>(options =>

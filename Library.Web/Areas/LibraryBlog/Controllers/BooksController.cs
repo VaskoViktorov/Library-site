@@ -74,17 +74,25 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 return this.RedirectToAction(nameof(this.Create));
             }
 
-            var startupPath = Path.GetFullPath(".\\");
-            var guid = Guid.NewGuid();
-            var filePath = $"{startupPath}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
+            string savePath = null;
 
-            if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
+            if (model.ImageUrl != null)
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataWrongUrlText, ModelName));
-                return this.RedirectToAction(nameof(this.Create));
-            }
+                var guid = Guid.NewGuid();
+                var filePath = $"{Directory.GetCurrentDirectory()}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
 
-            var savePath = $"/images/BookCovers/{guid}.jpg";
+                if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
+                {
+                    this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataWrongUrlText, ModelName));
+                    return this.RedirectToAction(nameof(this.Create));
+                }
+
+                savePath = $"\\images\\BookCovers\\{guid}.jpg";
+            }
+            else
+            {
+                savePath = $"\\images\\BookCovers\\default.jpg";
+            }
 
             await this.books.CreateAsync(
                 model.AuthorName,
@@ -137,9 +145,9 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             if (model.ImageUrl != null)
             {
-                var startupPath = Path.GetFullPath(".\\");
                 var guid = Guid.NewGuid();
-                var filePath = $"{startupPath}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
+                var filePath = $"{Directory.GetCurrentDirectory()}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
+
                 if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
                 {
                     this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataWrongUrlText, ModelName));
@@ -149,6 +157,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
                 savePath = $"/images/BookCovers/{guid}.jpg";
             }
+
 
             await this.books.EditAsync(
                 id,

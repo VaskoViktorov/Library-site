@@ -12,7 +12,7 @@ using System;
 namespace Library.Data.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20180115120904_InitialCreate")]
+    [Migration("20180116081643_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,8 @@ namespace Library.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AuthorName");
+                    b.Property<string>("AuthorName")
+                        .HasMaxLength(150);
 
                     b.Property<DateTime>("CreateDate");
 
@@ -83,7 +84,7 @@ namespace Library.Data.Migrations
                     b.Property<string>("Press")
                         .HasMaxLength(150);
 
-                    b.Property<DateTime>("PublishDate");
+                    b.Property<int>("PublishDate");
 
                     b.Property<int>("Size");
 

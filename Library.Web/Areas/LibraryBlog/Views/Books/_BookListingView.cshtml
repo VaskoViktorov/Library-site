@@ -7,7 +7,7 @@
             <img src="@book.ImageUrl" class="width-150 img-border float-left mr-r-15" alt="@book.BookTitle" />
         </a>
         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
-            <p class="bold h-60">@book.BookTitle.LimitStringLenght()</p>
+            <p class="bold h-60">@book.BookTitle.LimitStringLenght(60)</p>
             <small class="author-text">@book.AuthorName @book.AuthorName</small>
             <p class="author-text">Отдел "@book.Department.DepartmentsToBgLang()"</p>
         </a>

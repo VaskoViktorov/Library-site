@@ -9,7 +9,7 @@
     public interface IArticleService
     {
         Task CreateAsync(string title, string description, DateTime releaseDate,
-            DepartmentType type, string authorName);
+            DepartmentType type, string authorName, List<string> gallery);
 
         Task EditAsync(int id, string title, string description, DateTime releaseDate,
             DepartmentType type, string authorName);
@@ -22,5 +22,6 @@
 
         Task<int> TotalAsync();
 
+        Task<ArticleServiceModel> Details(int id);
     }
 }

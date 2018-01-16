@@ -26,7 +26,8 @@ namespace Library.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AuthorName");
+                    b.Property<string>("AuthorName")
+                        .HasMaxLength(150);
 
                     b.Property<DateTime>("CreateDate");
 
@@ -82,7 +83,7 @@ namespace Library.Data.Migrations
                     b.Property<string>("Press")
                         .HasMaxLength(150);
 
-                    b.Property<DateTime>("PublishDate");
+                    b.Property<int>("PublishDate");
 
                     b.Property<int>("Size");
 

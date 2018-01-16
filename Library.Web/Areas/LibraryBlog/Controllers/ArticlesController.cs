@@ -1,4 +1,9 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.AspNetCore.Http;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
@@ -7,6 +12,7 @@
     using System.Threading.Tasks;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
+    using Microsoft.Extensions.FileProviders;
 
     public class ArticlesController : BaseController
     {
@@ -14,9 +20,10 @@
 
         private readonly IArticleService articles;
 
-        public ArticlesController(IArticleService articles)
+        public ArticlesController(IArticleService articles )
         {
             this.articles = articles;
+
         }
 
         [AllowAnonymous]
@@ -32,7 +39,7 @@
         public async Task<IActionResult> Details(int id)
             => this.View(new ArticleViewModel
             {
-                Article = await this.articles.ByIdAsync(id)
+                Article = await this.articles.Details(id)
             });
 
 
@@ -45,12 +52,31 @@
         {
             var userName = User.Identity.Name;
 
+            if (model.Files == null || model.Files.Count == 0)
+                return Content("files not selected");
+
+            var gallery = new List<string>();
+            foreach (var file in model.Files)
+            {
+
+                var path = Path.Combine("images", "GalleryImages", Guid.NewGuid() + file.GetFileType());
+                var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", path);
+              
+                using (var stream = new FileStream(pathForUpload, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                gallery.Add($"\\{path}");
+            }
+
             await this.articles.CreateAsync(
                 model.Title,
                 model.Description,
                 model.ReleaseDate,
                 model.Type,
-                userName
+                userName,
+                gallery
               );
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));

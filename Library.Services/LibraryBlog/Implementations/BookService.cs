@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using Library.Common.Infrastructure.Extensions;
-
-namespace Library.Services.LibraryBlog.Implementations
+﻿namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
     using Data;
@@ -13,6 +9,8 @@ namespace Library.Services.LibraryBlog.Implementations
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Collections.Generic;
+    using Common.Infrastructure.Extensions;
 
     using static ServicesConstants;
 
@@ -26,7 +24,7 @@ namespace Library.Services.LibraryBlog.Implementations
         }
 
         public async Task CreateAsync(string authorName, string bookTitle, string bookDescription, string cityIssued,
-            string press, DepartmentType department, DateTime publishDate, DateTime date, int pages, int size, string genre, string imageUrl)
+            string press, DepartmentType department, int publishDate, DateTime date, int pages, int size, string genre, string imageUrl)
         {
             var book = new Book
             {
@@ -59,7 +57,7 @@ namespace Library.Services.LibraryBlog.Implementations
         }
 
         public async Task EditAsync(int id, string authorName, string bookTitle, string bookDescription, string cityIssued,
-            string press, DepartmentType department, DateTime publishDate, int pages, int size, string genre, string imageUrl)
+            string press, DepartmentType department, int publishDate, int pages, int size, string genre, string imageUrl)
         {
             var book = await this.db.Books.FindAsync(id);
 
@@ -78,9 +76,14 @@ namespace Library.Services.LibraryBlog.Implementations
             book.Pages = pages;
             book.Size = size;
             book.Genre = genre;
+
             if (imageUrl != null)
             {
-                FileExtensions.DeleteImage(book.ImageUrl);
+                if (imageUrl != "\\images\\BookCovers\\default.jpg")
+                {
+                    FileExtensions.DeleteImage(book.ImageUrl);
+                }
+
                 book.ImageUrl = imageUrl;
             }
 
@@ -99,7 +102,10 @@ namespace Library.Services.LibraryBlog.Implementations
 
             await this.db.SaveChangesAsync();
 
-            FileExtensions.DeleteImage(book.ImageUrl);
+            if (book.ImageUrl != "\\images\\BookCovers\\default.jpg")
+            {
+                FileExtensions.DeleteImage(book.ImageUrl);
+            }
         }
 
         public async Task<BookServiceModel> ByIdAsync(int id)

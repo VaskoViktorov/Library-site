@@ -15,7 +15,7 @@ namespace Library.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AuthorName = table.Column<string>(nullable: true),
+                    AuthorName = table.Column<string>(maxLength: 150, nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false),
                     Description = table.Column<string>(maxLength: 5000, nullable: false),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
@@ -84,7 +84,7 @@ namespace Library.Data.Migrations
                     ImageUrl = table.Column<string>(maxLength: 800, nullable: true),
                     Pages = table.Column<int>(nullable: false),
                     Press = table.Column<string>(maxLength: 150, nullable: true),
-                    PublishDate = table.Column<DateTime>(nullable: false),
+                    PublishDate = table.Column<int>(nullable: false),
                     Size = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

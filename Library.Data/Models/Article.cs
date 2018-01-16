@@ -19,10 +19,13 @@
         [MaxLength(ArticleDescriptionMaxLength)]
         public string Description { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
 
         public DateTime CreateDate { get; set; }
 
+        [MinLength(ArticleAuthorNameMinLength)]
+        [MaxLength(ArticleAuthorNameMaxLength)]
         public string AuthorName { get; set; }
 
         [Required]

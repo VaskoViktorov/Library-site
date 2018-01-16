@@ -17,13 +17,13 @@ namespace Library.Web.Infrastructure.Extensions
         public static bool IsNullOrWhiteSpace(string text)
             => string.IsNullOrWhiteSpace(text);
 
-        public static string LimitStringLenght(this string text)
+        public static string LimitStringLenght(this string text,int maxLenght)
         {
             if (!string.IsNullOrEmpty(text))
             {
-                if (text.Length > 60)
+                if (text.Length > maxLenght)
                 {
-                    return text.Substring(0, 60)+"...";                   
+                    return text.Substring(0, maxLenght) +"...";                   
                 }
             }
             return text;

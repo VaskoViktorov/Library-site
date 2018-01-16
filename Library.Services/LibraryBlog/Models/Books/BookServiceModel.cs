@@ -10,7 +10,7 @@
 
         public string Press { get; set; }
 
-        public DateTime PublishDate { get; set; }
+        public int PublishDate { get; set; }
 
         public DateTime Date { get; set; }
 
