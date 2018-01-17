@@ -14,9 +14,7 @@
         public string Name { get; set; }
 
         [Required]
-        [MinLength(SubscriptionDepartmentMinLength)]
-        [MaxLength(SubscriptionDepartmentMaxLength)]
-        public string Department { get; set; }
+        public DepartmentType Department { get; set; }
 
         [Required]
         public SubscriptionType Type { get; set; }

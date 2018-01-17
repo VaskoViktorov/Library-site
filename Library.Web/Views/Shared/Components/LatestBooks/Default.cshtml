@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <h4 class="text-center" style="width: 120px"><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Най-новите книги</a></h4>
+        <h4 class="text-center mr-t-45" style="width: 120px"><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Най-новите книги</a></h4>
         <ul class="rslides" style="max-height: 170px;">
             @foreach (var book in Model)
             {
@@ -13,6 +13,6 @@
                     <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id"><img src="@book.ImageUrl" alt="@book.BookTitle"></a>
                 </li>
             }
-        </ul>
+        </ul>       
     </div>
 </div>

@@ -11,6 +11,27 @@ $(document).ready(function () {
 
     });
 });
+//img popup gallery 
+
+$(document).ready(function () {
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function (item) {
+                return item.el.attr('title');
+            }
+        }
+    });
+});
 
 //dropdown menu
 $(document).ready(function () {
@@ -49,5 +70,20 @@ $(function () {
         after: function () { }     // Function: After callback
     });
 });
-
-
+//text editor
+$(document).ready(function () {
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 300
+        
+    });
+});
+//facebook
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

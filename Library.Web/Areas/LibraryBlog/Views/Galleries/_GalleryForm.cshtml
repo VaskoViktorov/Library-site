@@ -1,0 +1,15 @@
+﻿@model GalleryFormModel
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="Files" class="form-control" name="files" multiple />
+    </div>
+    <button type="submit" class="btn btn-info">Запази</button>
+    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Galleries">Обратно</a>
+</form>
+

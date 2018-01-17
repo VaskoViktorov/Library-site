@@ -69,16 +69,18 @@
             </table>
         </div>
         <div class="col-md-1"></div>
-        <div class="row max-w-750">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                @if (Model.Book.BookDescription != null)
-                {
+    <div class="row max-w-750">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        @if (Model.Book.BookDescription.Length > 2)
+        {
+            
                     <h4 class="bold text-center mr-t-b-25">Кратко описание</h4>
-                    <p>@Model.Book.BookDescription</p>
-                }
-            </div>
+                    <div class="text-justify mr-30">@Html.Raw(Model.Book.BookDescription)</div>
+                
+        }
         </div>
+    </div>
         <div class=" row text-center mr-t-10">
             <div class="col-md-1"></div>
             <div class="col-md-6">

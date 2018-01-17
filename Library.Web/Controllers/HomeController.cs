@@ -74,6 +74,9 @@ namespace Library.Web.Controllers
         public IActionResult Links()
             => View();
 
+        public IActionResult Ecatalogue()
+            => View();
+
         public IActionResult Test()
             => View();
 

@@ -13,7 +13,7 @@
         public int TotalBooks { get; set; }
 
         public int TotalPages
-            => (int)Math.Ceiling((double)this.TotalBooks / PageSize);
+            => (int)Math.Ceiling((double)this.TotalBooks / BooksPageSize);
 
         public int CurrentPage { get; set; }
 

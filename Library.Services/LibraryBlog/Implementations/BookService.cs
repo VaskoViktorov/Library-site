@@ -118,29 +118,29 @@
         public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(int page = 1)
             => await this.db
                 .Books
-                .OrderBy(b => b.Date)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
+                .OrderByDescending(b => b.Date)
+                .Skip((page - 1) * BooksPageSize)
+                .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
         public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1)
             => await this.db
                 .Books
-                .OrderBy(b => b.Date)
+                .OrderByDescending(b => b.Date)
                 .Where(b => b.Department == DepartmentType.Kids)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
+                .Skip((page - 1) * BooksPageSize)
+                .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
         public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(int page = 1)
             => await this.db
                 .Books
-                .OrderBy(b => b.Date)
+                .OrderByDescending(b => b.Date)
                 .Where(b => b.Department == DepartmentType.Land)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
+                .Skip((page - 1) * BooksPageSize)
+                .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 

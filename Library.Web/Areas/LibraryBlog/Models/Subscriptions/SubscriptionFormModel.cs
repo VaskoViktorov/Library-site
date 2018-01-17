@@ -14,10 +14,8 @@
         public string Name { get; set; }
 
         [Required]
-        [MinLength(SubscriptionDepartmentMinLength)]
-        [MaxLength(SubscriptionDepartmentMaxLength)]
         [Display(Name = "Отдел")]
-        public string Department { get; set; }
+        public DepartmentType Department { get; set; }
 
         [Required]
         [Display(Name = "Вид")]

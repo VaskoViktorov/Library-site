@@ -40,7 +40,7 @@
         public DepartmentType Department { get; set; }
 
         [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessage = "Некоректен формат за дата. Приемат се стойности от 1800 до 2099")]
-        [Display(Name = "Дата на издаване")]
+        [Display(Name = "Година на издаване")]
         public int PublishDate { get; set; } 
 
 

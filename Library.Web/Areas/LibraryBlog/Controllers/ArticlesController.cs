@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.AspNetCore.Http;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Services.Html;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Models.Articles;
@@ -12,18 +11,18 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
     using System.Threading.Tasks;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
-    using Microsoft.Extensions.FileProviders;
 
     public class ArticlesController : BaseController
     {
         private const string ModelName = "Статията";
 
         private readonly IArticleService articles;
+        private readonly IHtmlService html;
 
-        public ArticlesController(IArticleService articles )
+        public ArticlesController(IArticleService articles, IHtmlService html)
         {
             this.articles = articles;
-
+            this.html = html;
         }
 
         [AllowAnonymous]
@@ -50,6 +49,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         [ValidateModelState]
         public async Task<IActionResult> Create(ArticleFormModel model)
         {
+            model.Description = this.html.Sanitize(model.Description);
+
             var userName = User.Identity.Name;
 
             if (model.Files == null || model.Files.Count == 0)
@@ -106,6 +107,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         [ValidateModelState]
         public async Task<IActionResult> Edit(int id, ArticleFormModel model)
         {
+            model.Description = this.html.Sanitize(model.Description);
 
             var userName = User.Identity.Name;
 

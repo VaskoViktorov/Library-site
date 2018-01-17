@@ -9,6 +9,6 @@ namespace Library.Services.LibraryBlog.Models.Subscriptions
 
         public string Name { get; set; }
 
-        public string Department { get; set; }
+        public DepartmentType Department { get; set; }
     }
 }

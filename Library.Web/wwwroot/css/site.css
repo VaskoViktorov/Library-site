@@ -2,14 +2,44 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+    padding: 25px;
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
-
+/*Img Gallery*/
+.max-w-h-img {
+    max-width: 200px;
+    max-height: 224px;
+}
+.gallery-box {
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    text-align: center;
+}
+.gallery-img {
+    margin: 10px auto;
+}
+.p-t-5 {
+    padding-top: 5px;
+}
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -65,6 +95,9 @@ ul.pagination li.page-item a.disabled {
 }
 
 /* Custom css*/
+.mr-30 {
+    margin: 30px;
+}
 .mr-10-auto {
     margin: 10px auto;
 }
@@ -86,7 +119,9 @@ ul.pagination li.page-item a.disabled {
 .h-60 {
     height: 60px;
 }
-
+.word-wrap {
+    word-wrap: break-word;
+}
 .br-t {
     border-top: 1px solid lightgray;
 }
@@ -164,7 +199,9 @@ ol {
 .width-46pr {
     width: 46%;
 }
-
+.mr-t-45 {
+    margin-top: 45px;
+}
 .mr-t-b-25 {
     margin: 25px 0;
 }

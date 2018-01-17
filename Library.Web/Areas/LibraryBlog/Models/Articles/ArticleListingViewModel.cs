@@ -14,7 +14,7 @@ namespace Library.Web.Areas.LibraryBlog.Models.Articles
         public int TotalArticles { get; set; }
 
         public int TotalPages
-            => (int)Math.Ceiling((double)this.TotalArticles / PageSize);
+            => (int)Math.Ceiling((double)this.TotalArticles / ArticlesPageSize);
 
         public int CurrentPage { get; set; }
 

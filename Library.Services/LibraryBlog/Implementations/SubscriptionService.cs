@@ -19,7 +19,7 @@
             this.db = db;
         }
 
-        public async Task CreateAsync(string name, string department, SubscriptionType type)
+        public async Task CreateAsync(string name, DepartmentType department, SubscriptionType type)
         {
             var subscription = new Subscription
             {
@@ -32,7 +32,7 @@
             await this.db.SaveChangesAsync();
         }
 
-        public async Task EditAsync(int id, string name, string department, SubscriptionType type)
+        public async Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type)
         {
             var subscription = await this.db.Subscriptions.FindAsync(id);
 

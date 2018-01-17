@@ -78,6 +78,26 @@ namespace Library.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "viewGallery",
+                    template: "libraryblog/galleries/galleries",
+                    defaults: new { area = "LibraryBlog", controller = "Galleries", action = "Galleries" });
+
+                routes.MapRoute(
+                    name: "editGallery",
+                    template: "libraryblog/galleries/edit/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Galleries", action = "Edit" });
+
+                routes.MapRoute(
+                    name: "deleteGallery",
+                    template: "libraryblog/galleries/delete/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Galleries", action = "Delete" });
+
+                routes.MapRoute(
+                    name: "destroyGallery",
+                    template: "libraryblog/galleries/destroy/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Galleries", action = "Destroy" });
+
+                routes.MapRoute(
                     name: "viewArticle",
                     template: "libraryblog/articles/articles",
                     defaults: new { area = "LibraryBlog", controller = "Articles", action = "Articles" });

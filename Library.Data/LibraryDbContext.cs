@@ -32,6 +32,12 @@
                 .HasForeignKey<Gallery>(b => b.ArticleId);
 
             builder
+                .Entity<Gallery>()
+                .HasOne(a => a.Article)
+                .WithOne(u => u.Gallery)
+                .HasForeignKey<Article>(b => b.GalleryId);
+
+            builder
                 .Entity<Image>()
                 .HasOne(a => a.Gallery)
                 .WithMany(u => u.Images)

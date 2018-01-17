@@ -1,0 +1,38 @@
+﻿@model GalleryViewModel
+@{
+    ViewData["Title"] = "Details";
+    var count = Model.Gallery.Images.Count;
+}
+<div class="row mr-t-40">
+    <div class="col-md-12">
+        <h2 class="text-center">@Model.Gallery.Title</h2>
+        <div class="row max-w-750 mr-10-auto">
+            @if (count < 2)
+            {
+                <a class="image-popup-vertical-fit"  href="@Model.Gallery.Images.First().ImagePath" Title="@Model.Gallery.Title">
+                    <img src="@Model.Gallery.Images.First().ImagePath" class="img-border gallery-img" alt="@Model.Gallery.Title" />
+                </a>
+            }
+        </div>
+        @if (count >= 2)
+        {
+            <div class="row max-w-750 mr-10-auto popup-gallery gallery-box">
+                @foreach (var img in Model.Gallery.Images)
+                {
+                    <a href="@img.ImagePath" Title="@Model.Gallery.Title">
+                        <img src="@img.ImagePath" class="width-150 img-border gallery-img" alt="@Model.Gallery.Title"/>
+                    </a>
+                }
+            </div>
+        }
+        <div class="row max-w-750 text-center mr-10-auto">
+            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+            {
+                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit">Редактирай</a>
+                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete">Изтрии</a>
+            }
+            <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
+        </div>
+        
+    </div>
+</div>

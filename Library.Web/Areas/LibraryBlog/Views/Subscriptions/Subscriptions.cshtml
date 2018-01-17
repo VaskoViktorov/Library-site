@@ -35,7 +35,7 @@
                 {
                     <tr>
                         <td>@newspaper.Name</td>
-                        <td>@newspaper.Department</td>
+                        <td>Отдел "@newspaper.Department.DepartmentsToBgLang()"</td>
                         @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                         {
                             <td>
@@ -74,7 +74,7 @@
                 {
                     <tr>
                         <td>@magazine.Name</td>
-                        <td>@magazine.Department</td>
+                        <td>Отдел "@magazine.Department.DepartmentsToBgLang()"</td>
                         @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                         {
                             <td>

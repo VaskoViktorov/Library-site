@@ -1,6 +1,7 @@
 ﻿namespace Library.Data.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     public class Room
     {
@@ -8,12 +9,13 @@
 
         public DateTime Date { get; set; }
 
-        public string TimePreference { get; set; }
-       
-        public string Title { get; set; }
+        [Required]
+        public string TimePreference { get; set; }      
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public string Phone { get; set; }
 
         public string Email { get; set; }

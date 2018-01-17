@@ -33,5 +33,8 @@
         public const int ArticleDescriptionMaxLength = 5000;
         public const int ArticleAuthorNameMinLength = 2;
         public const int ArticleAuthorNameMaxLength = 150;
+
+        public const int GalleryTitleMinLength = 2;
+        public const int GalleryTitleMaxLength = 300;
     }
 }

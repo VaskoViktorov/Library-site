@@ -12,7 +12,7 @@ using System;
 namespace Library.Data.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20180116081643_InitialCreate")]
+    [Migration("20180117130053_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,8 @@ namespace Library.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(5000);
 
+                    b.Property<int>("GalleryId");
+
                     b.Property<DateTime>("ReleaseDate");
 
                     b.Property<string>("Title")
@@ -45,6 +47,9 @@ namespace Library.Data.Migrations
                     b.Property<int>("Type");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GalleryId")
+                        .IsUnique();
 
                     b.ToTable("Articles");
                 });
@@ -100,12 +105,11 @@ namespace Library.Data.Migrations
 
                     b.Property<int>("ArticleId");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ArticleId")
-                        .IsUnique();
 
                     b.ToTable("Galleries");
                 });
@@ -133,15 +137,16 @@ namespace Library.Data.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
                     b.Property<string>("Email");
 
-                    b.Property<string>("Phone");
+                    b.Property<string>("Phone")
+                        .IsRequired();
 
-                    b.Property<string>("TimePreference");
-
-                    b.Property<string>("Title");
+                    b.Property<string>("TimePreference")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -153,9 +158,7 @@ namespace Library.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasMaxLength(100);
+                    b.Property<int>("Department");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -333,11 +336,11 @@ namespace Library.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Library.Data.Models.Gallery", b =>
+            modelBuilder.Entity("Library.Data.Models.Article", b =>
                 {
-                    b.HasOne("Library.Data.Models.Article", "Article")
-                        .WithOne("Gallery")
-                        .HasForeignKey("Library.Data.Models.Gallery", "ArticleId")
+                    b.HasOne("Library.Data.Models.Gallery", "Gallery")
+                        .WithOne("Article")
+                        .HasForeignKey("Library.Data.Models.Article", "GalleryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

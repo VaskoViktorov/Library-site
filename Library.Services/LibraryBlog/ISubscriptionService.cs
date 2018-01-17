@@ -8,9 +8,9 @@
 
     public interface ISubscriptionService
     {
-        Task CreateAsync(string name, string department, SubscriptionType type);
+        Task CreateAsync(string name, DepartmentType department, SubscriptionType type);
 
-        Task EditAsync(int id, string name, string department, SubscriptionType type);
+        Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type);
 
         Task DeleteAsync(int id);
 

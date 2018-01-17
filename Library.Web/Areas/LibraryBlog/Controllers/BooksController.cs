@@ -1,28 +1,27 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using Services.LibraryBlog;
-    using System.Threading.Tasks;
-    using Models.Books;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-
+    using Models.Books;
+    using Services.Html;
+    using Services.LibraryBlog;
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
 
     public class BooksController : BaseController
     {
         private const string ModelName = "Книгата";
 
         private readonly IBookService books;
+        private readonly IHtmlService html;
 
-        public BooksController(IBookService books)
+        public BooksController(IBookService books, IHtmlService html)
         {
             this.books = books;
+            this.html = html;
         }
 
         [AllowAnonymous]
@@ -73,6 +72,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
                 return this.RedirectToAction(nameof(this.Create));
             }
+
+            model.BookDescription = this.html.Sanitize(model.BookDescription);
 
             string savePath = null;
 
@@ -158,6 +159,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 savePath = $"/images/BookCovers/{guid}.jpg";
             }
 
+            model.BookDescription = this.html.Sanitize(model.BookDescription);
 
             await this.books.EditAsync(
                 id,

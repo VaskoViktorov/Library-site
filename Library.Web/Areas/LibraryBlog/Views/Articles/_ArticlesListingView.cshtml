@@ -7,18 +7,19 @@
     var count = article.Gallery.Images.Count;
 
     <div class="col-md-12 mr-t-b-25">
-        <p class="mr-0-auto width-60pr">@article.ReleaseDate.ToShortDateString()</p>
+
         <div class="row text-center">
             @if (count != 0)
             {
                 <a class="image-popup-vertical-fit" href="@article.Gallery.Images.First().ImagePath" Title="@article.Title">
-                    <img src="@article.Gallery.Images.First().ImagePath" class="img-border width-60pr" alt="@article.Title"/>
+                    <img src="@article.Gallery.Images.First().ImagePath" class="img-border width-60pr" alt="@article.Title" />
                 </a>
             }
+            <p class="mr-0-auto width-60pr text-right p-t-5">@article.ReleaseDate.ToShortDateString()</p>
         </div>
         <div class="row text-center">
-            <h3 class="bold mr-r-15 text-center">@article.Title</h3>
-            <p class="text-justify mr-0-auto width-60pr">@article.Description.LimitStringLenght(200)</p>
+            <h3 class="bold mr-10-auto width-60pr">@article.Title</h3>
+            <div class="text-justify mr-10-auto width-60pr">@Html.Raw(article.Description.TruncateHtml(200, "..."))</div>
             <a class="btn btn-sm btn-default" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">Прочети още</a>
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {

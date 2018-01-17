@@ -124,9 +124,9 @@
         {
             var articles = await this.db
                 .Articles
-                .OrderBy(b => b.ReleaseDate)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize)
+                .OrderByDescending(b => b.ReleaseDate)
+                .Skip((page - 1) * ArticlesPageSize)
+                .Take(ArticlesPageSize)
                 .ProjectTo<ArticleListingServiceModel>()
                 .ToListAsync();
 
