@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Library.Services.Models.EmailSender;
 using Microsoft.Extensions.FileProviders;
 
 namespace Library.Web
@@ -29,6 +30,8 @@ namespace Library.Web
             services.AddDbContext<LibraryDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
 
+           
+
             services.AddSingleton<IFileProvider>(
             new PhysicalFileProvider(
                 Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
@@ -36,13 +39,14 @@ namespace Library.Web
             services
                 .AddIdentity<User, IdentityRole>(options =>
                 {
+                    options.SignIn.RequireConfirmedEmail = true;
                     options.Password.RequireDigit = false;
                     options.Password.RequireLowercase = false;
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                 })
                 .AddEntityFrameworkStores<LibraryDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders();           
 
             services.AddDomainServices();
 
@@ -54,6 +58,8 @@ namespace Library.Web
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
             });
+
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("EmailSettings"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

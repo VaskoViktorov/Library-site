@@ -49,7 +49,7 @@
                         }
 
                         var adminEmail = "admin@mysite.com";
-
+                        var username= "admin@mysite.com";
                         var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
                         if (adminUser == null)
@@ -57,7 +57,7 @@
                             adminUser = new User
                             {
                                 Email = adminEmail,
-                                UserName = adminEmail,
+                                UserName = username,
                                 UserFullName = roleNameAdmin,
                                 UserAge = 27
                             };

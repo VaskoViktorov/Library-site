@@ -115,28 +115,39 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
-        @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
-        {
-            <div class="alert alert-success">
-                @TempData[WebConstants.TempDataSuccessMessageKey]
+    <div class="container body-content">        
+        <div class="row">
+            <div id="fb-root"></div>
+            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
+            <div class="col-md-8 mr-t-45">
+                @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+                {
+                    <div class="alert alert-success">
+                        @TempData[WebConstants.TempDataSuccessMessageKey]
+                    </div>
+                }
+                @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
+                {
+                    <div class="alert alert-warning">
+                        @TempData[WebConstants.TempDataWarningMessageKey]
+                    </div>
+                }
+                @RenderBody()
             </div>
-        }
-        @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
-        {
-            <div class="alert alert-warning">
-                @TempData[WebConstants.TempDataWarningMessageKey]
-            </div>
-        }
-            <div class="row">
-                <div id="fb-root"></div>              
-                <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
-                <div class="col-md-8 mr-t-45"> @RenderBody()</div>
-                <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-right">@await Component.InvokeAsync("LatestGalleries")</div>
-            </div>
+            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-right">@await Component.InvokeAsync("LatestGalleries")</div>
+        </div>
         <footer>
             <hr />
-            <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="p-0-3 fb-like" float-left" data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
+                </div>
+            </div>
         </footer>
     </div>
     <environment include="Development">

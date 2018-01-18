@@ -6,7 +6,7 @@
 <div class="row mr-t-40">
     <div class="col-md-12">
         <h2 class="text-center">@Model.Article.Title</h2>
-        <div class="row max-w-750 mr-10-auto">
+        <div class="row max-w-750 mr-10-auto text-center">
             @if (count < 2)
             {
                 <a class="image-popup-vertical-fit" href="@Model.Article.Gallery.Images.First().ImagePath" Title="@Model.Article.Title">
@@ -31,7 +31,7 @@
             </div>
         }
         <div class="row max-w-750 text-center mr-10-auto">
-            <a class="fb-like" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@Model.Article.Id" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a>
+            <a class="fb-like" style="float:right" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@Model.Article.Id" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a>
         </div>
         <div class="row max-w-750 text-center mr-10-auto">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
@@ -39,7 +39,7 @@
                 <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit">Редактирай</a>
                 <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete">Изтрии</a>
             }
-            <a class="btn btn-sm btn-default" href="javascript:history.go(-1)">Обратно</a>
+            <a class="btn btn-sm btn-default mr-t-b-25" href="javascript:history.go(-1)">Обратно</a>
 
         </div>
        

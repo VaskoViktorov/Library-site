@@ -7,14 +7,14 @@ html {
     min-height: 100%;
 }
 body {
-    margin: 0 0 100px; /* bottom = footer height */
+    margin: 0 0 150px; /* bottom = footer height */
     padding: 25px;
 }
 footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 150px;
     width: 100%;
     overflow: hidden;
 }
@@ -23,6 +23,11 @@ footer {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+.carousel-custom-settings {
+    max-width: 600px;
+    max-height: 450px;
+    margin: 0 auto;
 }
 /*Img Gallery*/
 .max-w-h-img {
@@ -36,6 +41,7 @@ footer {
 }
 .gallery-img {
     margin: 10px auto;
+    max-width: 100%;
 }
 .p-t-5 {
     padding-top: 5px;

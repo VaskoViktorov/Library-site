@@ -17,5 +17,15 @@
 
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
+
+        public const string EmailReceiverForAsk = "rbmg@abv.bg";
+        public const string EmailReceiverHtmlText = @"<div style='width: 500px;'>
+            <p style = 'font-weight: bold; text-align: left; margin-bottom: 15px;'> Въпрос </ p >
+            <p style='text-align: justify;margin-bottom: 30px;'>{0}</p>
+            <p style = 'font-weight: bold; text-align: left;margin-bottom: 15px;'> Информация за обратна връзка</p>
+            <p style = 'text-align: left;margin-bottom: 5px;'><span style='font-weight: bold' > Телефон: </span>{1}</p>
+            <p style = 'text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Имейл:  </span>{2}</p>
+            <p style = 'text-align: left;'><span style='font-weight: bold'> Име: </span>{3}</p>
+            </div>";
     }
 }
