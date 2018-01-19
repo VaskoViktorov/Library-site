@@ -1,0 +1,8 @@
+﻿[{"id": 1, "date": "2018-01-21 07:30:00", "type": "meeting", "title": "Мини Машини във Видин!", "description": "TEST", "url": "http://localhost:53550/libraryblog/articles/details/4" },
+	{"id": 2, "date": "2018-01-23 17:30:00", "type": "meeting", "title": "Творческа вечер в Регионална библиотека „Михалаки Георгиев”", "description": "TEST", "url": "http://localhost:53550/" },
+  {
+    
+    
+    "id": 3, "date": "2018-01-24 11:30:00", "type": "meeting", "title": "New", "description": "TEST", "url": "http://localhost:53550/"
+  }]
+

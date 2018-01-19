@@ -196,7 +196,9 @@ ol {
 .float-left {
     float: left;
 }
-
+.width-300 {
+    max-width: 300px;
+}
 .width-150 {
     max-height: 150px;
     max-width: 150px;

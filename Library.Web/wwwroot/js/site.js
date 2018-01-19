@@ -12,7 +12,6 @@ $(document).ready(function () {
     });
 });
 //img popup gallery 
-
 $(document).ready(function () {
     $('.popup-gallery').magnificPopup({
         delegate: 'a',
@@ -75,11 +74,11 @@ $(document).ready(function () {
     $('#summernote').summernote({
         tabsize: 2,
         height: 300
-        
+
     });
 });
 //facebook
-(function(d, s, id) {
+(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s);
@@ -87,3 +86,47 @@ $(document).ready(function () {
     js.src = 'https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.11';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+//calendar
+$(document).ready(function () {
+    $("#eventCalendarLocaleFile").eventCalendar({
+        eventsjson: 'lib/jquery/dist/TestEvents.json',
+        locales: {
+            locale: "bg",
+            monthNames: ["Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"],
+            dayNames: ['Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                'Петък', 'Събота', 'Неделя'],
+            dayNamesShort: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+            txt_noEvents: "Няма събития",
+            txt_SpecificEvents_prev: "",
+            txt_SpecificEvents_after: "Събития:",
+            txt_next: "следващ",
+            txt_prev: "предишен",
+            txt_NextEvents: "Предстоящи събития:",
+            txt_GoToEventUrl: "Подробности",
+            "moment": {
+                "months": ["Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                    "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"],
+                "monthsShort": ["Яну", "Фев", "Мар", "Апр", "Май", "Юни",
+                    "Юли", "Авг", "Сеп", "Окт", "Ное", "Дек"],
+                "weekdays": ['Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                    'Петък', 'Събота', 'Неделя'],
+                "weekdaysShort": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+                "weekdaysMin": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+                "longDateFormat": {
+                    "LT": "H:mm",
+                    "LTS": "LT:ss",
+                    "L": "DD/MM/YYYY",
+                    "LL": "D MMMM YYYY",
+                    "LLL": "D MMMM YYYY LT",
+                    "LLLL": "dddd, D MMMM YYYY LT"
+                },
+                "week": {
+                    "dow": 1,
+                    "doy": 4
+                }
+            }
+        }
+    });
+});
