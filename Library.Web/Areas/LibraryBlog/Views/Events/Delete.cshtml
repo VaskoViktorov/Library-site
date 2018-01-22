@@ -1,0 +1,8 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Delete Event";
+}
+<h1 class="mr-t-b-25">Сигурен ли си, че искаш да изтриеш събитието?</h1>
+<a class="btn btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Destroy" asp-route-id="@Model">Да</a>
+<a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Обратно</a>

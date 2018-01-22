@@ -29,9 +29,7 @@ namespace Library.Web
         {
             services.AddDbContext<LibraryDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
-
            
-
             services.AddSingleton<IFileProvider>(
             new PhysicalFileProvider(
                 Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
@@ -83,6 +81,26 @@ namespace Library.Web
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "viewEvent",
+                    template: "libraryblog/events/events",
+                    defaults: new { area = "LibraryBlog", controller = "Events", action = "Events" });
+
+                routes.MapRoute(
+                    name: "editEvent",
+                    template: "libraryblog/events/edit/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Events", action = "Edit" });
+
+                routes.MapRoute(
+                    name: "deleteEvent",
+                    template: "libraryblog/events/delete/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Events", action = "Delete" });
+
+                routes.MapRoute(
+                    name: "destroyEvent",
+                    template: "libraryblog/events/destroy/{id}",
+                    defaults: new { area = "LibraryBlog", controller = "Events", action = "Destroy" });
+
                 routes.MapRoute(
                     name: "viewGallery",
                     template: "libraryblog/galleries/galleries",

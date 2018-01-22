@@ -12,9 +12,13 @@
         public const string TempDataEditCommentText = "{0} е редактиран{1} успешно.";
         public const string TempDataCreateCommentText = "{0} е създаден{1} успешно.";
 
+        public const string TempDataCreateFailText = "Възникна грешка!{0} НЕ е създаден{1}.";
+        public const string TempDataEditFailText = "Възникна грешка!{0} НЕ е редактиран{1}.";
+        public const string TempDataDeleteFailText = "Възникна грешка!{0} НЕ е изтрит{1}.";
+
         public const string TempDataAlreadyExistsText = "{0} с име {1}, вече съществува.";
         public const string TempDataWrongUrlText = "НЕ е създадена {0}, поради грешен URL адрес.";
-
+        
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
 
@@ -27,5 +31,7 @@
             <p style = 'text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Имейл:  </span>{2}</p>
             <p style = 'text-align: left;'><span style='font-weight: bold'> Име: </span>{3}</p>
             </div>";
+
+        public const string CallendarJasonDbPath ="{0}\\wwwroot\\lib\\jquery\\dist\\EventsDb.json";
     }
 }
