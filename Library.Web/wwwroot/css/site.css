@@ -101,8 +101,17 @@ ul.pagination li.page-item a.disabled {
 }
 
 /* Custom css*/
+.ico-style {
+    padding: 13px 0 !important;   
+    margin-right: 20px;
+    font-size: 1.6em;
+    float: right;
+}
 .mr-30 {
     margin: 30px;
+}
+.mr-r-30 {
+    margin-right: 30px;
 }
 .mr-10-auto {
     margin: 10px auto;

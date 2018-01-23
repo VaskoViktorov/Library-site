@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Library.Web.Controllers
 {
@@ -53,7 +54,6 @@ namespace Library.Web.Controllers
                 Articles = await home.LatestFourArticlesAsync()
             });
 
-            
         public IActionResult Contact()
             => View();
         
