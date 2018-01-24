@@ -72,26 +72,88 @@
         <div id="eventCalendarLocaleFile" class="width-300"></div>
     </div>
     <div class="col-md-3">
-        <h2>Run &amp; Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
+        <div class="work-time-box">
+            <span class="closed bold close-time">Затворено</span><span class="hours bold open-time">Отворено</span>
+            <div class="dropdown" role="button">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
+                </a>
+                <ul id="worktime-menu" class="dropdown-menu drop">
+                    <li class="p-0-3"><span class="bold">Понеделник: </span>9:00-18:00</li>
+                    <li class="p-0-3"><span class="bold">Вторник: </span>9:00-18:00</li>
+                    <li class="p-0-3"><span class="bold">Сряда: </span>9:00-18:00</li>
+                    <li class="p-0-3"><span class="bold">Четвъртък: </span>9:00-18:00</li>
+                    <li class="p-0-3"><span class="bold">Петък: </span>9:00-18:00</li>
+                    <li class="p-0-3"><span class="bold">Събота: </span>9:00-14:00</li>
+                    <li class="p-0-3"><span class="bold">Неделя: </span>Почивен ден</li>
+                    <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Виж още</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 @section Scripts{
+    <script type="text/javascript">
+        $('div.dropdown').hover(function () {
+                $(this).find('.drop').stop(true, true).delay(100).fadeIn(500);
+            },
+            function () {
+                $(this).find('.drop').stop(true, true).delay(100).fadeOut(500);
+            });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.closed').hide();
+            $('.open').hide();
+
+            var d = new Date();
+            var dayOfWeek = d.getDay();
+            var hour = d.getHours();
+            var mins = d.getMinutes();
+            var status = 'open';
+
+            if (dayOfWeek !== 6 && dayOfWeek !== 0 && hour >= 9 && hour < 18) {
+                if (hour === '9' && mins < '00') {
+                    status = 'closed';
+                } else {
+                    status = 'open';
+                }
+            } else if (dayOfWeek === 6 && hour >= 9 && hour < 14) {
+                if (hour === '9' && mins < '00') {
+                    status = 'closed';
+                } else {
+                    status = 'open';
+                }
+            } else {
+                status = 'closed';
+            }
+
+            if (status === 'open') {
+                $('.hours').show();
+                $('.closed').hide();
+            } else {
+                $('.hours').hide();
+                $('.closed').show();
+            }
+        });
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $("#eventCalendarLocaleFile").eventCalendar({
                 eventsjson: 'lib/jquery/dist/EventsDb.json',
                 locales: {
                     locale: "bg",
-                    monthNames: ["Януари", "Февруари", "Март", "Април", "Май", "Юни",
-                        "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"],
-                    dayNames: ['Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
-                        'Петък', 'Събота', 'Неделя'],
+                    monthNames: [
+                        "Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                        "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"
+                    ],
+                    dayNames: [
+                        'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                        'Петък', 'Събота', 'Неделя'
+                    ],
                     dayNamesShort: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
                     txt_noEvents: "Няма събития",
                     txt_SpecificEvents_prev: "",
@@ -101,12 +163,18 @@
                     txt_NextEvents: "Предстоящи събития:",
                     txt_GoToEventUrl: "Подробности",
                     "moment": {
-                        "months": ["Януари", "Февруари", "Март", "Април", "Май", "Юни",
-                            "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"],
-                        "monthsShort": ["Яну", "Фев", "Мар", "Апр", "Май", "Юни",
-                            "Юли", "Авг", "Сеп", "Окт", "Ное", "Дек"],
-                        "weekdays": ['Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
-                            'Петък', 'Събота', 'Неделя'],
+                        "months": [
+                            "Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                            "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"
+                        ],
+                        "monthsShort": [
+                            "Яну", "Фев", "Мар", "Апр", "Май", "Юни",
+                            "Юли", "Авг", "Сеп", "Окт", "Ное", "Дек"
+                        ],
+                        "weekdays": [
+                            'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                            'Петък', 'Събота', 'Неделя'
+                        ],
                         "weekdaysShort": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
                         "weekdaysMin": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
                         "longDateFormat": {

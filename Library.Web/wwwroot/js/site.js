@@ -86,6 +86,29 @@ $(document).ready(function () {
     js.src = 'https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&version=v2.11';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+//snowfall
+var dat = new Date();
+var mon = dat.getMonth();
+if (mon === 11 || mon === 0) {
+    $(document).ready(function () {
+        $(document).snowfall({
+            flakeCount: 100, // number
+            flakeColor: '#ffffff', // string
+            flakeIndex: 999999, // number
+            minSize: 1, // number
+            maxSize: 3, // number
+            minSpeed: 2, // number
+            maxSpeed: 3, // number
+            round: false, // bool
+            shadow: false // bool
+            //collection: '.col-md-3'
+        });
+    });
+}
 
-//calendar
+
+    //$("#clear").click(function () {
+    //$(document).snowfall('clear'); // How you clear
+    //});
+
 
