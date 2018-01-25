@@ -1,0 +1,184 @@
+﻿body > nav.navbar-inverse {
+    background-color: #29739E;
+    border-color: #29739E;
+    opacity: 0.9;
+}
+body > nav > div > div.navbar-collapse.collapse.in {
+    border-color: #FFEDD8;
+}
+body > nav > div > div.navbar-header > .navbar-brand {
+    border-color: #29739E;
+    color: #FFEDD8;
+}
+body > nav > div > div.navbar-header > button.navbar-toggle {
+    border-color: #FFEDD8;
+    color: #FFEDD8;
+    opacity: 1;
+    background-color: #29739E !important;
+}
+body > nav > div > div.navbar-header > button.navbar-toggle > .icon-bar {
+        border-color: #FFEDD8;
+        color: #FFEDD8;
+    }
+body > nav > div > div.navbar-header > button.navbar-toggle:hover {
+    background-color: #8F4D4D !important;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li > a {
+    color: #FFEDD8;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+body > nav > div > div.navbar-collapse.collapse > ul > li > a {
+    color: #FFEDD8;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > a {
+    background-color: #8F4D4D;
+}
+
+body > nav > div > div.navbar-collapse.collapse > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #8F4D4D;
+}
+
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul {
+    background-color: #29739E;
+    color: #FFEDD8;
+}
+
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a:hover {
+        color: #FFEDD8;
+        font-weight: bold;
+        background-color: #8F4D4D;
+}
+    body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul  {
+        background-color: #29739E;
+        color: #FFEDD8;
+        font-weight: bold;
+    }
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul > li > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #8F4D4D;
+}
+.lib-nav-container {
+    opacity: 0.9;
+    padding-top: 41px;
+    display: inline-block;
+}
+.lib-nav-container h1.lib-h1-logo-first {
+    color: antiquewhite;
+    position: absolute;
+    top: 50px;
+    left: 171px;
+}
+.lib-nav-container h1.lib-h1-logo-second {
+    color: antiquewhite;
+    position: absolute;
+    top: 91px;
+    left: 191px;
+}
+#sidebar-left {
+    padding: 0px;
+}
+/** WorkTime Box**/
+.work-time-box {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    border: 2px solid #FFEDD8;
+    width: 150px;
+    background: #FFEDD8;
+    border-radius: 15px;
+}
+
+.open-time {
+    color: #29739E;
+    padding-right: 10px;
+    padding-left: 9px;
+    font-size: 1.2em;
+}
+.clock-ico {
+    color: #29739E;
+    font-size: 1.6em;
+}
+.close-time {
+    color: #29739E;
+    padding-right: 10px;
+    padding-left: 9px;
+    font-size: 1.2em;
+}
+#worktime-menu {
+    color: #29739E;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #FFEDD8;
+}
+ul#worktime-menu.dropdown-menu {
+    min-width: 205px;
+}
+#worktime-menu > li > a {
+    color: #29739E;
+    font-weight: bold;
+    font-size: 1em;
+}
+#worktime-menu > li > a:hover {
+    color: #FFEDD8;
+    background-color: #8F4D4D;
+}
+#carosel-h2 {
+    padding: 15px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    margin: 25px auto 0 auto;
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #29739E;
+    max-width: 600px;
+}
+.carosel-p {
+    padding: 14px;
+    background: #29739E;
+    border-radius: 20px;
+    opacity: 0.9;
+    color: #FFEDD8;
+}
+.carosel-span {
+    border-color: #8F4D4D;
+    background-color: #8F4D4D;
+    color: #FFEDD8;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+.carosel-span:hover {
+        background-color: #660B0B;
+}
+#myCarousel > ul > li {
+    border-color: #FFEDD8;
+}
+#myCarousel > ul > li.active {
+        width: 15px;
+        height: 15px;
+        background-color: #FFEDD8;
+}
+#myCarousel > a.left.carousel-control > span.glyphicon.glyphicon-chevron-left {
+    color: #FFEDD8;
+}
+#myCarousel > a.right.carousel-control > span.glyphicon.glyphicon-chevron-right {
+    color: #FFEDD8;
+}

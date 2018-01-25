@@ -89,7 +89,7 @@ $(document).ready(function () {
 //snowfall
 var dat = new Date();
 var mon = dat.getMonth();
-if (mon === 11 || mon === 0) {
+if (mon === 11) {
     $(document).ready(function () {
         $(document).snowfall({
             flakeCount: 100, // number
@@ -105,10 +105,47 @@ if (mon === 11 || mon === 0) {
         });
     });
 }
+//worktime
+$('div.dropdown').hover(function () {
+    $(this).find('.drop').stop(true, true).delay(100).fadeIn(500);
+},
+    function () {
+        $(this).find('.drop').stop(true, true).delay(100).fadeOut(500);
+    });
 
+$(document).ready(function () {
+    $('.closed').hide();
+    $('.open').hide();
 
-    //$("#clear").click(function () {
-    //$(document).snowfall('clear'); // How you clear
-    //});
+    var d = new Date();
+    var dayOfWeek = d.getDay();
+    var hour = d.getHours();
+    var mins = d.getMinutes();
+    var status = 'open';
+
+    if (dayOfWeek !== 6 && dayOfWeek !== 0 && hour >= 9 && hour < 18) {
+        if (hour === '9' && mins < '00') {
+            status = 'closed';
+        } else {
+            status = 'open';
+        }
+    } else if (dayOfWeek === 6 && hour >= 9 && hour < 14) {
+        if (hour === '9' && mins < '00') {
+            status = 'closed';
+        } else {
+            status = 'open';
+        }
+    } else {
+        status = 'closed';
+    }
+
+    if (status === 'open') {
+        $('.hours').show();
+        $('.closed').hide();
+    } else {
+        $('.hours').hide();
+        $('.closed').show();
+    }
+});
 
 

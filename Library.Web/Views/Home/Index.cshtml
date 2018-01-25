@@ -2,7 +2,9 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<div class="row">
+
+<div class="row text-center">
+    <h2 class="text-center" id="carosel-h2">Последни събития</h2>    
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
         <ul class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -10,7 +12,7 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ul>
-        <div class="carousel-inner" role="listbox" style="border-radius: 50px">
+        <div class="carousel-inner" role="listbox" style="border-bottom-left-radius: 50px;border-bottom-right-radius: 50px">
             @{
                 var count = 0;
                 foreach (var article in Model.Articles)
@@ -18,13 +20,13 @@
                     if (count == 0)
                     {
                         <div class="item active">
-                            <a style="text-decoration: none;color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                            <a style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
 
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
+                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive"/>
                                 <div class="carousel-caption" role="option">
-                                    <p style="padding: 5px; background: rgba(0, 0, 0, 0.7); border-radius: 20px;">
+                                    <p class="carosel-p">
                                         @article.Title
-                                        <span style="border-color: rgba(83, 198, 83, 0.5);background-color: rgba(83, 198, 83, 0.5);color:#ffffff" class="btn btn-default" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                        <span class="carosel-span" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                             Прочети още
                                         </span>
                                     </p>
@@ -37,12 +39,12 @@
                     else
                     {
                         <div class="item">
-                            <a style="text-decoration: none;color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
+                            <a style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive"/>
                                 <div class="carousel-caption" role="option">
-                                    <p style="padding: 5px; background: rgba(0, 0, 0, 0.7); border-radius: 20px;">
+                                    <p class="carosel-p">
                                         @article.Title
-                                        <span style="border-color: rgba(83, 198, 83, 0.5);background-color: rgba(83, 198, 83, 0.5);color:#ffffff" class="btn btn-default" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                        <span class="carosel-span" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                             Прочети още
                                         </span>
                                     </p>
@@ -54,92 +56,19 @@
                 }
             }
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="border-top-left-radius: 50px;border-bottom-left-radius: 50px;">
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style=" border-bottom-left-radius: 50px;">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Предишна</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="border-top-right-radius: 50px;border-bottom-right-radius: 50px;">
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="border-bottom-right-radius: 50px;">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Следваща</span>
         </a>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-3">
-        <a asp-controller="Home" asp-action="Ask"><img class="img-responsive" src="images/SiteImages/ask.jpg" /></a>
-    </div>
-    <div class="col-md-6">
-        <div id="eventCalendarLocaleFile" class="width-300"></div>
-    </div>
-    <div class="col-md-3">
-        <div class="work-time-box">
-            <span class="closed bold close-time">Затворено</span><span class="hours bold open-time">Отворено</span>
-            <div class="dropdown" role="button">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
-                </a>
-                <ul id="worktime-menu" class="dropdown-menu drop">
-                    <li class="p-0-3"><span class="bold">Понеделник: </span>9:00-18:00</li>
-                    <li class="p-0-3"><span class="bold">Вторник: </span>9:00-18:00</li>
-                    <li class="p-0-3"><span class="bold">Сряда: </span>9:00-18:00</li>
-                    <li class="p-0-3"><span class="bold">Четвъртък: </span>9:00-18:00</li>
-                    <li class="p-0-3"><span class="bold">Петък: </span>9:00-18:00</li>
-                    <li class="p-0-3"><span class="bold">Събота: </span>9:00-14:00</li>
-                    <li class="p-0-3"><span class="bold">Неделя: </span>Почивен ден</li>
-                    <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Виж още</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 @section Scripts{
-    <script type="text/javascript">
-        $('div.dropdown').hover(function () {
-                $(this).find('.drop').stop(true, true).delay(100).fadeIn(500);
-            },
-            function () {
-                $(this).find('.drop').stop(true, true).delay(100).fadeOut(500);
-            });
-
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.closed').hide();
-            $('.open').hide();
-
-            var d = new Date();
-            var dayOfWeek = d.getDay();
-            var hour = d.getHours();
-            var mins = d.getMinutes();
-            var status = 'open';
-
-            if (dayOfWeek !== 6 && dayOfWeek !== 0 && hour >= 9 && hour < 18) {
-                if (hour === '9' && mins < '00') {
-                    status = 'closed';
-                } else {
-                    status = 'open';
-                }
-            } else if (dayOfWeek === 6 && hour >= 9 && hour < 14) {
-                if (hour === '9' && mins < '00') {
-                    status = 'closed';
-                } else {
-                    status = 'open';
-                }
-            } else {
-                status = 'closed';
-            }
-
-            if (status === 'open') {
-                $('.hours').show();
-                $('.closed').hide();
-            } else {
-                $('.hours').hide();
-                $('.closed').show();
-            }
-        });
-    </script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $("#eventCalendarLocaleFile").eventCalendar({

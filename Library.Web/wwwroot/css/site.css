@@ -1,8 +1,15 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+.parallax {
+    /* The image used */
+    background-image: url("/images/siteimages/backgroundImg.jpg");
+    /* Set a specific height */
+    min-height: 450px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
 html {
     position: relative;
     min-height: 100%;
@@ -10,7 +17,7 @@ html {
 
 body {
     margin: 0 0 150px; /* bottom = footer height */
-    padding: 25px;
+    padding: 0;
 }
 
 footer {
@@ -385,34 +392,7 @@ ol {
     opacity: 0;
     cursor: pointer;
 }
-/** WorkTime Box**/
-.work-time-box {
-    display: flex;
-    border: 2px solid lightgray;
-    width: 150px;
-    background: lightgray;
-    border-radius: 15px;
-}
 
-.open-time {
-    color: green;
-    padding-right: 10px;
-    font-size: 1.5em;
-}
-
-ul#worktime-menu.dropdown-menu {
-    min-width: 180px;
-}
-
-.clock-ico {
-    color: black;
-    font-size: 1.6em;
-}
-.close-time {
-    color: red;
-    padding-right: 10px;
-    font-size: 1.5em;
-}
 /** Transition effects **/
 .effect-1 p {
     transition: opacity 0.5s;
