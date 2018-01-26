@@ -3,19 +3,23 @@
     ViewData["Title"] = "Books";
 }
 <div class="row mr-8 text-center">
-    <a asp-controller="Home" asp-action="Ask"><img class="img-responsive mr-t-45" src="images/SiteImages/ask.jpg" /></a>
-    <h4 ><a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Последни галерии</a></h4>
-    <ul style="max-height: 280px; max-width: 200px; list-style: none">
+    <div id="lib-ask-box">
+        <a  asp-controller="Home" asp-action="Ask">
+            <p class="img-responsive lib-ask-p1">Попитай<span class="img-responsive lib-ask-p2">Библиотекаря</span></p>
+            
+        </a>
+    </div> 
+    <h4 id="lib-gallery-h4"><a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Последни галерии</a></h4>
+    <ul>
         @foreach (var gallery in Model)
         {
-            <li class="text-center">
+            <li class="text-center lib-gallery-img-box">
                 <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">
-                    <p class="word-wrap mr-0-auto">@gallery.Title</p>
-                    <img style="max-height: 200px; max-width: 120px;" class="img-border" src="@gallery.Images.First().ImagePath" alt="@gallery.Title">
-                    <p class="text-center">Бр. снимки: @gallery.Images.Count</p>
+                    <p class="word-wrap mr-0-auto lib-gallery-p-top">@gallery.Title</p>
+                    <img style="" class="" src="@gallery.Images.First().ImagePath" alt="@gallery.Title">
+                    <p class="text-center lib-gallery-p-bottom">Бр. снимки: @gallery.Images.Count</p>
                 </a>
             </li>
         }
     </ul>
-
 </div>

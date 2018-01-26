@@ -1,4 +1,12 @@
-﻿//img popup
+﻿//load check
+var scripts = Array
+    .from(document.querySelectorAll('script'))
+    .map(scr => scr.src);
+
+if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
+    flag = true;
+}
+//img popup
 $(document).ready(function () {
 
     $('.image-popup-vertical-fit').magnificPopup({
@@ -8,7 +16,6 @@ $(document).ready(function () {
         image: {
             verticalFit: true
         }
-
     });
 });
 //img popup gallery 
@@ -147,5 +154,56 @@ $(document).ready(function () {
         $('.closed').show();
     }
 });
-
-
+//calendar
+$(document).ready(function () {
+    $("#eventCalendarLocaleFile").eventCalendar({
+        eventsjson: '/lib/jquery/dist/EventsDb.json',
+        locales: {
+            locale: "bg",
+            monthNames: [
+                "Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"
+            ],
+            dayNames: [
+                'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                'Петък', 'Събота', 'Неделя'
+            ],
+            dayNamesShort: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+            txt_noEvents: "Няма събития",
+            txt_SpecificEvents_prev: "",
+            txt_SpecificEvents_after: "Събития:",
+            txt_next: "следващ",
+            txt_prev: "предишен",
+            txt_NextEvents: "Предстоящи събития:",
+            txt_GoToEventUrl: "Подробности",
+            "moment": {
+                "months": [
+                    "Януари", "Февруари", "Март", "Април", "Май", "Юни",
+                    "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"
+                ],
+                "monthsShort": [
+                    "Яну", "Фев", "Мар", "Апр", "Май", "Юни",
+                    "Юли", "Авг", "Сеп", "Окт", "Ное", "Дек"
+                ],
+                "weekdays": [
+                    'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
+                    'Петък', 'Събота', 'Неделя'
+                ],
+                "weekdaysShort": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+                "weekdaysMin": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+                "longDateFormat": {
+                    "LT": "H:mm",
+                    "LTS": "LT:ss",
+                    "L": "DD/MM/YYYY",
+                    "LL": "D MMMM YYYY",
+                    "LLL": "D MMMM YYYY LT",
+                    "LLLL": "dddd, D MMMM YYYY LT"
+                },
+                "week": {
+                    "dow": 1,
+                    "doy": 4
+                }
+            }
+        }
+    });
+});
