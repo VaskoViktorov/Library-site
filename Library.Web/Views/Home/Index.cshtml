@@ -4,7 +4,7 @@
 }
 
 <div class="row text-center">
-    <h3 class="text-center" id="carosel-h3"><a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Последни събития</a></h3>    
+    <h1 class="text-center" id="carosel-h1"><a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Последни събития</a></h1>
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
         <ul class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -22,10 +22,10 @@
                         <div class="item active">
                             <a style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
 
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive"/>
+                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
                                 <div class="carousel-caption" role="option">
                                     <p class="carosel-p">
-                                        @article.Title
+                                        <span class="carosel-span-0">@article.Title</span>
                                         <span class="carosel-span" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                             Прочети още
                                         </span>
@@ -40,10 +40,10 @@
                     {
                         <div class="item">
                             <a style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive"/>
+                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
                                 <div class="carousel-caption" role="option">
                                     <p class="carosel-p">
-                                        @article.Title
+                                        <span class="carosel-span-0">@article.Title</span>
                                         <span class="carosel-span" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                             Прочети още
                                         </span>
@@ -65,4 +65,11 @@
             <span class="sr-only">Следваща</span>
         </a>
     </div>
+</div>
+<div class="row">
+        <div id="lib-donate-box">
+            <a href="/home/ask">
+                <p class="img-responsive lib-donate-p1">Направи<span class="img-responsive lib-donate-p2">Дарение</span></p>
+            </a>
+        </div> 
 </div>

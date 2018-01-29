@@ -2,14 +2,14 @@
 @{
     ViewData["Title"] = "Subscriptions";
 }
-
-<h2 class="text-center mr-t-b-25">Абонаменти</h2>
-
+<div class="row text-center">
+    <h2>Абонаменти</h2>
+</div>
 <div class="row">
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
-        <table class="table table-bordered table-hover">
+        <table class="table table-responsive table-hover">
             <thead>
                 <tr>
                     <th colspan="2" class="bold text-center">ВЕСТНИЦИ</th>
@@ -21,33 +21,34 @@
                         </th>
                     }
                 </tr>
-                <tr>
-                    <th>Наименувание</th>
-                    <th>Получава се в:</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>Действия:</th>
-                    }
-                </tr>
+               
             </thead>
             <tbody>
-                @foreach (var newspaper in Model.Newspapers)
+            <tr>
+                <th class="first-color-b second-color text-center">Наименувание</th>
+                <th class="first-color-b second-color text-center">Получава се в:</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                 {
-                    <tr>
-                        <td>@newspaper.Name</td>
-                        <td>Отдел "@newspaper.Department.DepartmentsToBgLang()"</td>
-                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                        {
-                            <td>
-                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Редактирай</a>
-                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Изтрии</a>
-                            </td>
-                        }
-                    </tr>
+                    <th class="first-color-b second-color text-center">Действия:</th>
                 }
+            </tr>
+            @foreach (var newspaper in Model.Newspapers)
+            {
+                <tr>
+                    <td class="lib-cell-corrector">@newspaper.Name</td>
+                    <td>Отдел "@newspaper.Department.DepartmentsToBgLang()"</td>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <td>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Редактирай</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Изтрии</a>
+                        </td>
+                    }
+                </tr>
+            }
             </tbody>
         </table>
-        <table class="table table-bordered table-hover">
+        <table class="table table-responsive table-hover">
             <thead>
                 <tr>
                     <th colspan="2" class="bold text-center">СПИСАНИЯ</th>
@@ -59,31 +60,31 @@
                         </th>
                     }
                 </tr>
-
-                <tr>
-                    <th>Наименувание</th>
-                    <th>Получава се в:</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>Действия:</th>
-                    }
-                </tr>
             </thead>
             <tbody>
-                @foreach (var magazine in Model.Magazines)
+            
+            <tr>
+                <th class="first-color-b second-color text-center">Наименувание</th>
+                <th class="first-color-b second-color text-center">Получава се в:</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                 {
-                    <tr>
-                        <td>@magazine.Name</td>
-                        <td>Отдел "@magazine.Department.DepartmentsToBgLang()"</td>
-                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                        {
-                            <td>
-                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Редактирай</a>
-                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Изтрии</a>
-                            </td>
-                        }
-                    </tr>
+                    <th class="first-color-b second-color text-center">Действия:</th>
                 }
+            </tr>
+            @foreach (var magazine in Model.Magazines)
+            {
+                <tr>
+                    <td class="lib-cell-corrector">@magazine.Name</td>
+                    <td>Отдел "@magazine.Department.DepartmentsToBgLang()"</td>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <td>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Редактирай</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Изтрии</a>
+                        </td>
+                    }
+                </tr>
+            }
             </tbody>
         </table>
     </div>

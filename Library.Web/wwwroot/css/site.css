@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    margin: 0 0 150px; /* bottom = footer height */
+    margin: 0 0 200px; /* bottom = footer height */
     padding: 0;
 }
 
@@ -25,7 +25,7 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 150px;
+    height: 200px;
     width: 100%;
     overflow: hidden;
 }
@@ -128,7 +128,6 @@ ul.pagination li.page-item a.disabled {
 .max-w-500 {
     max-width: 500px;
 }
-
 .mr-30 {
     margin: 30px;
 }
@@ -140,15 +139,18 @@ ul.pagination li.page-item a.disabled {
 .mr-10-auto {
     margin: 10px auto;
 }
-
+.mr-30-auto {
+    margin: 30px auto;
+}
 .mr-0-auto {
     margin: 0 auto;
 }
-
 .width-60pr {
     width: 60%;
 }
-
+.width-75pr {
+    width: 75%;
+}
 .mr-l-10 {
     margin-left: 10px;
 }
@@ -192,7 +194,9 @@ body div .container .body-content {
 .bold {
     font-weight: bold;
 }
-
+.p-10 {
+    padding: 10px;
+}
 .img-float-left {
     float: left;
     margin: 0 15px 0 0;
@@ -248,10 +252,12 @@ ol {
 .width-150 {
     max-height: 150px;
     max-width: 150px;
+    margin-bottom: 10px;
 }
 
 .width-46pr {
     width: 46%;
+    margin-bottom: 10px;
 }
 
 .mr-t-45 {
@@ -340,19 +346,19 @@ ol {
     height: 120px;
     float: left;
     margin: 50px 20px 0 20px;
-    border: 5px solid #000000;
-    border-radius: 105px;
+    border: 5px solid #337ab7;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
     position: relative
 }
 
-    .box img {
-        border-radius: 100px;
-        width: 70px;
-        height: 108px;
-        margin-left: 20px;
-    }
+.box img {
+    border-radius: 100px;
+    width: 70px;
+    height: 108px;
+    margin-left: 20px;
+}
 
 .onvVidin img {
     width: 120px;
@@ -373,10 +379,11 @@ ol {
 .box p {
     width: 111px;
     height: 111px;
-    color: #fff;
-    background: #000;
+    color: #FFEDD8;
+    font-weight: bold;
+    background: #337ab7;
     text-align: center;
-    border-radius: 100px;
+    border-radius: 10px;
     padding: 45px 0 0 0
 }
 
@@ -398,11 +405,11 @@ ol {
 
 /** Transition effects **/
 .effect-1 p {
-    transition: opacity 0.5s;
+    transition: opacity 0.01s;
 }
 
     .effect-1 p:hover {
-        transition: opacity 0.5s;
+        transition: opacity 0.01s;
         opacity: 0.8;
         cursor: pointer;
     }

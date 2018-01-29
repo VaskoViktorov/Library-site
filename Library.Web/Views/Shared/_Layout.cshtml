@@ -69,7 +69,6 @@
                                 <a class="test" tabindex="-1" href="#">За нас</a>
                                 <ul class="dropdown-menu">
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">История</a></li>
-
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
                                 </ul>
@@ -81,7 +80,7 @@
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Често задавани въпроси</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Въпроси</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contributors">Дарители</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Партньори</a></li>
@@ -173,14 +172,30 @@
             <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-right">@await Component.InvokeAsync("LatestGalleries")</div>
         </div>
         <footer>
-            
             <div class="row mr-t-10">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="p-0-3 fb-like float-left" data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                 </div>
                 <div class="col-md-2">
+                    <ul class="lib-footer-ul">
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Често Задавани Въпроси</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
+                    <ul class="lib-footer-ul">
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Ecatalogue">Електронни каталози</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
                     <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
                 </div>
             </div>
