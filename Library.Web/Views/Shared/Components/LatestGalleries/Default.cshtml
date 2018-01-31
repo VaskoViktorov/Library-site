@@ -3,13 +3,31 @@
     ViewData["Title"] = "Books";
 }
 <div class="row mr-8 text-center">
-    <div id="lib-ask-box">
-        <a  asp-controller="Home" asp-action="Ask">
-            <p class="img-responsive lib-ask-p1">Попитай<span class="img-responsive lib-ask-p2">Библиотекаря</span></p>
-            
+    <div>
+        <a asp-controller="Home" asp-action="Ask" style="text-decoration: none">
+            <p class="lib-sidebar-p">Попитай Библиотекаря</p>
         </a>
-    </div> 
-    <h4 id="lib-gallery-h4"><a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Последни галерии</a></h4>
+    </div>
+    <div>
+        <a style="text-decoration: none">
+            <p class="lib-sidebar-p1">Стани Доброволец</p>
+        </a>
+    </div>
+    <div>
+        <a style="text-decoration: none">
+            <p class="lib-sidebar-p">Участвай в анкета</p>
+        </a>
+    </div>
+    <div>
+        <a style="text-decoration: none">
+            <p class="lib-sidebar-p1">Направи Дарение</p>
+        </a>
+    </div>
+    <div>
+        <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries" style="text-decoration: none">
+            <p class="lib-sidebar-p" style="font-size: 1.2em">Последни галерии</p>
+        </a>
+    </div>
     <ul>
         @foreach (var gallery in Model)
         {

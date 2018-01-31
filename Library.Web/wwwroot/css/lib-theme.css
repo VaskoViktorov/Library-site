@@ -159,6 +159,16 @@ footer ul.lib-footer-ul li a:hover {
    text-decoration: none;
    color: #8F4D4D;
 }
+.address-box {
+    background-color: #29739E;
+    margin: 0 auto 10px auto;
+    padding: 10px;
+    color: #FFEDD8;
+    border-radius: 20px;
+}
+.address-box a {
+    color: #FFEDD8;
+}
 .parallax {
     border-bottom: 10px solid #29739E;
 }
@@ -181,6 +191,8 @@ h3 {
     font-weight: bold;
 }
 .lib-btn {
+    position: relative;
+    top: 10px;
     color: #FFEDD8;
     background-color: #8f4d4d;
     font-weight: bold;
@@ -329,8 +341,7 @@ ul#worktime-menu.dropdown-menu {
     padding-bottom: 2px;
     opacity: 0.9
 }
-
-#sidebar-left > div > div.col-md-10 > div> ul.lib-new-book-ul {
+#sidebar-left  ul.lib-new-book-ul {
     border-radius: unset;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -340,7 +351,7 @@ ul#worktime-menu.dropdown-menu {
     border: 1px solid #29739E;
 }
 
-#sidebar-left > div > div.col-md-10 > div > ul.lib-new-book-ul:hover {
+#sidebar-left  ul.lib-new-book-ul:hover {
     border-color: #8f4d4d;
 }
 
@@ -351,6 +362,16 @@ ul#worktime-menu.dropdown-menu {
 
 #lib-new-book-h4:hover {
     background-color: #8f4d4d;
+}
+#lib-subscr {
+    background-color: #29739E;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 5px;
+    height: 214px;
+}
+#lib-subscr:hover {
+   background-color: #8f4d4d;
 }
 /*Ask librarian*/
 .lib-ask-p1 {
@@ -417,7 +438,8 @@ ul#worktime-menu.dropdown-menu {
     text-decoration: none;
 }
 .lib-gallery-p-top {
-    background-color: #29739E;
+    background-color: #8F4D4D;
+    border: 2px solid #8F4D4D;
     padding: 5px;
     font-weight: bold;
     opacity: 0.9;
@@ -426,7 +448,8 @@ ul#worktime-menu.dropdown-menu {
     max-width: 120px;
 }
 .lib-gallery-p-bottom {
-    background-color: #29739E;
+    background-color: #8F4D4D;
+    border: 2px solid #8F4D4D;
     padding: 5px;
     opacity: 0.9;
     border-bottom-left-radius: 20px;
@@ -435,10 +458,39 @@ ul#worktime-menu.dropdown-menu {
     margin: 0 auto 15px auto;
 }
 .lib-gallery-img-box:hover * {
-    background-color: #8F4D4D;
+    background-color: #29739E;
     border-color: #8f4d4d;
 }
 /*Donate*/
+.lib-sidebar-p {
+    color: #FFEDD8;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+.lib-sidebar-p1 {
+    color: #FFEDD8;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    background-color: #8f4d4d;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.lib-sidebar-p1:hover {
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.lib-sidebar-p:hover {
+    background-color: #8f4d4d;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 .lib-donate-p1 {
     color: #FFEDD8;
     background-color: #8f4d4d;
@@ -451,6 +503,7 @@ ul#worktime-menu.dropdown-menu {
     text-align: center;
     padding: 0px;
 }
+
 .lib-donate-p2 {
     color: #FFEDD8;
     background-color: #8f4d4d;
@@ -463,6 +516,7 @@ ul#worktime-menu.dropdown-menu {
     width: 120px;
     margin: 0 auto;
     opacity: 0.9;
+    padding-top: 20px;
 }
 #lib-donate-box a {
     text-decoration: none;
@@ -526,4 +580,28 @@ ul.lib-footer-ul li {
 ul.lib-footer-ul li a:hover {
     text-decoration: none;
     color: #8F4D4D;
+}
+/*Gallery listing*/
+.lib-gallery-h {
+    background-color: #29739E;
+    padding: 5px;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.lib-gallery-b {
+    width: 200px;
+    background-color: #29739E;
+    color: #FFEDD8;
+    padding: 2px;
+    margin: 0 auto 10px auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.lib-img-border {
+    border: 2px solid #29739E;
 }

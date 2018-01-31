@@ -5,17 +5,28 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <div id="lib-latest-books">
-        <h4 class="text-center" id="lib-new-book-h4"><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Най-новите книги</a></h4>
-            <ul class="lib-new-book-ul rslides">
-                @foreach (var book in Model)
-                {
-                    <li>
-                        <a class="second-color" asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id"><img src="@book.ImageUrl" alt="@book.BookTitle"></a>
-                    </li>
-                }
-            </ul>
+        <div class="row">
+            <div class="col-md-9" style="padding-left: 0; padding-right: 0px;display: inline-block;">
+                <div id="lib-latest-books" style="display: inline-block; padding-left: 1px;">
+                    <h4 class="text-center" id="lib-new-book-h4"><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Най-новите книги</a></h4>
+                    <ul class="lib-new-book-ul rslides">
+                        @foreach (var book in Model)
+                        {
+                            <li>
+                                <a class="second-color" asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id"><img src="@book.ImageUrl" alt="@book.BookTitle"></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3" style="margin-top: 45px; padding-left: 0px;">
+                <div>
+                    <a class="second-color" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions"><img id="lib-subscr" src="~/images/SiteImages/subscriptions.png" alt="Абонамент"/></a>
+                </div>
+            </div>
         </div>
-        <div id="eventCalendarLocaleFile" class="width-300 mr-t-20"></div>
+        <div class="row">
+            <div id="eventCalendarLocaleFile" class="width-300 mr-t-20"></div>
+        </div>
     </div>
 </div>

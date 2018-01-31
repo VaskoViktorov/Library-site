@@ -6,18 +6,18 @@
 
     var count = gallery.Images.Count;
 
-    <div class="col-md-4 text-center" style="min-height: 322px;">
-        <p class="bold mr-10-auto word-wrap">@gallery.Title</p>
+    <div class="col-md-4 text-center gallery-col">
+        <p class="lib-gallery-h word-wrap">@gallery.Title</p>
         @if (count != 0)
         {
             <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">
-                <img src="@gallery.Images.First().ImagePath" class="img-border max-w-h-img" alt="@gallery.Title" />
+                <img src="@gallery.Images.First().ImagePath" class="lib-img-border max-w-h-img" alt="@gallery.Title" />
             </a>
         }
 
         <div class="row text-center">
-            <p>Брой снимки: @count</p>
-            <a class="btn btn-sm btn-default" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">Виж още</a>
+            <p class="lib-gallery-b">Бр. снимки: @count</p>
+            <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">Виж още</a>
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
                 <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit" asp-route-id="@gallery.Id">Промени</a>

@@ -1,8 +1,4 @@
-﻿using System.IO;
-using Library.Services.Models.EmailSender;
-using Microsoft.Extensions.FileProviders;
-
-namespace Library.Web
+﻿namespace Library.Web
 {
     using AutoMapper;
     using Data;
@@ -15,6 +11,9 @@ namespace Library.Web
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using System.IO;
+    using Services.Models.EmailSender;
+    using Microsoft.Extensions.FileProviders;
 
     public class Startup
     {
@@ -29,7 +28,7 @@ namespace Library.Web
         {
             services.AddDbContext<LibraryDbContext>(options =>
                 options.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
-           
+
             services.AddSingleton<IFileProvider>(
             new PhysicalFileProvider(
                 Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
@@ -44,7 +43,7 @@ namespace Library.Web
                     options.Password.RequireUppercase = false;
                 })
                 .AddEntityFrameworkStores<LibraryDbContext>()
-                .AddDefaultTokenProviders();           
+                .AddDefaultTokenProviders();
 
             services.AddDomainServices();
 

@@ -8,7 +8,7 @@
         </a>
         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
             <p class="bold h-60">@book.BookTitle.LimitStringLenght(60)</p>
-            <small class="author-text">@book.AuthorName @book.AuthorName</small>
+            <small class="author-text">@book.AuthorName</small>
             <p class="author-text">Отдел "@book.Department.DepartmentsToBgLang()"</p>
         </a>
         <div class="mr-t-10">

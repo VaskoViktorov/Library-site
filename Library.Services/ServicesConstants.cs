@@ -7,6 +7,6 @@
         public const int GalleriesPageSize = 9;
 
         public const int LatestBooksAmount = 6;
-        public const int LatestGalleriesAmount = 3;
+        public const int LatestGalleriesAmount = 2;
     }
 }

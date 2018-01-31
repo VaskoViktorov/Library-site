@@ -51,10 +51,10 @@ $(document).ready(function () {
 //floater for returning top
 $(window).scroll(function () {
     var winScrollTop = $(window).scrollTop();
-    var winHeight = $(window).height();
+    //var winHeight = $(window).height();
     var floaterHeight = $('#floater').outerHeight(true);
-    var fromBottom = 185;
-    var top = winScrollTop + winHeight - floaterHeight - fromBottom;
+    var fromBottom = -80;
+    var top = winScrollTop - floaterHeight - fromBottom;
     $('#floater').css({ 'top': top + 'px' });
 });
 
