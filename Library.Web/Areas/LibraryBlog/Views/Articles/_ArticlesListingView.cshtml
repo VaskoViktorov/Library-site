@@ -19,7 +19,7 @@
         </div>
         <div class="row text-center">
 
-            <div class="text-justify mr-30-auto width-60pr">@Html.Raw(article.Description.TruncateHtml(200, "..."))</div>
+            <div class="text-justify mr-30-auto width-60pr br-w">@Html.Raw(article.Description.TruncateHtml(200, "..."))</div>
             <div class="text-center mr-30-auto width-60pr">
                 <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id"><span>Прочети още</span></a>
                 @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

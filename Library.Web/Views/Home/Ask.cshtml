@@ -2,10 +2,10 @@
 @{
     ViewData["Title"] = "Ask";
 }
-<div class="row">
+<div class="row text-center">
     <h2>Попитай библиотекаря</h2>
 </div>
-<div class="row width-46pr mr-0-auto">
+<div class="row width-60pr mr-0-auto">
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label asp-for="Email"></label>
@@ -27,8 +27,8 @@
             <textarea id="summernote" asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-success">Изпрати</button>
-        <a class="btn btn-default btn-sm" asp-controller="Home" asp-action="Index">Обратно</a>
+        <button type="submit" class="lib-btn">Изпрати</button>
+        <a class="lib-btn" asp-controller="Home" asp-action="Index">Обратно</a>
     </form>
 </div>
 

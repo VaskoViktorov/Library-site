@@ -45,10 +45,10 @@ body > nav > div > div.navbar-header > button.navbar-toggle {
     background-color: #29739E !important;
 }
 
-    body > nav > div > div.navbar-header > button.navbar-toggle > .icon-bar {
-        border-color: #FFEDD8;
-        color: #FFEDD8;
-    }
+body > nav > div > div.navbar-header > button.navbar-toggle > .icon-bar {
+    border-color: #FFEDD8;
+    color: #FFEDD8;
+}
 
     body > nav > div > div.navbar-header > button.navbar-toggle:hover {
         background-color: #8F4D4D !important;
@@ -69,7 +69,11 @@ body > nav > div > div.navbar-collapse.collapse > ul > li > a {
 body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > a {
     background-color: #8F4D4D;
 }
-
+body > nav > div > div.navbar-collapse.collapse > ul > li:last-child:hover a {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #29739E !important;
+}
 body > nav > div > div.navbar-collapse.collapse > ul > li > a:hover {
     color: #FFEDD8;
     font-weight: bold;
@@ -87,11 +91,11 @@ body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul {
         font-weight: bold;
     }
 
-        body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a:hover {
-            color: #FFEDD8;
-            font-weight: bold;
-            background-color: #8F4D4D;
-        }
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a:hover {
+       color: #FFEDD8;
+       font-weight: bold;
+       background-color: #8F4D4D;
+}
 
 body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul {
      background-color: #29739E;
@@ -130,7 +134,9 @@ body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > l
         top: 91px;
         left: 191px;
 }
-
+body > nav > div > div.navbar-collapse.collapse > ul > li.lib-submenu-color {
+    background-color: #8F4D4D;
+}
 #sidebar-left {
     padding: 0px;
 }
@@ -210,6 +216,17 @@ h3 {
 .lib-hr {
     background-color: #29739E;
     height: 1px;
+}
+.lib-arrow-up {
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 120px;
+    border: 1px solid #29739E;
+    padding: 10px;
+    background-color: #29739E;
+    color: #FFEDD8;
 }
 /** WorkTime Box**/
 .work-time-box {
@@ -294,9 +311,9 @@ ul#worktime-menu.dropdown-menu {
 }
 
 .carosel-span {
-    border-color: #FFEDD8;
-    background-color: #FFEDD8;
-    color: #29739E;
+    border-color: #8f4d4d;
+    background-color: #8f4d4d;
+    color: #FFEDD8;
     font-weight: bold;
     padding: 5px;
     border-radius: 5px;
@@ -333,26 +350,23 @@ ul#worktime-menu.dropdown-menu {
     background-color: #29739E;
     width: 120px;
     color: #FFEDD8;
-    margin: 45px auto 0 auto;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    margin: 0px auto 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     font-weight: bold;
     padding-top: 5px;
     padding-bottom: 2px;
-    opacity: 0.9
 }
-#sidebar-left  ul.lib-new-book-ul {
+#lib-latest-books:hover * {
+    background-color: #8f4d4d;
+    border-color: #8f4d4d !important;
+}
+#sidebar-left ul.lib-new-book-ul {
     border-radius: unset;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     max-height: 170px;
     margin: 0 auto;
     max-width: 120px;
-    border: 1px solid #29739E;
-}
-
-#sidebar-left  ul.lib-new-book-ul:hover {
-    border-color: #8f4d4d;
+    border: 3px solid #29739E;
 }
 
 #lib-new-book-h4 a {
@@ -360,19 +374,17 @@ ul#worktime-menu.dropdown-menu {
     text-decoration: none;
 }
 
-#lib-new-book-h4:hover {
-    background-color: #8f4d4d;
-}
 #lib-subscr {
     background-color: #29739E;
-    opacity: 0.9;
-    border-radius: 20px;
-    padding: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    margin-left: 1px;
     height: 214px;
 }
-#lib-subscr:hover {
-   background-color: #8f4d4d;
-}
+    #lib-subscr:hover {
+        background-color: #8f4d4d;
+    }
 /*Ask librarian*/
 .lib-ask-p1 {
     color: #FFEDD8;
@@ -464,7 +476,7 @@ ul#worktime-menu.dropdown-menu {
 /*Donate*/
 .lib-sidebar-p {
     color: #FFEDD8;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -472,7 +484,7 @@ ul#worktime-menu.dropdown-menu {
 }
 .lib-sidebar-p1 {
     color: #FFEDD8;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     padding-top: 20px;
     padding-bottom: 20px;

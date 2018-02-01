@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" class="width-150" style="width: 50px;position: relative;top: -12px;" /></a>
-                <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
+                <a href="http://178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
                 <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
@@ -115,15 +115,15 @@
                     </li>
                     <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Новини</a></li>
                     <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Галерия</a></li>
-                    <li class="dropdown" role="button">
+                    <li class="dropdown lib-submenu-color" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Е-Библиотека<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a href="http://178.239.224.218/absw/abs.htm" class="bold second-color">Е-Библиотека</a></li>
+                            <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Нови Книги</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Абонаменти</a></li>
-                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm" class="bold second-color">Други Е-Каталози</a></li>
+                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">Други Е-Каталози</a></li>
                         </ul>
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole))
@@ -168,7 +168,7 @@
                 }
                 @RenderBody()
             </div>
-            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-right" style="background-color: #29739E; opacity: 0.9; padding: 0;border-bottom-left-radius: 20px;">@await Component.InvokeAsync("LatestGalleries")</div>
+            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-right" style="background-color: #29739E; opacity: 0.9;padding-right: 0;padding-left: 7px;;border-bottom-left-radius: 20px;">@await Component.InvokeAsync("LatestGalleries")</div>
         </div>
         <footer>
             <div class="row mr-t-10 footer-row">

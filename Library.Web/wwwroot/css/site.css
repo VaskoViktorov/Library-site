@@ -82,7 +82,7 @@ footer {
 }
 
     .rslides:hover {
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     .rslides li {
@@ -94,11 +94,11 @@ footer {
         top: 0;
     }
 
-        .rslides li:first-child {
-            position: relative;
-            display: block;
-            float: left;
-        }
+.rslides li:first-child {
+     position: relative;
+     display: block;
+     float: left;
+}
 
     .rslides img {
         display: block;
@@ -124,7 +124,7 @@ ul.pagination li.page-item a.disabled {
 /* Custom css*/
 .ico-style {
     padding: 13px 0 !important;
-    margin-right: 20px;
+    margin-right: 17px;
     font-size: 1.6em;
     float: right;
 }
@@ -154,6 +154,9 @@ ul.pagination li.page-item a.disabled {
 }
 .width-75pr {
     width: 75%;
+}
+.width-85pr {
+    width: 85%;
 }
 .mr-l-10 {
     margin-left: 10px;
@@ -227,7 +230,9 @@ ol {
         margin-right: 5px;
         font-weight: bold;
     }
-
+.br-w {
+    word-wrap: break-word;
+}
 .img-border {
     border: 2px solid gray;
     border-radius: 5px;
@@ -237,8 +242,8 @@ ol {
     border-color: lightgray;
 }
 .p-10-table {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .p-0-3 {
     padding: 0 3px;
@@ -514,6 +519,10 @@ ol {
 }
 
 @media (max-width: 991px) {
+    .p-10-table {    
+        padding-left: 10px;
+        padding-right: 10px;
+    }    
     .navbar-header {
         float: none;
     }
