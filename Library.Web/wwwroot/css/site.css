@@ -10,7 +10,12 @@
     background-size: cover;
     box-shadow: 0 0 15px #999;
 }
-
+.panel-logo {
+    position: absolute;
+    left: -36px;
+    top: 50px;
+    max-width: 80%;
+}
 html {
     position: relative;
     min-height: 100%;
@@ -129,14 +134,23 @@ ul.pagination li.page-item a.disabled {
     font-size: 1.6em;
     float: right;
 }
-
+.ico-style img {
+    width: 50px;
+    position: relative;
+    top: -12px;
+}
 .max-w-500 {
     max-width: 500px;
 }
 .mr-30 {
     margin: 30px;
 }
-
+.fb-box {
+    background-color: #FFEDD8;
+    padding: 10px !important;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 .mr-r-30 {
     margin-right: 30px;
 }
@@ -256,6 +270,9 @@ ol {
 
 .float-left {
     float: left;
+}
+.pb-20 {
+    padding-bottom: 20px;
 }
 .pt-7 {
     padding-top: 7px !important;
@@ -392,7 +409,9 @@ ol {
     padding-bottom: 5px;
     margin-left: 0px;
 }
-
+.width-25 {
+    width: 25px;
+}
 .box p {
     width: 111px;
     height: 111px;
@@ -411,7 +430,9 @@ ol {
 .box .pt-15 {
     padding-top: 15px;
 }
-
+.pt-20 {
+    padding-top: 20px;
+}
 .effect-1 p {
     position: absolute;
     top: 0;
@@ -484,7 +505,6 @@ ol {
 .carousel-caption {
     display: none;
 }
-
 #floater {
    width: 10px;
    height: 10px;
@@ -525,11 +545,56 @@ ol {
     .p-10-table {    
         padding-left: 10px;
         padding-right: 10px;
-    }    
+    }
+    #sidebar-right {
+        margin-top: 20px;
+        border-radius: 0 !important;
+    }
+    #sidebar-right> div {
+        margin-left: 8px;
+    }
+    .lib-sidebar-p {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding-left: 0px;
+    }
+    #sidebar-right > div > div.lib-bp > a > div > img {
+        width: 200px;
+        border-radius: 0px
+    }
+    #sidebar-right > div > div.lib-bp > a > div {
+        background-color: #29739e;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #sidebar-right > div > div.lib-bp:hover * {
+        background-color: #660B0B;
+
+    }
+    .lib-sidebar-p:hover {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .lib-sidebar-p1 {
+        border-radius: 20px;
+        padding-left: 0px;
+    }
+    .lib-sidebar-p1:hover {
+        border-radius: 20px;
+    }
+    .lib-lang-box {
+        border-radius: 20px;
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        padding-right: 50px;
+    }
     .navbar-header {
         float: none;
     }
-
+    .fb-box {
+        border-radius: 20px;
+    }
     .navbar-left, .navbar-right {
         float: none !important;
     }
@@ -570,10 +635,10 @@ ol {
     display: block !important;
 }
 body {
-    margin-bottom:410px;
+    margin-bottom:520px;
 }
 footer {
-        height: 410px;
+        height: 520px;
 }
 .footer-row {
     display: flex;
@@ -602,4 +667,5 @@ footer {
 .parallax {
     min-height: 250px;
 }
+
 }

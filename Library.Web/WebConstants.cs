@@ -21,6 +21,7 @@
         
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
+        public const string EnglishAreaName = "En";
 
         public const string EmailReceiverForAsk = "rbmg@abv.bg";
         public const string EmailReceiverHtmlText = @"<div style='width: 500px;'>

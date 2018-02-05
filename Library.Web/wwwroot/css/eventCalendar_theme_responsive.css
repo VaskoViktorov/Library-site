@@ -138,7 +138,7 @@ li.eventCalendar-day.today a:hover {
     color: #fff;
 }
 li.eventCalendar-day.eventCalendar-dayWithEvents a:hover {
-    background-color: #955050;
+    background-color: #660B0B;
     /*box-shadow:inset 5px 5px 10px #89B814;
 					text-shadow: 2px 2px 2px #89B814;*/
 }
@@ -249,7 +249,7 @@ li.eventCalendar-day.eventCalendar-dayWithEvents a:hover {
     text-decoration: none;
     font-weight: bold;
     line-height: 1;
-    color: #ffffff;
+    color: #FFEDD8;
     background-color: #29739E;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     border: 1px solid #29739E;
@@ -261,10 +261,10 @@ li.eventCalendar-day.eventCalendar-dayWithEvents a:hover {
     transition: 0.1s linear all;
 }
     .bt:hover {
-        background-color: #499ed0;
+        background-color: #660B0B;
         background-position: 0 -15px;
         text-decoration: none;
-        color: #fff;
+        color: #FFEDD8;
     }
 /* end of theme css */
 

@@ -37,93 +37,91 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="work-time-box">
-                    <span class="closed bold close-time">Затворено</span><span class="hours bold open-time">Отворено</span>
+                    <span class="closed bold close-time">Closed</span><span class="hours bold open-time">Open</span>
                     <div class="dropdown" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
                         </a>
                         <ul id="worktime-menu" class="dropdown-menu drop">
-                            <li class="p-0-3"><span class="bold">Понеделник: </span>9:00-18:00</li>
-                            <li class="p-0-3"><span class="bold">Вторник: </span>9:00-18:00</li>
-                            <li class="p-0-3"><span class="bold">Сряда: </span>9:00-18:00</li>
-                            <li class="p-0-3"><span class="bold">Четвъртък: </span>9:00-18:00</li>
-                            <li class="p-0-3"><span class="bold">Петък: </span>9:00-18:00</li>
-                            <li class="p-0-3"><span class="bold">Събота: </span>9:00-14:00</li>
-                            <li class="p-0-3"><span class="bold">Неделя: </span>Почивен ден</li>
-                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Виж още</a></li>
+                            <li class="p-0-3"><span class="bold">Monday: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">Tuesday: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">Wednesday: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">Thursday: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">Friday: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">Saturday: </span>9:00-14:00</li>
+                            <li class="p-0-3"><span class="bold">Sunday: </span>Closed</li>
+                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">More</a></li>
                         </ul>
                     </div>
                 </div>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo"/></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
                 <a href="http://178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
                 <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">Начало</a></li>
+                    <li><a asp-area="En" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">Home</a></li>
                     <li class="dropdown" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Библиотека<span class="caret"></span>
+                            Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">За нас</a>
+                                <a class="test" tabindex="-1" href="#">About us</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">История</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">History</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Functions</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Structure</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">Полезна информация</a>
+                                <a class="test" tabindex="-1" href="#">Usefull info</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Въпроси</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Find us</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Work time</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Price list</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Contacts</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Usefull links</a></li>
                                 </ul>
                             </li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>                          
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contributors">Дарители</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Партньори</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contributors">Contributors</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Partners</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Детски свят<span class="caret"></span>
+                            Kids<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">Нови детски книги</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">Програма за работа с деца</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">Безопасен интернет</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">За ученика</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">За любителя</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">Work with children program</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">Safe internet</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">For the student</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">For the curious</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Роден край<span class="caret"></span>
+                            Homeland<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">Нови книги</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">Издания</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">Видин</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">За Михалаки Георгиев</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">Publications</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">Vidin</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">Mihalaki Georgiev</a></li>
                         </ul>
                     </li>
-                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Новини</a></li>
-                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Галерия</a></li>
+                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">News</a></li>
+                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Gallery</a></li>
                     <li class="dropdown lib-submenu-color" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Е-Библиотека<span class="caret"></span>
+                            E-Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Нови Книги</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Абонаменти</a></li>
-                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">Други Е-Каталози</a></li>
+                            <li><a href="http://178.239.224.218/absw/abs.htm">E-Library</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">New Books</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Subscriptions</a></li>
+                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">Other E-Catalouges</a></li>
                         </ul>
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole))
@@ -145,7 +143,7 @@
     </nav>
     <div class="parallax">
         <div class="lib-nav-container">
-            <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo.png" alt="panel" /></a>
+            <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo-en.png" alt="panel" /></a>
         </div>
     </div>
 
@@ -178,30 +176,30 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-2 footer-box-2">
                     <ul class="lib-footer-ul">
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Често Задавани Въпроси</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Contacts</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Price list</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Worktime</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Find us</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="col-md-2 footer-box-3">
+                <div class="col-md-2 footer-box-3" style="width: auto">
                     <ul class="lib-footer-ul">
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
-                        <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Functions</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Structure</a></li>
+                        <li><a href="http://178.239.224.218/absw/abs.htm">E-Library</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Usefull links</a></li>
                     </ul>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3 text-right">
                     <div class="p-10 lib-lang-box">
-                        <a class="p-0-3 " asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png"/></a>
-                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png"/></a>
+                        <a class="p-0-3 " asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" /></a>
+                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" /></a>
                     </div>
 
-                    <p class="text-center">&copy; 2018 - Регионална библиотека 'Михалаки Георгиев' - Видин</p>
+                    <p class="text-center">&copy; 2018 - Regional Library 'Mihalaki Georgiev' - Vidin</p>
                 </div>
             </div>
         </footer>
