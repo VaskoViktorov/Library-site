@@ -72,6 +72,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 date = currEvent.date,
                 title = currEvent.title,
                 description = currEvent.description,
+                url=currEvent.url
             });
         }
 

@@ -3,9 +3,9 @@ var scripts = Array
     .from(document.querySelectorAll('script'))
     .map(scr => scr.src);
 
-if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
-    flag = true;
-}
+//if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
+//    flag = true;
+//}
 //img popup
 $(document).ready(function () {
 

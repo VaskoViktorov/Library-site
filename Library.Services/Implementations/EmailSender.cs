@@ -51,7 +51,7 @@ namespace Library.Services.Implementations
                     await smtp.SendMailAsync(mail);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //do something here
             }

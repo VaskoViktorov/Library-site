@@ -22,7 +22,7 @@ namespace Library.Services.LibraryBlog.Implementations
             this.db = db;
         }
 
-        public async Task CreateAsync(string title,  List<string> gallery)
+        public async Task CreateAsync(string title, List<string> gallery)
         {
             var galleryy = new Gallery()
             {
@@ -41,7 +41,7 @@ namespace Library.Services.LibraryBlog.Implementations
             }
 
             this.db.Galleries.Add(galleryy);
-            
+
             await this.db.SaveChangesAsync();
         }
 
@@ -119,6 +119,7 @@ namespace Library.Services.LibraryBlog.Implementations
         public async Task<int> TotalAsync()
             => await this.db
                 .Galleries
+                .Where(g => g.Images.Count > 1)
                 .CountAsync();
 
         private async Task LoadImages(int id)

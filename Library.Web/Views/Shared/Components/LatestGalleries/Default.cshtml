@@ -4,17 +4,17 @@
 }
 <div class="row mr-8 text-center">
     <div>
-        <a asp-controller="Home" asp-action="Ask" style="text-decoration: none">
+        <a asp-area="" asp-controller="Home" asp-action="Ask" style="text-decoration: none">
             <p class="lib-sidebar-p1">Попитай Библиотекаря</p>
         </a>
     </div>
     <div>
-        <a style="text-decoration: none">
+        <a asp-area="" asp-controller="Home" asp-action="Volunteers" style="text-decoration: none">
             <p class="lib-sidebar-p1">Стани Доброволец</p>
         </a>
     </div>
     <div>
-        <a style="text-decoration: none">
+        <a asp-area="" asp-controller="Home" asp-action="Survey" style="text-decoration: none">
             <p class="lib-sidebar-p1">Участвай в анкета</p>
         </a>
     </div>
@@ -23,21 +23,10 @@
             <p class="lib-sidebar-p1">Направи Дарение</p>
         </a>
     </div>
-    <div>
-        <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries" style="text-decoration: none">
-            <p class="lib-sidebar-p1" style="font-size: 1.2em">Последни галерии</p>
+    <div class="lib-bp">
+        <a asp-area="" asp-controller="Home" asp-action="LibraryPost"  style="text-decoration: none">
+            <p class="lib-sidebar-p">БиблиоПоща</p>
+            <img class="lib-sidebar-img" src="~/images/SiteImages/biblio-poshta.JPG" alt="БиблиоПоща" />
         </a>
     </div>
-    <ul>
-        @foreach (var gallery in Model)
-        {
-            <li class="text-center lib-gallery-img-box">
-                <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">
-                    <p class="word-wrap mr-0-auto lib-gallery-p-top">@gallery.Title</p>
-                    <img style="" class="" src="@gallery.Images.First().ImagePath" alt="@gallery.Title">
-                    <p class="text-center lib-gallery-p-bottom">Бр. снимки: @gallery.Images.Count</p>
-                </a>
-            </li>
-        }
-    </ul>
 </div>

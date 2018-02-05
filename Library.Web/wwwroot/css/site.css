@@ -10,6 +10,7 @@
     background-size: cover;
     box-shadow: 0 0 15px #999;
 }
+
 html {
     position: relative;
     min-height: 100%;
@@ -256,13 +257,15 @@ ol {
 .float-left {
     float: left;
 }
-
+.pt-7 {
+    padding-top: 7px !important;
+}
 .width-300 {
     max-width: 300px;
 }
 
 .width-150 {
-    max-height: 150px;
+    max-height: 112px;
     max-width: 150px;
     margin-bottom: 10px;
 }

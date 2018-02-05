@@ -111,7 +111,13 @@ namespace Library.Web.Controllers
         public IActionResult Links()
             => View();
 
-        public IActionResult Test()
+        public IActionResult Survey()
+            => View();
+
+        public IActionResult Volunteers()
+            => View();
+
+        public IActionResult LibraryPost()
             => View();
 
         public IActionResult Error()
