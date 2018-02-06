@@ -12,5 +12,7 @@ namespace Library.Services.Models.Home
         public string Description { get; set; }
 
         public Gallery Gallery { get; set; }
+
+        public Language Language { get; set; }
     }
 }

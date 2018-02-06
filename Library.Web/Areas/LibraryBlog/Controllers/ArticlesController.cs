@@ -77,7 +77,8 @@
                 model.ReleaseDate,
                 model.Type,
                 userName,
-                gallery
+                gallery,
+                model.Language
               );
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));
@@ -99,7 +100,8 @@
                 Title = article.Title,
                 Description = article.Description,
                 ReleaseDate = article.ReleaseDate,
-                Type = article.Type
+                Type = article.Type,
+                Language = article.Language
             });
         }
 
@@ -117,7 +119,8 @@
                 model.Description,
                 model.ReleaseDate,
                 model.Type,
-                userName
+                userName,
+                model.Language
                 );
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "a"));

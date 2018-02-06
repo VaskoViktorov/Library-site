@@ -23,6 +23,9 @@
         public const string LibraryAreaName = "LibraryBlog";
         public const string EnglishAreaName = "En";
 
+        public const string BulgarianLanguage = "bg";
+        public const string EnglishLanguage = "en";
+
         public const string EmailReceiverForAsk = "rbmg@abv.bg";
         public const string EmailReceiverHtmlText = @"<div style='width: 500px;'>
             <p style = 'font-weight: bold; text-align: left; margin-bottom: 15px;'> Въпрос </ p >

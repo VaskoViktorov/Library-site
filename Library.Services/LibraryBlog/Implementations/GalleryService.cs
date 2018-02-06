@@ -22,11 +22,12 @@ namespace Library.Services.LibraryBlog.Implementations
             this.db = db;
         }
 
-        public async Task CreateAsync(string title, List<string> gallery)
+        public async Task CreateAsync(string title, List<string> gallery, Language language)
         {
             var galleryy = new Gallery()
             {
-                Title = title
+                Title = title,
+                Language = language
             };
 
             foreach (var path in gallery)
@@ -45,7 +46,7 @@ namespace Library.Services.LibraryBlog.Implementations
             await this.db.SaveChangesAsync();
         }
 
-        public async Task EditAsync(int id, string title)
+        public async Task EditAsync(int id, string title, Language language)
         {
             var gallery = await this.db.Galleries.FindAsync(id);
 
@@ -55,6 +56,7 @@ namespace Library.Services.LibraryBlog.Implementations
             }
 
             gallery.Title = title;
+            gallery.Language = language;
 
             await this.db.SaveChangesAsync();
         }
@@ -102,7 +104,7 @@ namespace Library.Services.LibraryBlog.Implementations
         {
             var gallery = await this.db
                 .Galleries
-                .Where(g => g.Images.Count > 1)
+                .Where(g => g.Images.Count > 1 && g.Language==Language.Bg)
                 .OrderByDescending(b => b.Id)
                 .Skip((page - 1) * GalleriesPageSize)
                 .Take(GalleriesPageSize)
@@ -119,8 +121,33 @@ namespace Library.Services.LibraryBlog.Implementations
         public async Task<int> TotalAsync()
             => await this.db
                 .Galleries
-                .Where(g => g.Images.Count > 1)
+                .Where(g => g.Images.Count > 1 && g.Language == Language.Bg)
                 .CountAsync();
+
+        public async Task<IEnumerable<GalleryServiceModel>> AllGalleriesEnAsync(int page = 1)
+        {
+            var gallery = await this.db
+                .Galleries
+                .Where(g => g.Images.Count > 1 && g.Language == Language.En)
+                .OrderByDescending(b => b.Id)
+                .Skip((page - 1) * GalleriesPageSize)
+                .Take(GalleriesPageSize)
+                .ProjectTo<GalleryServiceModel>()
+                .ToListAsync();
+
+            await this.db
+                .Images
+                .ToListAsync();
+
+            return gallery;
+        }
+
+        public async Task<int> TotalEnAsync()
+            => await this.db
+                .Galleries
+                .Where(g => g.Images.Count > 1 && g.Language == Language.En)
+                .CountAsync();
+
 
         private async Task LoadImages(int id)
             => await this.db

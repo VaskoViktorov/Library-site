@@ -7,5 +7,7 @@
     public interface ILatestBooksService
     {
         Task<IEnumerable<LatestBookServiceModel>> LatestBooks();
+
+        Task<IEnumerable<LatestBookServiceModel>> LatestBooksEn();
     }
 }

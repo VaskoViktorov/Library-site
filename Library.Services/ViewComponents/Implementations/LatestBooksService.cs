@@ -1,4 +1,6 @@
-﻿namespace Library.Services.ViewComponents.Implementations
+﻿using Library.Data.Models;
+
+namespace Library.Services.ViewComponents.Implementations
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -23,9 +25,18 @@
            => await this.db
                .Books
                .OrderByDescending(b => b.Id)
-               .Where(b => b.ImageUrl != "\\images\\BookCovers\\default.jpg")
+               .Where(b => b.ImageUrl != "\\images\\BookCovers\\default.jpg" && b.Language == Language.Bg)
                .Take(LatestBooksAmount)
                .ProjectTo<LatestBookServiceModel>()
                .ToListAsync();
-   }
+
+       public async Task<IEnumerable<LatestBookServiceModel>> LatestBooksEn()
+           => await this.db
+               .Books
+               .OrderByDescending(b => b.Id)
+               .Where(b => b.ImageUrl != "\\images\\BookCovers\\default-en.jpg" && b.Language == Language.En)
+               .Take(LatestBooksAmount)
+               .ProjectTo<LatestBookServiceModel>()
+               .ToListAsync();
+    }
 }

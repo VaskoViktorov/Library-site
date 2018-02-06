@@ -20,7 +20,8 @@
             int pages,
             int size,
             string genre,
-            string imageUrl);
+            string imageUrl,
+            Language language);
 
         Task<bool> UniqueCheckAsync(string bookTitle, string authorName);
 
@@ -36,7 +37,8 @@
             int pages,
             int size,
             string genre,
-            string imageUrl);
+            string imageUrl, 
+            Language language);
 
         Task<BookServiceModel> ByIdAsync(int id);
 
@@ -53,5 +55,17 @@
         Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1);
 
         Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(int page = 1);
+
+        Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1);
+
+        Task<int> TotalEnAsync();
+
+        Task<int> TotalForKidsEnAsync();
+
+        Task<int> TotalForLandEnAsync();
+
+        Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenEnAsync(int page = 1);
+
+        Task<IEnumerable<BookListingServiceModel>> AllBooksForLandEnAsync(int page = 1);
     }
 }

@@ -63,5 +63,9 @@
         [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$", ErrorMessage = "Грешен линк. Линка трябва да завършва с .jpg, .png или .gif .")]
         [Display(Name = "Линк")]
         public string ImageUrl { get; set; }
+
+        [Required]
+        [Display(Name = "Език")]
+        public Language Language { get; set; }
     }
 }

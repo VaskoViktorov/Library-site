@@ -1,0 +1,28 @@
+﻿@model Library.Web.Areas.LibraryBlog.Models.Galleries.GalleryListingViewModel
+
+
+@foreach (var gallery in Model.Galleries)
+{
+
+    var count = gallery.Images.Count;
+
+    <div class="col-md-4 text-center gallery-col">
+        <p class="lib-gallery-h word-wrap">@gallery.Title</p>
+        @if (count != 0)
+        {
+            <a asp-area="En" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">
+                <img src="@gallery.Images.First().ImagePath" class="lib-img-border max-w-h-img" alt="@gallery.Title" />
+            </a>
+        }
+
+        <div class="row text-center">
+            <p class="lib-gallery-b">Pictures: @count</p>
+            <a class="lib-btn" asp-area="En" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">More</a>
+            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+            {
+                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit" asp-route-id="@gallery.Id">Edit</a>
+                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete" asp-route-id="@gallery.Id">Delete</a>
+            }
+        </div>
+    </div>
+}

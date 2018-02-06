@@ -19,20 +19,21 @@
             this.db = db;
         }
 
-        public async Task CreateAsync(string name, DepartmentType department, SubscriptionType type)
+        public async Task CreateAsync(string name, DepartmentType department, SubscriptionType type, Language language)
         {
             var subscription = new Subscription
             {
                 Name = name,
                 Department = department,
-                Type = type
+                Type = type,
+                Language = language
             };
 
             this.db.Add(subscription);
             await this.db.SaveChangesAsync();
         }
 
-        public async Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type)
+        public async Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type, Language language)
         {
             var subscription = await this.db.Subscriptions.FindAsync(id);
 
@@ -44,6 +45,7 @@
             subscription.Name = name;
             subscription.Department = department;
             subscription.Type = type;
+            subscription.Language = language;
 
             await this.db.SaveChangesAsync();
         }
@@ -73,7 +75,7 @@
             => await this.db
                 .Subscriptions
                 .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Newspaper)
+                .Where(a => a.Type == SubscriptionType.Newspaper && a.Language == Language.Bg)
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
 
@@ -81,7 +83,24 @@
             => await this.db
                 .Subscriptions
                 .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Magazine)
+                .Where(a => a.Type == SubscriptionType.Magazine && a.Language == Language.Bg)
+                .ProjectTo<SubscriptionListingServiceModel>()
+                .ToListAsync();
+
+
+        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersEnAsync()
+            => await this.db
+                .Subscriptions
+                .OrderBy(a => a.Name)
+                .Where(a => a.Type == SubscriptionType.Newspaper && a.Language == Language.En)
+                .ProjectTo<SubscriptionListingServiceModel>()
+                .ToListAsync();
+
+        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesEnAsync()
+            => await this.db
+                .Subscriptions
+                .OrderBy(a => a.Name)
+                .Where(a => a.Type == SubscriptionType.Magazine && a.Language == Language.En)
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
 

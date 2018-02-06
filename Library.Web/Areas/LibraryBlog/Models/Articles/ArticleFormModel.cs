@@ -30,6 +30,10 @@ namespace Library.Web.Areas.LibraryBlog.Models.Articles
         [Display(Name = "Отдел")]
         public DepartmentType Type { get; set; }
 
+        [Required]
+        [Display(Name = "Език")]
+        public Language Language { get; set; }
+
         public List<IFormFile> Files { get; set; }
             = new List<IFormFile>();
     }

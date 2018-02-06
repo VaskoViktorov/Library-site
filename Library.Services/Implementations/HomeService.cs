@@ -1,4 +1,6 @@
-﻿namespace Library.Services.Implementations
+﻿using Library.Data.Models;
+
+namespace Library.Services.Implementations
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -22,7 +24,8 @@
         {
             var articles = await this.db
                 .Articles
-                .OrderByDescending(b => b.ReleaseDate)
+                .Where(a => a.Language == Language.Bg)
+                .OrderByDescending(a => a.ReleaseDate)
                 .Take(4)
                 .ProjectTo<ArticleListingHomeServiceModel>()
                 .ToListAsync();
@@ -33,5 +36,22 @@
 
             return articles;
         }
+
+       public async Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesEnAsync()
+       {
+           var articles = await this.db
+               .Articles
+               .Where(a => a.Language == Language.En)
+               .OrderByDescending(a => a.ReleaseDate)
+               .Take(4)
+               .ProjectTo<ArticleListingHomeServiceModel>()
+               .ToListAsync();
+
+           await this.db
+               .Images
+               .ToListAsync();
+
+           return articles;
+       }
     }
 }

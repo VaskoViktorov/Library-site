@@ -41,7 +41,7 @@
                 return this.RedirectToAction(nameof(this.Create));
             }
 
-            await this.subscriptions.CreateAsync(model.Name, model.Department, model.Type);
+            await this.subscriptions.CreateAsync(model.Name, model.Department, model.Type, model.Language);
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, string.Empty));
 
@@ -69,7 +69,7 @@
         [ValidateModelState]
         public async Task<IActionResult> Edit(int id, SubscriptionFormModel model)
         {
-            await this.subscriptions.EditAsync(id, model.Name, model.Department, model.Type);
+            await this.subscriptions.EditAsync(id, model.Name, model.Department, model.Type, model.Language);
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, string.Empty));
 

@@ -67,7 +67,8 @@
 
             await this.galleries.CreateAsync(
                 model.Title,
-                imgPaths
+                imgPaths,
+                model.Language
             );
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));
@@ -96,7 +97,8 @@
         {
             await this.galleries.EditAsync(
                 id,
-                model.Title
+                model.Title,
+                model.Language
             );
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "a"));

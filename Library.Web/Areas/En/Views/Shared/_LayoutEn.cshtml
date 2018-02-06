@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>РБ Михалаки Георгиев</title>
+    <title>RB Mihalaki Georgiev</title>
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"
             type="text/javascript"></script>
@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="work-time-box">
+                <div class="work-time-box" style="width: 115px;">
                     <span class="closed bold close-time">Closed</span><span class="hours bold open-time">Open</span>
                     <div class="dropdown" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -54,9 +54,9 @@
                         </ul>
                     </div>
                 </div>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
+                <a asp-area="En" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
                 <a href="http://178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
-                <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
+                <a asp-area="En" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
@@ -77,7 +77,7 @@
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1" href="#">Usefull info</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Find us</a></li>
+                                    <li><a tabindex="-1" asp-area="En" asp-controller="Home" asp-action="Contact">Find us</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Work time</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Price list</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Contacts</a></li>
@@ -111,16 +111,16 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">Mihalaki Georgiev</a></li>
                         </ul>
                     </li>
-                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">News</a></li>
-                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Gallery</a></li>
+                    <li><a tabindex="-1" asp-area="En" asp-controller="Articles" asp-action="Articles">News</a></li>
+                    <li><a tabindex="-1" asp-area="En" asp-controller="Galleries" asp-action="Galleries">Gallery</a></li>
                     <li class="dropdown lib-submenu-color" role="button">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             E-Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
                             <li><a href="http://178.239.224.218/absw/abs.htm">E-Library</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">New Books</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Subscriptions</a></li>
+                            <li><a tabindex="-1" asp-area="En" asp-controller="Books" asp-action="Books">New Books</a></li>
+                            <li><a tabindex="-1" asp-area="En" asp-controller="Subscriptions" asp-action="Subscriptions">Subscriptions</a></li>
                             <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">Other E-Catalouges</a></li>
                         </ul>
                     </li>
@@ -131,8 +131,8 @@
                                 Админ панел<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Потребители</a></li>
-                                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Събития</a></li>
+                                <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a></li>
+                                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Events</a></li>
                             </ul>
                         </li>
                     }
@@ -143,14 +143,14 @@
     </nav>
     <div class="parallax">
         <div class="lib-nav-container">
-            <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo-en.png" alt="panel" /></a>
+            <a asp-area="En" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo-en.png" alt="panel" /></a>
         </div>
     </div>
 
     <div class="container body-content">
         <div class="row pb-20">
             <div id="fb-root"></div>
-            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
+            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooksEn") </div>
             <div class="col-md-8">
                 @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
                 {
@@ -166,7 +166,7 @@
                 }
                 @RenderBody()
             </div>
-            <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("LatestGalleries")</div>
+            <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("LatestGalleriesEn")</div>
         </div>
         <footer>
             <div class="row mr-t-10 footer-row">
@@ -179,7 +179,7 @@
                         <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Contacts</a></li>
                         <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Price list</a></li>
                         <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Worktime</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Find us</a></li>
+                        <li><a tabindex="-1" asp-area="En" asp-controller="Home" asp-action="Contact">Find us</a></li>
                         <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a></li>
                     </ul>
                 </div>
@@ -193,7 +193,7 @@
                     </ul>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-3 text-right">
+                <div class="col-md-3 text-right" style="float: right">
                     <div class="p-10 lib-lang-box">
                         <a class="p-0-3 " asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" /></a>
                         <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" /></a>

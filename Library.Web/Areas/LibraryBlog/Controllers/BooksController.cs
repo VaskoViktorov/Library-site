@@ -107,7 +107,8 @@
                 model.Pages,
                 model.Size,
                 model.Genre,
-                savePath);
+                savePath,
+                model.Language);
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));
 
@@ -135,6 +136,7 @@
                 Pages = book.Pages,
                 Size = book.Size,
                 Genre = book.Genre,
+                Language = book.Language
             });
         }
 
@@ -173,7 +175,8 @@
                 model.Pages,
                 model.Size,
                 model.Genre,
-                savePath);
+                savePath,
+                model.Language);
 
             this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "a"));
 

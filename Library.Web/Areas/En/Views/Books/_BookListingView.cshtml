@@ -1,0 +1,22 @@
+﻿@model Library.Web.Areas.LibraryBlog.Models.Books.BookListingViewModel
+
+@foreach (var book in Model.Books)
+{
+    <div class="book-box col-md-12 min-h-150 mr-t-b-25">
+        <a class="image-popup-vertical-fit" href="@book.ImageUrl" Title="@book.BookTitle">
+            <img src="@book.ImageUrl" class="width-150 img-border float-left mr-r-15" alt="@book.BookTitle" />
+        </a>
+        <a asp-area="En" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
+            <p class="bold">@book.BookTitle.LimitStringLenght(60)</p>
+            <small class="author-text">@book.AuthorName</small>
+            <p class="author-text pt-20">"@book.Department" Department</p>
+        </a>
+        <div class="mr-t-10">
+            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+            {
+                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+            }
+        </div>
+    </div>
+}

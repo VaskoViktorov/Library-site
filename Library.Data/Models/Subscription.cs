@@ -18,5 +18,8 @@
 
         [Required]
         public SubscriptionType Type { get; set; }
+
+        [Required]
+        public Language Language { get; set; }
     }
 }

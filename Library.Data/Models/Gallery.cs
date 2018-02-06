@@ -14,6 +14,9 @@
         [MaxLength(GalleryTitleMaxLength)]   
         public string Title { get; set; }
 
+        [Required]
+        public Language Language { get; set; }
+
         public List<Image> Images { get; set; } = new List<Image>();
 
         public int ArticleId { get; set; }

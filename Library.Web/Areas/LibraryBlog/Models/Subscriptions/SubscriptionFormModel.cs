@@ -20,5 +20,9 @@
         [Required]
         [Display(Name = "Вид")]
         public SubscriptionType Type { get; set; }
+
+        [Required]
+        [Display(Name = "Език")]
+        public Language Language { get; set; }
     }
 }

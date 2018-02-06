@@ -8,9 +8,9 @@
 
     public interface ISubscriptionService
     {
-        Task CreateAsync(string name, DepartmentType department, SubscriptionType type);
+        Task CreateAsync(string name, DepartmentType department, SubscriptionType type, Language language);
 
-        Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type);
+        Task EditAsync(int id, string name, DepartmentType department, SubscriptionType type, Language language);
 
         Task DeleteAsync(int id);
 
@@ -20,6 +20,9 @@
 
         Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync();
 
+        Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersEnAsync();
+
+        Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesEnAsync();
         Task<bool> UniqueCheckAsync(string name);
     }
 }

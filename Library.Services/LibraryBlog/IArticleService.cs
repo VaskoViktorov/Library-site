@@ -9,10 +9,10 @@
     public interface IArticleService
     {
         Task CreateAsync(string title, string description, DateTime releaseDate,
-            DepartmentType type, string authorName, List<string> gallery);
+            DepartmentType type, string authorName, List<string> gallery, Language language);
 
         Task EditAsync(int id, string title, string description, DateTime releaseDate,
-            DepartmentType type, string authorName);
+            DepartmentType type, string authorName, Language language);
 
         Task DeleteAsync(int id);
 
@@ -21,6 +21,10 @@
         Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(int page = 1);
 
         Task<int> TotalAsync();
+
+        Task<IEnumerable<ArticleListingServiceModel>> AllArticlesEnAsync(int page = 1);
+
+        Task<int> TotalEnAsync();
 
         Task<ArticleServiceModel> Details(int id);
     }

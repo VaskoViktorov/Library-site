@@ -7,5 +7,7 @@
     public interface IHomeService
     {
         Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesAsync();
+
+        Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesEnAsync();
     }
 }

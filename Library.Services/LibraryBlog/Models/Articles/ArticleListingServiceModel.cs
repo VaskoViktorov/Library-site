@@ -17,5 +17,7 @@ namespace Library.Services.LibraryBlog.Models.Articles
         public string Description { get; set; }
 
         public Gallery Gallery { get; set; }
+
+        public Language Language { get; set; }
     }
 }

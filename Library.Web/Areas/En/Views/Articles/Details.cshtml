@@ -1,0 +1,47 @@
+﻿@model Library.Web.Areas.LibraryBlog.Models.Articles.ArticleViewModel
+@{
+    ViewData["Title"] = "Article Details";
+    var count = Model.Article.Gallery.Images.Count;
+}
+<div class="row text-center">
+    <h2>@Model.Article.Title</h2>
+</div>
+<div class="row mr-t-40">
+    <div class="col-md-12">       
+        <div class="row max-w-750 mr-10-auto text-center">
+            @if (count < 2)
+            {
+                <a class="image-popup-vertical-fit" href="@Model.Article.Gallery.Images.First().ImagePath" Title="@Model.Article.Title">
+                    <img src="@Model.Article.Gallery.Images.First().ImagePath" class="img-border gallery-img" alt="@Model.Article.Title" />
+                </a>
+            }
+            <div class="text-justify">@Html.Raw(Model.Article.Description)</div>
+            <div class="text-left" style="float: right">
+                <p>Publish Date: @Model.Article.ReleaseDate.ToShortDateString()</p>
+                <p>Author: <span class="author-text">@Model.Article.AuthorName</span></p>
+            </div>
+        </div>
+        @if (count >= 2)
+        {
+            <div class="row max-w-750 mr-10-auto popup-gallery gallery-box">
+                @foreach (var img in Model.Article.Gallery.Images)
+                {
+                    <a href="@img.ImagePath" Title="@Model.Article.Title">
+                        <img src="@img.ImagePath" class="width-150 img-border gallery-img" alt="@Model.Article.Title" />
+                    </a>
+                }
+            </div>
+        }
+        <div class="row max-w-750 text-center mr-10-auto">
+            <a class="fb-like" style="float:right" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@Model.Article.Id" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></a>
+        </div>
+        <div class="row max-w-750 text-center mr-10-auto">
+            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+            {
+                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit">Редактирай</a>
+                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete">Изтрии</a>
+            }
+            <a class="lib-btn" href="javascript:history.go(-1)">Back</a>
+        </div>       
+    </div>
+</div>

@@ -1,0 +1,91 @@
+﻿@model Library.Web.Areas.LibraryBlog.Models.Subscriptions.SubscriptionListingViewModel
+@{
+    ViewData["Title"] = "Subscriptions";
+}
+<div class="row text-center">
+    <h2>Subscriptions</h2>
+</div>
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th colspan="2" class="bold text-center">Newspapers</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>
+                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Create</a>
+
+                        </th>
+                    }
+                </tr>
+               
+            </thead>
+            <tbody>
+            <tr>
+                <th class="first-color-b second-color text-center">Name</th>
+                <th class="first-color-b second-color text-center">Distributed in</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                {
+                    <th class="first-color-b second-color text-center">Actions</th>
+                }
+            </tr>
+            @foreach (var newspaper in Model.Newspapers)
+            {
+                <tr>
+                    <td class="lib-cell-corrector">@newspaper.Name</td>
+                    <td>"@newspaper.Department" Department</td>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <td>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Edit</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">Delete</a>
+                        </td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th colspan="2" class="bold text-center">Magazines</th>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <th>
+                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Create</a>
+
+                        </th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+            
+            <tr>
+                <th class="first-color-b second-color text-center">Name</th>
+                <th class="first-color-b second-color text-center">Distributed in</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                {
+                    <th class="first-color-b second-color text-center">Actions</th>
+                }
+            </tr>
+            @foreach (var magazine in Model.Magazines)
+            {
+                <tr>
+                    <td class="lib-cell-corrector">@magazine.Name</td>
+                    <td>"@magazine.Department" Department</td>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <td>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Edit</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">Delete</a>
+                        </td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

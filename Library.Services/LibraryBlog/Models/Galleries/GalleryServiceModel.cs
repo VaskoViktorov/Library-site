@@ -11,5 +11,7 @@
         public string Title { get; set; }
 
         public List<Image> Images { get; set; } = new List<Image>();
+
+        public Language Language { get; set; }
     }
 }

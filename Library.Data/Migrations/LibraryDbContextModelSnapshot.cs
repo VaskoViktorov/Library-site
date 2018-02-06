@@ -37,6 +37,8 @@ namespace Library.Data.Migrations
 
                     b.Property<int>("GalleryId");
 
+                    b.Property<int>("Language");
+
                     b.Property<DateTime>("ReleaseDate");
 
                     b.Property<string>("Title")
@@ -83,6 +85,8 @@ namespace Library.Data.Migrations
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(800);
 
+                    b.Property<int>("Language");
+
                     b.Property<int>("Pages");
 
                     b.Property<string>("Press")
@@ -103,6 +107,8 @@ namespace Library.Data.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("ArticleId");
+
+                    b.Property<int>("Language");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -158,6 +164,8 @@ namespace Library.Data.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Department");
+
+                    b.Property<int>("Language");
 
                     b.Property<string>("Name")
                         .IsRequired()

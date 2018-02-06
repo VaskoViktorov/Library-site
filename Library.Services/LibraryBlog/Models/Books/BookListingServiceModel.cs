@@ -14,5 +14,7 @@ namespace Library.Services.LibraryBlog.Models.Books
         public string ImageUrl { get; set; }
 
         public DepartmentType Department { get; set; }
+
+        public Language Language { get; set; }
     }
 }

@@ -28,6 +28,7 @@ body {
 
 footer {
     position: absolute;
+    opacity: 0.9;
     left: 0;
     bottom: 0;
     height: 200px;
@@ -546,6 +547,9 @@ ol {
         padding-left: 10px;
         padding-right: 10px;
     }
+    body > div.container.body-content > div {
+        padding-bottom: 0;
+    }
     #sidebar-right {
         margin-top: 20px;
         border-radius: 0 !important;
@@ -638,7 +642,8 @@ body {
     margin-bottom:520px;
 }
 footer {
-        height: 520px;
+    height: 520px;
+    box-shadow: none;
 }
 .footer-row {
     display: flex;
