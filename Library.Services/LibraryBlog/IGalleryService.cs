@@ -1,9 +1,9 @@
 ﻿namespace Library.Services.LibraryBlog
 {
+    using Data.Models;
+    using Models.Galleries;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Models.Galleries;
-    using Data.Models;
 
     public interface IGalleryService
     {
@@ -20,6 +20,8 @@
         Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(int page = 1);
 
         Task<int> TotalAsync();
+
+        //English
 
         Task<IEnumerable<GalleryServiceModel>> AllGalleriesEnAsync(int page = 1);
 

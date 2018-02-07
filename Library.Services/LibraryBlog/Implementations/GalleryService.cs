@@ -1,15 +1,14 @@
-﻿using Library.Services.LibraryBlog.Models.Galleries;
-
-namespace Library.Services.LibraryBlog.Implementations
+﻿namespace Library.Services.LibraryBlog.Implementations
 {
+    using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure.Extensions;
     using Data;
+    using Data.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Models.Galleries;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using AutoMapper.QueryableExtensions;
-    using Common.Infrastructure.Extensions;
-    using Data.Models;
-    using Microsoft.EntityFrameworkCore;
 
     using static ServicesConstants;
 
@@ -42,7 +41,6 @@ namespace Library.Services.LibraryBlog.Implementations
             }
 
             this.db.Galleries.Add(galleryy);
-
             await this.db.SaveChangesAsync();
         }
 
@@ -71,7 +69,6 @@ namespace Library.Services.LibraryBlog.Implementations
             }
 
             this.db.Galleries.Remove(gallery);
-
             await this.db.SaveChangesAsync();
 
             foreach (var img in gallery.Images)
@@ -104,7 +101,7 @@ namespace Library.Services.LibraryBlog.Implementations
         {
             var gallery = await this.db
                 .Galleries
-                .Where(g => g.Images.Count > 1 && g.Language==Language.Bg)
+                .Where(g => g.Images.Count > 1 && g.Language == Language.Bg)
                 .OrderByDescending(b => b.Id)
                 .Skip((page - 1) * GalleriesPageSize)
                 .Take(GalleriesPageSize)

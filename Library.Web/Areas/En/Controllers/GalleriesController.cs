@@ -1,9 +1,9 @@
 ﻿namespace Library.Web.Areas.En.Controllers
 {
-    using Services.LibraryBlog;
     using LibraryBlog.Models.Galleries;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Services.LibraryBlog;
     using System.Threading.Tasks;
 
     using static WebConstants;

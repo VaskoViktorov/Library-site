@@ -1,8 +1,8 @@
 ﻿namespace Library.Services.ViewComponents
 {
+    using Models.LatestBooks;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Models.LatestBooks;
 
     public interface ILatestBooksService
     {

@@ -11,7 +11,7 @@
 
         [Required]
         [MinLength(GalleryTitleMinLength)]
-        [MaxLength(GalleryTitleMaxLength)]   
+        [MaxLength(GalleryTitleMaxLength)]
         public string Title { get; set; }
 
         [Required]

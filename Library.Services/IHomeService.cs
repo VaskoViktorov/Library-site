@@ -1,8 +1,8 @@
 ﻿namespace Library.Services
 {
+    using Models.Home;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Models.Home;
 
     public interface IHomeService
     {

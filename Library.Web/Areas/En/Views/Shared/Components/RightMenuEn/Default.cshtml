@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LatestGalleriesServiceModel>
+﻿@model SurveyListingViewModel
 @{
     ViewData["Title"] = "Books";
 }
@@ -9,22 +9,22 @@
         </a>
     </div>
     <div>
-        <a asp-area="" asp-controller="Home" asp-action="Volunteers" style="text-decoration: none">
+        <a asp-area="En" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.Last().id" style="text-decoration: none">
             <p class="lib-sidebar-p1">Become Volunteer</p>
         </a>
     </div>
     <div>
-        <a asp-area="" asp-controller="Home" asp-action="Survey" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Take a Survey</p>
+        <a asp-area="En" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.First().id" style="text-decoration: none">
+            <p class="lib-sidebar-p1">Join survey</p>
         </a>
     </div>
     <div>
         <a style="text-decoration: none">
-            <p class="lib-sidebar-p1">Make a donation</p>
+            <p class="lib-sidebar-p1">Make donation</p>
         </a>
     </div>
     <div class="lib-bp">
-        <a asp-area="" asp-controller="Home" asp-action="LibraryPost" style="text-decoration: none">
+        <a asp-area="En" asp-controller="Home" asp-action="LibraryPost" style="text-decoration: none">
             <p class="lib-sidebar-p">LibraryPost</p>
             <img class="lib-sidebar-img hidden-md hidden-sm hidden-xs" src="~/images/SiteImages/biblio-poshta.JPG" alt="LibraryPost" />
             <div class="hidden-lg">

@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     using static WebConstants;
@@ -10,6 +9,5 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
     [Authorize(Roles = LibrarianAuthorRole)]
     public class BaseController : Controller
     {
-
     }
 }

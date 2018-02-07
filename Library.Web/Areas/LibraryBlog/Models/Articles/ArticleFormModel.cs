@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Library.Data.Models;
-using Microsoft.AspNetCore.Http;
-
-namespace Library.Web.Areas.LibraryBlog.Models.Articles
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Articles
 {
+    using Data.Models;
+    using Microsoft.AspNetCore.Http;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     using static Data.DataConstants;
 
     public class ArticleFormModel
@@ -34,7 +34,6 @@ namespace Library.Web.Areas.LibraryBlog.Models.Articles
         [Display(Name = "Език")]
         public Language Language { get; set; }
 
-        public List<IFormFile> Files { get; set; }
-            = new List<IFormFile>();
+        public List<IFormFile> Files { get; set; } = new List<IFormFile>();
     }
 }

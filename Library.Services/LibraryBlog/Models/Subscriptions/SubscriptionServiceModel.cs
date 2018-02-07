@@ -2,8 +2,8 @@
 {
     using Data.Models;
 
-    public class SubscriptionServiceModel :SubscriptionListingServiceModel
-    {      
+    public class SubscriptionServiceModel : SubscriptionListingServiceModel
+    {
         public SubscriptionType Type { get; set; }
     }
 }

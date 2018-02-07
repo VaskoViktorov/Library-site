@@ -1,8 +1,8 @@
 ﻿namespace Library.Web.Areas.En.Controllers
 {
+    using LibraryBlog.Models.Articles;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using LibraryBlog.Models.Articles;
     using Services.LibraryBlog;
     using System.Threading.Tasks;
 
@@ -30,6 +30,6 @@
             => this.View(new ArticleViewModel
             {
                 Article = await this.articles.Details(id)
-            });      
+            });
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Areas.En.ViewComponents
 {
+    using Microsoft.AspNetCore.Mvc;
     using Services.ViewComponents;
-    using Microsoft.AspNetCore.Mvc;   
     using System.Threading.Tasks;
 
     public class LatestBooksEnViewComponent : ViewComponent
@@ -12,8 +12,8 @@
         {
             this.books = books;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
-        => View(await books.LatestBooksEn());        
-    }
 
+        public async Task<IViewComponentResult> InvokeAsync()
+        => View(await books.LatestBooksEn());
+    }
 }

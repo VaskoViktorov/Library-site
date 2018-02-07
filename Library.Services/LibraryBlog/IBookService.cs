@@ -1,10 +1,10 @@
 ﻿namespace Library.Services.LibraryBlog
 {
-    using System.Collections.Generic;
+    using Data.Models;
     using Models.Books;
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Data.Models;
 
     public interface IBookService
     {
@@ -37,7 +37,7 @@
             int pages,
             int size,
             string genre,
-            string imageUrl, 
+            string imageUrl,
             Language language);
 
         Task<BookServiceModel> ByIdAsync(int id);
@@ -51,6 +51,8 @@
         Task<int> TotalForKidsAsync();
 
         Task<int> TotalForLandAsync();
+
+        //English
 
         Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1);
 

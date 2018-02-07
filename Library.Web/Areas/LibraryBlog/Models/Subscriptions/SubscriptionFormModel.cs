@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
 {
-    using System.ComponentModel.DataAnnotations;
     using Data.Models;
+    using System.ComponentModel.DataAnnotations;
 
     using static Data.DataConstants;
 

@@ -1,8 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Books
 {
-
-    using System.ComponentModel.DataAnnotations;
     using Data.Models;
+    using System.ComponentModel.DataAnnotations;
 
     using static Data.DataConstants;
 
@@ -41,7 +40,7 @@
 
         [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessage = "Некоректен формат за дата. Приемат се стойности от 1800 до 2099")]
         [Display(Name = "Година на издаване")]
-        public int PublishDate { get; set; } 
+        public int PublishDate { get; set; }
 
 
         [Range(0, int.MaxValue)]
@@ -59,7 +58,7 @@
         public string Genre { get; set; }
 
         [MinLength(BookImageUrlMinLength)]
-        [MaxLength(BookImageUrlMaxLength)]        
+        [MaxLength(BookImageUrlMaxLength)]
         [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$", ErrorMessage = "Грешен линк. Линка трябва да завършва с .jpg, .png или .gif .")]
         [Display(Name = "Линк")]
         public string ImageUrl { get; set; }

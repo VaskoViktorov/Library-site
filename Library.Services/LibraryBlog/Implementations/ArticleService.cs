@@ -1,15 +1,15 @@
 ﻿namespace Library.Services.LibraryBlog.Implementations
 {
+    using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure.Extensions;
     using Data;
+    using Data.Models;
+    using Microsoft.EntityFrameworkCore;
+    using Models.Articles;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using AutoMapper.QueryableExtensions;
-    using Data.Models;
-    using Models.Articles;
-    using Microsoft.EntityFrameworkCore;
-    using Common.Infrastructure.Extensions;
 
     using static ServicesConstants;
 
@@ -39,6 +39,7 @@
                 };
 
                 this.db.Add(image);
+
                 galleryy.Images.Add(image);
             }
 
@@ -57,6 +58,7 @@
             };
 
             this.db.Add(article);
+
             await this.db.SaveChangesAsync();
         }
 

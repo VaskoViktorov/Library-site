@@ -4,7 +4,7 @@
     using Data.Models;
     using System.Collections.Generic;
 
-   public class GalleryServiceModel : IMapFrom<Gallery>
+    public class GalleryServiceModel : IMapFrom<Gallery>
     {
         public int Id { get; set; }
 

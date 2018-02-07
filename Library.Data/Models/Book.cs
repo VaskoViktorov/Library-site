@@ -42,10 +42,10 @@
 
         public DateTime Date { get; set; }
 
-        [Range(0,int.MaxValue)]
+        [Range(0, int.MaxValue)]
         public int Pages { get; set; }
 
-        [Range(0,int.MaxValue)]
+        [Range(0, int.MaxValue)]
         public int Size { get; set; }
 
         [Required]

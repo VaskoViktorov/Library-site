@@ -1,16 +1,16 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Services.Html;
+    using Infrastructure.Extensions;
+    using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Models.Articles;
+    using Services.Html;
     using Services.LibraryBlog;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
     using System.Threading.Tasks;
-    using Infrastructure.Extensions;
-    using Infrastructure.Filters;
 
     public class ArticlesController : BaseController
     {
@@ -41,7 +41,6 @@
                 Article = await this.articles.Details(id)
             });
 
-
         public IActionResult Create()
             => this.View();
 
@@ -54,15 +53,17 @@
             var userName = User.Identity.Name;
 
             if (model.Files == null || model.Files.Count == 0)
+            {
                 return Content("files not selected");
-
+            }
+               
             var gallery = new List<string>();
+
             foreach (var file in model.Files)
             {
-
                 var path = Path.Combine("images", "GalleryImages", Guid.NewGuid() + file.GetFileType());
                 var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", path);
-              
+
                 using (var stream = new FileStream(pathForUpload, FileMode.Create))
                 {
                     await file.CopyToAsync(stream);

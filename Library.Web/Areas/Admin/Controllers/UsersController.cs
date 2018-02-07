@@ -6,12 +6,10 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.EntityFrameworkCore;
-    using Models;
     using Models.Users;
     using Services.Admin;
     using System.Linq;
     using System.Threading.Tasks;
-
 
     public class UsersController : BaseController
     {
@@ -45,9 +43,8 @@
             {
                 Users = allUsers,
                 Roles = roles,
-                UserRoles = userRoles               
+                UserRoles = userRoles
             });
-
         }
 
         [HttpPost]

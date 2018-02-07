@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -51,8 +49,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public IActionResult Events(int page = 1)
         {
             var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
-            var events = ObjToJsonConverterExtensions.ListofEventsInJsonFile(filePath)
-                .OrderByDescending(e => e.date);
+            var events = ObjToJsonConverterExtensions.ListofEventsInJsonFile(filePath).OrderByDescending(e => e.date);
 
             return this.View(new EventListingViewModel
             {
@@ -63,7 +60,6 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public IActionResult Edit(string id)
         {
             var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
-
             var currEvent = ObjToJsonConverterExtensions.FindEventInJsonFile(filePath, id);
 
             return this.View(new EventFormModel()
@@ -72,7 +68,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 date = currEvent.date,
                 title = currEvent.title,
                 description = currEvent.description,
-                url=currEvent.url
+                url = currEvent.url
             });
         }
 
@@ -81,7 +77,9 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public IActionResult Edit(EventFormModel model)
         {
             var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+
             model.date = model.date.Replace("T", " ") + ":00";
+
             if (!ObjToJsonConverterExtensions.EditEventInJsonFile(filePath, model))
             {
                 this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataEditFailText, ModelName, "о"));
@@ -95,8 +93,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         }
 
         public IActionResult Delete(string id)
-        => this.View(model:id);
-                  
+        => this.View(model: id);
+
         public IActionResult Destroy(string id)
         {
             var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());

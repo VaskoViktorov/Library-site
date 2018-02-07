@@ -154,19 +154,23 @@
             <div class="col-md-8">
                 @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
                 {
-                    <div class="alert alert-success">
-                        @TempData[WebConstants.TempDataSuccessMessageKey]
+                    <div class="row width-85pr text-center mr-0-auto">
+                        <div class="alert alert-success">
+                            @TempData[WebConstants.TempDataSuccessMessageKey]
+                        </div>
                     </div>
                 }
                 @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
                 {
-                    <div class="alert alert-warning">
-                        @TempData[WebConstants.TempDataWarningMessageKey]
+                    <div class="row width-85pr text-center mr-0-auto">
+                        <div class="alert alert-warning">
+                            @TempData[WebConstants.TempDataWarningMessageKey]
+                        </div>
                     </div>
                 }
                 @RenderBody()
             </div>
-            <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("LatestGalleriesEn")</div>
+            <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenuEn")</div>
         </div>
         <footer>
             <div class="row mr-t-10 footer-row">
@@ -195,7 +199,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-3 text-right" style="float: right">
                     <div class="p-10 lib-lang-box">
-                        <a class="p-0-3 " asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" /></a>
+                        <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" /></a>
                         <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" /></a>
                     </div>
 

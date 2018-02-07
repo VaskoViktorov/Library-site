@@ -1,8 +1,8 @@
 namespace Library.Web.Infrastructure.Extensions
 {
+    using Services;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
-    using Services;
 
     public static class EmailSenderExtensions
     {
@@ -14,7 +14,7 @@ namespace Library.Web.Infrastructure.Extensions
 
         public static Task SendEmailWithQuestionAsync(this IEmailSender emailSender, string email, string html)
         {
-            return emailSender.SendEmailAsync(email, "Vupros ot \"Popitai bibliotekara\"",html);
+            return emailSender.SendEmailAsync(email, "Vupros ot \"Popitai bibliotekara\"", html);
         }
     }
 }

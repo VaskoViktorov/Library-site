@@ -1,9 +1,9 @@
 ﻿namespace Library.Web.Infrastructure.Extensions
 {
+    using Microsoft.Extensions.DependencyInjection;
+    using Services;
     using System.Linq;
     using System.Reflection;
-    using Library.Services;
-    using Microsoft.Extensions.DependencyInjection;
 
     /// <summary>
     /// Service injector.
@@ -23,6 +23,7 @@
                 })
                 .ToList()
                 .ForEach(s => services.AddTransient(s.Interface, s.Implementation));
+
             return services;
         }
     }

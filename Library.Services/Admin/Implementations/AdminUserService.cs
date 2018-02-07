@@ -56,7 +56,7 @@
                         if (userRole == role.Id)
                         {
                             userIdWithRoleNames[item.Key].Add(role.Name);
-                            break;                          
+                            break;
                         }
                     }
                 }

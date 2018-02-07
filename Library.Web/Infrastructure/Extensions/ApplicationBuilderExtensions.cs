@@ -49,7 +49,7 @@
                         }
 
                         var adminEmail = "admin@mysite.com";
-                        var username= "admin@mysite.com";
+                        var username = "admin@mysite.com";
                         var adminUser = await userManager.FindByEmailAsync(adminEmail);
 
                         if (adminUser == null)
@@ -77,4 +77,3 @@
         }
     }
 }
-

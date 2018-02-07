@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace Library.Web.Controllers
+﻿namespace Library.Web.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -11,6 +8,7 @@ namespace Library.Web.Controllers
     using Services;
     using System.Diagnostics;
     using Services.Html;
+    using System.Threading.Tasks;
 
     using static WebConstants;
 
@@ -42,7 +40,7 @@ namespace Library.Web.Controllers
 
             var email = EmailReceiverForAsk;
 
-            var htmlString = string.Format(EmailReceiverHtmlText,model.Description,model.Phone,model.Email,model.UserInfo);
+            var htmlString = string.Format(EmailReceiverHtmlText, model.Description, model.Phone, model.Email, model.UserInfo);
 
             emailSender.SendEmailWithQuestionAsync(email, htmlString);
             return this.RedirectToAction(nameof(this.Index));
@@ -56,7 +54,7 @@ namespace Library.Web.Controllers
 
         public IActionResult Contact()
             => View();
-        
+
         public IActionResult History()
             => View();
 
@@ -109,12 +107,6 @@ namespace Library.Web.Controllers
             => View();
 
         public IActionResult Links()
-            => View();
-
-        public IActionResult Survey()
-            => View();
-
-        public IActionResult Volunteers()
             => View();
 
         public IActionResult LibraryPost()

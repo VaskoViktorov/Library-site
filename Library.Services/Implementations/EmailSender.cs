@@ -1,11 +1,10 @@
-﻿using System;
-using System.Net;
-using System.Net.Mail;
-using Library.Services.Models.EmailSender;
-using Microsoft.Extensions.Options;
-
-namespace Library.Services.Implementations
+﻿namespace Library.Services.Implementations
 {
+    using Microsoft.Extensions.Options;
+    using Models.EmailSender;
+    using System;
+    using System.Net;
+    using System.Net.Mail;
     using System.Threading.Tasks;
 
     public class EmailSender : IEmailSender
@@ -13,15 +12,16 @@ namespace Library.Services.Implementations
         public EmailSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
         {
             Options = optionsAccessor.Value;
-        }              
+        }
 
-        public AuthMessageSenderOptions Options { get; } 
+        public AuthMessageSenderOptions Options { get; }
 
         public Task SendEmailAsync(string email, string subject, string message)
         {
-           this.Execute(email, subject, message).Wait();
+            this.Execute(email, subject, message).Wait();
+
             return Task.FromResult(0);
-            
+
         }
 
         public async Task Execute(string email, string message, string subject)
@@ -31,13 +31,13 @@ namespace Library.Services.Implementations
                 string toEmail = string.IsNullOrEmpty(email)
                     ? Options.ToEmail
                     : email;
+
                 MailMessage mail = new MailMessage()
                 {
                     From = new MailAddress(Options.UsernameEmail, "RB \"Mihalaki Georgiev\", Vidin")
                 };
-                mail.To.Add(new MailAddress(toEmail));
-               
 
+                mail.To.Add(new MailAddress(toEmail));
                 mail.Subject = message;
                 mail.Body = subject;
                 mail.IsBodyHtml = true;
@@ -45,7 +45,6 @@ namespace Library.Services.Implementations
 
                 using (SmtpClient smtp = new SmtpClient(Options.PrimaryDomain, Options.PrimaryPort))
                 {
-                    
                     smtp.Credentials = new NetworkCredential(Options.UsernameEmail, Options.UsernamePassword);
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(mail);

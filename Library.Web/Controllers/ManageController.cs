@@ -1,19 +1,19 @@
 ﻿namespace Library.Web.Controllers
 {
     using Data.Models;
-    using Models.Manage;
-    using Services;
+    using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
+    using Models.Manage;
+    using Services;
     using System;
     using System.Linq;
     using System.Text;
     using System.Text.Encodings.Web;
     using System.Threading.Tasks;
-    using Infrastructure.Extensions;
 
     [Authorize]
     [Route("[controller]/[action]")]

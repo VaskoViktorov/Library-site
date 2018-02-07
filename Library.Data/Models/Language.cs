@@ -1,8 +1,8 @@
 ﻿namespace Library.Data.Models
 {
-  public enum Language
+    public enum Language
     {
-        Bg=0,
-        En=1       
+        Bg = 0,
+        En = 1
     }
 }

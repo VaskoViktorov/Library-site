@@ -87,6 +87,5 @@
 
             return this.RedirectToAction(nameof(this.Subscriptions));
         }
-
     }
 }

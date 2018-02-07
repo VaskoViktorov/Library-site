@@ -1,0 +1,27 @@
+﻿@model SurveyFormModel
+
+@{
+    ViewData["Title"] = "Edit Survey";
+}
+<div class="row text-center">
+    <h1 class="text-center mr-t-b-25">Смени анкета</h1>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="url"></label>
+                <input asp-for="url" class="form-control" />
+                <span asp-validation-for="url" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-info">Запази</button>
+            <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">Обратно</a>
+        </form>
+    </div>
+</div>
+@section Scripts
+    {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+

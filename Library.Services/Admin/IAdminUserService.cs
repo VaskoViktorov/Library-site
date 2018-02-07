@@ -5,9 +5,9 @@
     using System.Threading.Tasks;
 
     public interface IAdminUserService
-   {
-       Task<IEnumerable<AdminUserServiceListingModel>> AllAsync();
+    {
+        Task<IEnumerable<AdminUserServiceListingModel>> AllAsync();
 
-       Task<Dictionary<string, List<string>>> UsersInRoleAsync();
-   }
+        Task<Dictionary<string, List<string>>> UsersInRoleAsync();
+    }
 }

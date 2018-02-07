@@ -275,6 +275,10 @@ ol {
 .pb-20 {
     padding-bottom: 20px;
 }
+.p-rl-15 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
 .pt-7 {
     padding-top: 7px !important;
 }

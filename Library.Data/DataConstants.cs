@@ -1,6 +1,6 @@
 ﻿namespace Library.Data
 {
-   public class DataConstants
+    public class DataConstants
     {
         public const int UserNameMinLength = 3;
         public const int UserNameMaxLength = 50;

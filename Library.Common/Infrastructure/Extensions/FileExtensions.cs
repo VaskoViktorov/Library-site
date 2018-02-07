@@ -4,7 +4,7 @@
 
     public class FileExtensions
     {
-        public static void  DeleteImage(string imagePath)
+        public static void DeleteImage(string imagePath)
         {
             var startupPath = Path.GetFullPath(".\\");
             var filePath = $"{startupPath}\\wwwroot\\{imagePath}";
@@ -13,7 +13,6 @@
             {
                 try
                 {
-
                     File.Delete(filePath);
                 }
                 catch (IOException)

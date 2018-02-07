@@ -1,10 +1,10 @@
 ﻿namespace Library.Web.Infrastructure.Extensions
 {
-    using System;
     using Data.Models;
-    using System.Text.RegularExpressions;
+    using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// changes the url text to user friendly url(only words, digits and dashes)
@@ -55,27 +55,38 @@
         public static string TruncateHtml(this string html, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(html))
+            {
                 return html;
+            }
 
             // find the spot to truncate
             // count the text characters and ignore tags
             var textCount = 0;
             var charCount = 0;
             var ignore = false;
+
             foreach (char c in html)
             {
                 charCount++;
                 if (c == '<')
+                {
                     ignore = true;
+                }
                 else if (!ignore)
+                {
                     textCount++;
+                }
 
                 if (c == '>')
+                {
                     ignore = false;
+                }
 
                 // stop once we hit the limit
                 if (textCount >= maxCharacters)
+                {
                     break;
+                }
             }
 
             // Truncate the html and keep whole words only
@@ -96,8 +107,9 @@
 
                     // push to stack if open tag and ignore it if it is self-closing, i.e. <br />
                     if (!string.IsNullOrEmpty(tag) && string.IsNullOrEmpty(match.Groups["selfClose"].Value))
+                    {
                         tags.Push(tag);
-
+                    }
                     // pop from stack if close tag
                     else if (!string.IsNullOrEmpty(closeTag))
                     {
@@ -110,8 +122,10 @@
             }
 
             if (html.Length > charCount)
+            {
                 // add the trailing text
                 trunc.Append(trailingText);
+            }
 
             // pop the rest off the stack to close remainder of tags
             while (tags.Count > 0)
@@ -143,9 +157,14 @@
         public static string TruncateHtmlByDelimiter(this string html, string delimiter, StringComparison comparison = StringComparison.Ordinal)
         {
             var index = html.IndexOf(delimiter, comparison);
-            if (index <= 0) return html;
+
+            if (index <= 0)
+            {
+                return html;
+            }
 
             var r = html.Substring(0, index);
+
             return r.TruncateHtml(r.StripHtml().Length);
         }
 
@@ -155,7 +174,9 @@
         public static string StripHtml(this string html)
         {
             if (string.IsNullOrEmpty(html))
+            {
                 return html;
+            }
 
             return Regex.Replace(html, @"<(.|\n)*?>", string.Empty);
         }
@@ -174,9 +195,11 @@
         public static string Truncate(this string text, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(text) || maxCharacters <= 0 || text.Length <= maxCharacters)
+            {
                 return text;
-            else
-                return text.Substring(0, maxCharacters) + trailingText;
+            }
+
+            return text.Substring(0, maxCharacters) + trailingText;
         }
 
 
@@ -194,12 +217,13 @@
         public static string TruncateWords(this string text, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(text) || maxCharacters <= 0 || text.Length <= maxCharacters)
+            {
                 return text;
-
+            }
+               
             // trunctate the text, then remove the partial word at the end
             return Regex.Replace(text.Truncate(maxCharacters),
                 @"\s+[^\s]+$", string.Empty, RegexOptions.IgnoreCase | RegexOptions.Compiled) + trailingText;
         }
     }
 }
-

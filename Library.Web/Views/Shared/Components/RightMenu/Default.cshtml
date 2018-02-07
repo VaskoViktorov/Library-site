@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LatestGalleriesServiceModel>
+﻿@model SurveyListingViewModel
 @{
     ViewData["Title"] = "Books";
 }
@@ -9,12 +9,12 @@
         </a>
     </div>
     <div>
-        <a asp-area="" asp-controller="Home" asp-action="Volunteers" style="text-decoration: none">
+        <a asp-area="LibraryBlog" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.Last().id" style="text-decoration: none">
             <p class="lib-sidebar-p1">Стани Доброволец</p>
         </a>
     </div>
     <div>
-        <a asp-area="" asp-controller="Home" asp-action="Survey" style="text-decoration: none">
+        <a asp-area="LibraryBlog" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.First().id" style="text-decoration: none">
             <p class="lib-sidebar-p1">Участвай в анкета</p>
         </a>
     </div>

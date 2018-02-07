@@ -9,7 +9,6 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-
     public class SubscriptionService : ISubscriptionService
     {
         private readonly LibraryDbContext db;
@@ -41,7 +40,7 @@
             {
                 return;
             }
-           
+
             subscription.Name = name;
             subscription.Department = department;
             subscription.Type = type;
@@ -60,7 +59,6 @@
             }
 
             this.db.Subscriptions.Remove(subscription);
-
             await this.db.SaveChangesAsync();
         }
 

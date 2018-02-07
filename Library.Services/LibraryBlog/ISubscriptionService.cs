@@ -1,10 +1,9 @@
 ﻿namespace Library.Services.LibraryBlog
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using Data.Models;
     using Models.Subscriptions;
-
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public interface ISubscriptionService
     {
@@ -19,6 +18,8 @@
         Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync();
 
         Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync();
+
+        //English
 
         Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersEnAsync();
 

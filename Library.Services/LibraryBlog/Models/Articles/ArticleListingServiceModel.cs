@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Library.Services.LibraryBlog.Models.Articles
+﻿namespace Library.Services.LibraryBlog.Models.Articles
 {
     using Common.Mapping;
     using Data.Models;

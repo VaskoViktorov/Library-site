@@ -1,12 +1,12 @@
 ﻿namespace Library.Web.Areas.En.Controllers
 {
+    using Infrastructure.Extensions;
+    using Infrastructure.Filters;
     using Microsoft.AspNetCore.Mvc;
+    using Models.Home;
     using Services;
     using Services.Html;
     using System.Threading.Tasks;
-    using Models.Home;
-    using Infrastructure.Extensions;
-    using Infrastructure.Filters;
 
     using static WebConstants;
 
@@ -42,6 +42,7 @@
             var htmlString = string.Format(EmailReceiverHtmlText, model.Description, model.Phone, model.Email, model.UserInfo);
 
             emailSender.SendEmailWithQuestionAsync(email, htmlString);
+
             return this.RedirectToAction(nameof(this.Index));
         }
 

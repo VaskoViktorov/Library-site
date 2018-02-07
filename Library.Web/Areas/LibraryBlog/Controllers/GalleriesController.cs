@@ -1,15 +1,15 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using Services.LibraryBlog;
-    using Models.Galleries;
+    using Infrastructure.Extensions;
+    using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
+    using Models.Galleries;
+    using Services.LibraryBlog;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using Infrastructure.Extensions;
-    using Infrastructure.Filters;
+    using System.Threading.Tasks;
 
     public class GalleriesController : BaseController
     {
@@ -45,15 +45,15 @@
         [ValidateModelState]
         public async Task<IActionResult> Create(GalleryFormModel model)
         {
-            
             if (model.Files == null || model.Files.Count == 0)
+            {
                 return Content("files not selected");
-
+            }
+               
             var imgPaths = new List<string>();
 
             foreach (var file in model.Files)
             {
-
                 var path = Path.Combine("images", "GalleryImages", Guid.NewGuid() + file.GetFileType());
                 var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", path);
 

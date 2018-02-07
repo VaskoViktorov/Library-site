@@ -1,8 +1,8 @@
 ﻿namespace Library.Web.Areas.En.Controllers
 {
+    using LibraryBlog.Models.Subscriptions;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using LibraryBlog.Models.Subscriptions;
     using Services.LibraryBlog;
     using System.Threading.Tasks;
 
@@ -22,6 +22,6 @@
         {
             Newspapers = await this.subscriptions.AllNewspapersEnAsync(),
             Magazines = await this.subscriptions.AllMagazinesEnAsync()
-        });     
+        });
     }
 }

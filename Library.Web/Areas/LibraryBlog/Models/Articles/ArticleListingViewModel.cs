@@ -1,10 +1,9 @@
-﻿
-
-namespace Library.Web.Areas.LibraryBlog.Models.Articles
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Articles
 {
+    using Services.LibraryBlog.Models.Articles;
     using System;
     using System.Collections.Generic;
-    using Services.LibraryBlog.Models.Articles;
+
     using static Services.ServicesConstants;
 
     public class ArticleListingViewModel

@@ -11,9 +11,9 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using System.IO;
-    using Services.Models.EmailSender;
     using Microsoft.Extensions.FileProviders;
+    using Services.Models.EmailSender;
+    using System.IO;
 
     public class Startup
     {

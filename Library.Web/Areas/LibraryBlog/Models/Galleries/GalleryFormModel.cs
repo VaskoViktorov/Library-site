@@ -1,10 +1,9 @@
-﻿using Library.Data.Models;
-
-namespace Library.Web.Areas.LibraryBlog.Models.Galleries
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Galleries
 {
+    using Data.Models;
+    using Microsoft.AspNetCore.Http;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Microsoft.AspNetCore.Http;
 
     using static Data.DataConstants;
 

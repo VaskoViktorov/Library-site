@@ -2,7 +2,7 @@
 {
     public enum SubscriptionType
     {
-        Newspaper =0,
-        Magazine =1
+        Newspaper = 0,
+        Magazine = 1
     }
 }

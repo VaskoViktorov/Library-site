@@ -1,6 +1,6 @@
 ﻿namespace Library.Data.Models
 {
-   public class Image
+    public class Image
     {
         public int Id { get; set; }
 

@@ -1,9 +1,9 @@
-﻿using Library.Common.Mapping;
-using Library.Data.Models;
-
-namespace Library.Services.Models.Home
+﻿namespace Library.Services.Models.Home
 {
-   public class ArticleListingHomeServiceModel : IMapFrom<Article>
+    using Common.Mapping;
+    using Data.Models;
+
+    public class ArticleListingHomeServiceModel : IMapFrom<Article>
     {
         public int Id { get; set; }
 

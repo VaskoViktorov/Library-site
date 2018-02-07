@@ -1,16 +1,16 @@
 ﻿namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure.Extensions;
     using Data;
     using Data.Models;
     using LibraryBlog;
     using Microsoft.EntityFrameworkCore;
     using Models.Books;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using System.Collections.Generic;
-    using Common.Infrastructure.Extensions;
 
     using static ServicesConstants;
 
@@ -24,7 +24,7 @@
         }
 
         public async Task CreateAsync(string authorName, string bookTitle, string bookDescription, string cityIssued,
-            string press, DepartmentType department, int publishDate, DateTime date, int pages, int size, string genre, string imageUrl,Language language)
+            string press, DepartmentType department, int publishDate, DateTime date, int pages, int size, string genre, string imageUrl, Language language)
         {
             var book = new Book
             {
@@ -100,8 +100,8 @@
             {
                 return;
             }
-            this.db.Books.Remove(book);
 
+            this.db.Books.Remove(book);
             await this.db.SaveChangesAsync();
 
             if (book.ImageUrl != "\\images\\BookCovers\\default.jpg")
@@ -167,7 +167,7 @@
 
         public async Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1)
             => await this.db
-                .Books                
+                .Books
                 .OrderByDescending(b => b.Date)
                 .Where(b => b.Language == Language.En)
                 .Skip((page - 1) * BooksPageSize)
@@ -214,4 +214,3 @@
                 .CountAsync();
     }
 }
-

@@ -1,8 +1,8 @@
 ﻿namespace Library.Data
 {
-    using Models;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using Models;
 
     public class LibraryDbContext : IdentityDbContext<User>
     {
@@ -28,7 +28,7 @@
             builder
                 .Entity<Article>()
                 .HasOne(a => a.Gallery)
-                .WithOne(u => u.Article)        
+                .WithOne(u => u.Article)
                 .HasForeignKey<Gallery>(b => b.ArticleId);
 
             builder

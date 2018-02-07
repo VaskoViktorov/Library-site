@@ -1,8 +1,8 @@
-﻿using Library.Data.Models;
-
-namespace Library.Services.LibraryBlog.Models.Articles
+﻿namespace Library.Services.LibraryBlog.Models.Articles
 {
-    public class ArticleServiceModel: ArticleListingServiceModel
+    using Data.Models;
+
+    public class ArticleServiceModel : ArticleListingServiceModel
     {
         public DepartmentType Type { get; set; }
 

@@ -1,9 +1,9 @@
-﻿using Library.Common.Mapping;
-using Library.Data.Models;
-
-namespace Library.Services.LibraryBlog.Models.Books
+﻿namespace Library.Services.LibraryBlog.Models.Books
 {
-   public class BookListingServiceModel : IMapFrom<Book>
+    using Common.Mapping;
+    using Data.Models;
+
+    public class BookListingServiceModel : IMapFrom<Book>
     {
         public int Id { get; set; }
 

@@ -1,10 +1,9 @@
 ﻿namespace Library.Services.LibraryBlog.Models.Books
 {
     using System;
-    using Data.Models;
 
     public class BookServiceModel : BookListingServiceModel
-    {      
+    {
         public string BookDescription { get; set; }
 
         public string CityIssued { get; set; }
@@ -19,6 +18,6 @@
 
         public int Size { get; set; }
 
-        public string Genre { get; set; }       
+        public string Genre { get; set; }
     }
 }

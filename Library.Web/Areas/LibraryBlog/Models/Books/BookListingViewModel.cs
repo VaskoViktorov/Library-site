@@ -1,8 +1,8 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Books
 {
     using Services.LibraryBlog.Models.Books;
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
 
     using static Services.ServicesConstants;
 

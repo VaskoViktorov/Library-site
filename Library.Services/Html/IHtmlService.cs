@@ -1,6 +1,6 @@
 ﻿namespace Library.Services.Html
 {
-   public interface IHtmlService
+    public interface IHtmlService
     {
         string Sanitize(string htmlContent);
     }

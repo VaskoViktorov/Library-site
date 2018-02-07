@@ -1,9 +1,9 @@
-﻿using Library.Common.Mapping;
-using Library.Data.Models;
-
-namespace Library.Services.LibraryBlog.Models.Articles
+﻿namespace Library.Services.LibraryBlog.Models.Articles
 {
-   public class ImageServiceModel : IMapFrom<Image>
+    using Common.Mapping;
+    using Data.Models;
+
+    public class ImageServiceModel : IMapFrom<Image>
     {
         public int Id { get; set; }
 

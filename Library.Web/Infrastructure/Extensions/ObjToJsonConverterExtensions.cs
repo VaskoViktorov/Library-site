@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Library.Web.Areas.LibraryBlog.Models.Events;
-
-namespace Library.Web.Infrastructure.Extensions
+﻿namespace Library.Web.Infrastructure.Extensions
 {
-    using System;
+    using Areas.LibraryBlog.Models.Events;
+    using Areas.LibraryBlog.Models.Surveys;
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
 
     public static class ObjToJsonConverterExtensions
     {
@@ -14,7 +13,7 @@ namespace Library.Web.Infrastructure.Extensions
         {
             string json = JsonConvert.SerializeObject(obj);
 
-            var text = System.IO.File.ReadAllText(path);
+            var text = File.ReadAllText(path);
 
             if (text.Length < 2)
             {
@@ -24,7 +23,7 @@ namespace Library.Web.Infrastructure.Extensions
             text = text.Remove(text.Length - 1);
             text = text + $",{Environment.NewLine}" + json + "]";
 
-            System.IO.File.WriteAllText(path, text);
+            File.WriteAllText(path, text);
 
             return true;
         }
@@ -40,7 +39,7 @@ namespace Library.Web.Infrastructure.Extensions
         {
             var events = ListofEventsInJsonFile(path);
             var currentEvent = events.Find(a => a.id == id);
-            
+
             return currentEvent;
         }
 
@@ -53,21 +52,23 @@ namespace Library.Web.Infrastructure.Extensions
             {
                 return false;
             }
+
             events.Remove(currentEvent);
-            
-            events.Add(eventForChange);  
-            
+
+            events.Add(eventForChange);
+
             List<string> strings = new List<string>();
 
             string json;
+
             foreach (var ev in events)
             {
                 json = JsonConvert.SerializeObject(ev);
                 strings.Add(json);
             }
 
-            var text =string.Join($",{Environment.NewLine}", strings);
-            text = "["+text+"]";
+            var text = string.Join($",{Environment.NewLine}", strings);
+            text = "[" + text + "]";
 
             File.WriteAllText(path, text);
 
@@ -83,14 +84,64 @@ namespace Library.Web.Infrastructure.Extensions
             {
                 return false;
             }
+
             events.Remove(currentEvent);
-          
+
             List<string> strings = new List<string>();
 
             string json;
+
             foreach (var ev in events)
             {
                 json = JsonConvert.SerializeObject(ev);
+                strings.Add(json);
+            }
+
+            var text = string.Join($",{Environment.NewLine}", strings);
+            text = "[" + text + "]";
+
+            File.WriteAllText(path, text);
+
+            return true;
+        }
+
+        public static SurveyFormModel FindSurveyInJsonFile(string path, string id)
+        {
+            var survey = ListofSurveysInJsonFile(path);
+            var currentSurvey = survey.Find(a => a.id == id);
+
+            return currentSurvey;
+        }
+
+        public static List<SurveyFormModel> ListofSurveysInJsonFile(string path)
+        {
+            var text = File.ReadAllText(path);
+            List<SurveyFormModel> surveys = JsonConvert.DeserializeObject<List<SurveyFormModel>>(text);
+
+            return surveys;
+        }
+
+        public static bool EditSurveyInJsonFile(string path, SurveyFormModel eventForChange)
+        {
+            var surveys = ListofSurveysInJsonFile(path);
+            var currentEvent = surveys.Find(a => a.id == eventForChange.id);
+
+            if (currentEvent == null)
+            {
+                return false;
+            }
+
+            surveys.Remove(currentEvent);
+
+            surveys.Add(eventForChange);
+
+            List<string> strings = new List<string>();
+
+            string json;
+
+            foreach (var sr in surveys)
+            {
+                json = JsonConvert.SerializeObject(sr);
                 strings.Add(json);
             }
 

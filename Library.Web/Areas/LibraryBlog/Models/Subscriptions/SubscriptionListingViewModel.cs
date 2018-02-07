@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
 {
-    using System.Collections.Generic;
     using Services.LibraryBlog.Models.Subscriptions;
+    using System.Collections.Generic;
 
     public class SubscriptionListingViewModel
     {

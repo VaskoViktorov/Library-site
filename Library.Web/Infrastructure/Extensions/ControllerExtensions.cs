@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Library.Web.Infrastructure.Extensions
+﻿namespace Library.Web.Infrastructure.Extensions
 {
+    using Microsoft.AspNetCore.Mvc;
+
     public static class ControllerExtensions
     {
         /// <summary>

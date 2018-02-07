@@ -18,7 +18,7 @@
 
         public const string TempDataAlreadyExistsText = "{0} с име {1}, вече съществува.";
         public const string TempDataWrongUrlText = "НЕ е създадена {0}, поради грешен URL адрес.";
-        
+
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
         public const string EnglishAreaName = "En";
@@ -36,6 +36,8 @@
             <p style = 'text-align: left;'><span style='font-weight: bold'> Име: </span>{3}</p>
             </div>";
 
-        public const string CallendarJasonDbPath ="{0}\\wwwroot\\lib\\jquery\\dist\\EventsDb.json";
+        public const string CallendarJasonDbPath = "{0}\\wwwroot\\lib\\jquery\\dist\\EventsDb.json";
+        public const string SurveysJasonDbPath = "{0}\\wwwroot\\json\\SurveysDb.json";
+        public const string SurveysEnJasonDbPath = "{0}\\wwwroot\\json\\SurveysEnDb.json";
     }
 }
