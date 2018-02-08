@@ -4,7 +4,9 @@
 }
 
 <div class="row text-center">
-    <h1 class="text-center" id="carosel-h1"><a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Последни събития</a></h1>
+    <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles" style="text-decoration: none">
+        <h1 class="text-center" id="carosel-h1">Последни събития</h1>
+    </a>
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
         <ul class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

@@ -2,10 +2,11 @@
 @{
     ViewData["Title"] = "Register";
 }
-
-<h2>@ViewData["Title"]</h2>
-
+<div class="row text-center">
+    <h2>@ViewData["Title"]</h2>
+</div>
 <div class="row">
+    <div class="col-md-4"></div>
     <div class="col-md-4">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
             <h4>Create a new account.</h4>
@@ -18,22 +19,22 @@
             </div>
             <div class="form-group">
                 <label class="color-blue" asp-for="UserName"></label>
-                <input asp-for="UserName" class="form-control"/>
+                <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="color-blue" asp-for="PhoneNumber"></label>
-                <input asp-for="PhoneNumber" class="form-control"/>
+                <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="color-blue" asp-for="UserFullName"></label>
-                <input asp-for="UserFullName" class="form-control"/>
+                <input asp-for="UserFullName" class="form-control" />
                 <span asp-validation-for="UserFullName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="color-blue" asp-for="UserAge"></label>
-                <input asp-for="UserAge" class="form-control"/>
+                <input asp-for="UserAge" class="form-control" />
                 <span asp-validation-for="UserAge" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -46,7 +47,7 @@
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-default">Register</button>
+            <button type="submit" class="lib-btn-invrt">Register</button>
         </form>
     </div>
 </div>

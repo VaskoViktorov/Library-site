@@ -6,28 +6,31 @@
     <h2>Събития</h2>
     <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Events" asp-action="Create">Създай</a>
 </div>
-<table class="table table-hover table-responsive ">
-    <thead>
-    <tr>
-        <th>Дата</th>
-        <th>Заглавие</th>
-        <th>Текст</th>
-        <th>Опции</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach(var eventLog in Model.Events)
-    {
-        <tr>
-            <td>@eventLog.date</td>
-            <td>@eventLog.title</td>
-            <td>@eventLog.description</td>
-            <td>
-                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Events" asp-action="Edit" asp-route-id="@eventLog.id">Промени</a>
-                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Delete" asp-route-id="@eventLog.id">Изтрии</a>
-            </td>
-        </tr>
-    }
-    </tbody>
-</table>
-
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <table class="table table-hover table-responsive ">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Заглавие</th>
+                    <th>Текст</th>
+                    <th>Опции</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var eventLog in Model.Events)
+                {
+                    <tr>
+                        <td>@eventLog.date</td>
+                        <td>@eventLog.title</td>
+                        <td>@eventLog.description</td>
+                        <td>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Events" asp-action="Edit" asp-route-id="@eventLog.id">Промени</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Delete" asp-route-id="@eventLog.id">Изтрии</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -204,6 +204,20 @@ h3 {
     border-radius: 20px;
     font-weight: bold;
 }
+.lib-logout-btn {
+    padding-right: 30px;
+    padding-top: 17px;
+    padding-bottom: 13px;
+    margin: 0px;
+    color: #FFEDD8;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #29739E;
+    border: none;
+}
+.lib-logout-btn:hover {
+    background-color: #660B0B;
+}
 .lib-lang-box {
     display: inline-block;
     background-color: #FFEDD8;
@@ -259,7 +273,7 @@ h3 {
     height: 40px;
     border-radius: 120px;
     border: 1px solid #29739E;
-    padding: 10px;
+    padding: 10px 11px 10px 10px;
     background-color: #29739E;
     color: #FFEDD8;
 }
@@ -434,7 +448,7 @@ ul#worktime-menu.dropdown-menu {
     background-color: #29739E;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    padding: 3px;
+    padding: 7px;
     margin-left: 1px;
     height: 214px;
 }
@@ -609,12 +623,12 @@ ul.lib-footer-ul li a:hover {
     font-weight: bold;
     font-size: 1.1em;
     margin: 10px auto 0 auto;
-    width: 200px;
+    width: 187px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 .lib-gallery-b {
-    width: 200px;
+    width: 187px;
     background-color: #29739E;
     color: #FFEDD8;
     padding: 2px;
@@ -624,4 +638,16 @@ ul.lib-footer-ul li a:hover {
 }
 .lib-img-border {
     border: 2px solid #29739E;
+}
+/*English part*/
+#lib-subscr-en {
+    background-color: #29739E;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 9px;
+    margin-left: 1px;
+    height: 214px;
+}
+#lib-subscr-en:hover {
+    background-color: #660B0B;
 }

@@ -11,7 +11,8 @@
  }
 .eventCalendar-wrap {
     border: solid 2px #29739E;
-    border-radius: 5px;
+    min-height: 415px;
+    border-radius: 20px;
     margin-bottom: 20px;
     color: #fff;
 }
@@ -182,7 +183,7 @@ li.eventCalendar-day.eventCalendar-dayWithEvents a:hover {
 }
 	.eventCalendar-list-content.scrollable {
 
-		height:100px;
+		height:150px;
 		overflow-y:auto;
 		margin:0 5px 5px 0;
 	}

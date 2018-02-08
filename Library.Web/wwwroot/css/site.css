@@ -49,8 +49,8 @@ footer {
 }
 /*Img Gallery*/
 .max-w-h-img {
-    width: 200px;
-    height: 151px;
+    width: 187px;
+    height: 144px;
 }
 
 .gallery-box {
@@ -547,6 +547,9 @@ ol {
 }
 
 @media (max-width: 991px) {
+    .container {
+        width: auto;
+    }
     .p-10-table {    
         padding-left: 10px;
         padding-right: 10px;
@@ -667,6 +670,33 @@ footer {
 }
 .lib-footer-ul {
     margin-bottom: 0;
+}
+/*Carousel responsive*/
+.carousel-custom-settings {
+    padding-bottom: 0px;
+    max-height: 550px;
+}
+.carousel-indicators {
+    bottom: 95px;
+}
+
+.carousel-caption {
+    position: unset;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: unset;
+}
+.carosel-p {
+    border-radius: unset;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+.carousel-control.right {
+    height: 98%;
+}
+.carousel-control.left {
+    height: 98%;
 }
 }
 @media (max-width: 485px) {
