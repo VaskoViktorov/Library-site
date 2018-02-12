@@ -1,9 +1,18 @@
 ﻿@model SubscriptionListingViewModel
 @{
     ViewData["Title"] = "Subscriptions";
+
+    int thCols = 2;
 }
 <div class="row text-center">
     <h2>Абонаменти</h2>
+</div>
+<div class="row text-center mr-t-b-25">
+    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+    {
+        thCols++;       
+        <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Books" asp-action="Create">Създай</a>
+    }
 </div>
 <div class="row">
     <div class="col-md-2">
@@ -12,16 +21,8 @@
         <table class="table table-responsive table-hover">
             <thead>
                 <tr>
-                    <th colspan="2" class="bold text-center">ВЕСТНИЦИ</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>
-                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Създай</a>
-
-                        </th>
-                    }
-                </tr>
-               
+                    <th colspan="@thCols" class="bold text-center">ВЕСТНИЦИ</th>                 
+                </tr>             
             </thead>
             <tbody>
             <tr>
@@ -51,18 +52,10 @@
         <table class="table table-responsive table-hover">
             <thead>
                 <tr>
-                    <th colspan="2" class="bold text-center">СПИСАНИЯ</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>
-                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Създай</a>
-
-                        </th>
-                    }
+                    <th colspan="@thCols" class="bold text-center">СПИСАНИЯ</th>                   
                 </tr>
             </thead>
-            <tbody>
-            
+            <tbody>         
             <tr>
                 <th class="first-color-b second-color text-center">Наименувание</th>
                 <th class="first-color-b second-color text-center">Получава се в:</th>

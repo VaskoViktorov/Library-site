@@ -4,84 +4,80 @@
 <div class="row text-center">
     <h2>Къде се намираме</h2>
 </div>
-<div class="row text-center p-10 ">   
-        <div class="address-box">
-            <p><span class="glyphicon glyphicon-home"></span><span class="bold"> Адрес:</span> пл. "Бдинци" № 1</p>
-            <p><span class="glyphicon glyphicon-phone"></span><span class="bold"> Телефон:</span> 094/601-704</p>
-            <p style="margin: 0;"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> Имейл:</span> libvidin@vidin.net</p>
-        </div>
-        <div id="map_canvas" class="google-box-height" style="border-radius: 30px; width: 85%; margin: 0 auto;"></div>
-        <section>
-            @section Scripts {
+<div class="row text-center p-10 ">
+    <div class="address-box">
+        <p><span class="glyphicon glyphicon-home"></span><span class="bold"> Адрес:</span> пл. "Бдинци" № 1</p>
+        <p><span class="glyphicon glyphicon-phone"></span><span class="bold"> Телефон:</span> 094/601-704</p>
+        <p style="margin: 0;"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> Имейл:</span> libvidin@vidin.net</p>
+    </div>
+    <div id="map_canvas" class="google-box-height" style="border-radius: 30px; width: 85%; margin: 0 auto;"></div>
+</div>
 
-                <script type="text/javascript">
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            initMap();
+        });
 
-                    $(document).ready(function () {
-                        initMap();
+        function initMap() {
+
+            var library = new google.maps.LatLng(43.9864002, 22.8772501);
+
+            var mapOptions = {
+                zoom: 18,
+                center: library
+            };
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+            var data = [
+                {
+                    "Id": 1,
+                    "PlaceName": "Р.Б. \"Михалаки Георгиев\"",
+                    "GeoLong": "43.9864",
+                    "GeoLat": "22.87725"
+                }
+            ];
+
+            $.each(data,
+                function (i, item) {
+                    var marker = new google.maps.Marker({
+                        'position': library,
+                        'map': map,
+                        'title': item.PlaceName
                     });
 
-                    function initMap() {
+                    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
 
-                        var library = new google.maps.LatLng(43.9864002, 22.8772501);
+                    var workHours = "Работно Време:";
+                    var workHrOne = "понеделник-петък: 9:00-18:00";
+                    var workHrTwo = "събота: 9:00-14:00";
+                    var workHrThree = "неделя: почивен ден";
 
-                        var mapOptions = {
-                            zoom: 18,
-                            center: library
-                        };
+                    var infowindow = new google.maps.InfoWindow({
+                        content: "<div class='infoDiv text-center'><h3>" +
+                        item.PlaceName +
+                        "</h2>" +
+                        "<div><img class='small-img' src='/images/SiteImages/Library.jpg' alt='библиотека' /></div>" +
+                        "<h4>" +
+                        workHours +
+                        "</h4><p>" +
+                        workHrOne +
+                        "</p>" +
+                        workHrTwo +
+                        "</p>" +
+                        workHrThree +
+                        "</p>" +
+                        "</div></div>"
+                    });
 
-                        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-                        
-                        var data = [
-                            {
-                                "Id": 1,
-                                "PlaceName": "Р.Б. \"Михалаки Георгиев\"",
-                                "GeoLong": "43.9864",
-                                "GeoLat": "22.87725"
-                            }
-                        ];
-                        
-                        $.each(data,
-                            function (i, item) {
-                                var marker = new google.maps.Marker({
-                                    'position': library,
-                                    'map': map,
-                                    'title': item.PlaceName
-                                });
-
-                                marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
-
-                                var workHours = "Работно Време:";
-                                var workHrOne = "понеделник-петък: 9:00-18:00";
-                                var workHrTwo = "събота: 9:00-14:00";
-                                var workHrThree = "неделя: почивен ден";
-
-                                var infowindow = new google.maps.InfoWindow({
-                                    content: "<div class='infoDiv text-center'><h3>" +
-                                    item.PlaceName +
-                                    "</h2>" +
-                                    "<div><img class='small-img' src='/images/SiteImages/Library.jpg' alt='библиотека' /></div>" +
-                                    "<h4>" +
-                                    workHours +
-                                    "</h4><p>" +
-                                    workHrOne +
-                                    "</p>" +
-                                    workHrTwo +
-                                    "</p>" +
-                                    workHrThree +
-                                    "</p>" +
-                                    "</div></div>"
-                                });
-                                
-                                var test = new google.maps.event.addListener(marker,
-                                    'click',
-                                    function () {
-                                        infowindow.open(map, marker);
-                                    });
-                            });
-                    }
-                </script>
-            }
-        </section>
-    </div>
-
+                    var test = new google.maps.event.addListener(marker,
+                        'click',
+                        function () {
+                            infowindow.open(map, marker);
+                        });
+                });
+        }
+    </script>
+}
 

@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RB Mihalaki Georgiev</title>
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"
-            type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
     <link rel="stylesheet" href="~/css/magnific-popup.css">
     <link rel="stylesheet" href="~/css/eventCalendar.css">
     <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">
@@ -38,8 +37,8 @@
                 </button>
                 <div class="work-time-box" style="width: 115px;">
                     <span class="closed bold close-time">Closed</span><span class="hours bold open-time">Open</span>
-                    <div class="dropdown" role="button">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" role="button">
                             <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
                         </a>
                         <ul id="worktime-menu" class="dropdown-menu drop">
@@ -50,7 +49,7 @@
                             <li class="p-0-3"><span class="bold">Friday: </span>9:00-18:00</li>
                             <li class="p-0-3"><span class="bold">Saturday: </span>9:00-14:00</li>
                             <li class="p-0-3"><span class="bold">Sunday: </span>Closed</li>
-                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">More</a></li>
+                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime" role="button">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,8 +60,8 @@
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="En" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">Home</a></li>
-                    <li class="dropdown" role="button">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <li class="dropdown lib-menu">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
@@ -90,8 +89,8 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Partners</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" role="button">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <li class="dropdown lib-menu">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             Kids<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
@@ -101,7 +100,7 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">For the curious</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" role="button">
+                    <li class="dropdown cr-pointer lib-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Homeland<span class="caret"></span>
                         </a>
@@ -113,8 +112,8 @@
                     </li>
                     <li><a tabindex="-1" asp-area="En" asp-controller="Articles" asp-action="Articles">News</a></li>
                     <li><a tabindex="-1" asp-area="En" asp-controller="Galleries" asp-action="Galleries">Gallery</a></li>
-                    <li class="dropdown lib-submenu-color" role="button">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <li class="dropdown lib-submenu-color lib-menu">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             E-Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
@@ -126,13 +125,14 @@
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole))
                     {
-                        <li class="dropdown" role="button">
+                        <li class="dropdown cr-pointer lib-menu">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 Admin Panel<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a></li>
                                 <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Events</a></li>
+                                <li><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Account</a></li>
                             </ul>
                         </li>
                     }
@@ -199,11 +199,11 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-3 text-right" style="float: right">
                     <div class="p-10 lib-lang-box">
-                        <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" /></a>
-                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" /></a>
+                        <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="BG language" /></a>
+                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="UK language" /></a>
                     </div>
 
-                    <p class="text-center">&copy; 2018 - Regional Library 'Mihalaki Georgiev' - Vidin</p>
+                    <p class="text-center">&copy; 2018 - Regional Library "Mihalaki Georgiev" - Vidin</p>
                 </div>
             </div>
         </footer>
@@ -215,10 +215,10 @@
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-        <script src="~/lib/jquery/dist/moment.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/snowfall.jquery.min.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/jquery.eventCalendar.js" type="text/javascript"></script>
+        <script src="~/lib/jquery/dist/moment.js"></script>
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
+        <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.eventCalendar.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -237,10 +237,10 @@
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-        <script src="~/lib/jquery/dist/moment.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/snowfall.jquery.min.js" type="text/javascript"></script>
-        <script src="~/lib/jquery/dist/jquery.eventCalendar.js" type="text/javascript"></script>
+        <script src="~/lib/jquery/dist/moment.js"></script>
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
+        <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.eventCalendar.js"></script>
     </environment>
     @RenderSection("Scripts", required: false)
 </body>

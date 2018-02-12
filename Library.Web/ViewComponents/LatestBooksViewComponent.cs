@@ -12,9 +12,8 @@
         {
             this.books = books;
         }
+
         public async Task<IViewComponentResult> InvokeAsync()
         => View(await books.LatestBooks());
-
     }
-
 }

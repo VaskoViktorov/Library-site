@@ -7,12 +7,12 @@
     <h2>@Model.Gallery.Title</h2>
 </div>
 <div class="row mr-t-40">
-    <div class="col-md-12">      
+    <div class="col-md-10 col-md-offset-1">      
         <div class="row max-w-750 mr-10-auto">
             @if (count < 2)
             {
-                <a class="image-popup-vertical-fit"  href="@Model.Gallery.Images.First().ImagePath" Title="@Model.Gallery.Title">
-                    <img src="@Model.Gallery.Images.First().ImagePath" class="img-border gallery-img" alt="@Model.Gallery.Title" />
+                <a class="image-popup-vertical-fit"  href="@Url.Content(Model.Gallery.Images.First().ImagePath)" Title="@Model.Gallery.Title">
+                    <img src="@Url.Content(Model.Gallery.Images.First().ImagePath)" class="img-border gallery-img" alt="@Model.Gallery.Title" />
                 </a>
             }
         </div>
@@ -21,8 +21,8 @@
             <div class="row max-w-750 mr-10-auto popup-gallery gallery-box">
                 @foreach (var img in Model.Gallery.Images)
                 {
-                    <a href="@img.ImagePath" Title="@Model.Gallery.Title">
-                        <img src="@img.ImagePath" class="width-150 img-border gallery-img" alt="@Model.Gallery.Title"/>
+                    <a href="@Url.Content(img.ImagePath)" Title="@Model.Gallery.Title">
+                        <img src="@Url.Content(img.ImagePath)" class="width-150 img-border gallery-img" alt="@Model.Gallery.Title"/>
                     </a>
                 }
             </div>

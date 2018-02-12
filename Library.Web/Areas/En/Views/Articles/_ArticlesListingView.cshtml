@@ -11,8 +11,8 @@
             <h3 class="bold mr-30-auto width-60pr">@article.Title</h3>
             @if (count != 0)
             {
-                <a class="image-popup-vertical-fit" href="@article.Gallery.Images.First().ImagePath" Title="@article.Title">
-                    <img src="@article.Gallery.Images.First().ImagePath" class="img-border width-60pr" alt="@article.Title" />
+                <a class="image-popup-vertical-fit" href="@Url.Content(article.Gallery.Images.First().ImagePath)" Title="@article.Title">
+                    <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" class="img-border width-60pr" alt="@article.Title" />
                 </a>
             }
             <p class="mr-0-auto width-60pr text-right p-t-5">@article.ReleaseDate.ToShortDateString()</p>
@@ -29,5 +29,5 @@
             </div>
         </div>
     </div>
-    <hr class="lib-hr width-60pr " />
+    <hr class="lib-hr width-60pr" />
 }

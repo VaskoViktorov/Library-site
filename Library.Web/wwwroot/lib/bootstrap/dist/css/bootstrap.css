@@ -3588,6 +3588,10 @@ tbody.collapse.in {
 .open > .dropdown-menu {
   display: block;
 }
+.open.lib-menu > .dropdown-menu {
+    display: none;
+    font-family: 'Arial';
+}
 .open > a {
   outline: 0;
 }

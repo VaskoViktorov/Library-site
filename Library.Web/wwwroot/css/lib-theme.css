@@ -54,11 +54,6 @@ body > nav > div > div.navbar-header > button.navbar-toggle > .icon-bar {
         background-color: #660B0B !important;
     }
 
-body > nav > div > div.navbar-collapse.collapse > ul > li > a {
-    color: #FFEDD8;
-    font-size: 1.3em;
-    font-weight: bold;
-}
 
 body > nav > div > div.navbar-collapse.collapse > ul > li > a {
     color: #FFEDD8;
@@ -66,56 +61,90 @@ body > nav > div > div.navbar-collapse.collapse > ul > li > a {
     font-weight: bold;
 }
 
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > a {
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > a {
     background-color: #660B0B;
     color: #FFEDD8;
+
 }
 body > nav > div > div.navbar-collapse.collapse > ul > li:last-child:hover a {
     color: #FFEDD8;
     font-weight: bold;
-
 }
 body > nav > div > div.navbar-collapse.collapse > ul > li > a:hover {
     color: #FFEDD8;
     font-weight: bold;
     background-color: #660B0B;
+    font-size: 1.03em;
 }
-
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul {
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > ul {
     background-color: #29739E;
     color: #FFEDD8;
+    font-size: 1.03em;
 }
-
-    body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a {
-        background-color: #29739E;
-        color: #FFEDD8;
-        font-weight: bold;
-    }
-
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > a:hover {
-       color: #FFEDD8;
-       font-weight: bold;
-       background-color: #660B0B;
-}
-
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul {
-     background-color: #29739E;
-     color: #FFEDD8;
-     font-weight: bold;
-}
-
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul > li > a {
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > ul > li > a {
     background-color: #29739E;
     color: #FFEDD8;
     font-weight: bold;
+    font-size: 1.03em;
 }
-
-body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open > ul > li > ul > li > a:hover {
-     color: #FFEDD8;
-     font-weight: bold;
-     background-color: #660B0B;
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > ul > li > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.03em;
 }
-
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #660B0B;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #660B0B;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > ul > li > ul {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.lib-menu:hover > ul > li > ul {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > ul > li > ul > li > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > ul > li > ul > li > a {
+    background-color: #29739E;
+    color: #FFEDD8;
+    font-weight: bold;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.open.lib-menu > ul > li > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #660B0B;
+    font-size: 1.03em;
+}
+body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown:hover > ul > li > ul > li > a:hover {
+    color: #FFEDD8;
+    font-weight: bold;
+    background-color: #660B0B;
+    font-size: 1.03em;
+}
 .lib-nav-container {
     opacity: 0.9;
     padding-top: 41px;
@@ -214,6 +243,7 @@ h3 {
     text-decoration: none;
     background-color: #29739E;
     border: none;
+    font-size: 1.1em;
 }
 .lib-logout-btn:hover {
     background-color: #660B0B;
@@ -298,6 +328,15 @@ ul.pagination > li:first-child a {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
 }
+#floater {
+    border: 1px solid #8f4d4d;
+    background-color: #29739E;
+    color: #FFEDD8;
+}
+    #floater:hover {
+        background-color: #8f4d4d;
+        border-color: #8f4d4d;
+    }
 /** WorkTime Box**/
 .work-time-box {
     display: flex;

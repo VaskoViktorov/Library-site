@@ -1,9 +1,18 @@
 ﻿@model Library.Web.Areas.LibraryBlog.Models.Subscriptions.SubscriptionListingViewModel
 @{
     ViewData["Title"] = "Subscriptions";
+
+    int thCols = 2;
 }
 <div class="row text-center">
     <h2>Subscriptions</h2>
+</div>
+<div class="row text-center mr-t-b-25">
+    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+    {
+        thCols++;
+        <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Create</a>
+    }
 </div>
 <div class="row">
     <div class="col-md-2">
@@ -12,16 +21,8 @@
         <table class="table table-responsive table-hover">
             <thead>
                 <tr>
-                    <th colspan="2" class="bold text-center">Newspapers</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>
-                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Create</a>
-
-                        </th>
-                    }
-                </tr>
-               
+                    <th colspan="@thCols" class="bold text-center">Newspapers</th>
+                </tr>              
             </thead>
             <tbody>
             <tr>
@@ -51,14 +52,7 @@
         <table class="table table-responsive table-hover">
             <thead>
                 <tr>
-                    <th colspan="2" class="bold text-center">Magazines</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th>
-                            <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Create">Create</a>
-
-                        </th>
-                    }
+                    <th colspan="@thCols" class="bold text-center">Magazines</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,7 +67,7 @@
             </tr>
             @foreach (var magazine in Model.Magazines)
             {
-                <tr>
+                <tr >
                     <td class="lib-cell-corrector">@magazine.Name</td>
                     <td>"@magazine.Department" Department</td>
                     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

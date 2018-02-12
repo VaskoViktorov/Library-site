@@ -11,11 +11,11 @@
         @if (count != 0)
         {
             <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">
-                <img src="@gallery.Images.First().ImagePath" class="lib-img-border max-w-h-img" alt="@gallery.Title" />
+                <img src="@Url.Content(gallery.Images.First().ImagePath)" class="lib-img-border max-w-h-img" alt="@gallery.Title" />
             </a>
         }
 
-        <div class="row text-center">
+        <div class="row text-center mr-0-auto">
             <p class="lib-gallery-b">Бр. снимки: @count</p>
             <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">Виж още</a>
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

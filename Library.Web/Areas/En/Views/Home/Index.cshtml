@@ -3,10 +3,10 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="row text-center">
+<div class="row text-center mr-l-1">
     <a asp-area="En" asp-controller="Articles" asp-action="Articles" style="text-decoration: none">
         <h1 class="text-center" id="carosel-h1">Latest News</h1>
-    </a>  
+    </a>
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
         <ul class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -22,36 +22,30 @@
                     if (count == 0)
                     {
                         <div class="item active">
-                            <a style="text-decoration: none; color: #fff" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
-                                <div class="carousel-caption" role="option">
-                                    <p class="carosel-p">
-                                        <span class="carosel-span-0">@article.Title</span>
-                                        <span class="carosel-span" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                            Read more
-                                        </span>
-                                    </p>
-
-                                </div>
-                            </a>
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" />
+                            <div class="carousel-caption" role="option">
+                                <p class="carosel-p">
+                                    <span class="carosel-span-0">@article.Title</span>
+                                    <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                        Read more
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                         count++;
                     }
                     else
                     {
                         <div class="item">
-                            <a style="text-decoration: none; color: #fff" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                <img src="@article.Gallery.Images.First().ImagePath" alt="@article.Title" class="img-responsive" />
-                                <div class="carousel-caption" role="option">
-                                    <p class="carosel-p">
-                                        <span class="carosel-span-0">@article.Title</span>
-                                        <span class="carosel-span" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                            Read more
-                                        </span>
-                                    </p>
-                                </div>
-                            </a>
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" />
+                            <div class="carousel-caption" role="option">
+                                <p class="carosel-p">
+                                    <span class="carosel-span-0">@article.Title</span>
+                                    <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="En" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                        Read more
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                         count++;
                     }

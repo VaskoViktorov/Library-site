@@ -1,20 +1,29 @@
-﻿.parallax {
+﻿.navbar-default .navbar-nav > li.dropdown:hover > a, 
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown.lib-menu:hover > .dropdown-menu {
+    display: block;
+}
+.parallax {
     /* The image used */
-    background-image: url("/images/siteimages/backgroundImg.jpg");
+    background-image: url("/images/siteimages/backgroundImg-16-10.jpg");
     /* Set a specific height */
     min-height: 450px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     box-shadow: 0 0 15px #999;
+    background-position: 64% -136px;
 }
 .panel-logo {
     position: absolute;
     left: -36px;
     top: 50px;
-    max-width: 80%;
+    max-width: 45%;
 }
 html {
     position: relative;
@@ -155,7 +164,9 @@ ul.pagination li.page-item a.disabled {
 .mr-r-30 {
     margin-right: 30px;
 }
-
+.mr-l-1 {
+    margin-left: 1px;
+}
 .mr-10-auto {
     margin: 10px auto;
 }
@@ -191,7 +202,9 @@ ul.pagination li.page-item a.disabled {
 .h-60 {
     height: 60px;
 }
-
+.cr-pointer {
+    cursor: pointer !important;
+}
 .word-wrap {
     word-wrap: break-word;
 }
@@ -329,27 +342,25 @@ ol {
 .mb-30 {
     margin-bottom: 30px;
 }
-
+.alert {
+    margin-bottom: 0 !important;
+}
 #floater {
     position: absolute;
     top: 100px;
     right: 1px;
     width: 40px;
     height: 40px;
-    border-radius: 120px;
     border: 1px solid #29739E;
+    border-radius: 120px;
     -webkit-transition: all 2s ease-in-out;
     transition: all 2s ease-in-out;
     z-index: 1;
     padding: 10px;
-    background-color: #29739E;
-    color: #FFEDD8;
     text-align: center;
     box-sizing: border-box;
 }
-#floater:hover {
-    background-color: #8f4d4d;
-}
+
 #floater p {
    font-size: 1.2em;
    font-weight: bold;
@@ -427,7 +438,9 @@ ol {
     border-radius: 10px;
     padding: 45px 0 0 0
 }
-
+.box .pt-35 {
+    padding-top: 35px;
+}
 .box .pt-25 {
     padding-top: 25px;
 }
@@ -547,6 +560,27 @@ ol {
 }
 
 @media (max-width: 991px) {
+body > nav > div > div.navbar-collapse.navbar-right.collapse.in > ul > li > ul {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+    }
+    body > nav > div > div.navbar-collapse.navbar-right.collapse.in > ul > li > ul > li > ul {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+    }
+    body > nav > div > div.navbar-collapse.navbar-right.collapse.in > ul > li.dropdown.lib-menu> ul > li:nth-child(2) > ul {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+    }
+    .mr-l-1 {
+        margin-left: -15px;
+    }
     .container {
         width: auto;
     }
@@ -708,3 +742,60 @@ footer {
 }
 
 }
+@media (max-width: 1680px) {
+    .parallax {
+        background-position: 80% -88px;
+    }
+}
+@media (max-width: 1418px) {
+    .parallax {
+        background-image: url("/images/siteimages/backgroundImg-16-10.jpg");
+        background-position: 80% -34px;
+    }
+}
+@media (max-width: 1280px) {
+    .parallax {
+        background-image: url("/images/siteimages/backgroundImg-1000px-1200px.jpg");
+        background-position: 80% 0px;
+    }
+}
+@media (max-width: 1000px) {
+    .parallax {
+        background-image: url("/images/siteimages/backgroundImg1.jpg");
+        min-height: 350px;
+        background-position: 80% 45px;
+    }
+}
+@media (max-width: 855px) {
+    .parallax {
+        min-height: 346px;
+    }
+}
+@media (max-width: 733px) {
+    .parallax {
+        min-height: 294px;
+    }
+}
+@media (max-width: 609px) {
+    .parallax {
+        min-height: 244px;
+    }
+}
+@media (max-width: 485px) {
+    .parallax {
+        min-height: 180px;
+    }
+    .panel-logo {
+        left: -29px;
+        max-width: 73%;
+    }
+    .carousel-control.left {
+        height: 97%;
+        border-bottom-left-radius: 55px;
+    }
+    .carousel-control.right {
+        height: 97%;
+        border-bottom-right-radius: 55px;
+    }
+} 
+    

@@ -8,7 +8,7 @@
         public static bool Download(string imageUrl, string saveLocation)
         {
             byte[] imageBytes;
-
+        
             if (imageUrl.ToLower().EndsWith(".jpg") || imageUrl.ToLower().EndsWith(".gif") || imageUrl.ToLower().EndsWith(".png"))
             {
                 HttpWebRequest imageRequest = (HttpWebRequest)WebRequest.Create(imageUrl);

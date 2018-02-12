@@ -88,11 +88,11 @@
                     return this.RedirectToAction(nameof(this.Create));
                 }
 
-                savePath = $"\\images\\BookCovers\\{guid}.jpg";
+                savePath = $"/images/BookCovers/{guid}.jpg";
             }
             else
             {
-                savePath = $"\\images\\BookCovers\\default.jpg";
+                savePath = $"/images/BookCovers/default.jpg";
             }
 
             await this.books.CreateAsync(
@@ -162,7 +162,7 @@
             }
 
             model.BookDescription = this.html.Sanitize(model.BookDescription);
-
+            
             await this.books.EditAsync(
                 id,
                 model.AuthorName,

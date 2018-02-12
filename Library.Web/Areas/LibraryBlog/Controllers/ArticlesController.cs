@@ -69,7 +69,8 @@
                     await file.CopyToAsync(stream);
                 }
 
-                gallery.Add($"\\{path}");
+                path = path.Replace("\\", "/");
+                gallery.Add($"/{path}");
             }
 
             await this.articles.CreateAsync(

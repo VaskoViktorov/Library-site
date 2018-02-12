@@ -4,7 +4,7 @@
 {
     <div class="book-box col-md-12 min-h-150 mr-t-b-25">
         <a class="image-popup-vertical-fit" href="@book.ImageUrl" Title="@book.BookTitle">
-            <img src="@book.ImageUrl" class="width-150 img-border float-left mr-r-15" alt="@book.BookTitle" />
+            <img src="@Url.Content(book.ImageUrl)" class="width-150 img-border float-left mr-r-15" alt="@book.BookTitle" />
         </a>
         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
             <p class="bold">@book.BookTitle.LimitStringLenght(60)</p>

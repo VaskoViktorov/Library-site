@@ -8,8 +8,8 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-10 mr-l-10">
-        <a class="image-popup-vertical-fit" href="@Model.Book.ImageUrl" title="@Model.Book.BookTitle">
-            <img src="@Model.Book.ImageUrl" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10" alt="@Model.Book.BookTitle" />
+        <a class="image-popup-vertical-fit" href="@Url.Content(Model.Book.ImageUrl)" title="@Model.Book.BookTitle">
+            <img src="@Url.Content(Model.Book.ImageUrl)" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10" alt="@Model.Book.BookTitle" />
         </a>
         <p class="author-text mr-t-10">Author: @Model.Book.AuthorName</p>
         <p class="mr-t-40">Find in "@Model.Book.Department" Department</p>
