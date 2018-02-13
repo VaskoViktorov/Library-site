@@ -1,9 +1,10 @@
 ﻿@model BookViewModel
 @{
-    ViewData["Title"] = "Book Details";
+    ViewData["Title"] = Model.Book.BookTitle;
+    ViewData["Description"] = $"Вземете книгата \"{Model.Book.BookTitle}\" сега от Регионална библиотека \"Михалаки Георгиев\" - гр. Видин.";
 }
 <div class="row text-center">
-    <h2>@Model.Book.BookTitle</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row">
     <div class="col-md-2"></div>

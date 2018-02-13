@@ -1,6 +1,7 @@
 ﻿@model BookListingViewModel
 @{
-    ViewData["Title"] = "Books";
+    ViewData["Title"] = "Нови книги";
+    ViewData["Description"] = "Нови книги в Регионална библиотека \"Михалаки Георгиев\" - гр. Видин, достъпни за всички.";
 
     var previousDisabled = Model.CurrentPage == 1 ? "disabled" : string.Empty;
     var nextDisabled = string.Empty;
@@ -11,7 +12,7 @@
     }
 }
 <div class="row text-center">
-    <h2>Нови книги</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center mr-t-b-25">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

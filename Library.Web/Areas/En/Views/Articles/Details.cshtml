@@ -1,6 +1,8 @@
 ﻿@model Library.Web.Areas.LibraryBlog.Models.Articles.ArticleViewModel
 @{
-    ViewData["Title"] = "Article Details";
+    ViewData["Title"] = Model.Article.Title + "- articl";
+    ViewData["Description"] = Model.Article.Title + "- Find more at Regional Library \"Mihalaki Georgiev\" - Vidin.";
+
     var count = Model.Article.Gallery.Images.Count;
 }
 <div class="row text-center">

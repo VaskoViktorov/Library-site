@@ -1,9 +1,9 @@
 ﻿@model EventListingViewModel
 @{
-    ViewData["Title"] = "Events";
+    ViewData["Title"] = "Събития";
 }
 <div class="row text-center">
-    <h2>Събития</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center mr-t-b-25">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

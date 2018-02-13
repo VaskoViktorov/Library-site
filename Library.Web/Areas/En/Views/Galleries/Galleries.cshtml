@@ -1,6 +1,7 @@
 ﻿@model Library.Web.Areas.LibraryBlog.Models.Galleries.GalleryListingViewModel
 @{
     ViewData["Title"] = "Galleries";
+    ViewData["Description"] = "Take a look at the latest events in Regional Library \"Mihalaki Georgiev\" - Vidin.";
 
     var previousDisabled = Model.CurrentPage == 1 ? "disabled" : string.Empty;
     var nextDisabled = string.Empty;

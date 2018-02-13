@@ -1,9 +1,10 @@
 ﻿@model AskFormModel
 @{
-    ViewData["Title"] = "Ask";
+    ViewData["Title"] = "Попитай библиотекаря";
+    ViewData["Description"] = "Регионална библиотека \"Михалаки Георгиев\" - гр. Видин, очаква вашите въпроси.";
 }
 <div class="row text-center">
-    <h2>Попитай библиотекаря</h2>
+    <h2>@ViewData["Title"] </h2>
 </div>
 <div class="row width-60pr mr-0-auto">
     <form method="post" enctype="multipart/form-data">

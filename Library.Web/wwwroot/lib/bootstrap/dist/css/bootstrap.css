@@ -3590,7 +3590,6 @@ tbody.collapse.in {
 }
 .open.lib-menu > .dropdown-menu {
     display: none;
-    font-family: 'Arial';
 }
 .open > a {
   outline: 0;

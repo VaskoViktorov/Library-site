@@ -1,6 +1,7 @@
 ﻿@model GalleryListingViewModel
 @{
-    ViewData["Title"] = "Galleries";
+    ViewData["Title"] = "Галерия";
+    ViewData["Description"] = "Разгледайте галериите от последните събития в Регионална библиотека \"Михалаки Георгиев\" - гр. Видин";
 
     var previousDisabled = Model.CurrentPage == 1 ? "disabled" : string.Empty;
     var nextDisabled = string.Empty;
@@ -11,7 +12,7 @@
     }
 }
 <div class="row text-center">
-    <h2>Галерия</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

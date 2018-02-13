@@ -1,11 +1,12 @@
 ﻿@model SubscriptionListingViewModel
 @{
-    ViewData["Title"] = "Subscriptions";
+    ViewData["Title"] = "Абонаменти";
+    ViewData["Description"] = "Разгледайте списъка с абонаменти за весници и списания на Регионална библиотека \"Михалаки Георгиев\" - гр. Видин";
 
     int thCols = 2;
 }
 <div class="row text-center">
-    <h2>Абонаменти</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center mr-t-b-25">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

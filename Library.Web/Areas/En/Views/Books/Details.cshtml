@@ -1,6 +1,7 @@
 ﻿@model Library.Web.Areas.LibraryBlog.Models.Books.BookViewModel
 @{
-    ViewData["Title"] = "Book Details";
+    ViewData["Title"] = Model.Book.BookTitle;
+    ViewData["Description"] = $"Take the book \"{Model.Book.BookTitle}\" now! In Regional Library \"Mihalaki Georgiev\" - Vidin";
 }
 <div class="row text-center">
         <h2>@Model.Book.BookTitle</h2>

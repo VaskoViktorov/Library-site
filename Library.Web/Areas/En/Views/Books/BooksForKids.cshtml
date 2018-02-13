@@ -1,7 +1,8 @@
 ﻿@model Library.Web.Areas.LibraryBlog.Models.Books.BookListingViewModel
 
 @{
-    ViewData["Title"] = "Books for Kids";
+    ViewData["Title"] = "New Books for Kids";
+    ViewData["Description"] = "New books for kids in the \"Kids\" department of Regional Library \"Mihalaki Georgiev\" - Vidin, available for everyone.";
 
     var previousDisabled = Model.CurrentPage == 1 ? "disabled" : string.Empty;
     var nextDisabled = string.Empty;
