@@ -7,6 +7,9 @@
 li.dropdown.lib-menu:hover > .dropdown-menu {
     display: block;
 }
+.open.lib-menu > .dropdown-menu {
+    display: none !important;
+}
 .parallax {
     /* The image used */
     background-image: url("/images/siteimages/backgroundImg-16-10.jpg");
@@ -220,7 +223,7 @@ ul.pagination li.page-item a.disabled {
 body div .container .body-content {
     margin-right: 0 !important;
     margin-left: 0 !important;
-    width: 98% !important;
+    width: 100% !important;
 }
 /*Static pages*/
 .vertical-align-middle {

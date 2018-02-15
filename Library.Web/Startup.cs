@@ -1,4 +1,7 @@
-﻿namespace Library.Web
+﻿using Microsoft.AspNetCore.Rewrite;
+using Microsoft.Extensions.Logging;
+
+namespace Library.Web
 {
     using AutoMapper;
     using Data;
@@ -54,13 +57,23 @@
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                //options.Filters.Add<RequireHttpsAttribute>();
             });
 
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("EmailSettings"));
         }
-
+        //For HTTPS, remove comments
+        //, ILoggerFactory loggerFactory
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddDebug();
+
+            //var options = new RewriteOptions()
+            //  .AddRedirectToHttps();
+
+            //app.UseRewriter(options);
+
             app.UseDatabaseMigration();
 
             if (env.IsDevelopment())

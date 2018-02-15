@@ -54,5 +54,8 @@
 
         public IActionResult Contact()
             => View();
+
+        public IActionResult LibraryPost()
+            => View();
     }
 }

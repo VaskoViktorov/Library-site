@@ -353,15 +353,16 @@ ul.pagination > li:first-child a {
     position: absolute;
     top: 12px;
     border: 2px solid #FFEDD8;
-    width: 150px;
+    width: 130px;
     background: #FFEDD8;
     border-radius: 15px;
 }
 
 .open-time {
     color: #29739E;
-    padding-right: 10px;
+    padding-right: 4px;
     padding-left: 9px;
+    padding-top: 3px;
     font-size: 1.2em;
 }
 
@@ -372,9 +373,10 @@ ul.pagination > li:first-child a {
 
 .close-time {
     color: #660B0B;
-    padding-right: 10px;
+    padding-right: 4px;
     padding-left: 9px;
     font-size: 1.2em;
+    padding-top: 3px;
 }
 
 #worktime-menu {

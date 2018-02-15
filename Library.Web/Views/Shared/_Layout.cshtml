@@ -6,24 +6,32 @@
     <title>@ViewData["Title"] | Р.Б. "Михалаки Георгиев"-гр. Видин</title>
     <meta name="description" content="@ViewData["Description"]">
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
-    <link rel="stylesheet" href="~/css/magnific-popup.css">
-    <link rel="stylesheet" href="~/css/eventCalendar.css">
-    <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">
-    <link rel="stylesheet" href="~/css/panorama_viewer.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
     <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search"/>
+
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/lib-theme.css">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="~/css/lib-theme.css">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/lib-theme.css">   
+        <link rel="stylesheet" href="~/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/css/eventCalendar.css">
+        <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">
+        <link rel="stylesheet" href="~/css/panorama_viewer.css">     
+    </environment>
+    <environment exclude="Development">
+        <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+        <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/lib-theme.min.css">
+        <link rel="stylesheet" href="~/css/magnific-popup.css">
+        <link rel="stylesheet" href="~/css/eventCalendar.css">
+        <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.min.css">
+        <link rel="stylesheet" href="~/css/panorama_viewer.css">
     </environment>
 </head>
 <body>
@@ -55,7 +63,7 @@
                 </div>
             </div>
             <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
-            <a href="http://178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
+            <a href="//178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
             <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
@@ -123,7 +131,7 @@
                         <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
                         <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Нови Книги</a></li>
                         <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Абонаменти</a></li>
-                        <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">Други Е-Каталози</a></li>
+                        <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">Други Е-Каталози</a></li>
                     </ul>
                 </li>
                 @if (User.IsInRole(WebConstants.AdministratorRole))
@@ -151,8 +159,7 @@
 </div>
 
 <div class="container body-content">
-    <div class="row pb-20">
-        <div id="fb-root"></div>
+    <div class="row pb-20">      
         <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
         <div class="col-md-8">
             @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
@@ -177,8 +184,9 @@
     </div>
     <footer>
         <div class="row mr-t-10 footer-row">
+   
             <div class="col-md-3 footer-fb">
-                <div class="p-0-3 fb-like float-left fb-box" data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                <div class="p-0-3 fb-like float-left fb-box" async data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2 footer-box-2">
@@ -195,15 +203,15 @@
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
-                    <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
+                    <li><a href="//178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
                 </ul>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-3 text-right">
                 <div class="p-10 lib-lang-box">
-                    <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език" /></a>
-                    <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език" /></a>
+                    <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език"/></a>
+                    <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език"/></a>
                 </div>
 
                 <p class="text-center">&copy; 2018 - Регионална библиотека "Михалаки Георгиев" - Видин</p>
@@ -212,39 +220,48 @@
     </footer>
 </div>
 <environment include="Development">
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-    <script src="~/lib/jquery/dist/moment.js"></script>
-    <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
-    <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.eventCalendar.js"></script>
-</environment>
-<environment exclude="Development">
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"
             asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
             asp-fallback-test="window.jQuery"
             crossorigin="anonymous"
-            integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
     </script>
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
             asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
             asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
             crossorigin="anonymous"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
     </script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-    <script src="~/lib/jquery/dist/moment.js"></script>
+    <script src="~/lib/jquery/dist/moment.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
     <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.eventCalendar.js"></script>
-       
+    <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
+    <script src="~/js/site.js"></script>
+</environment>
+<environment exclude="Development">
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
+    </script>
+    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
+    <script src="~/lib/jquery/dist/moment.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
+    <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
+    <script src="~/js/site.min.js"></script>
 </environment>
 @RenderSection("Scripts", required: false)
 </body>
