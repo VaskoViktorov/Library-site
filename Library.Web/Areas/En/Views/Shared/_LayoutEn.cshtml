@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/lib-theme.css">   
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/magnific-popup.css">
         <link rel="stylesheet" href="~/css/panorama_viewer.css">     
     </environment>
@@ -22,8 +22,8 @@
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/lib-theme.min.css">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/magnific-popup.css">
         <link rel="stylesheet" href="~/css/panorama_viewer.css">
     </environment>
@@ -52,7 +52,7 @@
                             <li class="p-0-3"><span class="bold">Friday: </span>9:00-18:00</li>
                             <li class="p-0-3"><span class="bold">Saturday: </span>9:00-14:00</li>
                             <li class="p-0-3"><span class="bold">Sunday: </span>Closed</li>
-                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime" role="button">More</a></li>
+                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="En" asp-controller="Home" asp-action="WorkTime" role="button">More</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,13 +63,13 @@
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="En" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">Home</a></li>
-                    <li class="dropdown lib-menu">
+                    <li class="dropdown">
                         <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             Library<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">About us</a>
+                                <a class="test" tabindex="-1">About us</a>
                                 <ul class="dropdown-menu">
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">History</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Functions</a></li>
@@ -77,10 +77,10 @@
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
-                                <a class="test" tabindex="-1" href="#">Useful info</a>
+                                <a class="test" tabindex="-1">Useful info</a>
                                 <ul class="dropdown-menu">
                                     <li><a tabindex="-1" asp-area="En" asp-controller="Home" asp-action="Contact">Find us</a></li>
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Work time</a></li>
+                                    <li><a tabindex="-1" asp-area="En" asp-controller="Home" asp-action="WorkTime">Work time</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Price list</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Contacts</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">FAQ</a></li>
@@ -92,7 +92,7 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Partners</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown lib-menu">
+                    <li class="dropdown">
                         <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             Kids<span class="caret"></span>
                         </a>
@@ -103,7 +103,7 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">For the curious</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown cr-pointer lib-menu">
+                    <li class="dropdown cr-pointer">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Homeland<span class="caret"></span>
                         </a>
@@ -115,7 +115,7 @@
                     </li>
                     <li><a tabindex="-1" asp-area="En" asp-controller="Articles" asp-action="Articles">News</a></li>
                     <li><a tabindex="-1" asp-area="En" asp-controller="Galleries" asp-action="Galleries">Gallery</a></li>
-                    <li class="dropdown lib-submenu-color lib-menu">
+                    <li class="dropdown lib-submenu-color">
                         <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
                             E-Library<span class="caret"></span>
                         </a>
@@ -128,7 +128,7 @@
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole))
                     {
-                        <li class="dropdown cr-pointer lib-menu">
+                        <li class="dropdown cr-pointer">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 Admin Panel<span class="caret"></span>
                             </a>

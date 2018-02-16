@@ -57,5 +57,8 @@
 
         public IActionResult LibraryPost()
             => View();
+
+        public IActionResult WorkTIme()
+            => View();
     }
 }

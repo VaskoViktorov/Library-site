@@ -1,8 +1,16 @@
 ﻿@model SurveyListingViewModel
-@{
-    ViewData["Title"] = "Books";
-}
+
 <div class="row mr-8 text-center">
+    <div>
+        <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" class="hidden-lg hidden-md" style="text-decoration: none">
+            <p class="lib-sidebar-p1">Най-новите книги</p>
+        </a>
+    </div>
+    <div>
+        <a asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions" class="hidden-lg hidden-md" style="text-decoration: none">
+            <p class="lib-sidebar-p1">Абонамент</p>
+        </a>
+    </div>
     <div>
         <a asp-area="" asp-controller="Home" asp-action="Ask" style="text-decoration: none">
             <p class="lib-sidebar-p1">Попитай Библиотекаря</p>

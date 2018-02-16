@@ -8,7 +8,7 @@
 </div>
 <div class="row">
     <div class="col-md-2"></div>
-    <div class="col-md-10 mr-l-10">
+    <div class="col-md-8 mr-l-10">
         <a class="image-popup-vertical-fit" href="@Url.Content(Model.Book.ImageUrl)" title="@Model.Book.BookTitle">
             <img src="@Url.Content(Model.Book.ImageUrl)" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10" alt="@Model.Book.BookTitle" />
         </a>
@@ -16,61 +16,64 @@
         <p class="mr-t-40">Find in "@Model.Book.Department" Department</p>
         <table class="table-condensed mr-t-40">
             <tbody>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">Publisher</th>
-                    <td>@Model.Book.Press</td>
-                </tr>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">City</th>
-                    <td>
-                        @if (Model.Book.CityIssued == null)
-                        {
-                            <span>-</span>
-                        }
-                        else
-                        {
-                            @Model.Book.CityIssued
-                        }
-                    </td>
-                </tr>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">Pages</th>
-                    <td>
-                        @if (Model.Book.Pages == 0)
-                        {
-                            <span>-</span>
-                        }
-                        else
-                        {
-                            @Model.Book.Pages
-                        }
-                    </td>
-                </tr>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">Year</th>
-                    <td>@Model.Book.PublishDate г.</td>
-                </tr>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">Size</th>
-                    <td>
-                        @if (Model.Book.Size == 0)
-                        {
-                            <span>-</span>
-                        }
-                        else
-                        {
-                            @Model.Book.Size
-                        }
-                    </td>
-                </tr>
-                <tr class="br-t">
-                    <th class="first-color-b second-color">Genre</th>
-                    <td>@Model.Book.Genre</td>
-                </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">Publisher</th>
+                <td>@Model.Book.Press</td>
+            </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">City</th>
+                <td>
+                    @if (Model.Book.CityIssued == null)
+                    {
+                        <span>-</span>
+                    }
+                    else
+                    {
+                        @Model.Book.CityIssued
+                    }
+                </td>
+            </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">Pages</th>
+                <td>
+                    @if (Model.Book.Pages == 0)
+                    {
+                        <span>-</span>
+                    }
+                    else
+                    {
+                        @Model.Book.Pages
+                    }
+                </td>
+            </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">Year</th>
+                <td>@Model.Book.PublishDate г.</td>
+            </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">Size</th>
+                <td>
+                    @if (Model.Book.Size == 0)
+                    {
+                        <span>-</span>
+                    }
+                    else
+                    {
+                        @Model.Book.Size
+                    }
+                </td>
+            </tr>
+            <tr class="br-t">
+                <th class="first-color-b second-color">Genre</th>
+                <td>@Model.Book.Genre</td>
+            </tr>
             </tbody>
         </table>
-    </div>    
-        <div class="col-md-8">
+    </div>  
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
             @if (Model.Book.BookDescription.Length > 2)
             {
                 <h4 class="bold text-center mr-t-b-25">Short description</h4>
@@ -78,7 +81,7 @@
             }
         </div>
     <div class="text-center mr-t-10">
-        <div class="col-md-10 mr-t-b-25">
+        <div class="col-md-12 mr-t-b-25">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
                 <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">Edit</a>
