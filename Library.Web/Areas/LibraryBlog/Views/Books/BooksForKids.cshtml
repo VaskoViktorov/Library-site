@@ -12,7 +12,8 @@
         nextDisabled = "disabled";
     }
 }
-<div class="row text-center">
+@await Component.InvokeAsync("Search")
+<div id="search-head" class="row text-center">
     <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center mr-t-b-25">

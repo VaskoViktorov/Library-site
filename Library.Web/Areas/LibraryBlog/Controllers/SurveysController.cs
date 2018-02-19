@@ -7,6 +7,8 @@
     using Models.Surveys;
     using System.IO;
 
+    using static WebConstants;
+
     public class SurveysController : BaseController
     {
         private const string ModelName = "Анкетата";
@@ -14,7 +16,7 @@
         [AllowAnonymous]
         public IActionResult Survey(string id)
         {
-            var filePath = string.Format(WebConstants.SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
             var surveys = ObjToJsonConverterExtensions.FindSurveyInJsonFile(filePath, id);
 
             return this.View(new SurveyFormModel()
@@ -26,7 +28,7 @@
 
         public IActionResult Edit(string id)
         {
-            var filePath = string.Format(WebConstants.SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
 
             var currSurvey = ObjToJsonConverterExtensions.FindSurveyInJsonFile(filePath, id);
 
@@ -41,16 +43,16 @@
         [ValidateModelState]
         public IActionResult Edit(SurveyFormModel model)
         {
-            var filePath = string.Format(WebConstants.SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
 
             if (!ObjToJsonConverterExtensions.EditSurveyInJsonFile(filePath, model))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataEditFailText, ModelName, "о"));
+                this.TempData.AddWarningMessage(string.Format(TempDataEditFailText, ModelName, EndingLetterO));
 
                 return this.RedirectToAction(nameof(this.Edit));
             }
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "o"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterO));
 
             return this.RedirectToAction("Articles", "Articles");
         }

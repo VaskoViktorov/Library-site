@@ -54,7 +54,7 @@ $(window).scroll(function () {
     //var winHeight = $(window).height();
     var floaterHeight = $('#floater').outerHeight(true);
     var fromBottom = -80;
-    var top = winScrollTop - floaterHeight - fromBottom;
+    var top = winScrollTop - floaterHeight - fromBottom + 350;
     $('#floater').css({ 'top': top + 'px' });
 });
 

@@ -9,7 +9,7 @@ namespace Library.Web.Infrastructure.Extensions
         public static Task SendEmailConfirmationAsync(this IEmailSender emailSender, string email, string link)
         {
             return emailSender.SendEmailAsync(email, "Confirm your email",
-                $"Моля подтвърдете акаунта си: <a href='{HtmlEncoder.Default.Encode(link)}'>link</a>");
+                $"Моля потвърдете акаунта си: <a href='{HtmlEncoder.Default.Encode(link)}'>link</a>");
         }
 
         public static Task SendEmailWithQuestionAsync(this IEmailSender emailSender, string email, string html)

@@ -3,6 +3,8 @@
     using System.IO;
     using System.Net;
 
+    using static WebConstants;
+
     public static class ImageDownloaderExtensions
     {
         public static bool Download(string imageUrl, string saveLocation)
@@ -30,7 +32,9 @@
                     responseStream.Close();
                     imageResponse.Close();
 
-                    FileStream fs = new FileStream(saveLocation, FileMode.Create);
+                    var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), RootFolderName, saveLocation);
+
+                    FileStream fs = new FileStream(pathForUpload, FileMode.Create);
                     BinaryWriter bw = new BinaryWriter(fs);
 
                     try

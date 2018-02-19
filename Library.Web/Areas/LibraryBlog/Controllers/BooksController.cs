@@ -11,9 +11,11 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using static WebConstants;
+
     public class BooksController : BaseController
     {
-        private const string ModelName = "Книгата";
+        private const string ModelName = "Книгата";       
 
         private readonly IBookService books;
         private readonly IHtmlService html;
@@ -68,31 +70,31 @@
         {
             if (await this.books.UniqueCheckAsync(model.BookTitle, model.AuthorName))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataAlreadyExistsText, ModelName, model.BookTitle));
+                this.TempData.AddWarningMessage(string.Format(TempDataAlreadyExistsText, ModelName, model.BookTitle));
 
                 return this.RedirectToAction(nameof(this.Create));
             }
 
             model.BookDescription = this.html.Sanitize(model.BookDescription);
 
-            string savePath = null;
+            string savePath;
 
             if (model.ImageUrl != null)
             {
-                var guid = Guid.NewGuid();
-                var filePath = $"{Directory.GetCurrentDirectory()}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
+                var path = Path.Combine(ImageFolderName, BooksImageFolderName, $"{Guid.NewGuid()}.jpg");
 
-                if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
+                if (!ImageDownloaderExtensions.Download(model.ImageUrl, path))
                 {
-                    this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataWrongUrlText, ModelName));
+                    this.TempData.AddWarningMessage(string.Format(TempDataWrongUrlText, ModelName));
                     return this.RedirectToAction(nameof(this.Create));
                 }
+                path = path.Replace("\\", "/");
 
-                savePath = $"/images/BookCovers/{guid}.jpg";
+                savePath = $"/{path}";
             }
             else
             {
-                savePath = $"/images/BookCovers/default.jpg";
+                savePath = DefaultImagePath;
             }
 
             await this.books.CreateAsync(
@@ -110,7 +112,7 @@
                 savePath,
                 model.Language);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Books));
         }
@@ -148,17 +150,18 @@
 
             if (model.ImageUrl != null)
             {
-                var guid = Guid.NewGuid();
-                var filePath = $"{Directory.GetCurrentDirectory()}\\wwwroot\\images\\BookCovers\\{guid}.jpg";
+                var path = Path.Combine(ImageFolderName, BooksImageFolderName, $"{Guid.NewGuid()}.jpg");               
 
-                if (!ImageDownloaderExtensions.Download(model.ImageUrl, filePath))
+                if (!ImageDownloaderExtensions.Download(model.ImageUrl, path))
                 {
-                    this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataWrongUrlText, ModelName));
+                    this.TempData.AddWarningMessage(string.Format(TempDataWrongUrlText, ModelName));
 
                     return this.RedirectToAction(nameof(this.Create));
                 }
 
-                savePath = $"/images/BookCovers/{guid}.jpg";
+                path = path.Replace("\\", "/");
+
+                savePath = $"/{path}";
             }
 
             model.BookDescription = this.html.Sanitize(model.BookDescription);
@@ -178,7 +181,7 @@
                 savePath,
                 model.Language);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Books));
         }
@@ -190,7 +193,7 @@
         {
             await this.books.DeleteAsync(id);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataDeleteCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataDeleteCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Books));
         }

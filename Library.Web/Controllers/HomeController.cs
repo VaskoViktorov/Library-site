@@ -45,7 +45,7 @@
             emailSender.SendEmailWithQuestionAsync(email, htmlString);
             return this.RedirectToAction(nameof(this.Index));
         }
-
+     
         public async Task<IActionResult> Index()
             => View(new ArticleListingHomeViewModel
             {

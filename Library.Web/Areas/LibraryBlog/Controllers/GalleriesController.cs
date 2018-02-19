@@ -11,6 +11,8 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using static WebConstants;
+
     public class GalleriesController : BaseController
     {
         private const string ModelName = "Галерията";
@@ -54,8 +56,8 @@
 
             foreach (var file in model.Files)
             {
-                var path = Path.Combine("images", "GalleryImages", Guid.NewGuid() + file.GetFileType());
-                var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", path);
+                var path = Path.Combine(ImageFolderName, GalleriesImageFolderName, Guid.NewGuid() + file.GetFileType());
+                var pathForUpload = Path.Combine(Directory.GetCurrentDirectory(), RootFolderName, path);
 
                 using (var stream = new FileStream(pathForUpload, FileMode.Create))
                 {
@@ -72,7 +74,7 @@
                 model.Language
             );
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Galleries));
         }
@@ -102,7 +104,7 @@
                 model.Language
             );
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Galleries));
         }
@@ -114,7 +116,7 @@
         {
             await this.galleries.DeleteAsync(id);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataDeleteCommentText, ModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataDeleteCommentText, ModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Galleries));
         }

@@ -8,6 +8,9 @@
         public const string TempDataSuccessMessageKey = "SuccessMessage";
         public const string TempDataWarningMessageKey = "WarningMessage";
 
+        public const string TempDataSearchEmtyTextMessage = "Полето за текст е празно.";
+        public const string TempDataSearchNoSelectMessage = "Няма селектиран критерии за търсене.";
+
         public const string TempDataDeleteCommentText = "{0} е изтрит{1} успешно.";
         public const string TempDataEditCommentText = "{0} е редактиран{1} успешно.";
         public const string TempDataCreateCommentText = "{0} е създаден{1} успешно.";
@@ -17,7 +20,7 @@
         public const string TempDataDeleteFailText = "Възникна грешка!{0} НЕ е изтрит{1}.";
 
         public const string TempDataAlreadyExistsText = "{0} с име {1}, вече съществува.";
-        public const string TempDataWrongUrlText = "НЕ е създадена {0}, поради грешен URL адрес.";
+        public const string TempDataWrongUrlText = "{0} НЕ е създадена, поради грешен URL адрес.";
 
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
@@ -39,5 +42,14 @@
         public const string CallendarJasonDbPath = "{0}\\wwwroot\\lib\\jquery\\dist\\EventsDb.json";
         public const string SurveysJasonDbPath = "{0}\\wwwroot\\json\\SurveysDb.json";
         public const string SurveysEnJasonDbPath = "{0}\\wwwroot\\json\\SurveysEnDb.json";
+        public const string DefaultImagePath = "/images/BookCovers/default.jpg";
+
+        public const string EndingLetterA = "a";
+        public const string EndingLetterO = "o";
+        public const string RootFolderName = "wwwroot";
+        public const string ImageFolderName = "images";
+        public const string GalleriesImageFolderName = "GalleryImages";
+        public const string BooksImageFolderName = "BookCovers";
+       
     }
 }

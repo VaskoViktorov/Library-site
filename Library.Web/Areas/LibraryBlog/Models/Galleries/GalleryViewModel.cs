@@ -1,9 +1,11 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Galleries
 {
     using Services.LibraryBlog.Models.Galleries;
+    using Search;
 
-    public class GalleryViewModel
+    public class GalleryViewModel : SearchFormModel
+
     {
-        public GalleryServiceModel Gallery { get; set; }
+    public GalleryServiceModel Gallery { get; set; }
     }
 }

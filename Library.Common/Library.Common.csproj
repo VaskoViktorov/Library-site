@@ -9,12 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Infrastructure\Extensions\CustomFormats\" />
   </ItemGroup>
 

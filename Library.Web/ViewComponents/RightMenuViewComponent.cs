@@ -7,7 +7,6 @@
 
     public class RightMenuViewComponent : ViewComponent
     {
-
         public IViewComponentResult Invoke()
         {
             var filePath = string.Format(WebConstants.SurveysJasonDbPath, Directory.GetCurrentDirectory());

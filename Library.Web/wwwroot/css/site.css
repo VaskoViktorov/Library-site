@@ -121,7 +121,7 @@ footer {
 
 .rslides img {
         display: block;
-        height: auto;
+        height: 159px;
         float: left;
         width: 100%;
         border: 0;
@@ -146,6 +146,7 @@ ul.pagination li.page-item a.disabled {
     margin-right: 17px;
     font-size: 1.6em;
     float: right;
+    margin-left: 0 !important;
 }
 .ico-style img {
     width: 50px;
@@ -523,29 +524,32 @@ ol {
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
-.carousel-caption {
+    .carousel-caption {
     display: none;
-}
-#floater {
+    }
+    #floater {
         width: 10px !important;
         height: 10px !important;
-}
-.table-responsive {
+    }
+    .table-responsive {
     border: none !important;
-}
+    }
     .p-10-table {
         padding-left: 1px !important;
         padding-right: 1px !important;
     }
-#floater p {
+    #floater p {
    font-size: 1em !important;
    position: relative !important;
    top: -8px;
    left: -7px;
-}
-#two-on-row {
+    }
+    #two-on-row {
     display: none !important;
-}
+    }
+    #search-head {
+        position: initial;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -566,6 +570,9 @@ ol {
 }
 
 @media (max-width: 991px) {
+    #lib-search-footer-box {
+        position: initial;
+    }
     body > nav > div > div.navbar-collapse.navbar-right.collapse.in {
         overflow-y: auto !important;
     }
@@ -680,10 +687,10 @@ ol {
     display: block !important;
 } 
 body {
-    margin-bottom:520px;
+    margin-bottom:685px;
 } 
 footer {
-    height: 520px;
+    height: 685px;
     box-shadow: none;
 }
 .footer-row {
@@ -698,7 +705,7 @@ footer {
     margin: 10px auto 0 auto;
 } 
 .footer-box-3 {
-    margin: 0px auto 22px;
+    margin: 0px auto 5px;
     width: 216px;
 } 
 .lib-footer-ul {
@@ -775,6 +782,7 @@ table.mr-t-40, p.mr-t-40 {
     .parallax {
         min-height: 294px;
     }
+    
 }
 @media (max-width: 609px) {
     .parallax {

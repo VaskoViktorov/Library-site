@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Rewrite;
-using Microsoft.Extensions.Logging;
-
-namespace Library.Web
+﻿namespace Library.Web
 {
+    using Microsoft.AspNetCore.Rewrite;
+    using Microsoft.Extensions.Logging;
     using AutoMapper;
     using Data;
     using Data.Models;
@@ -17,6 +16,8 @@ namespace Library.Web
     using Microsoft.Extensions.FileProviders;
     using Services.Models.EmailSender;
     using System.IO;
+
+    using static WebConstants;
 
     public class Startup
     {
@@ -34,7 +35,7 @@ namespace Library.Web
 
             services.AddSingleton<IFileProvider>(
             new PhysicalFileProvider(
-                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")));
+                Path.Combine(Directory.GetCurrentDirectory(), RootFolderName)));
 
             services
                 .AddIdentity<User, IdentityRole>(options =>
@@ -63,6 +64,7 @@ namespace Library.Web
             services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("EmailSettings"));
         }
         //For HTTPS, remove comments
+
         //, ILoggerFactory loggerFactory
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

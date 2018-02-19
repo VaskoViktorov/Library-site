@@ -9,6 +9,8 @@
     using System.IO;
     using System.Linq;
 
+    using static WebConstants;
+
     public class EventsController : BaseController
     {
         private const string ModelName = "Събитието";
@@ -30,25 +32,25 @@
             model.title = this.html.Sanitize(model.title);
             model.description = this.html.Sanitize(model.description);
             model.id = Guid.NewGuid().ToString();
-            model.date = model.date.Replace("T", " ") + ":00";
+            model.date = NewFormatDate(model.date);
 
-            var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
 
             if (!ObjToJsonConverterExtensions.CreateEventInJsonFile(model, filePath))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataCreateFailText, ModelName, "о"));
+                this.TempData.AddWarningMessage(string.Format(TempDataCreateFailText, ModelName, EndingLetterO));
 
                 return this.RedirectToAction(nameof(this.Create));
             }
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, "о"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, EndingLetterO));
 
             return this.RedirectToAction(nameof(this.Events));
         }
 
         public IActionResult Events(int page = 1)
         {
-            var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
             var events = ObjToJsonConverterExtensions.ListofEventsInJsonFile(filePath).OrderByDescending(e => e.date);
 
             return this.View(new EventListingViewModel
@@ -59,7 +61,7 @@
 
         public IActionResult Edit(string id)
         {
-            var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
             var currEvent = ObjToJsonConverterExtensions.FindEventInJsonFile(filePath, id);
 
             return this.View(new EventFormModel()
@@ -76,18 +78,18 @@
         [ValidateModelState]
         public IActionResult Edit(EventFormModel model)
         {
-            var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
 
-            model.date = model.date.Replace("T", " ") + ":00";
+            model.date = NewFormatDate(model.date);
 
             if (!ObjToJsonConverterExtensions.EditEventInJsonFile(filePath, model))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataEditFailText, ModelName, "о"));
+                this.TempData.AddWarningMessage(string.Format(TempDataEditFailText, ModelName, EndingLetterO));
 
                 return this.RedirectToAction(nameof(this.Edit));
             }
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataEditCommentText, ModelName, "o"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterO));
 
             return this.RedirectToAction(nameof(this.Events));
         }
@@ -97,18 +99,21 @@
 
         public IActionResult Destroy(string id)
         {
-            var filePath = string.Format(WebConstants.CallendarJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
 
             if (!ObjToJsonConverterExtensions.DeleteEventInJsonFile(filePath, id))
             {
-                this.TempData.AddWarningMessage(string.Format(WebConstants.TempDataDeleteFailText, ModelName, "о"));
+                this.TempData.AddWarningMessage(string.Format(TempDataDeleteFailText, ModelName, EndingLetterO));
 
                 return this.RedirectToAction(nameof(this.Edit));
             }
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataDeleteCommentText, ModelName, "o"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataDeleteCommentText, ModelName, EndingLetterO));
 
             return this.RedirectToAction(nameof(this.Events));
         }
+
+        private string NewFormatDate(string date)
+        => date.Replace("T", " ") + ":00";        
     }
 }

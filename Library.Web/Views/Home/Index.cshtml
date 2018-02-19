@@ -3,7 +3,7 @@
     ViewData["Title"] = "Начало";
     ViewData["Description"] = "Регионална библиотека \"Михалаки Георгиев\" във Видин понастоящем се помещава в сградата на бившия Партиен дом на централния градски площад „Бдинци“ № 1 (тел. директор 094-22673). Днес библиотеката е най-голямата общодостъпна научна библиотека в Област Видин.";
 }
-
+@await Component.InvokeAsync("Search")
 <div class="row text-center mr-l-1">
     <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles" style="text-decoration: none">
         <h1 class="text-center" id="carosel-h1">Последни събития</h1>
@@ -15,7 +15,7 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ul>
-        <div class="carousel-inner" role="listbox" style="border-bottom-left-radius: 50px;border-bottom-right-radius: 50px">
+        <div class="carousel-inner" role="listbox" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px">
             @{
                 var count = 0;
                 foreach (var article in Model.Articles)
@@ -53,7 +53,7 @@
                 }
             }
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style=" border-bottom-left-radius: 50px;">
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="border-bottom-left-radius: 50px;">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Предишна</span>
         </a>

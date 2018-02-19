@@ -76,7 +76,7 @@
                     </a>
                     <ul class="dropdown-menu drop">
                         <li class="dropdown-submenu">
-                            <a tabindex="-1" class="test" >За нас</a>
+                            <a class="test" tabindex="-1">За нас</a>
                             <ul class="dropdown-menu">
                                 <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">История</a></li>
                                 <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
@@ -84,7 +84,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-submenu">
-                            <a tabindex="-1" class="test">Полезна информация</a>
+                            <a class="test" tabindex="-1">Полезна информация</a>
                             <ul class="dropdown-menu">
                                 <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
                                 <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
@@ -166,7 +166,7 @@
             @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
             {
                 <div class="row width-85pr text-center mr-0-auto">
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" style="position: absolute;width: inherit;padding-top: 20px;">
                         @TempData[WebConstants.TempDataSuccessMessageKey]
                     </div>
                 </div>
@@ -174,7 +174,7 @@
             @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
             {
                 <div class="row width-85pr text-center mr-0-auto">
-                    <div class="alert alert-warning">
+                    <div class="alert alert-warning"  style="position: absolute;width: inherit;padding-top: 20px;">
                         @TempData[WebConstants.TempDataWarningMessageKey]
                     </div>
                 </div>
@@ -189,7 +189,6 @@
             <div class="col-md-3 footer-fb">
                 <div class="p-0-3 fb-like float-left fb-box" async data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
             </div>
-            <div class="col-md-1"></div>
             <div class="col-md-2 footer-box-2">
                 <ul class="lib-footer-ul">
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
@@ -208,8 +207,10 @@
                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
                 </ul>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3 text-right">
+            <div class="col-md-3 mr-0-auto">
+                @Html.Partial("_SearchForm")
+            </div>
+            <div class="col-md-2 text-right">
                 <div class="p-10 lib-lang-box">
                     <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език"/></a>
                     <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език"/></a>

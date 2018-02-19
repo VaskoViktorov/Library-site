@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Models.Books
+﻿using Library.Web.Areas.LibraryBlog.Models.Search;
+
+namespace Library.Web.Areas.LibraryBlog.Models.Books
 {
     using Services.LibraryBlog.Models.Books;
     using System;
@@ -6,7 +8,7 @@
 
     using static Services.ServicesConstants;
 
-    public class BookListingViewModel
+    public class BookListingViewModel : SearchFormModel
     {
         public IEnumerable<BookListingServiceModel> Books { get; set; }
 

@@ -1,0 +1,109 @@
+﻿@model SearchViewModel
+@{
+    ViewData["Title"] = $"Резултати за:";
+}
+@await Component.InvokeAsync("Search")
+<div id="search-head" class="row text-center">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<div class="row text-center mr-t-20">
+    <h4>"@Model.SearchedText"</h4>
+</div>
+<div class="row text-center">
+    <div class="col-md-12">
+    @{
+        if (Model.SearchInBook != null)
+        {
+            <h3 class="text-center">Нови книги</h3>
+
+            if (Model.SearchInBook.Any())
+            {
+                <div class="row">
+                    <ul class="lib-footer-ul">
+                        @foreach (var book in Model.SearchInBook)
+                        {
+                            <li>
+                                <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
+                                    <p class="bold">@book.BookTitle.LimitStringLenght(60) - @book.AuthorName</p>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <p>Няма намерени книги.</p>
+            }
+
+        }
+        if (Model.SearchInArticle != null)
+        {
+            <h3 class="text-center">Новини</h3>
+            if (Model.SearchInArticle.Any())
+            {
+                <div class="row">
+                    <ul class="lib-footer-ul">
+                        @foreach (var article in Model.SearchInArticle)
+                        {
+                            <li>
+                                <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id"><span>@article.Title</span></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <p>Няма намерени новини.</p>
+            }
+        }
+        if (Model.SearchInGallery != null)
+        {
+            <h3 class="text-center">Галерии</h3>
+            if (Model.SearchInGallery.Any())
+            {
+                <div class="row">
+                    <ul class="lib-footer-ul">
+                        @foreach (var gallery in Model.SearchInGallery)
+                        {
+                            var count = gallery.Images.Count;
+                            <li>
+                                <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">@gallery.Title - Бр. снимки: @count</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <p>Няма намерени галерии.</p>
+            }
+        }
+        if (Model.SearchInSubscription != null)
+        {
+            <h3 class="text-center">Абонаменти</h3>
+            if (Model.SearchInSubscription.Any())
+            {
+                <div class="row">
+                    <ul class="lib-footer-ul">
+                        @foreach (var subscription in Model.SearchInSubscription)
+                        {
+                            <li>
+                                <p>@subscription.Name - намери в отдел  "@subscription.Department.DepartmentsToBgLang()"</p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <p>Няма намерени абонаменти.</p>
+            }
+        }
+    }
+    </div>
+</div>
+<div class="row text-center mr-t-b-25">
+    <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">Назад</a>
+</div>
