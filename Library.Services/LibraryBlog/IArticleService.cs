@@ -30,9 +30,9 @@
 
         Task<ArticleServiceModel> ByIdAsync(int id);
 
-        Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(int page = 1);
+        Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(string language, int page = 1);
 
-        Task<int> TotalAsync();
+        Task<int> TotalAsync(string language);
 
         Task<ArticleServiceModel> Details(int id);
 

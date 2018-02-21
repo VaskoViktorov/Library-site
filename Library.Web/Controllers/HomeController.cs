@@ -1,13 +1,18 @@
-﻿namespace Library.Web.Controllers
+﻿using System.Globalization;
+
+namespace Library.Web.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
     using Models;
     using Models.Home;
     using Services;
-    using System.Diagnostics;
     using Services.Html;
+    using System;
+    using System.Diagnostics;
     using System.Threading.Tasks;
 
     using static WebConstants;
@@ -36,7 +41,7 @@
         {
             model.Description = this.html.Sanitize(model.Description);
 
-            this.TempData.AddSuccessMessage(string.Format(WebConstants.TempDataCreateCommentText, ModelName, ""));
+            this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, ""));
 
             var email = EmailReceiverForAsk;
 
@@ -49,8 +54,20 @@
         public async Task<IActionResult> Index()
             => View(new ArticleListingHomeViewModel
             {
-                Articles = await home.LatestFourArticlesAsync()
+                Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
             });
+
+        [HttpPost]
+        public IActionResult SetLanguage(string culture)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return this.RedirectToAction(nameof(this.Index));
+        }
 
         public IActionResult Contact()
             => View();

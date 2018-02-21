@@ -9,12 +9,12 @@
 
     public interface ISearchService
     {
-        Task<IEnumerable<BookListingServiceModel>> FindBooksAsync(string modelSearchText, bool modelSearchInBooks);
+        Task<IEnumerable<BookListingServiceModel>> FindBooksAsync(string language, string modelSearchText, bool modelSearchInBooks);
 
-        Task<IEnumerable<ArticleListingServiceModel>> FindArticlesAsync(string modelSearchText, bool modelSearchInArticles);
+        Task<IEnumerable<ArticleListingServiceModel>> FindArticlesAsync(string language, string modelSearchText, bool modelSearchInArticles);
 
-        Task<IEnumerable<GalleryServiceModel>> FindGalleriesAsync(string modelSearchText, bool modelSearchInGalleries);
+        Task<IEnumerable<GalleryServiceModel>> FindGalleriesAsync(string language, string modelSearchText, bool modelSearchInGalleries);
 
-        Task<IEnumerable<SubscriptionListingServiceModel>> FindSubscriptionsAsync(string modelSearchText, bool modelSearchInSubscriptions);
+        Task<IEnumerable<SubscriptionListingServiceModel>> FindSubscriptionsAsync(string language, string modelSearchText, bool modelSearchInSubscriptions);
     }
 }

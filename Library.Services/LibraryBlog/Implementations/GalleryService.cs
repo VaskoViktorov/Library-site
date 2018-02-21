@@ -1,4 +1,6 @@
-﻿namespace Library.Services.LibraryBlog.Implementations
+﻿using Library.Common.Infrastructure;
+
+namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
     using Common.Infrastructure.Extensions;
@@ -97,11 +99,11 @@
             return gallery;
         }
 
-        public async Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(int page = 1)
+        public async Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(string language, int page = 1)
         {
             var gallery = await this.db
                 .Galleries
-                .Where(g => g.Images.Count > 1 && g.Language == Language.Bg)
+                .Where(g => g.Images.Count > 1 && g.Language == (Language)language.ParseLang())
                 .OrderByDescending(b => b.Id)
                 .Skip((page - 1) * GalleriesPageSize)
                 .Take(GalleriesPageSize)
@@ -115,10 +117,10 @@
             return gallery;
         }
 
-        public async Task<int> TotalAsync()
+        public async Task<int> TotalAsync(string language)
             => await this.db
                 .Galleries
-                .Where(g => g.Images.Count > 1 && g.Language == Language.Bg)
+                .Where(g => g.Images.Count > 1 && g.Language == (Language)language.ParseLang())
                 .CountAsync();
 
         public async Task<IEnumerable<GalleryServiceModel>> AllGalleriesEnAsync(int page = 1)

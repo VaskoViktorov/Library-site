@@ -8,6 +8,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Common.Infrastructure;
 
     public class SubscriptionService : ISubscriptionService
     {
@@ -65,23 +66,23 @@
         public async Task<SubscriptionServiceModel> ByIdAsync(int id)
             => await this.db
                 .Subscriptions
-                .Where(a => a.Id == id)
+                .Where(s => s.Id == id)
                 .ProjectTo<SubscriptionServiceModel>()
                 .FirstOrDefaultAsync();
 
-        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync()
+        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync(string language)
             => await this.db
                 .Subscriptions
-                .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Newspaper && a.Language == Language.Bg)
+                .OrderBy(n => n.Name)
+                .Where(n => n.Type == SubscriptionType.Newspaper && n.Language == (Language)language.ParseLang())
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync()
+        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync(string language)
             => await this.db
                 .Subscriptions
-                .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Magazine && a.Language == Language.Bg)
+                .OrderBy(m => m.Name)
+                .Where(m => m.Type == SubscriptionType.Magazine && m.Language == (Language)language.ParseLang())
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
 

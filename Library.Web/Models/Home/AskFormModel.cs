@@ -1,29 +1,30 @@
 ﻿namespace Library.Web.Models.Home
 {
     using System.ComponentModel.DataAnnotations;
+    using Resources.Models.Home;
 
     public class AskFormModel
     {
         [MinLength(0)]
         [MaxLength(100)]
-        [Display(Name = "Имейл")]
+        [Display(Name = "Email", ResourceType = typeof(AskFormModelResx))]
         public string Email { get; set; } = "-";
 
         [MinLength(0)]
         [MaxLength(30)]
-        [Display(Name = "Телефон")]
+        [Display(Name = "Phone", ResourceType = typeof(AskFormModelResx))]
         public string Phone { get; set; } = "-";
 
         [Required]
         [MinLength(3)]
         [MaxLength(200)]
-        [Display(Name = "Име, Фамилия")]
+        [Display(Name = "Name")]
         public string UserInfo { get; set; }
 
         [Required]
         [MinLength(5)]
         [MaxLength(5000)]
-        [Display(Name = "Въпрос")]
+        [Display(Name = "Question", ResourceType = typeof(AskFormModelResx))]
         public string Description { get; set; }
     }
 }

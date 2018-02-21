@@ -10,6 +10,8 @@
     using Models.Subscriptions;
     using Microsoft.EntityFrameworkCore;
     using Data;
+    using Common.Infrastructure;
+    using Data.Models;
 
     public class SearchService : ISearchService
     {
@@ -20,7 +22,7 @@
             this.db = db;
         }
 
-        public async Task<IEnumerable<BookListingServiceModel>> FindBooksAsync(string searchText, bool searchInBooks)
+        public async Task<IEnumerable<BookListingServiceModel>> FindBooksAsync(string language, string searchText, bool searchInBooks)
         {
             if (!searchInBooks)
             {
@@ -29,12 +31,12 @@
 
             return await this.db
                   .Books
-                  .Where(b => b.BookTitle.ToLower().Contains(searchText))
+                  .Where(b => b.BookTitle.ToLower().Contains(searchText) && b.Language == (Language)language.ParseLang())
                   .ProjectTo<BookListingServiceModel>()
                   .ToListAsync();
         }
 
-        public async Task<IEnumerable<ArticleListingServiceModel>> FindArticlesAsync(string searchText, bool searchInArticles)
+        public async Task<IEnumerable<ArticleListingServiceModel>> FindArticlesAsync(string language, string searchText, bool searchInArticles)
         {
             if (!searchInArticles)
             {
@@ -43,12 +45,13 @@
 
             return await this.db
                 .Articles
+                .Where(a => a.Language == (Language)language.ParseLang())
                 .Where(a => a.Title.ToLower().Contains(searchText) || a.AuthorName.ToLower().Contains(searchText))
                 .ProjectTo<ArticleListingServiceModel>()
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<GalleryServiceModel>> FindGalleriesAsync(string searchText, bool searchInGalleries)
+        public async Task<IEnumerable<GalleryServiceModel>> FindGalleriesAsync(string language, string searchText, bool searchInGalleries)
         {
             if (!searchInGalleries)
             {
@@ -57,12 +60,12 @@
 
             return await this.db
                 .Galleries
-                .Where(g => g.Title.ToLower().Contains(searchText) && g.Images.Count >1)
+                .Where(g => g.Title.ToLower().Contains(searchText) && g.Images.Count >1 && g.Language == (Language)language.ParseLang())
                 .ProjectTo<GalleryServiceModel>()
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<SubscriptionListingServiceModel>> FindSubscriptionsAsync(string searchText, bool searchInSubscriptions)
+        public async Task<IEnumerable<SubscriptionListingServiceModel>> FindSubscriptionsAsync(string language, string searchText, bool searchInSubscriptions)
         {
             if (!searchInSubscriptions)
             {
@@ -71,7 +74,7 @@
 
             return await this.db
                 .Subscriptions
-                .Where(a => a.Name.ToLower().Contains(searchText))
+                .Where(s => s.Name.ToLower().Contains(searchText) && s.Language == (Language)language.ParseLang())
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
         }

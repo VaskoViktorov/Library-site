@@ -9,13 +9,17 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Razor;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.FileProviders;
     using Services.Models.EmailSender;
+    using System.Globalization;
     using System.IO;
+    using Microsoft.Extensions.Options;
 
     using static WebConstants;
 
@@ -55,16 +59,34 @@
 
             services.AddRouting(routing => routing.LowercaseUrls = true);
 
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("EmailSettings"));
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
-                //options.Filters.Add<RequireHttpsAttribute>();
+            })
+              .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+              .AddDataAnnotationsLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("bg-BG"),
+                    new CultureInfo("en-US")
+                };
+
+                options.DefaultRequestCulture = new RequestCulture(culture: "bg-BG", uiCulture: "bg-BG");
+
+                options.SupportedCultures = supportedCultures;
+
+                options.SupportedUICultures = supportedCultures;
             });
-
-            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("EmailSettings"));
         }
-        //For HTTPS, remove comments
 
+        //For HTTPS, remove comments
         //, ILoggerFactory loggerFactory
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -77,6 +99,9 @@
             //app.UseRewriter(options);
 
             app.UseDatabaseMigration();
+
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
 
             if (env.IsDevelopment())
             {

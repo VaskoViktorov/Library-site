@@ -1,4 +1,6 @@
-﻿namespace Library.Services.LibraryBlog.Implementations
+﻿using Library.Common.Infrastructure;
+
+namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
     using Common.Infrastructure.Extensions;
@@ -118,52 +120,52 @@
                 .ProjectTo<BookServiceModel>()
                 .FirstOrDefaultAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(string language,int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)
-                .Where(b => b.Language == Language.Bg)
+                .Where(b => b.Language == (Language)language.ParseLang())
                 .Skip((page - 1) * BooksPageSize)
                 .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language,int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)
-                .Where(b => b.Department == DepartmentType.Kids && b.Language == Language.Bg)
+                .Where(b => b.Department == DepartmentType.Kids && b.Language == (Language)language.ParseLang())
                 .Skip((page - 1) * BooksPageSize)
                 .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language,int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)
-                .Where(b => b.Department == DepartmentType.Land && b.Language == Language.Bg)
+                .Where(b => b.Department == DepartmentType.Land && b.Language == (Language)language.ParseLang())
                 .Skip((page - 1) * BooksPageSize)
                 .Take(BooksPageSize)
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<int> TotalAsync()
+        public async Task<int> TotalAsync(string language)
         => await this.db
                     .Books
-                    .Where(b => b.Language == Language.Bg)
+                    .Where(b => b.Language == (Language)language.ParseLang())
                     .CountAsync();
 
-        public async Task<int> TotalForKidsAsync()
+        public async Task<int> TotalForKidsAsync(string language)
             => await this.db
                 .Books
-                .Where(b => b.Department == DepartmentType.Kids && b.Language == Language.Bg)
+                .Where(b => b.Department == DepartmentType.Kids && b.Language == (Language)language.ParseLang())
                 .CountAsync();
 
-        public async Task<int> TotalForLandAsync()
+        public async Task<int> TotalForLandAsync(string language)
            => await this.db
                .Books
-               .Where(b => b.Department == DepartmentType.Land && b.Language == Language.Bg)
+               .Where(b => b.Department == DepartmentType.Land && b.Language == (Language)language.ParseLang())
                .CountAsync();
 
         public async Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1)

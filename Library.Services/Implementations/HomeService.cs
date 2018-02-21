@@ -8,6 +8,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using Common.Infrastructure;
 
     public class HomeService : IHomeService
     {
@@ -18,11 +19,11 @@
             this.db = db;
         }
 
-        public async Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesAsync()
+        public async Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesAsync(string language)
         {
             var articles = await this.db
                 .Articles
-                .Where(a => a.Language == Language.Bg)
+                .Where(a => a.Language == (Language)language.ParseLang())
                 .OrderByDescending(a => a.ReleaseDate)
                 .Take(4)
                 .ProjectTo<ArticleListingHomeServiceModel>()

@@ -44,20 +44,19 @@
 
         Task DeleteAsync(int id);
 
-        Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(int page = 1);
+        Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(string language,int page = 1);
 
-        Task<int> TotalAsync();
+        Task<int> TotalAsync(string language);
 
-        Task<int> TotalForKidsAsync();
+        Task<int> TotalForKidsAsync(string language);
 
-        Task<int> TotalForLandAsync();
+        Task<int> TotalForLandAsync(string language);
+      
+        Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language, int page = 1);
+    
+        Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language, int page = 1);
 
         //English
-
-        Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(int page = 1);
-
-        Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(int page = 1);
-
         Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1);
 
         Task<int> TotalEnAsync();

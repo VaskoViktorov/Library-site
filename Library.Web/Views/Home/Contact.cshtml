@@ -1,21 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Къде се намираме";
-    ViewData["Description"] = "Регионална библиотека \"Михалаки Георгиев\" - гр. Видин, местоположение, адрес,телефон,имейл. Намерете ни!";
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Contact"];
+    ViewData["Description"] = Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin, address,Phone,Email. Find us!"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center p-10 ">
     <div class="address-box">
-        <p><span class="glyphicon glyphicon-home"></span><span class="bold"> Адрес:</span> пл. "Бдинци" № 1</p>
-        <p><span class="glyphicon glyphicon-phone"></span><span class="bold"> Телефон:</span> 094/601-704</p>
-        <p style="margin: 0;"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> Имейл:</span> libvidin@vidin.net</p>
+        <p><span class="glyphicon glyphicon-home"></span><span class="bold"> @Localizer["Address"]:</span> @Localizer["\"Bdintzi\" Square"] № 1</p>
+        <p><span class="glyphicon glyphicon-phone"></span><span class="bold"> @Localizer["Phone"]:</span> 094/601-704</p>
+        <p style="margin: 0;"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> @Localizer["Email"]:</span> libvidin@vidin.net</p>
     </div>
     <div id="map_canvas" class="google-box-height" style="border-radius: 30px; width: 85%; margin: 0 auto;"></div>
 </div>
 
 @section Scripts {
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             initMap();
         });
@@ -34,7 +35,7 @@
             var data = [
                 {
                     "Id": 1,
-                    "PlaceName": "Р.Б. \"Михалаки Георгиев\"",
+                    "PlaceName": "@Localizer["R.L. Mihalaki Georgiev"]",
                     "GeoLong": "43.9864",
                     "GeoLat": "22.87725"
                 }
@@ -50,16 +51,16 @@
 
                     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
 
-                    var workHours = "Работно Време:";
-                    var workHrOne = "понеделник-петък: 9:00-18:00";
-                    var workHrTwo = "събота: 9:00-14:00";
-                    var workHrThree = "неделя: почивен ден";
+                    var workHours = "@Localizer["Opening time"]:";
+                    var workHrOne = "@Localizer["Monday-Friday"]: 9:00-18:00";
+                    var workHrTwo = "@Localizer["Saturday"]: 9:00-14:00";
+                    var workHrThree = "@Localizer["Sunday: Closed"]";
 
                     var infowindow = new google.maps.InfoWindow({
                         content: "<div class='infoDiv text-center'><h3>" +
                         item.PlaceName +
                         "</h2>" +
-                        "<div><img class='small-img' src='/images/SiteImages/Library.jpg' alt='библиотека' /></div>" +
+                        "<div><img class='small-img' src='/images/SiteImages/Library.jpg' alt='@Localizer["R.L. Mihalaki Georgiev"]' /></div>" +
                         "<h4>" +
                         workHours +
                         "</h4><p>" +

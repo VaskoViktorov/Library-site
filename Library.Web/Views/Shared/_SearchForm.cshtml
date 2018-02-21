@@ -1,10 +1,10 @@
 ﻿@model SearchFormModel
-
-<div id="lib-search-footer-box" class="first-color-b" style="">
+@inject IViewLocalizer Localizer
+<div id="lib-search-footer-box" class="first-color-b">
     <form asp-area="LibraryBlog" asp-controller="Search" asp-action="Search" asp-route-model="SearchFormModel" method="get">
         <div class="form-group" style="margin-bottom: 8px;margin-left: 6px;">
             <p class="glyphicon glyphicon-search first-color" style="top: 28px;left: 5px;margin: 0"></p>
-            <input asp-for="@Model.SearchText" class="form-control" style="padding-left: 25px;" placeholder="Въведете текст" />
+            <input asp-for="@Model.SearchText" class="form-control" style="padding-left: 25px;" placeholder="@Localizer["Write here"]" />
         </div>
         <div class="form-group" style="display: inline-block;padding-left: 2px;padding-right: 58px;">
             <label asp-for="@Model.SearchInBooks" class="second-color" style="padding-left: 5px;"></label>
@@ -22,8 +22,7 @@
             <input asp-for="@Model.SearchInSubscriptions" checked="checked" type="checkbox" />
         </div>
         <div class="text-center">
-            <button class="btn third-color-b second-color">Търси</button>
+            <button class="btn third-color-b second-color">@Localizer["Search"]</button>
         </div>
-       
     </form>
 </div>

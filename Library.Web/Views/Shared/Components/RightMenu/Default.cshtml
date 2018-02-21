@@ -1,42 +1,43 @@
 ﻿@model SurveyListingViewModel
+@inject IViewLocalizer Localizer
 
 <div class="row mr-8 text-center">
     <div>
         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" class="hidden-lg hidden-md" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Най-новите книги</p>
+            <p class="lib-sidebar-p1">@Localizer["View Latest Books"]</p>
         </a>
     </div>
     <div>
         <a asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions" class="hidden-lg hidden-md" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Абонамент</p>
+            <p class="lib-sidebar-p1">@Localizer["Subscriptions"]</p>
         </a>
     </div>
     <div>
         <a asp-area="" asp-controller="Home" asp-action="Ask" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Попитай Библиотекаря</p>
+            <p class="lib-sidebar-p1">@Localizer["Ask Librarian"]</p>
         </a>
     </div>
     <div>
         <a asp-area="LibraryBlog" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.Last().id" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Стани Доброволец</p>
+            <p class="lib-sidebar-p1">@Localizer["Become Volunteer"]</p>
         </a>
     </div>
     <div>
         <a asp-area="LibraryBlog" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.First().id" style="text-decoration: none">
-            <p class="lib-sidebar-p1">Участвай в анкета</p>
+            <p class="lib-sidebar-p1">@Localizer["Join survey"]</p>
         </a>
     </div>
     <div>
         <a style="text-decoration: none">
-            <p class="lib-sidebar-p1">Направи Дарение</p>
+            <p class="lib-sidebar-p1">@Localizer["Make donation"]</p>
         </a>
     </div>
     <div class="lib-bp">
         <a asp-area="" asp-controller="Home" asp-action="LibraryPost" style="text-decoration: none">
-            <p class="lib-sidebar-p">БиблиоПоща</p>
-            <img class="lib-sidebar-img hidden-md hidden-sm hidden-xs" src="~/images/SiteImages/biblio-poshta.JPG" alt="БиблиоПоща" />
+            <p class="lib-sidebar-p">@Localizer["LibraryPost"]</p>
+            <img class="lib-sidebar-img hidden-md hidden-sm hidden-xs" src="~/images/SiteImages/biblio-poshta.JPG" alt="@Localizer["LibraryPost"]" />
             <div class="hidden-lg" style="border-bottom-left-radius: 20px;">
-                <img class="lib-sidebar-img" src="~/images/SiteImages/biblio-poshta.JPG" alt="БиблиоПоща" />
+                <img class="lib-sidebar-img" src="~/images/SiteImages/biblio-poshta.JPG" alt="@Localizer["LibraryPost"]" />
             </div>
         </a>
     </div>

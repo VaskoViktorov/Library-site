@@ -6,6 +6,13 @@ var scripts = Array
 //if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
 //    flag = true;
 //}
+
+//change language
+$(document).ready(function () {
+    $("#selectLanguage select").change(function () {
+        $(this).parent().submit();
+    });
+}());
 //img popup
 $(document).ready(function () {
 

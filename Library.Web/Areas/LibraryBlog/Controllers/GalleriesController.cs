@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using System.Globalization;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -28,8 +30,8 @@
         public async Task<IActionResult> Galleries(int page = 1)
             => this.View(new GalleryListingViewModel
             {
-                Galleries = await this.galleries.AllGalleriesAsync(page),
-                TotalGalleries = await this.galleries.TotalAsync(),
+                Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(),page),
+                TotalGalleries = await this.galleries.TotalAsync(CurrentCulture()),
                 CurrentPage = page
             });
 
@@ -120,5 +122,8 @@
 
             return this.RedirectToAction(nameof(this.Galleries));
         }
+
+        private string CurrentCulture()
+            => CultureInfo.CurrentCulture.Name;
     }
 }

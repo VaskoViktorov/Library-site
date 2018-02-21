@@ -349,6 +349,15 @@ ul.pagination > li:first-child a {
     border-color: #8f4d4d;
 }
 /** WorkTime Box**/
+.work-time-box-en {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    border: 2px solid #FFEDD8;
+    width: 107px;
+    background: #FFEDD8;
+    border-radius: 15px;
+}
 .work-time-box {
     display: flex;
     position: absolute;

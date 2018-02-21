@@ -1,6 +1,7 @@
 ﻿namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure;
     using Common.Infrastructure.Extensions;
     using Data;
     using Data.Models;
@@ -125,11 +126,11 @@
             return article;
         }
 
-        public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(int page = 1)
+        public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(string language,int page = 1)
         {
             var articles = await this.db
                 .Articles
-                .Where(a => a.Language == Language.Bg)
+                .Where(a => a.Language == (Language)language.ParseLang())
                 .OrderByDescending(b => b.ReleaseDate)
                 .Skip((page - 1) * ArticlesPageSize)
                 .Take(ArticlesPageSize)
@@ -143,10 +144,10 @@
             return articles;
         }
 
-        public async Task<int> TotalAsync()
+        public async Task<int> TotalAsync(string language)
             => await this.db
                 .Articles
-                .Where(a => a.Language == Language.Bg)
+                .Where(a => a.Language == (Language)language.ParseLang())
                 .CountAsync();
 
         public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesEnAsync(int page = 1)

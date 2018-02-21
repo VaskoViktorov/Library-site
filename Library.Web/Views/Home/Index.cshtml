@@ -1,12 +1,13 @@
 ﻿@model ArticleListingHomeViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Начало";
-    ViewData["Description"] = "Регионална библиотека \"Михалаки Георгиев\" във Видин понастоящем се помещава в сградата на бившия Партиен дом на централния градски площад „Бдинци“ № 1 (тел. директор 094-22673). Днес библиотеката е най-голямата общодостъпна научна библиотека в Област Видин.";
+    ViewData["Title"] = Localizer["Home"];
+    ViewData["Description"] = Localizer["The \"Mihalaki Georgiev\" Regional Library in Vidin is currently housed in the building of the former Party House on the central city square \"Bdintsi\" No 1 (tel.:94-22673). Today, the library is the largest public library in the Vidin District."];
 }
 @await Component.InvokeAsync("Search")
 <div class="row text-center mr-l-1">
     <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles" style="text-decoration: none">
-        <h1 class="text-center" id="carosel-h1">Последни събития</h1>
+        <h1 class="text-center" id="carosel-h1">@Localizer["Latest news"]</h1>
     </a>
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
         <ul class="carousel-indicators">
@@ -28,7 +29,7 @@
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>
                                     <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                        Прочети още
+                                        @Localizer["Read more"]
                                     </a>
                                 </p>
                             </div>
@@ -43,7 +44,7 @@
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>
                                     <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
-                                        Прочети още
+                                        @Localizer["Read more"]
                                     </a>
                                 </p>
                             </div>
@@ -55,13 +56,12 @@
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="border-bottom-left-radius: 50px;">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Предишна</span>
+            <span class="sr-only">@Localizer["Previous"]</span>
         </a>
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="border-bottom-right-radius: 50px;">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Следваща</span>
+            <span class="sr-only">@Localizer["Next"]</span>
         </a>
     </div>
-
 </div>
 

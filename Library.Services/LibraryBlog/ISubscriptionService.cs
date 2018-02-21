@@ -15,9 +15,9 @@
 
         Task<SubscriptionServiceModel> ByIdAsync(int id);
 
-        Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync();
+        Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersAsync(string language);
 
-        Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync();
+        Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync(string language);
 
         //English
 

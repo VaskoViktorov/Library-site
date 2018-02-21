@@ -11,6 +11,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
+    using System.Globalization;
 
     using static WebConstants;
 
@@ -31,8 +32,8 @@
         public async Task<IActionResult> Articles(int page = 1)
             => this.View(new ArticleListingViewModel
             {
-                Articles = await this.articles.AllArticlesAsync(page),
-                TotalArticles = await this.articles.TotalAsync(),
+                Articles = await this.articles.AllArticlesAsync(CurrentCulture(), page),
+                TotalArticles = await this.articles.TotalAsync(CurrentCulture()),
                 CurrentPage = page
             });
 
@@ -143,5 +144,8 @@
 
             return this.RedirectToAction(nameof(this.Articles));
         }
+
+        private string CurrentCulture()
+            => CultureInfo.CurrentCulture.Name;
     }
 }

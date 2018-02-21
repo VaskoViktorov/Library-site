@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using System.Globalization;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -30,8 +32,8 @@
         public async Task<IActionResult> Books(int page = 1)
         => this.View(new BookListingViewModel
         {
-            Books = await this.books.AllBooksAsync(page),
-            TotalBooks = await this.books.TotalAsync(),
+            Books = await this.books.AllBooksAsync(CurrentCulture(),page),
+            TotalBooks = await this.books.TotalAsync(CurrentCulture()),
             CurrentPage = page
         });
 
@@ -39,8 +41,8 @@
         public async Task<IActionResult> BooksForKids(int page = 1)
             => this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksForChildrenAsync(page),
-                TotalBooks = await this.books.TotalForKidsAsync(),
+                Books = await this.books.AllBooksForChildrenAsync(CurrentCulture(),page),
+                TotalBooks = await this.books.TotalForKidsAsync(CurrentCulture()),
                 CurrentPage = page
             });
 
@@ -48,8 +50,8 @@
         public async Task<IActionResult> BooksForLand(int page = 1)
             => this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksForLandLandAsync(page),
-                TotalBooks = await this.books.TotalForLandAsync(),
+                Books = await this.books.AllBooksForLandLandAsync(CurrentCulture(),page),
+                TotalBooks = await this.books.TotalForLandAsync(CurrentCulture()),
                 CurrentPage = page
             });
 
@@ -197,5 +199,8 @@
 
             return this.RedirectToAction(nameof(this.Books));
         }
+
+        private string CurrentCulture()
+            => CultureInfo.CurrentCulture.Name;
     }
 }

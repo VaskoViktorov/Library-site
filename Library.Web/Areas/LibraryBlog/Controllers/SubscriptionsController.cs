@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -7,6 +9,7 @@
     using Models.Subscriptions;
     using Services.LibraryBlog;
     using System.Threading.Tasks;
+    using System.Globalization;
 
     public class SubscriptionsController : BaseController
     {
@@ -23,8 +26,8 @@
         public async Task<IActionResult> Subscriptions()
         => this.View(new SubscriptionListingViewModel
         {
-            Newspapers = await this.subscriptions.AllNewspapersAsync(),
-            Magazines = await this.subscriptions.AllMagazinesAsync()
+            Newspapers = await this.subscriptions.AllNewspapersAsync(CurrentCulture()),
+            Magazines = await this.subscriptions.AllMagazinesAsync(CurrentCulture())
         });
 
         public IActionResult Create()
@@ -87,5 +90,8 @@
 
             return this.RedirectToAction(nameof(this.Subscriptions));
         }
+
+        private string CurrentCulture()
+            => CultureInfo.CurrentCulture.Name;
     }
 }

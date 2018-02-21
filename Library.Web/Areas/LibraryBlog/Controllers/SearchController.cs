@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using System.Globalization;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using System.Threading.Tasks;
     using Services.LibraryBlog;
@@ -39,20 +41,28 @@
             {
                 SearchedText = model.SearchText,
                 SearchInBook = await this.searches.FindBooksAsync(
+                    CurrentCulture(),
                     model.SearchText,
                     model.SearchInBooks),
                 SearchInArticle = await this.searches.FindArticlesAsync(
-                model.SearchText,
-                model.SearchInArticles),
+                    CurrentCulture(),
+                    model.SearchText,
+                    model.SearchInArticles),
                 SearchInGallery = await this.searches.FindGalleriesAsync(
-                model.SearchText,
-                model.SearchInGalleries),
+                    CurrentCulture(),
+                    model.SearchText,
+                    model.SearchInGalleries),
                 SearchInSubscription = await this.searches.FindSubscriptionsAsync(
-                model.SearchText,
-                model.SearchInSubscriptions)
+                    CurrentCulture(),
+                    model.SearchText,
+                    model.SearchInSubscriptions)
             };
 
             return this.View(viewModel);
         }
+
+
+        private string CurrentCulture()
+            => CultureInfo.CurrentCulture.Name;
     }
 }

@@ -1,13 +1,22 @@
-﻿<!DOCTYPE html>
-<html lang="bg">
+﻿@inject IViewLocalizer Localizer
+@{
+    var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
+    var engType = "";
+    if (currentCulture != "bg-BG")
+    {
+        engType = "-en";
+    }
+}
+<!DOCTYPE html>
+<html lang="@Localizer["en"]">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] | Р.Б. "Михалаки Георгиев"-гр. Видин</title>
+    <title>@ViewData["Title"] | @Localizer["Regional Library \"Mihalaki Georgiev\"-Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
     <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
-    <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search"/>
+    <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search" />
 
     <environment include="Development">
         <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
@@ -15,7 +24,7 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/lib-theme.css">
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />         
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/magnific-popup.css">
         <link rel="stylesheet" href="~/css/eventCalendar.css">
         <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">
@@ -36,235 +45,236 @@
     </environment>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="work-time-box">
-                <span class="closed bold close-time">Затворено</span><span class="hours bold open-time">Отворено</span>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" role="button">
-                        <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
-                    </a>
-                    <ul id="worktime-menu" class="dropdown-menu drop">
-                        <li class="p-0-3"><span class="bold">Понеделник: </span>9:00-18:00</li>
-                        <li class="p-0-3"><span class="bold">Вторник: </span>9:00-18:00</li>
-                        <li class="p-0-3"><span class="bold">Сряда: </span>9:00-18:00</li>
-                        <li class="p-0-3"><span class="bold">Четвъртък: </span>9:00-18:00</li>
-                        <li class="p-0-3"><span class="bold">Петък: </span>9:00-18:00</li>
-                        <li class="p-0-3"><span class="bold">Събота: </span>9:00-14:00</li>
-                        <li class="p-0-3"><span class="bold">Неделя: </span>Почивен ден</li>
-                        <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime" role="button">Виж още</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
-            <a href="//178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
-            <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
-        </div>
-        <div class="navbar-collapse collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">Начало</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
-                        Библиотека<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu drop">
-                        <li class="dropdown-submenu">
-                            <a class="test" tabindex="-1">За нас</a>
-                            <ul class="dropdown-menu">
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">История</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="test" tabindex="-1">Полезна информация</a>
-                            <ul class="dropdown-menu">
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Въпроси</a></li>
-                                <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
-                            </ul>
-                        </li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contributors">Дарители</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">Партньори</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
-                        Детски свят<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu drop">
-                        <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">Нови детски книги</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">Програма за работа с деца</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">Безопасен интернет</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">За ученика</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">За любителя</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
-                        Роден край<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu drop">
-                        <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">Нови книги</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">Издания</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">Видин</a></li>
-                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">За Михалаки Георгиев</a></li>
-                    </ul>
-                </li>
-                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">Новини</a></li>
-                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">Галерия</a></li>
-                <li class="dropdown lib-submenu-color">
-                    <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
-                        Е-Библиотека<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu drop">
-                        <li><a href="http://178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
-                        <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">Нови Книги</a></li>
-                        <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">Абонаменти</a></li>
-                        <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">Други Е-Каталози</a></li>
-                    </ul>
-                </li>
-                @if (User.IsInRole(WebConstants.AdministratorRole))
-                {
-                    <li class="dropdown cr-pointer">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Админ панел<span class="caret"></span>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">@Localizer["Toggle navigation"]</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="work-time-box@(engType)">
+                    <span class="closed bold close-time">@Localizer["Closed"]</span><span class="hours bold open-time">@Localizer["Open"]</span>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" role="button">
+                            <span class="glyphicon glyphicon-time clock-ico"></span><span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Потребители</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Събития</a></li>
-                            <li><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Акаунт</a></li>                               
+                        <ul id="worktime-menu" class="dropdown-menu drop">
+                            <li class="p-0-3"><span class="bold">@Localizer["Monday"]: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Tuesday"]: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Wednesday"]: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Thursday"]: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Friday"]: </span>9:00-18:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Saturday"]: </span>9:00-14:00</li>
+                            <li class="p-0-3"><span class="bold">@Localizer["Sunday"]</span>@Localizer[": Closed"]</li>
+                            <li class="p-0-3 text-center"><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime" role="button">@Localizer["See More"]</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
+                <a href="//178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
+                <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-sm hidden-xs">@Localizer["Home"]</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
+                            @Localizer["Library"]<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu drop">
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1">@Localizer["About us"]</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">@Localizer["History"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1">@Localizer["Useful info"]</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Find us"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">@Localizer["Opening hours"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">@Localizer["Price list"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">@Localizer["Contacts"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">@Localizer["FAQ"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">@Localizer["Useful links"]</a></li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Services"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contributors">@Localizer["Contributors"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Partners">@Localizer["Partners"]</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
+                            @Localizer["Kids"]<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu drop">
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">@Localizer["New children books"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">@Localizer["Work with children program"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">@Localizer["Safe internet"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">@Localizer["For the student"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">@Localizer["For the curious"]</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
+                            @Localizer["Homeland"]<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu drop">
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">@Localizer["New books"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">@Localizer["Publications"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">@Localizer["Vidin"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">@Localizer["Mihalaki Georgiev"]</a></li>
+                        </ul>
+                    </li>
+                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">@Localizer["News"]</a></li>
+                    <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">@Localizer["Gallery"]</a></li>
+                    <li class="dropdown lib-submenu-color">
+                        <a class="dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false">
+                            @Localizer["E-Library"]<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu drop">
+                            <li><a href="http://178.239.224.218/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["New books"]</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
+                            <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
+                        </ul>
+                    </li>
+                    @if (User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <li class="dropdown cr-pointer">
+                            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                @Localizer["Admin Panel"]<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">@Localizer["Users"]</a></li>
+                                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">@Localizer["Events"]</a></li>
+                                <li><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">@Localizer["Account"]</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="parallax">
+        <div class="lib-nav-container">
+            <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo@(engType).png" alt="panel" /> </a>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="row pb-20">
+            <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
+            <div class="col-md-8">
+                @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+                {
+                    <div class="row width-85pr text-center mr-0-auto">
+                        <div class="alert alert-success" style="position: absolute;width: inherit;padding-top: 20px;">
+                            @TempData[WebConstants.TempDataSuccessMessageKey]
+                        </div>
+                    </div>
                 }
-            </ul>
-            @await Html.PartialAsync("_LoginPartial")
-        </div>
-    </div>
-</nav>
-<div class="parallax">
-    <div class="lib-nav-container">
-        <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo.png" alt="panel" /></a>
-    </div>
-</div>
-
-<div class="container body-content">
-    <div class="row pb-20">      
-        <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
-        <div class="col-md-8">
-            @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
-            {
-                <div class="row width-85pr text-center mr-0-auto">
-                    <div class="alert alert-success" style="position: absolute;width: inherit;padding-top: 20px;">
-                        @TempData[WebConstants.TempDataSuccessMessageKey]
+                @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
+                {
+                    <div class="row width-85pr text-center mr-0-auto">
+                        <div class="alert alert-warning" style="position: absolute;width: inherit;padding-top: 20px;">
+                            @TempData[WebConstants.TempDataWarningMessageKey]
+                        </div>
                     </div>
-                </div>
-            }
-            @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
-            {
-                <div class="row width-85pr text-center mr-0-auto">
-                    <div class="alert alert-warning"  style="position: absolute;width: inherit;padding-top: 20px;">
-                        @TempData[WebConstants.TempDataWarningMessageKey]
-                    </div>
-                </div>
-            }
-            @RenderBody()
+                }
+                @RenderBody()
+                @await Html.PartialAsync("_SelectLanguagePartial")
+            </div>
+            <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenu")</div>
         </div>
-        <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenu")</div>
-    </div>
-    <footer>
-        <div class="row mr-t-10 footer-row">
-   
-            <div class="col-md-3 footer-fb">
-                <div class="p-0-3 fb-like float-left fb-box" async data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-            </div>
-            <div class="col-md-2 footer-box-2">
-                <ul class="lib-footer-ul">
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">Контакти</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">Ценоразпис</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">Работно време</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">Къде се намираме</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">Често Задавани Въпроси</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 footer-box-3">
-                <ul class="lib-footer-ul">
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">Услуги</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">Функции</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">Структура</a></li>
-                    <li><a href="//178.239.224.218/absw/abs.htm">Е-Библиотека</a></li>
-                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">Полезни връзки</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3 mr-0-auto">
-                @Html.Partial("_SearchForm")
-            </div>
-            <div class="col-md-2 text-right">
-                <div class="p-10 lib-lang-box">
-                    <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език"/></a>
-                    <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език"/></a>
-                </div>
+        <footer>
+            <div class="row mr-t-10 footer-row">
 
-                <p class="text-center">&copy; 2018 - Регионална библиотека "Михалаки Георгиев" - Видин</p>
+                <div class="col-md-3 footer-fb">
+                    <div class="p-0-3 fb-like float-left fb-box" async data-href="https://www.facebook.com/libvidin/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                </div>
+                <div class="col-md-2 footer-box-2">
+                    <ul class="lib-footer-ul">
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Staff">@Localizer["Contacts"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="PriceList">@Localizer["Price list"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="WorkTime">@Localizer["Opening hours"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Find us"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Faq">@Localizer["FAQ"]</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 footer-box-3">
+                    <ul class="lib-footer-ul">
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Services"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
+                        <li><a href="//178.239.224.218/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                        <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Links">@Localizer["Useful links"]</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mr-0-auto">
+                    @Html.Partial("_SearchForm")
+                </div>
+                <div class="col-md-2 text-right">
+                    <div class="p-10 lib-lang-box">
+                        <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език" /></a>
+                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език" /></a>
+                    </div>
+
+                    <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
+                </div>
             </div>
-        </div>
-    </footer>
-</div>
-<environment include="Development">
-    <script src="//code.jquery.com/jquery-2.2.4.min.js"
-            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery"
-            crossorigin="anonymous"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
-    </script>
-    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-            crossorigin="anonymous"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
-    <script src="~/lib/jquery/dist/moment.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
-    <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
-    <script src="~/js/site.js"></script>
-</environment>
-<environment exclude="Development">
-    <script src="//code.jquery.com/jquery-2.2.4.min.js"
-            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery"
-            crossorigin="anonymous"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
-    </script>
-    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-            crossorigin="anonymous"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
-    <script src="~/lib/jquery/dist/moment.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
-    <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
-    <script src="~/js/site.min.js"></script>
-</environment>
-@RenderSection("Scripts", required: false)
+        </footer>
+    </div>
+    <environment include="Development">
+        <script src="//code.jquery.com/jquery-2.2.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
+        </script>
+        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
+        <script src="~/lib/jquery/dist/moment.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
+        <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
+        <script src="~/js/site.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="//code.jquery.com/jquery-2.2.4.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
+        </script>
+        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
+        <script src="~/lib/jquery/dist/moment.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
+        <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
+        <script src="~/js/site.min.js"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
