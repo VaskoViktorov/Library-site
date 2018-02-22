@@ -188,8 +188,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             return this.RedirectToAction(nameof(this.Books));
         }
 
-        public IActionResult Delete(int id)
-            => this.View(id);
+        public IActionResult Delete(BookDeleteViewModel model)
+            => this.View(model);
 
         public async Task<IActionResult> Destroy(int id)
         {

@@ -2,10 +2,10 @@
 {
     using Data.Models;
     using System.ComponentModel.DataAnnotations;
-
+    using Search;
     using static Data.DataConstants;
 
-    public class BookFormModel
+    public class BookFormModel : SearchFormModel
     {
         [Required]
         [MinLength(BookAuthorNameMinLength)]

@@ -1,6 +1,7 @@
 ﻿@model AdminUsersListingViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Управление на потребителите";
+    ViewData["Title"] = Localizer["User Control Panel"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
@@ -9,54 +10,51 @@
     <div class="col-md-10 col-md-offset-1">
         <table class="table table-hover table-responsive">
             <thead>
-            <tr>
-                <th>Потребителско име</th>
-                <th>Настоящи роли</th>
-                <th>Имейл</th>
-                <th>Промени ролите</th>
-            </tr>
+                <tr>
+                    <th>@Localizer["Username"]</th>
+                    <th>@Localizer["Current roles"]</th>
+                    <th>@Localizer["Email"]</th>
+                    <th>@Localizer["Change roles"]</th>
+                </tr>
             </thead>
             <tbody>
-            @foreach (var user in Model.Users)
-            {
-                <tr>
-                    <td>@user.Username</td>
-                    <td>
-                        @if (Model.UserRoles.ContainsKey(user.Id))
-                        {
-                            var rolesInDictionary = Model.UserRoles.Where(c => c.Key == user.Id).Select(c => c.Value);
-
-                            foreach (var roles in rolesInDictionary)
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.Username</td>
+                        <td>
+                            @if (Model.UserRoles.ContainsKey(user.Id))
                             {
-                                foreach (var role in roles)
+                                var rolesInDictionary = Model.UserRoles.Where(c => c.Key == user.Id).Select(c => c.Value);
+
+                                foreach (var roles in rolesInDictionary)
                                 {
-                                    <small>@role</small>
+                                    foreach (var role in roles)
+                                    {
+                                        <small>@role</small>
+                                    }
                                 }
                             }
-                        }
-                    </td>
-                    <td>@user.Email</td>
-                    <td>
-                        <form asp-controller="Users" asp-action="AddToRole" method="post">
-
-                            <div class="row">
-                                <div class="col-md-8">
-
-                                    <input type="hidden" name="UserId" value="@user.Id"/>
-                                    <select name="Role" asp-items="@Model.Roles" class="form-control"></select>
+                        </td>
+                        <td>@user.Email</td>
+                        <td>
+                            <form asp-controller="Users" asp-action="AddToRole" method="post">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <input type="hidden" name="UserId" value="@user.Id" />
+                                        <select name="Role" asp-items="@Model.Roles" class="form-control"></select>
+                                    </div>
+                                    <div class="col-md-4 text-left">
+                                        <input class="btn btn-sm btn-info " type="submit" value="@Localizer["Add"]" name="Add" />
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-8 text-left mr-8">
+                                        <input class="btn btn-sm btn-danger" type="submit" value="@Localizer["Remove"]" name="Remove" />
+                                    </div>
                                 </div>
-                                <div class="col-md-1 text-left mr-8">
-                                    <input class="btn btn-sm btn-info " type="submit" value="Add" name="add"/>
-
-                                </div>
-                                <div class="col-md-1 text-left mr-8">
-                                    <input class="btn btn-sm btn-danger" type="submit" value="Remove" name="remove"/>
-                                </div>
-                            </div>
-                        </form>
-                    </td>
-                </tr>
-            }
+                            </form>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

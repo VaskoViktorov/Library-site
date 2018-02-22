@@ -1,5 +1,5 @@
 ﻿@model EventFormModel
-
+@inject IViewLocalizer Localizer
 <form method="post">
     <div class="form-group">
         <label asp-for="title"></label>
@@ -21,6 +21,6 @@
         <input asp-for="url" class="form-control" />
         <span asp-validation-for="url" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-info">Запази</button>
-    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Articles">Обратно</a>
+    <button type="submit" class="btn btn-info">@Localizer["Save"]</button>
+    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">@Localizer["Back"]</a>
 </form>

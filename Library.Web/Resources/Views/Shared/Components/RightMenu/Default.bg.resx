@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Ask Librarian" xml:space="preserve">
+  <data name="Ask the librarian" xml:space="preserve">
     <value>Попитай Библиотекаря</value>
   </data>
-  <data name="Become Volunteer" xml:space="preserve">
+  <data name="Become volunteer" xml:space="preserve">
     <value>Стани Доброволец</value>
   </data>
   <data name="Join survey" xml:space="preserve">
@@ -135,7 +135,7 @@
   <data name="Subscriptions" xml:space="preserve">
     <value>Абонамент</value>
   </data>
-  <data name="View Latest Books" xml:space="preserve">
+  <data name="View latest books" xml:space="preserve">
     <value>Най-новите книги</value>
   </data>
 </root>

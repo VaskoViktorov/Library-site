@@ -94,8 +94,8 @@
             return this.RedirectToAction(nameof(this.Events));
         }
 
-        public IActionResult Delete(string id)
-        => this.View(model: id);
+        public IActionResult Delete(EventDeleteViewModel model)
+        => this.View(model);
 
         public IActionResult Destroy(string id)
         {

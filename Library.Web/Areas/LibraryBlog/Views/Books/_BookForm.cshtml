@@ -1,5 +1,5 @@
 ﻿@model BookFormModel
-
+@inject IViewLocalizer Localizer
 <form method="post">
     <div class="form-group">
         <label asp-for="AuthorName"></label>
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         <label asp-for="BookDescription"></label>
-        <textarea id="summernote" asp-for="BookDescription" class="form-control" ></textarea>
+        <textarea id="summernote" asp-for="BookDescription" class="form-control"></textarea>
         <span asp-validation-for="BookDescription" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -31,38 +31,38 @@
             <label asp-for="Department"></label>
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Kids))Детски
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Kids))@Localizer["Children's"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Rent))Заемна
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Rent))@Localizer["Book borrowing"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Read))Читални
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Read))@Localizer["Reading rooms"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Check))Справочен
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Check))@Localizer["Information center"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Art))Изкуство
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Art))@Localizer["Art"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Land))Краезнание
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Land))@Localizer["Homeland"]
         </div>
         <span asp-validation-for="Department" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="PublishDate"></label>
-        <input asp-for="PublishDate" class="form-control"/>
+        <input asp-for="PublishDate" class="form-control" />
         <span asp-validation-for="PublishDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Pages"></label>
-        <input asp-for="Pages" class="form-control"/>
+        <input asp-for="Pages" class="form-control" />
         <span asp-validation-for="Pages" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Size"></label>
-        <input asp-for="Size" class="form-control"/>
+        <input asp-for="Size" class="form-control" />
         <span asp-validation-for="Size" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -75,18 +75,18 @@
             <label asp-for="Language"></label>
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.Bg))Български
+            @(Html.RadioButtonFor(l => l.Language, Language.Bg))@Localizer["Bulgarian"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.En))Английски
+            @(Html.RadioButtonFor(l => l.Language, Language.En))@Localizer["English"]
         </div>
         <span asp-validation-for="Language" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ImageUrl"></label>
-        <input asp-for="ImageUrl" class="form-control" value="@null"/>
+        <input asp-for="ImageUrl" class="form-control" value="@null" />
         <span asp-validation-for="ImageUrl" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-info">Запази</button>
-    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Books">Обратно</a>
+    <button type="submit" class="btn btn-info">@Localizer["Save"]</button>
+    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Books">@Localizer["Back"]</a>
 </form>

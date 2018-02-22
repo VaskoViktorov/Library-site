@@ -1,7 +1,8 @@
 ﻿@model GalleryViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = Model.Gallery.Title + " - галерия";
-    ViewData["Description"] = Model.Gallery.Title + "- Научете още подробности и разгледайте снимки от събитието..";
+    ViewData["Title"] = Model.Gallery.Title + " - " + Localizer["gallery"];
+    ViewData["Description"] = Model.Gallery.Title + "- " + Localizer["Find more about this event..."];
 
     var count = Model.Gallery.Images.Count;
 }
@@ -9,11 +10,11 @@
     <h2>@Model.Gallery.Title</h2>
 </div>
 <div class="row mr-t-40">
-    <div class="col-md-10 col-md-offset-1">      
+    <div class="col-md-10 col-md-offset-1">
         <div class="row max-w-750 mr-10-auto">
             @if (count < 2)
             {
-                <a class="image-popup-vertical-fit"  href="@Url.Content(Model.Gallery.Images.First().ImagePath)" Title="@Model.Gallery.Title">
+                <a class="image-popup-vertical-fit" href="@Url.Content(Model.Gallery.Images.First().ImagePath)" Title="@Model.Gallery.Title">
                     <img src="@Url.Content(Model.Gallery.Images.First().ImagePath)" class="img-border gallery-img" alt="@Model.Gallery.Title" />
                 </a>
             }
@@ -24,7 +25,7 @@
                 @foreach (var img in Model.Gallery.Images)
                 {
                     <a href="@Url.Content(img.ImagePath)" Title="@Model.Gallery.Title">
-                        <img src="@Url.Content(img.ImagePath)" class="width-150 img-border gallery-img" alt="@Model.Gallery.Title"/>
+                        <img src="@Url.Content(img.ImagePath)" class="width-150 img-border gallery-img" alt="@Model.Gallery.Title" />
                     </a>
                 }
             </div>
@@ -32,11 +33,11 @@
         <div class="row max-w-750 text-center mr-10-auto">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
-                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit">Редактирай</a>
-                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete">Изтрии</a>
+                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit">@Localizer["Edit"]</a>
+                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete">@Localizer["Delete"]</a>
             }
-            <a class="lib-btn" href="javascript:history.go(-1)">Обратно</a>
+                <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
         </div>
-        
+
     </div>
 </div>

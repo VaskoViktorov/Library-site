@@ -294,7 +294,7 @@ h3 {
     font-size: 1.1em;
     border-radius: 10px;
     opacity: 0.9;
-    padding: 8px;
+    padding: 9px;
     margin: 20px auto;
     border-style: none;
 }
@@ -721,7 +721,11 @@ ul.lib-footer-ul li a:hover {
     border-radius: 20px;
     z-index: 2;
 }
-#lib-search > div > form > button:hover, #lib-search-footer-box > form > div.text-center > button:hover {
+#lib-search form #SearchText {
+    width: 415px;
+    padding-left: 25px;
+}
+#lib-search > div > form > div > button:hover, #lib-search-footer-box > form > div > button:hover {
     background-color: #660B0B;
     color: #FFEDD8;
 }
@@ -744,5 +748,24 @@ ul.lib-footer-ul li a:hover {
     border-radius: 20px;
     position: absolute;
     top: -55px;
-    max-width: 252px;
+    max-width: 240px;
+}
+#lib-search-footer-box  form  #SearchText {
+    width: auto;
+    padding-left: 25px;
+}
+#lib-search-footer-box > form > div.lib-inl-b {
+    text-align: center;
+    display: block;
+}
+.lib-inl-b {
+    display: inline-block;
+}
+#lib-search-footer-box #lib-search-form-second {
+    padding-left: 1px;
+    padding-right: 45px;
+}
+#lib-search-footer-box #lib-search-form-fourth {
+    padding-right: 15px;
+    padding-left: 20px;
 }

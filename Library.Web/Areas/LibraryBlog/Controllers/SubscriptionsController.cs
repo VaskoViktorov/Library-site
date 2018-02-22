@@ -79,8 +79,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             return this.RedirectToAction(nameof(this.Subscriptions));
         }
 
-        public IActionResult Delete(int id)
-            => this.View(id);
+        public IActionResult Delete(SubscriptionDeleteViewModel model)
+            => this.View(model);
 
         public async Task<IActionResult> Destroy(int id)
         {

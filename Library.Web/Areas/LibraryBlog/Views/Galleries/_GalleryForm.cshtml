@@ -1,5 +1,5 @@
 ﻿@model GalleryFormModel
-
+@inject IViewLocalizer Localizer
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Title"></label>
@@ -11,17 +11,17 @@
             <label asp-for="Language"></label>
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.Bg))Български
+            @(Html.RadioButtonFor(l=> l.Language, Language.Bg))@Localizer["Bulgarian"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.En))Английски
+            @(Html.RadioButtonFor(l => l.Language, Language.En))@Localizer["English"]
         </div>
         <span asp-validation-for="Language" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input asp-for="Files" class="form-control" name="files" multiple />
     </div>
-    <button type="submit" class="btn btn-info">Запази</button>
-    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Galleries">Обратно</a>
+    <button type="submit" class="btn btn-info">@Localizer["Save"]</button>
+    <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Galleries">@Localizer["Back"]</a>
 </form>
 

@@ -28,6 +28,8 @@
 
         public const string BulgarianLanguage = "bg";
         public const string EnglishLanguage = "en";
+        public const string BulgarianCulture = "bg-BG";
+        public const string EnglishCulture = "en-US";
 
         public const string EmailReceiverForAsk = "rbmg@abv.bg";
         public const string EmailReceiverHtmlText = @"<div style='width: 500px;'>

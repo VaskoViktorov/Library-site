@@ -1,5 +1,5 @@
 ﻿@model BookListingViewModel
-
+@inject IViewLocalizer Localizer
 @foreach (var book in Model.Books)
 {
     <div class="book-box col-md-12 min-h-150 mr-t-b-25">
@@ -14,8 +14,8 @@
         <div class="mr-t-10">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
-                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Промени</a>
-                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Изтрии</a>
+                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">@Localizer["Edit"]</a>
+                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">@Localizer["Delete"]</a>
             }
         </div>
     </div>

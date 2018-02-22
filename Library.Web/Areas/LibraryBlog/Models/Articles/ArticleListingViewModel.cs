@@ -1,10 +1,9 @@
-﻿using Library.Web.Areas.LibraryBlog.Models.Search;
-
-namespace Library.Web.Areas.LibraryBlog.Models.Articles
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Articles
 {
     using Services.LibraryBlog.Models.Articles;
     using System;
     using System.Collections.Generic;
+    using Search;
 
     using static Services.ServicesConstants;
 

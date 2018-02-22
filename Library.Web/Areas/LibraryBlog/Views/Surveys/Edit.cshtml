@@ -1,10 +1,11 @@
 ﻿@model SurveyFormModel
+@inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Смени анкета";
+    ViewData["Title"] = Localizer["Change survey"];
 }
 <div class="row text-center">
-    <h1 class="text-center mr-t-b-25">@ViewData["Title"]</h1>
+    <h2 class="text-center mr-t-b-25">@ViewData["Title"]</h2>
 </div>
 <div class="row">
     <div class="col-md-3"></div>
@@ -15,8 +16,8 @@
                 <input asp-for="url" class="form-control" />
                 <span asp-validation-for="url" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-info">Запази</button>
-            <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">Обратно</a>
+            <button type="submit" class="lib-btn-invrt">@Localizer["Save"]</button>
+            <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Back"]</a>
         </form>
     </div>
 </div>

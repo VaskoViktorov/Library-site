@@ -1,7 +1,7 @@
 ﻿@model BookFormModel
-
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Редактирай Книга";
+    ViewData["Title"] = Localizer["Edit Book"];
 }
 
 <h2 class="text-center mr-t-b-25">@ViewData["Title"]</h2>
@@ -13,6 +13,6 @@
 </div>
 
 @section Scripts
-{
+    {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }

@@ -6,17 +6,18 @@
     using Microsoft.AspNetCore.Mvc;
     using Models.Surveys;
     using System.IO;
+    using System.Globalization;
 
     using static WebConstants;
 
     public class SurveysController : BaseController
     {
         private const string ModelName = "Анкетата";
-
+    
         [AllowAnonymous]
         public IActionResult Survey(string id)
         {
-            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(GetSurveysJsonPath(), Directory.GetCurrentDirectory());
             var surveys = ObjToJsonConverterExtensions.FindSurveyInJsonFile(filePath, id);
 
             return this.View(new SurveyFormModel()
@@ -28,7 +29,7 @@
 
         public IActionResult Edit(string id)
         {
-            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(GetSurveysJsonPath(), Directory.GetCurrentDirectory());
 
             var currSurvey = ObjToJsonConverterExtensions.FindSurveyInJsonFile(filePath, id);
 
@@ -43,7 +44,7 @@
         [ValidateModelState]
         public IActionResult Edit(SurveyFormModel model)
         {
-            var filePath = string.Format(SurveysJasonDbPath, Directory.GetCurrentDirectory());
+            var filePath = string.Format(GetSurveysJsonPath(), Directory.GetCurrentDirectory());
 
             if (!ObjToJsonConverterExtensions.EditSurveyInJsonFile(filePath, model))
             {
@@ -55,6 +56,18 @@
             this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterO));
 
             return this.RedirectToAction("Articles", "Articles");
+        }
+
+        private string GetSurveysJsonPath()
+        {
+            var currCulture= CultureInfo.CurrentCulture.Name;
+
+            if (currCulture == BulgarianCulture)
+            {
+                return SurveysJasonDbPath;
+            }
+
+            return SurveysEnJasonDbPath;
         }
     }
 }

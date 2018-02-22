@@ -1,7 +1,7 @@
 ﻿@model EventFormModel
-
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Редактирай събитие";
+    ViewData["Title"] = Localizer["Edit event"];
 }
 
 <h2 class="text-center mr-t-b-25">@ViewData["Title"]</h2>
@@ -13,7 +13,7 @@
 </div>
 
 @section Scripts
-{
+    {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
 

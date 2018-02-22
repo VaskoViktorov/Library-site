@@ -1,8 +1,9 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Events
 {
     using System.ComponentModel.DataAnnotations;
+    using Search;
 
-    public class EventFormModel
+    public class EventFormModel : SearchFormModel
     {
         public string id { get; set; }
 

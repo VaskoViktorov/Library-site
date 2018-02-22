@@ -121,7 +121,7 @@
     <value>Имейл</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Име</value>
+    <value>Име, Фамилия</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Телефон</value>

@@ -1,4 +1,5 @@
 ﻿@model ArticleFormModel
+@inject IViewLocalizer Localizer
 
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -21,22 +22,22 @@
             <label asp-for="Type"></label>
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Kids))Детски
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Kids))@Localizer["Children's"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Rent))Заемна
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Rent))@Localizer["Book borrowing"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Read))Читални
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Read))@Localizer["Reading rooms"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Check))Справочен
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Check))@Localizer["Information center"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Art))Изкуство
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Art))@Localizer["Art"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Land))Краезнание
+            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Land))@Localizer["Homeland"]
         </div>      
         <span asp-validation-for="Type" class="text-danger"></span>
     </div>
@@ -45,17 +46,17 @@
             <label asp-for="Language"></label>
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.Bg))Български
+            @(Html.RadioButtonFor(l => l.Language, Language.Bg))@Localizer["Bulgarian"]
         </div>
         <div class="row mr-l-0">
-            @(Html.RadioButtonFor(l=> l.Language, Language.En))Английски
+            @(Html.RadioButtonFor(l => l.Language, Language.En))@Localizer["English"]
         </div>
         <span asp-validation-for="Language" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input asp-for="Files" class="form-control" name="files" multiple />
     </div>
-    <button type="submit" class="btn btn-info">Запази</button>
-    <a class="lib-btn" asp-area="LibraryBlog" asp-action="Articles">Обратно</a>
+    <button type="submit" class="btn btn-info">@Localizer["Save"]</button>
+    <a class="lib-btn" asp-area="LibraryBlog" asp-action="Articles">@Localizer["Back"]</a>
 </form>
 

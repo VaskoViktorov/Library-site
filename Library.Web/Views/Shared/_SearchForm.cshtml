@@ -4,9 +4,9 @@
     <form asp-area="LibraryBlog" asp-controller="Search" asp-action="Search" asp-route-model="SearchFormModel" method="get">
         <div class="form-group" style="margin-bottom: 8px;margin-left: 6px;">
             <p class="glyphicon glyphicon-search first-color" style="top: 28px;left: 5px;margin: 0"></p>
-            <input asp-for="@Model.SearchText" class="form-control" style="padding-left: 25px;" placeholder="@Localizer["Write here"]" />
+            <input asp-for="@Model.SearchText" class="form-control"  placeholder="@Localizer["Write here"]" />
         </div>
-        <div class="form-group" style="display: inline-block;padding-left: 2px;padding-right: 58px;">
+        <div id="lib-search-form-second" class="form-group" style="display: inline-block;">
             <label asp-for="@Model.SearchInBooks" class="second-color" style="padding-left: 5px;"></label>
             <input asp-for="@Model.SearchInBooks" checked="checked" type="checkbox" />
         </div>

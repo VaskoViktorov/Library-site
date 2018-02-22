@@ -1,5 +1,5 @@
 ﻿@model ArticleListingViewModel
-
+@inject IViewLocalizer Localizer
 
 @foreach (var article in Model.Articles)
 {
@@ -21,11 +21,11 @@
 
             <div class="text-justify mr-30-auto width-60pr br-w">@Html.Raw(article.Description.TruncateHtml(200, "..."))</div>
             <div class="text-center mr-30-auto width-60pr">
-                <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id"><span>Прочети още</span></a>
+                <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id"><span>@Localizer["Read more"]</span></a>
                 @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                 {
-                    <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit" asp-route-id="@article.Id">Промени</a>
-                    <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete" asp-route-id="@article.Id">Изтрии</a>
+                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit" asp-route-id="@article.Id">@Localizer["Edit"]</a>
+                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete" asp-route-id="@article.Id">@Localizer["Delete"]</a>
                 }
             </div>
         </div>

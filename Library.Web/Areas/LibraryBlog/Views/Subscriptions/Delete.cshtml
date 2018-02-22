@@ -1,7 +1,12 @@
-﻿@model int
+﻿@model SubscriptionDeleteViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Изтрии абонамент";
+    ViewData["Title"] = Localizer["Delete Subscription"];
 }
-<h1 class="mr-t-b-25">Сигурен ли си, че искаш да изтриеш абонамента?</h1>
-<a asp-area="LibraryBlog" asp-action="Destroy" class="btn btn-danger">Да</a>
-<a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Subscriptions">Обратно</a>
+<div class="row">
+    <div class="col-md-11 col-md-offset-1">
+        <h1 class="mr-t-b-25">@Localizer["Are you sure, you want to delete the subscription"]?</h1>
+        <a asp-area="LibraryBlog" asp-action="Destroy" asp-route-id="@Model.Id" class="btn btn-danger">@Localizer["Delete"]</a>
+        <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-action="Subscriptions">@Localizer["Back"]</a>
+    </div>
+</div>

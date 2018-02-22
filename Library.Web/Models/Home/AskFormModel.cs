@@ -18,7 +18,7 @@
         [Required]
         [MinLength(3)]
         [MaxLength(200)]
-        [Display(Name = "Name")]
+        [Display(Name = "Name", ResourceType = typeof(AskFormModelResx))]
         public string UserInfo { get; set; }
 
         [Required]

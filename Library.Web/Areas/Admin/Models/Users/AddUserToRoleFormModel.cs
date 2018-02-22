@@ -1,8 +1,9 @@
 ﻿namespace Library.Web.Areas.Admin.Models.Users
 {
     using System.ComponentModel.DataAnnotations;
+    using LibraryBlog.Models.Search;
 
-    public class AddUserToRoleFormModel
+    public class AddUserToRoleFormModel : SearchFormModel
     {
         [Required]
         public string UserId { get; set; }

@@ -1,8 +1,12 @@
-﻿@model string
-
+﻿@model EventDeleteViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Изтрии събитие";
+    ViewData["Title"] = Localizer["Delete event"];
 }
-<h1 class="mr-t-b-25">Сигурен ли си, че искаш да изтриеш събитието?</h1>
-<a class="btn btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Destroy" asp-route-id="@Model">Да</a>
-<a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">Обратно</a>
+<div class="row">
+    <div class="col-md-11 col-md-offset-1">
+        <h1 class="mr-t-b-25">@Localizer["Are you sure, you want to delete the event"]?</h1>
+        <a class="btn btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Destroy" asp-route-id="@Model.Id">@Localizer["Delete"]</a>
+        <a class="btn btn-default btn-sm" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">@Localizer["Back"]</a>
+    </div>
+</div>

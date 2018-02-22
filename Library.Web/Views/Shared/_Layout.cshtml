@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] | @Localizer["Regional Library \"Mihalaki Georgiev\"-Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
-    <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
-    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
+    <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">    
     <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search" />
+    <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
 
     <environment include="Development">
         <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
@@ -218,17 +218,19 @@
                     </ul>
                 </div>
                 <div class="col-md-3 mr-0-auto">
-                    @Html.Partial("_SearchForm")
-                </div>
-                <div class="col-md-2 text-right">
-                    <div class="p-10 lib-lang-box">
-                        <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език" /></a>
-                        <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език" /></a>
+                    <div id="lib-search-footer-box" class="first-color-b">
+                        @await Component.InvokeAsync("Search")
+                        </div>
                     </div>
+                    <div class="col-md-2 text-right">
+                        <div class="p-10 lib-lang-box">
+                            <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език" /></a>
+                            <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език" /></a>
+                        </div>
 
-                    <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
+                        <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
+                    </div>
                 </div>
-            </div>
         </footer>
     </div>
     <environment include="Development">

@@ -1,7 +1,8 @@
 ﻿@model ArticleViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = Model.Article.Title +" - статия";
-    ViewData["Description"] = Model.Article.Title + "- Научете още подробности..";
+    ViewData["Title"] = Model.Article.Title + " - " + Localizer["article"];
+    ViewData["Description"] = Model.Article.Title + "- " + Localizer["Find more at Regional Library \"Mihalaki Georgiev\" - Vidin."];
 
     var count = Model.Article.Gallery.Images.Count;
 }
@@ -9,7 +10,7 @@
     <h2>@Model.Article.Title</h2>
 </div>
 <div class="row mr-t-40">
-    <div class="col-md-10 col-md-offset-1">       
+    <div class="col-md-10 col-md-offset-1">
         <div class="row max-w-750 mr-10-auto text-center">
             @if (count < 2)
             {
@@ -19,8 +20,8 @@
             }
             <div class="text-justify">@Html.Raw(Model.Article.Description)</div>
             <div class="text-left" style="float: right">
-                <p>Публикувано на: @Model.Article.ReleaseDate.ToShortDateString()</p>
-                <p>Автор: <span class="author-text">@Model.Article.AuthorName</span></p>
+                <p>@Localizer["Publish Date"]: @Model.Article.ReleaseDate.ToShortDateString()</p>
+                <p>@Localizer["Author"]: <span class="author-text">@Model.Article.AuthorName</span></p>
             </div>
         </div>
         @if (count >= 2)
@@ -40,12 +41,12 @@
         <div class="row max-w-750 text-center mr-10-auto">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
-                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit">Редактирай</a>
-                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete">Изтрии</a>
+            <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Edit">@Localizer["Edit"]</a>
+            <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Delete">@Localizer["Delete"]</a>
             }
-            <a class="lib-btn" href="javascript:history.go(-1)">Обратно</a>
+            <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
 
         </div>
-       
+
     </div>
 </div>

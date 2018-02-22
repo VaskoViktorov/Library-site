@@ -1,7 +1,7 @@
 ﻿@model GalleryFormModel
-
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Редактирай Галерия";
+    ViewData["Title"] = Localizer["Edit Gallery"];
 }
 
 <h1 class="text-center mr-t-b-25">@ViewData["Title"]</h1>
@@ -13,6 +13,6 @@
 </div>
 
 @section Scripts
-{
+    {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }

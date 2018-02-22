@@ -121,7 +121,7 @@
     <value>Email</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>Name</value>
+    <value>Name, Last Name</value>
   </data>
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>

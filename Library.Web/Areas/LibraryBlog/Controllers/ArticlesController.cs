@@ -133,8 +133,8 @@
             return this.RedirectToAction(nameof(this.Articles));
         }
 
-        public IActionResult Delete(int id)
-            => this.View(id);
+        public IActionResult Delete(ArticleDeleteViewModel model)
+            => this.View(model);
 
         public async Task<IActionResult> Destroy(int id)
         {

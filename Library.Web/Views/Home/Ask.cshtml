@@ -1,10 +1,12 @@
 ﻿@model AskFormModel
+@inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Попитай библиотекаря";
-    ViewData["Description"] = "Регионална библиотека \"Михалаки Георгиев\" - гр. Видин, очаква вашите въпроси.";
+    ViewData["Title"] = Localizer["Ask the librarian"];
+    ViewData["Description"] = Localizer["We await your questions at Regional Library \"Mihalaki Georgiev\" - Vidin."];
 }
 <div class="row text-center">
-    <h2>@ViewData["Title"] </h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row width-60pr mr-0-auto">
     <form method="post" enctype="multipart/form-data">
@@ -28,8 +30,8 @@
             <textarea id="summernote" asp-for="Description" class="form-control"></textarea>
             <span asp-validation-for="Description" class="text-danger"></span>
         </div>
-        <button type="submit" class="lib-btn-invrt">Изпрати</button>
-        <a class="lib-btn" asp-controller="Home" asp-action="Index">Обратно</a>
+        <button type="submit" class="lib-btn-invrt">@Localizer["Send"]</button>
+        <a class="lib-btn" asp-controller="Home" asp-action="Index">@Localizer["Back"]</a>
     </form>
 </div>
 

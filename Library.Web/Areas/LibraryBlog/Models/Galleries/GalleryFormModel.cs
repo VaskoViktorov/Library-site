@@ -4,10 +4,11 @@
     using Microsoft.AspNetCore.Http;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Search;
 
     using static Data.DataConstants;
 
-    public class GalleryFormModel
+    public class GalleryFormModel : SearchFormModel
     {
         [Required]
         [MinLength(GalleryTitleMinLength)]

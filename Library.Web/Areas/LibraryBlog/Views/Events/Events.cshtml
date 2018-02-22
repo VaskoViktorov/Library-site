@@ -1,6 +1,7 @@
 ﻿@model EventListingViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Събития";
+    ViewData["Title"] = Localizer["Events"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
@@ -8,7 +9,7 @@
 <div class="row text-center mr-t-b-25">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
     {
-        <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Events" asp-action="Create">Създай</a>
+    <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Events" asp-action="Create">@Localizer["Create"]</a>
     }
 </div>
 <div class="row">
@@ -16,10 +17,10 @@
         <table class="table table-hover table-responsive ">
             <thead>
                 <tr>
-                    <th>Дата</th>
-                    <th>Заглавие</th>
-                    <th>Текст</th>
-                    <th>Опции</th>
+                    <th>@Localizer["Date"]</th>
+                    <th>@Localizer["Title"]</th>
+                    <th>@Localizer["Description"]</th>
+                    <th>@Localizer["Actions"]</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,8 +31,8 @@
                         <td>@eventLog.title</td>
                         <td>@eventLog.description</td>
                         <td>
-                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Events" asp-action="Edit" asp-route-id="@eventLog.id">Промени</a>
-                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Delete" asp-route-id="@eventLog.id">Изтрии</a>
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Events" asp-action="Edit" asp-route-id="@eventLog.id">@Localizer["Edit"]</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Events" asp-action="Delete" asp-route-id="@eventLog.id">@Localizer["Delete"]</a>
                         </td>
                     </tr>
                 }

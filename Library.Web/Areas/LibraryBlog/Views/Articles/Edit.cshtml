@@ -1,7 +1,7 @@
 ﻿@model ArticleFormModel
-
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Редактирай Статия";
+    ViewData["Title"] = Localizer["Edit Article"];
 }
 
 <h2 class="text-center mr-t-b-25">@ViewData["Title"]</h2>
