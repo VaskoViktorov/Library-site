@@ -40,6 +40,61 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Books\BookFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BookFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Events\EventFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Galleries\GalleryFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GalleryFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SearchFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Subscriptions\SubscriptionFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SubscriptionFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\LibraryBlog\Models\Surveys\SurveyFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SurveyFormModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Models\Account\ForgotPasswordViewModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ForgotPasswordViewModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Models\Account\LoginViewModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LoginViewModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Models\Account\RegisterViewModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RegisterViewModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Models\Manage\ChangePasswordViewModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ChangePasswordViewModelResx.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Models\Manage\IndexViewModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexViewModelResx.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Shared\_SearchForm.bg.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -55,17 +110,51 @@
       <LastGenOutput>ArticleFormModelResxbg.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Articles\ArticleFormModelResx.en.resx">
-      <LastGenOutput>ArticleFormModelResx.bg.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Articles\ArticleFormModelResx.en.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ArticleFormModelResxbg.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Articles\ArticleFormModelResx.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ArticleFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Books\BookFormModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Books\BookFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BookFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Events\EventFormModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Events\EventFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EventFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Galleries\GalleryFormModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Galleries\GalleryFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GalleryFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Subscriptions\SubscriptionFormModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Subscriptions\SubscriptionFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriptionFormModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Surveys\SurveyFormModel.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Surveys\SurveyFormModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SurveyFormModelResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Articles\Articles.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +269,27 @@
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Surveys\Survey.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\ForgotPasswordViewModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\ForgotPasswordViewModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPasswordViewModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\LoginViewModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\LoginViewModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginViewModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\RegisterViewModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Account\RegisterViewModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegisterViewModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Models\Home\AskFormModelResx.en.resx">
       <LastGenOutput>AskFormModelResx.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -187,6 +297,38 @@
     <EmbeddedResource Update="Resources\Models\Home\AskFormModelResx.bg.resx">
       <LastGenOutput>AskFormModelResx.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Manage\ChangePasswordViewModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Manage\ChangePasswordViewModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ChangePasswordViewModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Manage\IndexViewModelResx.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Models\Manage\IndexViewModelResx.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IndexViewModelResx.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\AccessDenied.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\ConfirmEmail.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\ForgotPassword.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\ForgotPasswordConfirmation.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\Login.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\Register.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Ask.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +338,18 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Index.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Manage\ChangePassword.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Manage\Index.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Manage\_Layout.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Manage\_ManageNav.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\Components\LatestBooks\Default.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>

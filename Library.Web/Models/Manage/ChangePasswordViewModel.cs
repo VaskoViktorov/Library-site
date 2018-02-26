@@ -1,23 +1,25 @@
 ﻿namespace Library.Web.Models.Manage
 {
     using System.ComponentModel.DataAnnotations;
+    using Areas.LibraryBlog.Models.Search;
+    using Resources.Models.Manage;
 
-    public class ChangePasswordViewModel
+    public class ChangePasswordViewModel : SearchFormModel
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "CurrentPassword", ResourceType = typeof(ChangePasswordViewModelResx))]
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessageResourceName = "ErrorNewPassword", MinimumLength = 6, ErrorMessageResourceType = typeof(ChangePasswordViewModelResx))]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "NewPassword", ResourceType = typeof(ChangePasswordViewModelResx))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "ConfirmNewPassword", ResourceType = typeof(ChangePasswordViewModelResx))]
+        [Compare("NewPassword", ErrorMessageResourceName = "ErrorConfirmNewPassword", ErrorMessageResourceType = typeof(ChangePasswordViewModelResx))]
         public string ConfirmPassword { get; set; }
 
         public string StatusMessage { get; set; }

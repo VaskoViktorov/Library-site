@@ -87,7 +87,7 @@
                             <li class="dropdown-submenu">
                                 <a class="test" tabindex="-1">@Localizer["About us"]</a>
                                 <ul class="dropdown-menu">
-                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="History">@Localizer["History"]</a></li>
+                                    <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Library">@Localizer["Library info"]</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
                                     <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
                                 </ul>
@@ -167,7 +167,6 @@
             <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo@(engType).png" alt="panel" /> </a>
         </div>
     </div>
-
     <div class="container body-content">
         <div class="row pb-20">
             <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
@@ -189,7 +188,6 @@
                     </div>
                 }
                 @RenderBody()
-                @await Html.PartialAsync("_SelectLanguagePartial")
             </div>
             <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenu")</div>
         </div>
@@ -222,12 +220,8 @@
                         @await Component.InvokeAsync("Search")
                         </div>
                     </div>
-                    <div class="col-md-2 text-right">
-                        <div class="p-10 lib-lang-box">
-                            <a class="p-rl-15" asp-area="" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/bg-flag.png" alt="БГ език" /></a>
-                            <a asp-area="En" asp-controller="Home" asp-action="Index"><img class="width-25" src="~/images/SiteImages/uk-flag.png" alt="АНГ език" /></a>
-                        </div>
-
+                    <div class="col-md-2 text-right">                       
+                            @await Html.PartialAsync("_SelectLanguagePartial")               
                         <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
                     </div>
                 </div>

@@ -55,18 +55,5 @@
         Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language, int page = 1);
     
         Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language, int page = 1);
-
-        //English
-        Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1);
-
-        Task<int> TotalEnAsync();
-
-        Task<int> TotalForKidsEnAsync();
-
-        Task<int> TotalForLandEnAsync();
-
-        Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenEnAsync(int page = 1);
-
-        Task<IEnumerable<BookListingServiceModel>> AllBooksForLandEnAsync(int page = 1);
     }
 }

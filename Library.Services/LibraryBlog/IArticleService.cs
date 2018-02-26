@@ -35,11 +35,5 @@
         Task<int> TotalAsync(string language);
 
         Task<ArticleServiceModel> Details(int id);
-
-        //English
-
-        Task<IEnumerable<ArticleListingServiceModel>> AllArticlesEnAsync(int page = 1);
-
-        Task<int> TotalEnAsync();
     }
 }

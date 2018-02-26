@@ -25,7 +25,7 @@
         public string Description { get; set; }
 
         [DataType(DataType.Date)]
-        [Display(Name = "Release date", ResourceType = typeof(ArticleFormModelResx))]
+        [Display(Name = "Release", ResourceType = typeof(ArticleFormModelResx))]
         public DateTime ReleaseDate { get; set; }
 
         [Required]

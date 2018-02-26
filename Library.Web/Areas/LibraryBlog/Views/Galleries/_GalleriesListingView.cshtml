@@ -17,12 +17,14 @@
 
         <div class="row text-center mr-0-auto">
             <p class="lib-gallery-b">@Localizer["Pics count"]: @count</p>
+            <div class="p-t-10">
             <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">@Localizer["See more"]</a>
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
             {
             <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit" asp-route-id="@gallery.Id">@Localizer["Edit"]</a>
             <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete" asp-route-id="@gallery.Id">@Localizer["Delete"]</a>
             }
+            </div>
         </div>
     </div>
 }

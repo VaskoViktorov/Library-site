@@ -20,11 +20,5 @@
         Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(string language,int page = 1);
 
         Task<int> TotalAsync(string language);
-
-        //English
-
-        Task<IEnumerable<GalleryServiceModel>> AllGalleriesEnAsync(int page = 1);
-
-        Task<int> TotalEnAsync();
     }
 }

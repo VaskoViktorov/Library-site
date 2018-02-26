@@ -1,6 +1,7 @@
 ﻿@model RegisterViewModel
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = Localizer["Register"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
@@ -9,7 +10,7 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <h4>Create a new account.</h4>
+            <h4>@Localizer["Create a new account"].</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -47,7 +48,7 @@
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="lib-btn-invrt">Register</button>
+            <button type="submit" class="lib-btn-invrt">@Localizer["Register"]</button>
         </form>
     </div>
 </div>

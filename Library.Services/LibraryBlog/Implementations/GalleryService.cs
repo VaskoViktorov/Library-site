@@ -123,31 +123,6 @@ namespace Library.Services.LibraryBlog.Implementations
                 .Where(g => g.Images.Count > 1 && g.Language == (Language)language.ParseLang())
                 .CountAsync();
 
-        public async Task<IEnumerable<GalleryServiceModel>> AllGalleriesEnAsync(int page = 1)
-        {
-            var gallery = await this.db
-                .Galleries
-                .Where(g => g.Images.Count > 1 && g.Language == Language.En)
-                .OrderByDescending(b => b.Id)
-                .Skip((page - 1) * GalleriesPageSize)
-                .Take(GalleriesPageSize)
-                .ProjectTo<GalleryServiceModel>()
-                .ToListAsync();
-
-            await this.db
-                .Images
-                .ToListAsync();
-
-            return gallery;
-        }
-
-        public async Task<int> TotalEnAsync()
-            => await this.db
-                .Galleries
-                .Where(g => g.Images.Count > 1 && g.Language == Language.En)
-                .CountAsync();
-
-
         private async Task LoadImages(int id)
             => await this.db
                 .Images

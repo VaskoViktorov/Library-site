@@ -7,7 +7,5 @@
     public interface IHomeService
     {
         Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesAsync(string language);
-
-        Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesEnAsync();
     }
 }

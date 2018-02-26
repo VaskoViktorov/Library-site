@@ -1,5 +1,8 @@
 ﻿@model BookListingViewModel
 @inject IViewLocalizer Localizer
+@{
+    var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
+}
 @foreach (var book in Model.Books)
 {
     <div class="book-box col-md-12 min-h-150 mr-t-b-25">
@@ -9,7 +12,19 @@
         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
             <p class="bold">@book.BookTitle.LimitStringLenght(60)</p>
             <small class="author-text">@book.AuthorName</small>
-            <p class="author-text pt-20">Отдел "@book.Department.DepartmentsToBgLang()"</p>
+            <p class="author-text pt-20">
+                "@{
+                    if (currentCulture == "bg-BG")
+                    {
+                        @book.Department.DepartmentsToBgLang()
+                    }
+                    else
+                    {
+                        @book.Department
+                    }
+                }"
+                @Localizer["Department"]
+            </p>
         </a>
         <div class="mr-t-10">
             @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

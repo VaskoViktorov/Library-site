@@ -1,10 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Confirm email";
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Confirm email"];
 }
-
-<h2>@ViewData["Title"]</h2>
-<div>
-    <p>
-        Thank you for confirming your email.
-    </p>
+<div class="row text-center">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="max-w-300 mr-0-auto">
+            <p>
+                @Localizer["Thank you for confirming your email."]
+            </p>
+        </div>
+    </div>
 </div>

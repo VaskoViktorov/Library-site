@@ -31,12 +31,14 @@
             </div>
         }
         <div class="row max-w-750 text-center mr-10-auto">
-            @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-            {
-                <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit">@Localizer["Edit"]</a>
-                <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete">@Localizer["Delete"]</a>
-            }
+            <div class="p-t-10">
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                {
+                    <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Edit">@Localizer["Edit"]</a>
+                    <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Delete">@Localizer["Delete"]</a>
+                }
                 <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
+            </div>
         </div>
 
     </div>

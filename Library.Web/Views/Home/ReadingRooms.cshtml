@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "ReadingRooms";
+}
+<div class="row text-center">
+    <h2>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</h2>
+</div>
+<div id="scroll-id4" class="max-w-500 mr-10-auto">
+    <table class="table-hover" style="width: -webkit-fill-available">
+        <thead>
+            <tr>
+                <th colspan="2" class="text-center">Работно време</th>
+            </tr>
+        </thead>
+        <tbody style="width: 500px;">
+            <tr>
+                <td class="p-0-3 text-left">Понеделник - Петък</td>
+                <td class="p-0-3 text-left">9.00-18.00 часа</td>
+            </tr>
+            <tr>
+                <td class="p-0-3 text-left">Събота</td>
+                <td class="p-0-3 text-left">Почивен ден</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="panorama">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="Отдел „Читални”">
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="text-justify max-w-750 mr-0-auto">
+        <p>Организира, съхранява, поддържа и предоставя за ползване богат фонд от от 15 863 р.е. книги и справочни издания в областите наука, философия, психология, социология, политика, икономика, право, педагогика, етнография, история, технически, медицински и селскостопански науки, мултимедийни формати: CD и DVD; карти и атласи от различни научни области. </p>
+        <p>Отделът обслужва потребителите с периодични издания в различни научни области с траен или срочен режим на съхранение. На разположение на читателите е Държавен вестник от 1943 година до сега. Абонаментът обхваща 85 периодични издания, а от дарения се получават още 5 заглавия.</p>
+        <p>Могат да се ползват преносими компютри с наличната Wi-Fi мрежа. На читателите се доставят необходимите им книги и статии от други библиотеки в страната чрез услугата междубиблиотечно заемане.</p>
+    </div>
+    <div class="text-center">
+        <a class="lib-btn" href="javascript:history.go(-1)">Назад</a>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(".panorama").panorama_viewer({
+            repeat: true,
+            direction: "horizontal",
+            animationTime: 1200,
+            easing: "ease-out",
+            overlay: true
+        });
+    </script>
+}

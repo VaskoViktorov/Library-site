@@ -86,23 +86,6 @@
                 .ProjectTo<SubscriptionListingServiceModel>()
                 .ToListAsync();
 
-
-        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersEnAsync()
-            => await this.db
-                .Subscriptions
-                .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Newspaper && a.Language == Language.En)
-                .ProjectTo<SubscriptionListingServiceModel>()
-                .ToListAsync();
-
-        public async Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesEnAsync()
-            => await this.db
-                .Subscriptions
-                .OrderBy(a => a.Name)
-                .Where(a => a.Type == SubscriptionType.Magazine && a.Language == Language.En)
-                .ProjectTo<SubscriptionListingServiceModel>()
-                .ToListAsync();
-
         public async Task<bool> UniqueCheckAsync(string name)
         {
             if (await this.db.Subscriptions.AnyAsync(a => a.Name == name))

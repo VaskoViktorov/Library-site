@@ -29,7 +29,7 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public ArticleFormModelResx() {
+        internal ArticleFormModelResx() {
         }
         
         /// <summary>
@@ -90,9 +90,9 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         /// <summary>
         ///   Looks up a localized string similar to Release date.
         /// </summary>
-        public static string Release_date {
+        public static string Release {
             get {
-                return ResourceManager.GetString("Release date", resourceCulture);
+                return ResourceManager.GetString("Release", resourceCulture);
             }
         }
         

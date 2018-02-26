@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Methodological";
+}
+<div class="row text-center">
+    <h2>Отдел „Методичен”</h2>
+</div>
+<div class="max-w-500 mr-10-auto">
+    <table class="table-hover" style="width: -webkit-fill-available">
+        <thead>
+            <tr>
+                <th colspan="2" class="text-center">Работно време</th>
+            </tr>
+        </thead>
+        <tbody style="width: 500px;">
+            <tr>
+                <td class="p-0-3 text-left">Понеделник - Петък</td>
+                <td class="p-0-3 text-left">9.00-12.00 часа; 12.30-17.00 часа</td>
+            </tr>
+            <tr>
+                <td class="p-0-3 text-left">Събота</td>
+                <td class="p-0-3 text-left">Почивен ден</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="panorama">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="Отдел „Методичен”">
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="text-justify max-w-750 mr-0-auto">
+        <p class="text-justify mr-t-b-25">Оказва експертно-консултантска и квалификационна помощ на библиотеките от област Видин. Специалистът в отдела координира и професионално подпомага дейностите, извършвани от библиотекарите от област Видин. В отдела се събира, обработва и анализира информацията за работа и състоянието на библиотеките в областта. Основните потребители на отдела са библиотечни специалисти, студенти и ученици. Библиотековедският фонд от книги и други видове документи съдържа над 500 библиотечни единици - на български и чужди езици.</p>
+    </div>
+    <div class="text-center">
+        <a class="lib-btn" href="javascript:history.go(-1)">Назад</a>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(".panorama").panorama_viewer({
+            repeat: true,
+            direction: "horizontal",
+            animationTime: 1200,
+            easing: "ease-out",
+            overlay: true
+        });
+    </script>
+}

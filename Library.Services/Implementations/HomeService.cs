@@ -35,22 +35,5 @@
 
             return articles;
         }
-
-        public async Task<IEnumerable<ArticleListingHomeServiceModel>> LatestFourArticlesEnAsync()
-        {
-            var articles = await this.db
-                .Articles
-                .Where(a => a.Language == Language.En)
-                .OrderByDescending(a => a.ReleaseDate)
-                .Take(4)
-                .ProjectTo<ArticleListingHomeServiceModel>()
-                .ToListAsync();
-
-            await this.db
-                .Images
-                .ToListAsync();
-
-            return articles;
-        }
     }
 }

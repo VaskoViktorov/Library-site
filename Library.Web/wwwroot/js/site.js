@@ -1,18 +1,12 @@
 ﻿//load check
-var scripts = Array
-    .from(document.querySelectorAll('script'))
-    .map(scr => scr.src);
+//var scripts = Array
+//    .from(document.querySelectorAll('script'))
+//    .map(scr => scr.src);
 
 //if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
 //    flag = true;
 //}
 
-//change language
-$(document).ready(function () {
-    $("#selectLanguage select").change(function () {
-        $(this).parent().submit();
-    });
-}());
 //img popup
 $(document).ready(function () {
 
@@ -60,8 +54,8 @@ $(window).scroll(function () {
     var winScrollTop = $(window).scrollTop();
     //var winHeight = $(window).height();
     var floaterHeight = $('#floater').outerHeight(true);
-    var fromBottom = -80;
-    var top = winScrollTop - floaterHeight - fromBottom + 350;
+    var fromBottom = 210;
+    var top = winScrollTop - floaterHeight + fromBottom;
     $('#floater').css({ 'top': top + 'px' });
 });
 

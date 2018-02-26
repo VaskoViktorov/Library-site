@@ -167,53 +167,5 @@ namespace Library.Services.LibraryBlog.Implementations
                .Books
                .Where(b => b.Department == DepartmentType.Land && b.Language == (Language)language.ParseLang())
                .CountAsync();
-
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksEnAsync(int page = 1)
-            => await this.db
-                .Books
-                .OrderByDescending(b => b.Date)
-                .Where(b => b.Language == Language.En)
-                .Skip((page - 1) * BooksPageSize)
-                .Take(BooksPageSize)
-                .ProjectTo<BookListingServiceModel>()
-                .ToListAsync();
-
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenEnAsync(int page = 1)
-            => await this.db
-                .Books
-                .OrderByDescending(b => b.Date)
-                .Where(b => b.Department == DepartmentType.Kids && b.Language == Language.En)
-                .Skip((page - 1) * BooksPageSize)
-                .Take(BooksPageSize)
-                .ProjectTo<BookListingServiceModel>()
-                .ToListAsync();
-
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandEnAsync(int page = 1)
-            => await this.db
-                .Books
-                .OrderByDescending(b => b.Date)
-                .Where(b => b.Department == DepartmentType.Land && b.Language == Language.En)
-                .Skip((page - 1) * BooksPageSize)
-                .Take(BooksPageSize)
-                .ProjectTo<BookListingServiceModel>()
-                .ToListAsync();
-
-        public async Task<int> TotalEnAsync()
-            => await this.db
-                .Books
-                .Where(b => b.Language == Language.En)
-                .CountAsync();
-
-        public async Task<int> TotalForKidsEnAsync()
-            => await this.db
-                .Books
-                .Where(b => b.Department == DepartmentType.Kids && b.Language == Language.En)
-                .CountAsync();
-
-        public async Task<int> TotalForLandEnAsync()
-            => await this.db
-                .Books
-                .Where(b => b.Department == DepartmentType.Land && b.Language == Language.En)
-                .CountAsync();
     }
 }

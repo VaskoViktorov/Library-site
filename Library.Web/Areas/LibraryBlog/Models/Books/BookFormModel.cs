@@ -3,6 +3,8 @@
     using Data.Models;
     using System.ComponentModel.DataAnnotations;
     using Search;
+    using Resources.Areas.LibraryBlog.Models.Books;
+
     using static Data.DataConstants;
 
     public class BookFormModel : SearchFormModel
@@ -10,61 +12,61 @@
         [Required]
         [MinLength(BookAuthorNameMinLength)]
         [MaxLength(BookAuthorNameMaxLength)]
-        [Display(Name = "Автор")]
+        [Display(Name = "Author", ResourceType = typeof(BookFormModelResx))]
         public string AuthorName { get; set; }
 
         [Required]
         [MinLength(BookTitleMinLength)]
         [MaxLength(BookTitleMaxLength)]
-        [Display(Name = "Заглавие")]
+        [Display(Name = "Title", ResourceType = typeof(BookFormModelResx))]
         public string BookTitle { get; set; }
 
         [MinLength(BookDescriptionMinLength)]
         [MaxLength(BookDescriptionMaxLength)]
-        [Display(Name = "Кратко описание")]
+        [Display(Name = "Description", ResourceType = typeof(BookFormModelResx))]
         public string BookDescription { get; set; }
 
         [MinLength(BookCityMinLength)]
         [MaxLength(BookCityMaxLength)]
-        [Display(Name = "Град")]
+        [Display(Name = "City", ResourceType = typeof(BookFormModelResx))]
         public string CityIssued { get; set; }
 
         [MinLength(BookPressMinLength)]
         [MaxLength(BookPressMaxLength)]
-        [Display(Name = "Издател")]
+        [Display(Name = "Publisher", ResourceType = typeof(BookFormModelResx))]
         public string Press { get; set; }
 
         [Required]
-        [Display(Name = "Отдел")]
+        [Display(Name = "Department", ResourceType = typeof(BookFormModelResx))]
         public DepartmentType Department { get; set; }
 
-        [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessage = "Некоректен формат за дата. Приемат се стойности от 1800 до 2099")]
-        [Display(Name = "Година на издаване")]
+        [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessageResourceName= "DateError", ErrorMessageResourceType = typeof(BookFormModelResx))]
+        [Display(Name = "Date", ResourceType = typeof(BookFormModelResx))]
         public int PublishDate { get; set; }
 
 
         [Range(0, int.MaxValue)]
-        [Display(Name = "Страници")]
+        [Display(Name = "Pages", ResourceType = typeof(BookFormModelResx))]
         public int Pages { get; set; }
 
         [Range(0, int.MaxValue)]
-        [Display(Name = "Размер")]
+        [Display(Name = "Sizes", ResourceType = typeof(BookFormModelResx))]
         public int Size { get; set; }
 
         [Required]
         [MinLength(BookGenreMinLength)]
         [MaxLength(BookGenreMaxLength)]
-        [Display(Name = "Жанр")]
+        [Display(Name = "Genre", ResourceType = typeof(BookFormModelResx))]
         public string Genre { get; set; }
 
         [MinLength(BookImageUrlMinLength)]
         [MaxLength(BookImageUrlMaxLength)]
-        [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$", ErrorMessage = "Грешен линк. Линка трябва да завършва с .jpg, .png или .gif .")]
-        [Display(Name = "Линк")]
+        [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$",ErrorMessageResourceName = "UrlError", ErrorMessageResourceType = typeof(BookFormModelResx))]
+        [Display(Name = "Url", ResourceType = typeof(BookFormModelResx))]
         public string ImageUrl { get; set; }
 
         [Required]
-        [Display(Name = "Език")]
+        [Display(Name = "Language", ResourceType = typeof(BookFormModelResx))]
         public Language Language { get; set; }
     }
 }

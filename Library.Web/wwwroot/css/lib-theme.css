@@ -179,7 +179,7 @@ body > nav > div > div.navbar-collapse.collapse > ul > li.lib-submenu-color {
     background-color: #660B0B;
 }
 #sidebar-left {
-    padding: 0px;
+    padding: 0;
 }
 
 footer {
@@ -249,7 +249,7 @@ h3 {
     padding-right: 30px;
     padding-top: 17px;
     padding-bottom: 13px;
-    margin: 0px;
+    margin: 0;
     color: #FFEDD8;
     font-weight: bold;
     text-decoration: none;
@@ -266,9 +266,10 @@ h3 {
     border-top-left-radius: 20px;
     margin-bottom: 20px
 }
+.lib-lang-box a:hover {
+    opacity: 0.7;
+}
 .lib-btn {
-    position: relative;
-    top: 10px;
     color: #FFEDD8;
     background-color: #29739E;
     font-weight: bold;
@@ -286,8 +287,6 @@ h3 {
 }
 
 .lib-btn-invrt {
-    position: relative;
-    top: 10px;
     color: #FFEDD8;
     background-color: #8f4d4d;
     font-weight: bold;
@@ -354,7 +353,7 @@ ul.pagination > li:first-child a {
     position: absolute;
     top: 12px;
     border: 2px solid #FFEDD8;
-    width: 107px;
+    width: 101px;
     background: #FFEDD8;
     border-radius: 15px;
 }
@@ -481,7 +480,7 @@ ul#worktime-menu.dropdown-menu {
     background-color: #29739E;
     width: 120px;
     color: #FFEDD8;
-    margin: 0px auto 0 auto;
+    margin: 0 auto 0 auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     font-weight: bold;
@@ -542,7 +541,7 @@ div#sidebar-right {
     list-style: none;
     padding-left: 0 !important;
     margin: 10px auto;
-    -webkit-padding-start: 0;
+    -webkit-padding-start: 0;    
 }
 #sidebar-right > div > ul img {
     border: 1px solid #29739E;
@@ -580,7 +579,7 @@ div#sidebar-right {
 }
 /*Donate*/
 .lib-sidebar-p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: #FFEDD8;
     font-size: 1.3em;
     font-weight: bold;
@@ -762,10 +761,23 @@ ul.lib-footer-ul li a:hover {
     display: inline-block;
 }
 #lib-search-footer-box #lib-search-form-second {
-    padding-left: 1px;
-    padding-right: 45px;
+    padding-left: 0;
+    padding-right: 21px;
+    width: 117px;
+    text-align: right;
+}
+#lib-search-footer-box #lib-search-form-third {
+    display: inline-block;
+    text-align: right;
+    width: 95px;
+    padding-right: 5px;
 }
 #lib-search-footer-box #lib-search-form-fourth {
-    padding-right: 15px;
-    padding-left: 20px;
+    padding-left: 22px;
+    width: 100px;
+}
+#lib-search-footer-box #lib-search-form-fifth {
+    display: inline-block;
+    text-align: right;
+    width: 109px;
 }

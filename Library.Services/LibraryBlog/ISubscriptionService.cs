@@ -19,11 +19,6 @@
 
         Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesAsync(string language);
 
-        //English
-
-        Task<IEnumerable<SubscriptionListingServiceModel>> AllNewspapersEnAsync();
-
-        Task<IEnumerable<SubscriptionListingServiceModel>> AllMagazinesEnAsync();
         Task<bool> UniqueCheckAsync(string name);
     }
 }

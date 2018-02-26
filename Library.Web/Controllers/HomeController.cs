@@ -57,12 +57,12 @@ namespace Library.Web.Controllers
                 Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
             });
 
-        [HttpPost]
-        public IActionResult SetLanguage(string culture)
+    
+        public IActionResult SetLanguage(string id)
         {
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(id)),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
@@ -127,6 +127,36 @@ namespace Library.Web.Controllers
             => View();
 
         public IActionResult LibraryPost()
+            => View();
+
+        public IActionResult Library()
+            => View();
+
+        public IActionResult Art()
+            => View();
+
+        public IActionResult BookBorrowing()
+            => View();
+
+        public IActionResult Children()
+            => View();
+
+        public IActionResult Homeland()
+            => View();
+
+        public IActionResult InformationCenter()
+            => View();
+
+        public IActionResult ReadingRooms()
+            => View();
+
+        public IActionResult ForeignReadingRoom()
+            => View();
+
+        public IActionResult ApcDepartment()
+            => View();
+
+        public IActionResult Methodological()
             => View();
 
         public IActionResult Error()

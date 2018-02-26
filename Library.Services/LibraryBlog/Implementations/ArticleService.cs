@@ -150,30 +150,6 @@
                 .Where(a => a.Language == (Language)language.ParseLang())
                 .CountAsync();
 
-        public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesEnAsync(int page = 1)
-        {
-            var articles = await this.db
-                .Articles
-                .Where(a => a.Language == Language.En)
-                .OrderByDescending(b => b.ReleaseDate)
-                .Skip((page - 1) * ArticlesPageSize)
-                .Take(ArticlesPageSize)
-                .ProjectTo<ArticleListingServiceModel>()
-                .ToListAsync();
-
-            await this.db
-                .Images
-                .ToListAsync();
-
-            return articles;
-        }
-
-        public async Task<int> TotalEnAsync()
-            => await this.db
-                .Articles
-                .Where(a => a.Language == Language.En)
-                .CountAsync();
-
         private async Task LoadImages(int id)
             => await this.db
                 .Images
