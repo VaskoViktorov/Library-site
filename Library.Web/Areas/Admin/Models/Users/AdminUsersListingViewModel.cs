@@ -5,8 +5,8 @@
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Services.Admin.Models;
     using System.Collections.Generic;
-    using LibraryBlog.Models.Search;
-    public class AdminUsersListingViewModel : SearchFormModel, IMapFrom<User>
+
+    public class AdminUsersListingViewModel : IMapFrom<User>
     {
         public IEnumerable<AdminUserServiceListingModel> Users { get; set; }
 

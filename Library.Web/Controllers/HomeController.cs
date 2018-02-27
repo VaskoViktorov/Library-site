@@ -31,6 +31,12 @@ namespace Library.Web.Controllers
             this.html = html;
             this.home = home;
         }
+       
+        public async Task<IActionResult> Index()
+            => View(new ArticleListingHomeViewModel
+            {
+                Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
+            });
 
         public IActionResult Ask()
             => View();
@@ -50,14 +56,8 @@ namespace Library.Web.Controllers
             emailSender.SendEmailWithQuestionAsync(email, htmlString);
             return this.RedirectToAction(nameof(this.Index));
         }
-     
-        public async Task<IActionResult> Index()
-            => View(new ArticleListingHomeViewModel
-            {
-                Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
-            });
 
-    
+
         public IActionResult SetLanguage(string id)
         {
             Response.Cookies.Append(
@@ -131,6 +131,8 @@ namespace Library.Web.Controllers
 
         public IActionResult Library()
             => View();
+
+        //Departments static pages
 
         public IActionResult Art()
             => View();

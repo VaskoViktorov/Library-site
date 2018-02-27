@@ -2,9 +2,8 @@
 {
     using Services.LibraryBlog.Models.Subscriptions;
     using System.Collections.Generic;
-    using Search;
 
-    public class SubscriptionListingViewModel : SearchFormModel
+    public class SubscriptionListingViewModel
     {
         public IEnumerable<SubscriptionListingServiceModel> Newspapers { get; set; }
 

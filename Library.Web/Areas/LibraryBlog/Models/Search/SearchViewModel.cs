@@ -6,7 +6,7 @@
     using Services.LibraryBlog.Models.Subscriptions;
     using System.Collections.Generic;
 
-    public class SearchViewModel : SearchFormModel
+    public class SearchViewModel
     {
         public string SearchedText { get; set; }
 

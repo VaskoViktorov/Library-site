@@ -5,7 +5,7 @@
 
     var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
 }
-}
+
 <div class="row hidden-xs">
     <div class="mr-0-auto col-md-offset-6" style="width: 30px">
         <div id="lib-search" class="third-color-b dropdown">
@@ -17,14 +17,14 @@
         </div>
     </div>
 </div>
-<div id="search-head" class="row text-center">
-    <h2>@ViewData["Title"] @Localizer["for"]:</h2>
+<div id="search-head" class="row text-center">   
+        <h2>@ViewData["Title"] @Localizer["for"]:</h2>
 </div>
-<div class="row text-center mr-t-20">
+<div class="row text-center mr-t-20" style="padding-left: 40px;">
     <h4>"@Model.SearchedText"</h4>
 </div>
 <div class="row text-center">
-    <div class="col-md-12">
+    <div class="col-md-12 " style="padding-left: 50px;">
         @{
             if (Model.SearchInBook != null)
             {
@@ -130,6 +130,6 @@
         }
     </div>
 </div>
-<div class="row text-center mr-t-b-25">
+<div class="row text-center mr-t-b-25" style="padding-left: 40px;">
     <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Back"]</a>
 </div>

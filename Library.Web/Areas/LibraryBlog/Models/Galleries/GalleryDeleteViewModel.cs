@@ -1,8 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Galleries
 {
-    using Search;
 
-    public class GalleryDeleteViewModel : SearchFormModel
+    public class GalleryDeleteViewModel
     {
         public int Id { get; set; }
     }

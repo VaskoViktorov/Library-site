@@ -3,11 +3,10 @@
     using Services.LibraryBlog.Models.Galleries;
     using System;
     using System.Collections.Generic;
-    using Search;
 
     using static Services.ServicesConstants;
 
-    public class GalleryListingViewModel : SearchFormModel
+    public class GalleryListingViewModel
     {
         public IEnumerable<GalleryServiceModel> Galleries { get; set; }
 

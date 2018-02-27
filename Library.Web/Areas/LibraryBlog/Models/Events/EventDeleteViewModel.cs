@@ -1,8 +1,6 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Events
 {
-    using Search;
-
-    public class EventDeleteViewModel : SearchFormModel
+    public class EventDeleteViewModel
     {
         public string Id { get; set; }
     }

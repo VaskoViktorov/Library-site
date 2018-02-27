@@ -358,7 +358,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\Components\Search\Default.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\_LoginPartial.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>

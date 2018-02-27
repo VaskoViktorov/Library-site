@@ -3,11 +3,10 @@
     using Services.LibraryBlog.Models.Articles;
     using System;
     using System.Collections.Generic;
-    using Search;
 
     using static Services.ServicesConstants;
 
-    public class ArticleListingViewModel : SearchFormModel
+    public class ArticleListingViewModel
     {
         public IEnumerable<ArticleListingServiceModel> Articles { get; set; }
 

@@ -1,10 +1,9 @@
 ﻿namespace Library.Web.Models.Manage
 {
     using System.ComponentModel.DataAnnotations;
-    using Areas.LibraryBlog.Models.Search;
     using Resources.Models.Manage;
 
-    public class ChangePasswordViewModel : SearchFormModel
+    public class ChangePasswordViewModel
     {
         [Required]
         [DataType(DataType.Password)]

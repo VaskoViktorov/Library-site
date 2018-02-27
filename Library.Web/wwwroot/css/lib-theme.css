@@ -175,7 +175,7 @@ body > nav > div > div.navbar-collapse.collapse > ul > li.dropdown.lib-menu:hove
         top: 91px;
         left: 191px;
 }
-body > nav > div > div.navbar-collapse.collapse > ul > li.lib-submenu-color {
+body > nav > div > div.navbar-collapse.collapse > ul > .lib-submenu-color {
     background-color: #660B0B;
 }
 #sidebar-left {
@@ -468,11 +468,11 @@ ul#worktime-menu.dropdown-menu {
         background-color: #FFEDD8;
     }
 
-#myCarousel > a.left.carousel-control > span.glyphicon.glyphicon-chevron-left {
+#myCarousel > a.left.carousel-control > .glyphicon-chevron-left {
     color: #FFEDD8;
 }
 
-#myCarousel > a.right.carousel-control > span.glyphicon.glyphicon-chevron-right {
+#myCarousel > a.right.carousel-control > .glyphicon-chevron-right {
     color: #FFEDD8;
 }
 /**Newest Books**/
@@ -738,7 +738,9 @@ ul.lib-footer-ul li a:hover {
     text-decoration: none;
 }
 #search-head {
-    width:  -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
     position: absolute;
     top: 0;
 }

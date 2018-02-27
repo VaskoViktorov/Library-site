@@ -2,12 +2,11 @@
 {
     using Data.Models;
     using System.ComponentModel.DataAnnotations;
-    using Search;
     using Resources.Areas.LibraryBlog.Models.Books;
 
     using static Data.DataConstants;
 
-    public class BookFormModel : SearchFormModel
+    public class BookFormModel
     {
         [Required]
         [MinLength(BookAuthorNameMinLength)]

@@ -2,12 +2,11 @@
 {
     using Data.Models;
     using System.ComponentModel.DataAnnotations;
-    using Search;
     using Resources.Areas.LibraryBlog.Models.Subscriptions;
 
     using static Data.DataConstants;
 
-    public class SubscriptionFormModel : SearchFormModel
+    public class SubscriptionFormModel
     {
         [Required]
         [MinLength(SubscriptionNameMinLength)]

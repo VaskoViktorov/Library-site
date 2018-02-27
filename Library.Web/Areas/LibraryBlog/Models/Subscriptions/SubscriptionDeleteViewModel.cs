@@ -1,8 +1,6 @@
-﻿using Library.Web.Areas.LibraryBlog.Models.Search;
-
-namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
+﻿namespace Library.Web.Areas.LibraryBlog.Models.Subscriptions
 {
-    public class SubscriptionDeleteViewModel : SearchFormModel
+    public class SubscriptionDeleteViewModel
     {
         public int Id { get; set; }
     }

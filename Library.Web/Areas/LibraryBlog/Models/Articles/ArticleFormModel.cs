@@ -5,12 +5,11 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Search;
     using Resources.Areas.LibraryBlog.Models.Articles;
 
     using static Data.DataConstants;
 
-    public class ArticleFormModel : SearchFormModel
+    public class ArticleFormModel
     {
         [Required]
         [MinLength(ArticleTitleMinLength)]

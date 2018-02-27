@@ -19,7 +19,7 @@
     using Services.Models.EmailSender;
     using System.Globalization;
     using System.IO;
-    using Microsoft.Extensions.Options;
+    using System.Collections.Generic;
 
     using static WebConstants;
 
@@ -66,6 +66,7 @@
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                //options.Filters.Add<RequireHttpsAttribute>();
             })
               .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
               .AddDataAnnotationsLocalization();
@@ -79,10 +80,13 @@
                 };
 
                 options.DefaultRequestCulture = new RequestCulture(culture: "bg-BG", uiCulture: "bg-BG");
-
                 options.SupportedCultures = supportedCultures;
-
                 options.SupportedUICultures = supportedCultures;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider()
+                };
             });
         }
 
@@ -100,8 +104,7 @@
 
             app.UseDatabaseMigration();
 
-            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
-            app.UseRequestLocalization(locOptions.Value);
+            app.UseRequestLocalization();
 
             if (env.IsDevelopment())
             {
