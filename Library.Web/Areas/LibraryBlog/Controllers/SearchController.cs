@@ -21,16 +21,17 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Search(SearchFormModel model)
+        public async Task<IActionResult> Search(string searchText,bool searchInBooks,
+            bool searchInArticles,bool searchInGalleries,bool searchInSubscriptions)
         {
-            if (StringExtensions.IsNullOrWhiteSpace(model.SearchText))
+            if (StringExtensions.IsNullOrWhiteSpace(searchText))
             {
                 this.TempData.AddWarningMessage(TempDataSearchEmtyTextMessage);
 
                 return this.RedirectToAction("Index", "Home", new { area = "" });
             }
 
-            if (!model.SearchInBooks && !model.SearchInArticles && !model.SearchInGalleries & !model.SearchInSubscriptions)
+            if (!searchInBooks && !searchInArticles && !searchInGalleries & !searchInSubscriptions)
             {
                 this.TempData.AddWarningMessage(TempDataSearchNoSelectMessage);
 
@@ -39,23 +40,23 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             var viewModel = new SearchViewModel
             {
-                SearchedText = model.SearchText,
+                SearchedText = searchText,
                 SearchInBook = await this.searches.FindBooksAsync(
                     CurrentCulture(),
-                    model.SearchText,
-                    model.SearchInBooks),
+                   searchText,
+                    searchInBooks),
                 SearchInArticle = await this.searches.FindArticlesAsync(
                     CurrentCulture(),
-                    model.SearchText,
-                    model.SearchInArticles),
+                    searchText,
+                    searchInArticles),
                 SearchInGallery = await this.searches.FindGalleriesAsync(
                     CurrentCulture(),
-                    model.SearchText,
-                    model.SearchInGalleries),
+                    searchText,
+                    searchInGalleries),
                 SearchInSubscription = await this.searches.FindSubscriptionsAsync(
                     CurrentCulture(),
-                    model.SearchText,
-                    model.SearchInSubscriptions)
+                    searchText,
+                    searchInSubscriptions)
             };
 
             return this.View(viewModel);

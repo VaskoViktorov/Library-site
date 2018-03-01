@@ -117,52 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Back" xml:space="preserve">
-    <value>Назад</value>
+  <data name="&quot;Art&quot; department" xml:space="preserve">
+    <value>Отдел „Изкуство”</value>
   </data>
-  <data name="find in department" xml:space="preserve">
-    <value>намери в отдел</value>
+  <data name="&quot;Assembly, Processing and Cataloging&quot; department" xml:space="preserve">
+    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
   </data>
-  <data name="for" xml:space="preserve">
-    <value>за</value>
+  <data name="&quot;Book borrowing&quot; department" xml:space="preserve">
+    <value>Отдел „Заемна за възрастни”</value>
   </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Галерии</value>
+  <data name="&quot;Children&quot; department" xml:space="preserve">
+    <value>Отдел „Детски”</value>
   </data>
-  <data name="New Books" xml:space="preserve">
-    <value>Нови книги</value>
+  <data name="&quot;Foreign languages reading room&quot; department" xml:space="preserve">
+    <value>Отдел „Чуждоезикова читалня”</value>
   </data>
-  <data name="News" xml:space="preserve">
-    <value>Новини</value>
+  <data name="&quot;Homeland&quot; department" xml:space="preserve">
+    <value>Отдел „Краезнание”</value>
   </data>
-  <data name="No new books were found" xml:space="preserve">
-    <value>Няма намерени в раздел "нови книги".</value>
+  <data name="&quot;Methodological&quot; department" xml:space="preserve">
+    <value>Отдел „Методичен”</value>
   </data>
-  <data name="No galleries were found" xml:space="preserve">
-    <value>Няма намерени галерии</value>
+  <data name="&quot;Reading Rooms - Humanities, accurate and applied science, periodicals&quot; department" xml:space="preserve">
+    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
   </data>
-  <data name="No news were found" xml:space="preserve">
-    <value>Няма намерени новини</value>
+  <data name="Center for information and referential-bibliographic services" xml:space="preserve">
+    <value>Център за информационно и справочно-библиографско обслужване</value>
   </data>
-  <data name="No subscriptions were found" xml:space="preserve">
-    <value>Няма намерени абонаменти</value>
+  <data name="Structure" xml:space="preserve">
+    <value>Структура</value>
   </data>
-  <data name="Pics count" xml:space="preserve">
-    <value>Бр. снимки</value>
-  </data>
-  <data name="Results" xml:space="preserve">
-    <value>Резултати</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Търси</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонаменти</value>
-  </data>
-  <data name="But we still might have the book" xml:space="preserve">
-    <value>Но има шанс книгата да я има в библиотеката</value>
-  </data>
-  <data name="Search in the E-catalogue" xml:space="preserve">
-    <value>Провери в Е-Каталога</value>
+  <data name="Structure of the departments in the Regional Library &quot;Mihalaki Georgiev&quot;  - Vidin." xml:space="preserve">
+    <value>Структура на отделите в Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
   </data>
 </root>

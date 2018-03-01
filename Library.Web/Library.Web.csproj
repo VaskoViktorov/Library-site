@@ -55,11 +55,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>GalleryFormModelResx.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SearchFormModelResx.resx</DependentUpon>
-    </Compile>
     <Compile Update="Resources\Areas\LibraryBlog\Models\Subscriptions\SubscriptionFormModelResx.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -135,13 +130,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GalleryFormModelResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.bg.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Search\SearchFormModelResx.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SearchFormModelResx.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Models\Subscriptions\SubscriptionFormModelResx.bg.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
@@ -166,7 +154,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Articles\Details.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Articles\Edit.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -336,7 +324,22 @@
     <EmbeddedResource Update="Resources\Views\Home\Contact.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Functions.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Functions.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Index.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Library.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Library.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Structure.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Manage\ChangePassword.bg.resx">

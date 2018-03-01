@@ -1,11 +1,13 @@
 ﻿@model ArticleViewModel
 @inject IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = Model.Article.Title + " - " + Localizer["article"];
-    ViewData["Description"] = Model.Article.Title + "- " + Localizer["Find more at Regional Library \"Mihalaki Georgiev\" - Vidin."];
+    ViewData["Title"] = $"{Model.Article.Title} - {Localizer["article"].Value}";
+    ViewData["Description"] = Model.Article.Title + "- " + Localizer["Find more at Regional Library \"Mihalaki Georgiev\" - Vidin."].Value;
 
     var count = Model.Article.Gallery.Images.Count;
 }
+
 <div class="row text-center">
     <h2>@Model.Article.Title</h2>
 </div>

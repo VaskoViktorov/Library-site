@@ -117,16 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Articles" xml:space="preserve">
-    <value>Новини</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>The Regional Library  "Mihalaki Georgiev" - Vidin is the successor of the Library, founded in 1870, at the Cultural Center "Tsvyat". In 2000 it was transformed into a regional and methodological center for libraries in the whole Vidin district. Today it is a leading institution in the cultural life of the area. The library has all the modern means of accessing books and the world wide information network and it serves a population of 48,000 people - directly and remotely. This includes students, employed, unemployed,retirees and people with special needs.</value>
   </data>
-  <data name="Books" xml:space="preserve">
-    <value>Нови Книги</value>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
   </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Галерии</value>
+  <data name="Library" xml:space="preserve">
+    <value>Library info</value>
   </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонаменти</value>
+  <data name="metadata" xml:space="preserve">
+    <value>Regional Library "Mihalaki Georgiev"  - Vidin is the successor of the Library, founded in 1870, at the Cultural Center "Tsvyat".</value>
+  </data>
+  <data name="SecondParagraph" xml:space="preserve">
+    <value>A huge part of the population is covered, thanks to the rich library stock, technological equipment, qualified employees and good facilities. In the training centers, created by the "Global Libraries - Bulgaria" project, everyone can participate in the trainings on initial computer literacy and internet useage, train for professional qualification - "Librarian", aquire information about vacant workplaces, employment measures and  programs, recieve help for competition preparation or job interview. In the centers are also held courses for the librarians from the Vidin district.</value>
+  </data>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>The library is working in partnership with civic associations and non-governmental organizations, educational institutions, informal youth organizations and communities to provide an extremely varied and dynamic program in benefit of the local community. The library is a important center for work with children and young people, it initiates a large number of activities in the field, often with the help of other similar structures at local, national and international level. The funding of the library's initiatives is supported by contributory campaigns and projects.</value>
   </data>
 </root>

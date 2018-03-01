@@ -207,6 +207,11 @@ a {
 .mr-t-20 {
     margin-top: 20px;
 }
+.max-width {
+    width: 100%;
+    width: -webkit-fill-available;
+    width: -moz-available;
+}
 .max-w-300 {
     max-width: 300px;
 }
@@ -311,8 +316,8 @@ ol {
     padding-right: 15px;
     padding-left: 15px;
 }
-.pt-7 {
-    padding-top: 7px !important;
+.p-t-20 {
+    padding-top: 20px !important;
 }
 .width-300 {
     max-width: 300px;

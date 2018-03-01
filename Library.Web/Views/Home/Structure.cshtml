@@ -1,6 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Структура";
-    ViewData["Description"] = "Структура на отделите в Регионална библиотека \"Михалаки Георгиев\" - гр. Видин и работното време.";
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Structure"];
+    ViewData["Description"] = Localizer["Structure of the departments in the Regional Library \"Mihalaki Georgiev\"  - Vidin."];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
@@ -9,15 +10,15 @@
     <div class="row text-justify">
         <div class="col-md-5 col-md-offset-4 text-center">
             <ul class="lib-footer-ul text-justify" style="display: inline-block; padding-left: 50px;">
-                <li><a asp-area="" asp-controller="Home" asp-action="BookBorrowing">Отдел „Заемна за възрастни”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Children">Отдел „Детски”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ReadingRooms">Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="InformationCenter">Център за информационно и справочно-библиографско обслужване</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ForeignReadingRoom">Отдел „Чуждоезикова читалня”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Art">Отдел „Изкуство”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Homeland">Отдел „Краезнание”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ApcDepartment">Отдел „Комплектуване, обработка и каталогизация”</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Methodological">Отдел „Методичен”</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="BookBorrowing">@Localizer["\"Book borrowing\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Children">@Localizer["\"Children\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["\"Reading Rooms - Humanities, accurate and applied science, periodicals\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="InformationCenter">@Localizer["Center for information and referential-bibliographic services"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ForeignReadingRoom">@Localizer["\"Foreign languages reading room\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Art">@Localizer["\"Art\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Homeland">@Localizer["\"Homeland\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ApcDepartment">@Localizer["\"Assembly, Processing and Cataloging\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Methodological">@Localizer["\"Methodological\" department"]</a></li>
             </ul>
         </div>
     </div>

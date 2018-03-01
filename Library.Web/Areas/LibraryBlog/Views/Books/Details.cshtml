@@ -2,8 +2,7 @@
 @inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = Model.Book.BookTitle;
-    ViewData["Description"] = Localizer["Take the book \""] + Model.Book.BookTitle + Localizer["\" now!In Regional Library \"Mihalaki Georgiev\" - Vidin"];
-
+    ViewData["Description"] = Localizer["Take the book \""].Value + Model.Book.BookTitle +" "+ Localizer["\" now! In Regional Library \"Mihalaki Georgiev\" - Vidin"].Value;
     var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
 }
 <div class="row text-center">

@@ -1,8 +1,8 @@
 ﻿@model GalleryViewModel
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = Model.Gallery.Title + " - " + Localizer["gallery"];
-    ViewData["Description"] = Model.Gallery.Title + "- " + Localizer["Find more about this event..."];
+    ViewData["Title"] = Model.Gallery.Title + " - " + Localizer["gallery"].Value;
+    ViewData["Description"] = Model.Gallery.Title + "- " + Localizer["Find more about this event..."].Value;
 
     var count = Model.Gallery.Images.Count;
 }

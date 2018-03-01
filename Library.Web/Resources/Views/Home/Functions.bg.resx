@@ -117,52 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Back" xml:space="preserve">
-    <value>Назад</value>
+  <data name="Functions" xml:space="preserve">
+    <value>Функции</value>
   </data>
-  <data name="find in department" xml:space="preserve">
-    <value>намери в отдел</value>
+  <data name="library" xml:space="preserve">
+    <value>на библиотеката</value>
   </data>
-  <data name="for" xml:space="preserve">
-    <value>за</value>
+  <data name="ListItemEight" xml:space="preserve">
+    <value>Разработват и участват в програми и проекти</value>
   </data>
-  <data name="Galleries" xml:space="preserve">
-    <value>Галерии</value>
+  <data name="ListItemFive" xml:space="preserve">
+    <value>Създават и развиват регионални автоматизирани библиотечно-информационни мрежи</value>
   </data>
-  <data name="New Books" xml:space="preserve">
-    <value>Нови книги</value>
+  <data name="ListItemFour" xml:space="preserve">
+    <value>Осъществяват издателска дейност, изработват и разпространяват библиографски указатели, краеведски, информационни издания и други</value>
   </data>
-  <data name="News" xml:space="preserve">
-    <value>Новини</value>
+  <data name="ListItemNine" xml:space="preserve">
+    <value>Оказват съдействие на общинската администрация при реализиране на културната политика в областта на библиотечното дело</value>
   </data>
-  <data name="No new books were found" xml:space="preserve">
-    <value>Няма намерени в раздел "нови книги".</value>
+  <data name="ListItemOne" xml:space="preserve">
+    <value>Събират, съхраняват, обработват, организират и предоставят за ползване библиотечен фонд</value>
   </data>
-  <data name="No galleries were found" xml:space="preserve">
-    <value>Няма намерени галерии</value>
+  <data name="ListItemSeven" xml:space="preserve">
+    <value>Организират и провеждат културно-образователни инициативи</value>
   </data>
-  <data name="No news were found" xml:space="preserve">
-    <value>Няма намерени новини</value>
+  <data name="ListItemSix" xml:space="preserve">
+    <value>Извършват координационна, експертно-консултантска и квалификационна дейност за библиотеките от региона</value>
   </data>
-  <data name="No subscriptions were found" xml:space="preserve">
-    <value>Няма намерени абонаменти</value>
+  <data name="ListItemTen" xml:space="preserve">
+    <value>Събират и обработват статистическа информация и поддържат бази данни за библиотеките от региона</value>
   </data>
-  <data name="Pics count" xml:space="preserve">
-    <value>Бр. снимки</value>
+  <data name="ListItemThree" xml:space="preserve">
+    <value>Поддържат архив на краеведския печат и литература и координират събирането, съхраняването, организирането и разпространението на краеведска информация и библиография по краезнание</value>
   </data>
-  <data name="Results" xml:space="preserve">
-    <value>Резултати</value>
+  <data name="ListItemTwo" xml:space="preserve">
+    <value>Извършват библиотечно-информационно обслужване, включително междубиблиотечно заемане, и координират организацията на библиотечно-информационното обслужване на територията на региона</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>Търси</value>
+  <data name="metadata" xml:space="preserve">
+    <value>Списък с функциите, изпълнявани от Регионална библиотека "Михалаки Георгиев" - гр. Видин</value>
   </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонаменти</value>
-  </data>
-  <data name="But we still might have the book" xml:space="preserve">
-    <value>Но има шанс книгата да я има в библиотеката</value>
-  </data>
-  <data name="Search in the E-catalogue" xml:space="preserve">
-    <value>Провери в Е-Каталога</value>
+  <data name="Paragraph" xml:space="preserve">
+    <value>Функциите на Регионална библиотека „Михалаки Георгиев” – Видин се определят от чл.27, ал.1 от Закона за обществените библиотеки и ПМС № 153 от 20.07.2000 г., според които Регионалните библиотеки</value>
   </data>
 </root>

@@ -17,8 +17,8 @@
         </div>
     </div>
 </div>
-<div id="search-head" class="row text-center">   
-        <h2>@ViewData["Title"] @Localizer["for"]:</h2>
+<div id="search-head" class="row text-center">
+    <h2>@ViewData["Title"] @Localizer["for"]:</h2>
 </div>
 <div class="row text-center mr-t-20" style="padding-left: 40px;">
     <h4>"@Model.SearchedText"</h4>
@@ -47,9 +47,11 @@
                 }
                 else
                 {
-                    <p>@Localizer["No books were found"].</p>
+                    <div>
+                        <p>@Localizer["No new books were found"]. @Localizer["But we still might have the book"]. </p>
+                        <a class="lib-btn-invrt" href="http://178.239.224.218/absw/abs.htm">@Localizer["Search in the E-catalogue"]</a>
+                    </div>
                 }
-
             }
             if (Model.SearchInArticle != null)
             {
