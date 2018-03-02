@@ -1,7 +1,7 @@
 ﻿namespace Library.Web
 {
     using Microsoft.AspNetCore.Rewrite;
-    using Microsoft.Extensions.Logging;
+    using AspNetCoreRateLimit;
     using AutoMapper;
     using Data;
     using Data.Models;
@@ -16,10 +16,11 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.FileProviders;
+    using Microsoft.Extensions.Logging;
     using Services.Models.EmailSender;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
-    using System.Collections.Generic;
 
     using static WebConstants;
 
@@ -52,6 +53,24 @@
                 })
                 .AddEntityFrameworkStores<LibraryDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddOptions();
+            services.AddMemoryCache();
+
+            //configure ip rate limiting middle-ware
+            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimiting"));
+            services.Configure<IpRateLimitPolicies>(Configuration.GetSection("IpRateLimitPolicies"));
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+
+            //configure client rate limiting middleware
+            services.Configure<ClientRateLimitOptions>(Configuration.GetSection("ClientRateLimiting"));
+            services.Configure<ClientRateLimitPolicies>(Configuration.GetSection("ClientRateLimitPolicies"));
+            services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
+            //services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+
+            var opt = new ClientRateLimitOptions();
+            ConfigurationBinder.Bind(Configuration.GetSection("ClientRateLimiting"), opt);
 
             services.AddDomainServices();
 
@@ -90,13 +109,14 @@
             });
         }
 
-        //For HTTPS, remove comments
-        //, ILoggerFactory loggerFactory
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            //loggerFactory.AddDebug();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
 
+            app.UseIpRateLimiting();
+            app.UseClientRateLimiting();
+            //For HTTPS, remove comments
             //var options = new RewriteOptions()
             //  .AddRedirectToHttps();
 
