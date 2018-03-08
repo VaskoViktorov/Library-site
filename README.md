@@ -33,6 +33,6 @@ Website made for the Vidin's regional library.
 * Full CRUD for Models(article,gallery,book,subscription and event);
 * Https protocol support;
 * Images are stored in folder, outside of the DB(to save space);
-* Localization(Multi Language support (currently bulgarian to english));
+* Localization(Multi Language support (currently bulgarian & english));
 * Rooted admin user;
 * Services injector;

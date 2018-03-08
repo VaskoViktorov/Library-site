@@ -117,37 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&quot;Art&quot; department" xml:space="preserve">
-    <value>Отдел „Изкуство”</value>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
   </data>
-  <data name="&quot;Children's&quot; department" xml:space="preserve">
-    <value>Отдел „Детски”</value>
+  <data name="ChildrensDepartment" xml:space="preserve">
+    <value>Детски отдел</value>
   </data>
-  <data name="&quot;Foreign language reading room&quot; department" xml:space="preserve">
-    <value>Отдел „Чуждоезикова читалня”</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>Детският отдел на Регионална библиотека “Михалаки Георгиев” работи активно с деца до 14 годишна възраст. Отделът разполага с богат книжен фонд от детска художествена и научно-популярна литература, комикси, енциклопедии, детски вестници и списания. През 2012 година отделът бе обновен и бяха обособени кътове, където децата могат да четат, да рисуват, да пишат, да играят.</value>
   </data>
-  <data name="&quot;Local history&quot; department" xml:space="preserve">
-    <value>Отдел „Краезнание”</value>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>Понеделник - Петък</value>
   </data>
-  <data name="&quot;Methodological&quot; department" xml:space="preserve">
-    <value>Отдел „Методичен”</value>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Работно време</value>
   </data>
-  <data name="&quot;Reading rooms - branch of scholarship, exact and applied sciences, periodicals&quot; department" xml:space="preserve">
-    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
+  <data name="Saturday" xml:space="preserve">
+    <value>Събота</value>
   </data>
-  <data name="&quot;Supplying, registration and cataloging&quot; department" xml:space="preserve">
-    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
+  <data name="SaturdayWorkTime" xml:space="preserve">
+    <value>9:00-14:00 часа</value>
   </data>
-  <data name="Information and reference-bibliographic services center" xml:space="preserve">
-    <value>Център за информационно и справочно-библиографско обслужване</value>
+  <data name="SecondParagraph" xml:space="preserve">
+    <value>През 2015 година отвори врати нов технологичен кът към Детски отдел, разполагащ с 3D телевизор, четци за електронни книги, видео игри и детски книги.</value>
   </data>
-  <data name="Lending department for adults" xml:space="preserve">
-    <value>Отдел „Заемна за възрастни”</value>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>Основна цел на отдела на видинската библиотека е да възпитава любов към четенето, да стимулира децата да развиват творческите си способности, креативност и фантазия. В тази насока се провеждат различни мероприятия - драматизация на детски приказки, гостувания на детски автори и представяне на нови книги, възстановка на редица български обичаи, тържества по повод всеки празник, игри с награди, четене на открито и „Лято с библиотеката”.</value>
   </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
-  </data>
-  <data name="Structure of the departments in the Regional Library &quot;Mihalaki Georgiev&quot;  - Vidin." xml:space="preserve">
-    <value>Структура на отделите в Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
+  <data name="WeekWorkTime" xml:space="preserve">
+    <value>9:00-18:00 часа</value>
   </data>
 </root>

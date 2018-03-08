@@ -1,46 +1,52 @@
-﻿
+﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Children";
+    ViewData["Title"] = Localizer["ChildrensDepartment"];
+
+    var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
 }
 <div class="text-center row">
-    <h2>Детски отдел</h2>
+    <h2>@Localizer["ChildrensDepartment"]</h2>
 </div>
 <div class="row max-w-500 mr-10-auto">
     <table class="table-hover max-width">
         <thead>
             <tr>
-                <th colspan="2" class="text-center">Работно време</th>
+                <th colspan="2" class="text-center">@Localizer["OpeningHours"]</th>
             </tr>
         </thead>
         <tbody style="width: 500px;">
             <tr>
-                <td class="p-0-3 text-left">Понеделник - Петък</td>
-                <td class="p-0-3 text-left">9.00-18.00 часа</td>
+                <td class="p-0-3 text-left">@Localizer["MondayFriday"]</td>
+                <td class="p-0-3 text-left">@Localizer["WeekWorkTime"]</td>
             </tr>
             <tr>
-                <td class="p-0-3 text-left">Събота</td>
-                <td class="p-0-3 text-left">9.00-14.00 часа</td>
+                <td class="p-0-3 text-left">@Localizer["Saturday"]</td>
+                <td class="p-0-3 text-left">@Localizer["SaturdayWorkTime"]</td>
             </tr>
         </tbody>
     </table>
     <div class="panorama">
-        <img src="~/images/SiteImages/CISBO.jpg" alt="Детски отдел">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="@Localizer["ChildrensDepartment"]">
     </div>
 </div>
 <div class="col-md-12">
     <div class="text-justify max-w-750 mr-0-auto">
-        <p class="text-center italic">Деца, глъч, светли и просторни зали, кътове за четене и игра</p>
-        <p class="text-center italic">и много детски усмивки.</p>
-        <p class="text-center italic">Това е мястото където се случва първата среща на малкия читател</p>
-        <p class="text-center italic">с библиотеката и книгите.</p>
-        <p>Детският отдел на  Регионална библиотека “Михалаки Георгиев” работи активно с деца до 14 годишна възраст. Отделът разполага с богат книжен фонд от детска художествена и научно-популярна  литература, комикси, енциклопедии, детски вестници и списания. През 2012 година отделът бе обновен и бяха обособени кътове, където децата могат да четат, да рисуват, да пишат, да играят.</p>
-        <p>През  2015 година отвори врати нов технологичен кът към Детски отдел, разполагащ с 3D телевизор, четци за електронни книги, видео игри и детски книги.</p>
-        <p>Основна цел на отдела на видинската библиотека е да  възпитава любов  към четенето, да стимулира децата да развиват творческите си способности, креативност и фантазия.  В тази насока се провеждат различни мероприятия - драматизация на детски приказки, гостувания на детски автори и представяне на нови книги, възстановка на редица български обичаи, тържества по повод всеки празник, игри с награди, четене на открито и „Лято с библиотеката”.</p>
+        @if (currentCulture == "bg-BG")
+        {
+            <p class="text-center italic">Деца, глъч, светли и просторни зали, кътове за четене и игра</p>
+            <p class="text-center italic">и много детски усмивки.</p>
+            <p class="text-center italic">Това е мястото където се случва първата среща на малкия читател</p>
+            <p class="text-center italic">с библиотеката и книгите.</p>
+        }
+        <p>@Localizer["FirstParagraph"]</p>
+        <p>@Localizer["SecondParagraph"]</p>
+        <p>@Localizer["ThirdParagraph"]</p>
         <div class="text-center mr-t-b-25">
-            <a class="lib-btn" href="javascript:history.go(-1)">Назад</a>
+            <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
         </div>
     </div>
 </div>
+
 @section Scripts{
     <script type="text/javascript">
         $(".panorama").panorama_viewer({

@@ -1,42 +1,42 @@
-﻿
+﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "BookBorrowing";
+    ViewData["Title"] = Localizer["LendingDepartment"];
 }
 <div class="text-center row">
-    <h2>Отдел „Заемна за възрастни”</h2>
+    <h2>@Localizer["LendingDepartment"]</h2>
 </div>
 <div class="max-w-500 mr-10-auto">
     <table class="table-hover max-width">
         <thead>
             <tr>
-                <th colspan="2" class="text-center">Работно време</th>
+                <th colspan="2" class="text-center">@Localizer["OpeningHours"]</th>
             </tr>
         </thead>
         <tbody style="width: 500px;">
             <tr>
-                <td class="p-0-3 text-left">Понеделник - Петък</td>
-                <td class="p-0-3 text-left">9.00-18.00 часа</td>
+                <td class="p-0-3 text-left">@Localizer["MondayFriday"]</td>
+                <td class="p-0-3 text-left">@Localizer["WeekWorkTime"]</td>
             </tr>
             <tr>
-                <td class="p-0-3 text-left">Събота</td>
-                <td class="p-0-3 text-left">9.00-14.00 часа</td>
+                <td class="p-0-3 text-left">@Localizer["Saturday"]</td>
+                <td class="p-0-3 text-left">@Localizer["SaturdayWorkTime"]</td>
             </tr>
         </tbody>
     </table>
     <div class="panorama">
-        <img src="~/images/SiteImages/CISBO.jpg" alt="Заемна за възрастни">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="@Localizer["LendingDepartment"]">
     </div>
 </div>
 <div class="col-md-12">
     <div class="text-justify max-w-750 mr-0-auto">
-        <p>Предоставя библиотечни услуги, информация и документи за домашно ползване. В него се обслужват и регистрират всички категории читатели над 14 – годишна възраст.</p>
-        <p>Фонда на отдел „Заемна за възрастни” е универсален по своята същност. Ползвателите на отдела разполагат със свободен достъп до над 100 хил. тома от всички отдели на знанието.</p>
-        <p>Фондът е разположен в две зали, в които са обособени художествената литература – българска, руска, немска, френска, американска, английска и др. и научна литература от всички отрасли на знанието – медицина, психология, философия, селско стопанство, математика, химия и др.</p>
-        <p>Ежемесечно подръчния фонд се обновява и обогатява, съобразно политиката на комплектуване на библиотеката и читателските търсения. Читателите могат да заемат за дома до 5 броя библиотечни единици, които трябва да върнат в 20 дневен срок след датата на заемане. В отдела читателите могат да използват и четири компютризирани работни места.</p>
-        <p>Техниката е осигурена по Програмата „Глобални Библиотеки – България”. В Отдела се провеждат литературни вечери, срещи с писатели, изложби.</p>
+        <p>@Localizer["FirstParagraph"]</p>
+        <p>@Localizer["SecondParagraph"]</p>
+        <p>@Localizer["ThirdParagraph"]</p>
+        <p>@Localizer["FourthParagraph"]</p>
+        <p>@Localizer["FifthParagraph"]</p>
     </div>
     <div class="text-center mr-t-b-25">
-        <a class="lib-btn" href="javascript:history.go(-1)">Назад</a>
+        <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
     </div>
 </div>
 

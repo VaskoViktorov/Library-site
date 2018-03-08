@@ -117,37 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&quot;Art&quot; department" xml:space="preserve">
-    <value>Отдел „Изкуство”</value>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
-  <data name="&quot;Children's&quot; department" xml:space="preserve">
-    <value>Отдел „Детски”</value>
+  <data name="FifthParagraph" xml:space="preserve">
+    <value>The equipment is provided by “Global libraries – Bulgaria” program. Many literary discussions, meetings with writers and exhibitions are being held in the department.</value>
   </data>
-  <data name="&quot;Foreign language reading room&quot; department" xml:space="preserve">
-    <value>Отдел „Чуждоезикова читалня”</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>It offers library services, information and documents for home use. All kinds of readers over the age of 14 are served and registered here.</value>
   </data>
-  <data name="&quot;Local history&quot; department" xml:space="preserve">
-    <value>Отдел „Краезнание”</value>
+  <data name="FourthParagraph" xml:space="preserve">
+    <value>The handy fund is renewed and enriched monthly according to the library policy and readers’ interests. Every reader can borrow 5 library units and has to turn them back in 20 days term. There are 4 computers in the department to be used by the readers.</value>
   </data>
-  <data name="&quot;Methodological&quot; department" xml:space="preserve">
-    <value>Отдел „Методичен”</value>
+  <data name="LendingDepartment" xml:space="preserve">
+    <value>Lending department for adults</value>
   </data>
-  <data name="&quot;Reading rooms - branch of scholarship, exact and applied sciences, periodicals&quot; department" xml:space="preserve">
-    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>Monday-Friday</value>
   </data>
-  <data name="&quot;Supplying, registration and cataloging&quot; department" xml:space="preserve">
-    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening Hours</value>
   </data>
-  <data name="Information and reference-bibliographic services center" xml:space="preserve">
-    <value>Център за информационно и справочно-библиографско обслужване</value>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
   </data>
-  <data name="Lending department for adults" xml:space="preserve">
-    <value>Отдел „Заемна за възрастни”</value>
+  <data name="SaturdayWorkTime" xml:space="preserve">
+    <value>9:00-14:00</value>
   </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
+  <data name="SecondParagraph" xml:space="preserve">
+    <value>The fund of the department is universal. The users have free access to more than 100 thousand books from all the knowledge departments.</value>
   </data>
-  <data name="Structure of the departments in the Regional Library &quot;Mihalaki Georgiev&quot;  - Vidin." xml:space="preserve">
-    <value>Структура на отделите в Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>The fund is arranged in two halls – fiction: Bulgarian, Russian, German, French, American, English etc. and scientific literature – medicine, psychology, philosophy, agriculture, mathematics, chemistry etc.</value>
+  </data>
+  <data name="WeekWorkTime" xml:space="preserve">
+    <value>9:00-18:00</value>
   </data>
 </root>

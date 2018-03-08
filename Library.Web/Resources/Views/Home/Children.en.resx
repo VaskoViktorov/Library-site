@@ -117,37 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&quot;Art&quot; department" xml:space="preserve">
-    <value>Отдел „Изкуство”</value>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
-  <data name="&quot;Children's&quot; department" xml:space="preserve">
-    <value>Отдел „Детски”</value>
+  <data name="ChildrensDepartment" xml:space="preserve">
+    <value>Children's department</value>
   </data>
-  <data name="&quot;Foreign language reading room&quot; department" xml:space="preserve">
-    <value>Отдел „Чуждоезикова читалня”</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>The Children’s Department of the Regional Library “Mihalaki Georgiev” has a rich book-stock of children’s fiction and a popular science fiction, encyclopedias, children’s newspapers and magazines. The department consists of lending section and reading room.It’s for children up to 14 years old. Here the librarians organize educational activities, competitions, exhibitions, holiday’s activities, presenting new books etc..</value>
   </data>
-  <data name="&quot;Local history&quot; department" xml:space="preserve">
-    <value>Отдел „Краезнание”</value>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>Monday-Friday</value>
   </data>
-  <data name="&quot;Methodological&quot; department" xml:space="preserve">
-    <value>Отдел „Методичен”</value>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening Hours</value>
   </data>
-  <data name="&quot;Reading rooms - branch of scholarship, exact and applied sciences, periodicals&quot; department" xml:space="preserve">
-    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
   </data>
-  <data name="&quot;Supplying, registration and cataloging&quot; department" xml:space="preserve">
-    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
+  <data name="SaturdayWorkTime" xml:space="preserve">
+    <value>9:00-14:00</value>
   </data>
-  <data name="Information and reference-bibliographic services center" xml:space="preserve">
-    <value>Център за информационно и справочно-библиографско обслужване</value>
+  <data name="SecondParagraph" xml:space="preserve">
+    <value>In Children’s Department you’ll find modern technological space, educational and interesting games. New technological room disposes of 3D television, video games and children’s books.</value>
   </data>
-  <data name="Lending department for adults" xml:space="preserve">
-    <value>Отдел „Заемна за възрастни”</value>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>The main purpose of the Vidin Library is to develop love for reading in children, to encourage them to find their creative abilities and fantasy. Various events are taking place in that direction- storytelling, children's books authors visits, new books presentations, recreation of Bulgarian customs, holiday celebrations, prize-games, outdoor reading and "Library Summer".</value>
   </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
-  </data>
-  <data name="Structure of the departments in the Regional Library &quot;Mihalaki Georgiev&quot;  - Vidin." xml:space="preserve">
-    <value>Структура на отделите в Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
+  <data name="WeekWorkTime" xml:space="preserve">
+    <value>9:00-18:00</value>
   </data>
 </root>

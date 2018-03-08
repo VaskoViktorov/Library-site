@@ -132,7 +132,7 @@
   <data name="Art" xml:space="preserve">
     <value>Изкуство</value>
   </data>
-  <data name="Book borrowing" xml:space="preserve">
+  <data name="Lending for adults" xml:space="preserve">
     <value>Заемна за възрастни</value>
   </data>
   <data name="Children's" xml:space="preserve">
@@ -150,7 +150,7 @@
   <data name="Foreign language reading room" xml:space="preserve">
     <value>Чуждоезикова читалня</value>
   </data>
-  <data name="Homeland" xml:space="preserve">
+  <data name="Local history" xml:space="preserve">
     <value>Краезнание</value>
   </data>
   <data name="Information center" xml:space="preserve">
