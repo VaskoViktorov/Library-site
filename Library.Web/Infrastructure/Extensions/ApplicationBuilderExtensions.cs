@@ -11,7 +11,7 @@
     public static class ApplicationBuilderExtensions
     {
         /// <summary>
-        /// Creates Database Migration, Admin role and roots an Admin user.
+        /// Creates Database Migration, roles and roots an Admin user.
         /// </summary>
 
         public static IApplicationBuilder UseDatabaseMigration(this IApplicationBuilder app)
