@@ -2,7 +2,7 @@
 //var scripts = Array
 //    .from(document.querySelectorAll('script'))
 //    .map(scr => scr.src);
-
+//
 //if (!scripts.includes('~/lib/jquery/dist/jquery.eventCalendar.js')) {
 //    flag = true;
 //}
@@ -216,18 +216,18 @@ $(document).ready(function () {
     });
 });
 //menu resize
- $(document).ready(function () {
-            var alterClass = function() {
-                var ww = document.body.clientWidth;
-                if (ww <= 992) {
-                    $('.dropdown').removeClass("lib-menu");
-                } else if (ww > 992) {
-                    $('.dropdown').addClass("lib-menu");
-                }
-            };
-            $(window).resize(function(){
-                alterClass();
-            });
-            //Fire it when the page first loads:
-            alterClass();
-        });
+$(document).ready(function () {
+    var alterClass = function () {
+        var ww = document.body.clientWidth;
+        if (ww <= 992) {
+            $('.dropdown').removeClass("lib-menu");
+        } else if (ww > 992) {
+            $('.dropdown').addClass("lib-menu");
+        }
+    };
+    $(window).resize(function () {
+        alterClass();
+    });
+    //Fire it when the page first loads:
+    alterClass();
+});

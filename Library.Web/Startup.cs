@@ -67,8 +67,7 @@
             services.Configure<ClientRateLimitOptions>(Configuration.GetSection("ClientRateLimiting"));
             services.Configure<ClientRateLimitPolicies>(Configuration.GetSection("ClientRateLimitPolicies"));
             services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
-            //services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
-
+            
             var opt = new ClientRateLimitOptions();
             ConfigurationBinder.Bind(Configuration.GetSection("ClientRateLimiting"), opt);
 
@@ -85,6 +84,7 @@
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                //remove comment for https
                 //options.Filters.Add<RequireHttpsAttribute>();
             })
               .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)

@@ -13,6 +13,8 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
 
+    using static WebConstants;
+
     [Authorize]
     [Route("[controller]/[action]")]
     public class AccountController : Controller
@@ -202,7 +204,7 @@
         }
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize(Roles = AdministratorRole)]
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -210,7 +212,7 @@
         }
 
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = AdministratorRole)]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {

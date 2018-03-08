@@ -34,7 +34,7 @@
                     if (count == 0)
                     {
                         <div class="item active">
-                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" />
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;" />
                             <div class="carousel-caption" role="option">
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>
@@ -49,7 +49,7 @@
                     else
                     {
                         <div class="item">
-                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" />
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;" />
                             <div class="carousel-caption" role="option">
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>

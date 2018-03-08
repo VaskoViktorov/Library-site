@@ -117,157 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="en" xml:space="preserve">
-    <value>bg</value>
+  <data name="Bulgarian Library Information Association" xml:space="preserve">
+    <value>Българска библиотечна информационна асоциация</value>
   </data>
-  <data name="E-Library" xml:space="preserve">
-    <value>Е-Библиотека</value>
+  <data name="Global Libraries Foundation Bulgaria" xml:space="preserve">
+    <value>Фондация глобални библиотеки България</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Галерия</value>
+  <data name="Kids Youth Parliament - Vidin" xml:space="preserve">
+    <value>Детски младежки парламент – Видин</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Начало</value>
+  <data name="List of Regional Library &quot;Mihalaki Georgiev&quot; partners." xml:space="preserve">
+    <value>Списък с партньорите на Регионална библиотека \"Михалаки Георгиев\" - гр. Видин.</value>
   </data>
-  <data name="Homeland" xml:space="preserve">
-    <value>Роден край</value>
-  </data>
-  <data name="Kids" xml:space="preserve">
-    <value>Детски свят</value>
-  </data>
-  <data name="Library" xml:space="preserve">
-    <value>Библиотека</value>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>Новини</value>
-  </data>
-  <data name=": Closed" xml:space="preserve">
-    <value>: Почивен ден</value>
-  </data>
-  <data name="About us" xml:space="preserve">
-    <value>За нас</value>
-  </data>
-  <data name="My Account" xml:space="preserve">
-    <value>Профил</value>
-  </data>
-  <data name="Control Panel" xml:space="preserve">
-    <value>Контрол панел</value>
-  </data>
-  <data name="Closed" xml:space="preserve">
-    <value>Затворено</value>
-  </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Контакти</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Дарители</value>
-  </data>
-  <data name="Events" xml:space="preserve">
-    <value>Събития</value>
-  </data>
-  <data name="FAQ" xml:space="preserve">
-    <value>Въпроси</value>
-  </data>
-  <data name="Find us" xml:space="preserve">
-    <value>Къде се намираме</value>
-  </data>
-  <data name="For the curious" xml:space="preserve">
-    <value>За любителя</value>
-  </data>
-  <data name="For the student" xml:space="preserve">
-    <value>За ученика</value>
-  </data>
-  <data name="Friday" xml:space="preserve">
-    <value>Петък</value>
-  </data>
-  <data name="Functions" xml:space="preserve">
-    <value>Функции</value>
-  </data>
-  <data name="Library info" xml:space="preserve">
-    <value>За библиотеката</value>
-  </data>
-  <data name="Mihalaki Georgiev" xml:space="preserve">
-    <value>За Михалаки Георгиев</value>
-  </data>
-  <data name="Monday" xml:space="preserve">
-    <value>Понеделник</value>
-  </data>
-  <data name="New books" xml:space="preserve">
-    <value>Нови книги</value>
-  </data>
-  <data name="New children books" xml:space="preserve">
-    <value>Нови детски книги</value>
-  </data>
-  <data name="Open" xml:space="preserve">
-    <value>Отворено</value>
-  </data>
-  <data name="Opening hours" xml:space="preserve">
-    <value>Работно време</value>
-  </data>
-  <data name="Other E-Catalouges" xml:space="preserve">
-    <value>Други Е-Каталози</value>
+  <data name="Ministry of Culture" xml:space="preserve">
+    <value>Министерство на културата</value>
   </data>
   <data name="Partners" xml:space="preserve">
     <value>Партньори</value>
   </data>
-  <data name="Price list" xml:space="preserve">
-    <value>Ценоразпис</value>
+  <data name="Regional Administration Vidin" xml:space="preserve">
+    <value>Областна Администрация Видин</value>
   </data>
-  <data name="Publications" xml:space="preserve">
-    <value>Издания</value>
+  <data name="SBT Vidin" xml:space="preserve">
+    <value>ДБТ Видин</value>
   </data>
-  <data name="Regional Library &quot;Mihalaki Georgiev&quot; - Vidin" xml:space="preserve">
-    <value>Регионална Библиотека "Михалаки Георгиев"-гр. Видин</value>
+  <data name="TD of NRA Vidin" xml:space="preserve">
+    <value>ТД на НАП Видин</value>
   </data>
-  <data name="Regional Library &quot;Mihalaki Georgiev&quot;-Vidin" xml:space="preserve">
-    <value>Р.Б. "Михалаки Георгиев"-гр. Видин</value>
+  <data name="Vidin Municipality" xml:space="preserve">
+    <value>Община Видин</value>
   </data>
-  <data name="Safe internet" xml:space="preserve">
-    <value>Безопасен интернет</value>
-  </data>
-  <data name="Saturday" xml:space="preserve">
-    <value>Събота</value>
-  </data>
-  <data name="See More" xml:space="preserve">
-    <value>Виж още</value>
-  </data>
-  <data name="Services" xml:space="preserve">
-    <value>Услуги</value>
-  </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонаменти</value>
-  </data>
-  <data name="Sunday" xml:space="preserve">
-    <value>Неделя</value>
-  </data>
-  <data name="Thursday" xml:space="preserve">
-    <value>Четвъртък</value>
-  </data>
-  <data name="Toggle navigation" xml:space="preserve">
-    <value>Включи навигацията</value>
-  </data>
-  <data name="Tuesday" xml:space="preserve">
-    <value>Вторник</value>
-  </data>
-  <data name="Useful info" xml:space="preserve">
-    <value>Полезна информация</value>
-  </data>
-  <data name="Useful links" xml:space="preserve">
-    <value>Полезни връзки</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Потребители</value>
-  </data>
-  <data name="Vidin" xml:space="preserve">
-    <value>Видин</value>
-  </data>
-  <data name="Wednesday" xml:space="preserve">
-    <value>Сряда</value>
-  </data>
-  <data name="Work with children program" xml:space="preserve">
-    <value>Програма за работа с деца</value>
+  <data name="Youth Municipal Council on Narcotic Substances" xml:space="preserve">
+    <value>Младежки общински съвет по наркотичните вещества</value>
   </data>
 </root>

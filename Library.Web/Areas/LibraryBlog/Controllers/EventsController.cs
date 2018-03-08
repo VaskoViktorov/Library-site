@@ -55,7 +55,9 @@
 
             return this.View(new EventListingViewModel
             {
-                Events = events
+                Events = events,
+                TotalEvents = events.Count(),
+                CurrentPage = page
             });
         }
 

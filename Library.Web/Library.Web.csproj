@@ -340,6 +340,12 @@
     <EmbeddedResource Update="Resources\Views\Home\Library.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Partners.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Staff.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Structure.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

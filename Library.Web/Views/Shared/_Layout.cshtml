@@ -15,7 +15,7 @@
     <title>@ViewData["Title"] | @Localizer["Regional Library \"Mihalaki Georgiev\"-Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">    
-    <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search" />
+    <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />
     <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
 
     <environment include="Development">
@@ -144,16 +144,19 @@
                             <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
                         </ul>
                     </li>
-                    @if (User.IsInRole(WebConstants.AdministratorRole))
+                    @if (User.IsInRole(WebConstants.AdministratorRole) || User.IsInRole(WebConstants.LibrarianAuthorRole))
                     {
                         <li class="dropdown cr-pointer">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                @Localizer["Admin Panel"]<span class="caret"></span>
+                                @Localizer["Control Panel"]<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">@Localizer["Users"]</a></li>
-                                <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">@Localizer["Events"]</a></li>
-                                <li><a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">@Localizer["Account"]</a></li>
+                                @if (User.IsInRole(WebConstants.AdministratorRole))
+                                {
+                                    <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">@Localizer["Users"]</a></li>
+                                }
+                                <li><a asp-area="LibraryBlog" asp-controller="Events" asp-action="Events">@Localizer["Events"]</a></li>
+                                <li><a asp-area="" asp-controller="Manage" asp-action="Index">@Localizer["My Account"]</a></li>
                             </ul>
                         </li>
                     }
