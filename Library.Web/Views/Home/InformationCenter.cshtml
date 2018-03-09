@@ -1,42 +1,43 @@
-﻿
+﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "InformationCenter";
+    ViewData["Title"] = Localizer["InfoCenter"];
 }
 
 <div class="row text-center">
-    <h2>Център за информационно и справочно-библиографско обслужване</h2>
+    <h2>@Localizer["InfoCenter"]</h2>
 </div>
 <div class="max-w-500 mr-10-auto">
     <table class="table-hover max-width">
         <thead>
             <tr>
-                <th colspan="2" class="text-center">Работно време</th>
+                <th colspan="2" class="text-center">@Localizer["OpeningHours"]</th>
             </tr>
         </thead>
         <tbody style="width: 500px;">
             <tr>
-                <td class="p-0-3 text-left">Понеделник - Петък</td>
-                <td class="p-0-3 text-left">9.00-12.00 часа; 12.30-17.00 часа</td>
+                <td class="p-0-3 text-left">@Localizer["MondayFriday"]</td>
+                <td class="p-0-3 text-left">@Localizer["WeekWorkTime"]</td>
             </tr>
             <tr>
-                <td class="p-0-3 text-left">Събота</td>
-                <td class="p-0-3 text-left">Почивен ден</td>
+                <td class="p-0-3 text-left">@Localizer["Saturday"]</td>
+                <td class="p-0-3 text-left">@Localizer["SaturdayWorkTime"]</td>
             </tr>
         </tbody>
     </table>
     <div class="panorama">
-        <img src="~/images/SiteImages/CISBO.jpg" alt="Център за информационно обслужване">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="@Localizer["InfoCenter"]">
     </div>
 </div>
 <div class="col-md-12">
     <div class="text-justify max-w-750 mr-0-auto">
-        <p class="text-justify">Центърът е създаден през 2008 година. Разполага с модерна компютърна техника - 10 конфигурации, осигурени от проекта Глобални библиотеки България. Предоставя достъп на читателите до информационни услуги, базирани на новите информационни технологии и Интернет: е-ресурси, електронни енциклопедии, пълнотекстови бази данни: CIELA.net, EBSCO, аналитични публикации на агенция Фокус. Ежедневно центърът се посещава от читатели на различна възраст.</p>
-        <p class="text-justify">Периодично в ЦИСБО се провеждат обучителни курсове за начални компютърни умения и ползване на интернет с читатели над 55 годишна възраст.</p>
+        <p class="text-justify">@Localizer["FirstParagraph"]</p>
+        <p class="text-justify">@Localizer["SecondParagraph"]</p>
     </div>
     <div class="text-center mr-t-b-25">
-        <a class="lib-btn" href="javascript:history.go(-1)">Назад</a>
+        <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
     </div>
 </div>
+
 @section Scripts{
     <script type="text/javascript">
         $(".panorama").panorama_viewer({

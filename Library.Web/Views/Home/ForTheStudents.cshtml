@@ -1,35 +1,35 @@
-﻿
+﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "За Ученика";
-    ViewData["Description"] = "Кратка информация за учениците желаещи да четат в Регионална библиотека \"Михалаки Георгиев\" - гр. Видин";
+    ViewData["Title"] = Localizer["ForStudent"];
+    ViewData["Description"] = Localizer["MetaData"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row text-center p-10">
-    <p class="text-justify width-85pr mr-0-auto">При нас може да намерите както художествена и научна литература, така и учебно-помощна литература, речници, образователни вестници и списания.  Тези материали могат да Ви помогнат за получаване на допълнителна информация, за изготвяне на проекти и домашни работи, подготовка за изпити, тестове и матури</p>
+    <p class="text-justify width-85pr mr-0-auto">@Localizer["Paragraph"]</p>
 
-    <h3 class="mr-t-b-25">Списъци за лятно четене</h3>
+    <h3 class="mr-t-b-25">@Localizer["SummerList"]</h3>
     <div class="text-center">
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs3.jpg" title="Списък за лятно четене за 2. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs3.jpg" alt="Списък за лятно четене за 2. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs3.jpg" title="@Localizer["ReadingList"] @Localizer["Second"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs3.jpg" alt="@Localizer["ReadingList"]  @Localizer["Second"]" />
         </a>
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs4.jpg" title="Списък за лятно четене за 3. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs4.jpg" alt="Списък за лятно четене за 3. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs4.jpg" title="@Localizer["ReadingList"]  @Localizer["Third"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs4.jpg" alt="@Localizer["ReadingList"] @Localizer["Third"]" />
         </a>
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs5.jpg" title="Списък за лятно четене за 4. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs5.jpg" alt="Списък за лятно четене за 4. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs5.jpg" title="@Localizer["ReadingList"] @Localizer["Fourth"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs5.jpg" alt="@Localizer["ReadingList"] @Localizer["Fourth"]" />
         </a>
     </div>
     <div class="text-center">
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs6.jpg" title="Списък за лятно четене за 5. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs6.jpg" alt="Списък за лятно четене за 5. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs6.jpg" title="@Localizer["ReadingList"] @Localizer["Fifth"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs6.jpg" alt="@Localizer["ReadingList"] @Localizer["Fifth"]" />
         </a>
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs7.jpg" title="Списък за лятно четене за 6. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs7.jpg" alt="Списък за лятно четене за 6. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs7.jpg" title="@Localizer["ReadingList"] @Localizer["Sixth"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs7.jpg" alt="@Localizer["ReadingList"] @Localizer["Sixth"]" />
         </a>
-        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs8.jpg" title="Списък за лятно четене за 7. клас">
-            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs8.jpg" alt="Списък за лятно четене за 7. клас" />
+        <a class="image-popup-vertical-fit" href="/images/SiteImages/fs8.jpg" title="@Localizer["ReadingList"] @Localizer["Seventh"]">
+            <img class="width-150 mr-8 img-border mr-t-b-25" src="/images/SiteImages/fs8.jpg" alt="@Localizer["ReadingList"] @Localizer["Seventh"]" />
         </a>
     </div>
 </div>

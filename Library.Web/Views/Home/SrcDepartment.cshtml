@@ -1,10 +1,10 @@
 ﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = Localizer["ForeignReadingRoom"];
+    ViewData["Title"] = Localizer["SRC"];
 }
 
 <div class="row text-center">
-    <h2>@Localizer["ForeignReadingRoom"]</h2>
+    <h2>@Localizer["SRC"]</h2>
 </div>
 <div class="max-w-500 mr-10-auto">
     <table class="table-hover max-width">
@@ -25,16 +25,12 @@
         </tbody>
     </table>
     <div class="panorama">
-        <img src="~/images/SiteImages/CISBO.jpg" alt="@Localizer["ForeignReadingRoom"]">
+        <img src="~/images/SiteImages/CISBO.jpg" alt="@Localizer["SRC"]">
     </div>
 </div>
 <div class="col-md-12">
     <div class="text-justify max-w-750 mr-0-auto">
         <p>@Localizer["FirstParagraph"]</p>
-        <p>@Localizer["SecondParagraph"]</p>
-        <p>@Localizer["ThirdParagraph"]</p>
-        <p>@Localizer["FourthParagraph"]</p>
-        <p>@Localizer["FifthParagraph"]</p>
     </div>
     <div class="text-center mr-t-b-25">
         <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
@@ -52,3 +48,4 @@
         });
     </script>
 }
+

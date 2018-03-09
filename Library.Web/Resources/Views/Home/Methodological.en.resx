@@ -117,157 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="en" xml:space="preserve">
-    <value>bg</value>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
-  <data name="E-Library" xml:space="preserve">
-    <value>Е-Библиотека</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>The department administers and helps the libraries from Vidin region with expert-consultancy assistance. The specialist in the department coordinates and professionally assists the activities of the librarians from Vidin district. He collects and analyzes the information about the work and the situation of the libraries in the region. The main users of the department are librarians and students.</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Галерия</value>
+  <data name="Methodological" xml:space="preserve">
+    <value>Methodological department</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Начало</value>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>Monday-Friday</value>
   </data>
-  <data name="Homeland" xml:space="preserve">
-    <value>Роден край</value>
-  </data>
-  <data name="Kids World" xml:space="preserve">
-    <value>Детски свят</value>
-  </data>
-  <data name="Library" xml:space="preserve">
-    <value>Библиотека</value>
-  </data>
-  <data name="News" xml:space="preserve">
-    <value>Новини</value>
-  </data>
-  <data name=": Closed" xml:space="preserve">
-    <value>: Почивен ден</value>
-  </data>
-  <data name="About us" xml:space="preserve">
-    <value>За нас</value>
-  </data>
-  <data name="My Account" xml:space="preserve">
-    <value>Профил</value>
-  </data>
-  <data name="Control Panel" xml:space="preserve">
-    <value>Контрол панел</value>
-  </data>
-  <data name="Closed" xml:space="preserve">
-    <value>Затворено</value>
-  </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Контакти</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Дарители</value>
-  </data>
-  <data name="Events" xml:space="preserve">
-    <value>Събития</value>
-  </data>
-  <data name="FAQ" xml:space="preserve">
-    <value>Въпроси</value>
-  </data>
-  <data name="Find us" xml:space="preserve">
-    <value>Къде се намираме</value>
-  </data>
-  <data name="For the curious" xml:space="preserve">
-    <value>За любителя</value>
-  </data>
-  <data name="For the student" xml:space="preserve">
-    <value>За ученика</value>
-  </data>
-  <data name="Friday" xml:space="preserve">
-    <value>Петък</value>
-  </data>
-  <data name="Functions" xml:space="preserve">
-    <value>Функции</value>
-  </data>
-  <data name="Library info" xml:space="preserve">
-    <value>За библиотеката</value>
-  </data>
-  <data name="Mihalaki Georgiev" xml:space="preserve">
-    <value>За Михалаки Георгиев</value>
-  </data>
-  <data name="Monday" xml:space="preserve">
-    <value>Понеделник</value>
-  </data>
-  <data name="New books" xml:space="preserve">
-    <value>Нови книги</value>
-  </data>
-  <data name="New children books" xml:space="preserve">
-    <value>Нови детски книги</value>
-  </data>
-  <data name="Open" xml:space="preserve">
-    <value>Отворено</value>
-  </data>
-  <data name="Opening hours" xml:space="preserve">
-    <value>Работно време</value>
-  </data>
-  <data name="Other E-Catalouges" xml:space="preserve">
-    <value>Други Е-Каталози</value>
-  </data>
-  <data name="Partners" xml:space="preserve">
-    <value>Партньори</value>
-  </data>
-  <data name="Price list" xml:space="preserve">
-    <value>Ценоразпис</value>
-  </data>
-  <data name="Publications" xml:space="preserve">
-    <value>Издания</value>
-  </data>
-  <data name="Regional Library &quot;Mihalaki Georgiev&quot; - Vidin" xml:space="preserve">
-    <value>Регионална Библиотека "Михалаки Георгиев"-гр. Видин</value>
-  </data>
-  <data name="Regional Library &quot;Mihalaki Georgiev&quot;-Vidin" xml:space="preserve">
-    <value>Р.Б. "Михалаки Георгиев"-гр. Видин</value>
-  </data>
-  <data name="Safe internet" xml:space="preserve">
-    <value>Безопасен интернет</value>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening Hours</value>
   </data>
   <data name="Saturday" xml:space="preserve">
-    <value>Събота</value>
+    <value>Saturday</value>
   </data>
-  <data name="See More" xml:space="preserve">
-    <value>Виж още</value>
+  <data name="SaturdayWorkTime" xml:space="preserve">
+    <value>Closed</value>
   </data>
-  <data name="Our Services" xml:space="preserve">
-    <value>Услуги</value>
-  </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонаменти</value>
-  </data>
-  <data name="Sunday" xml:space="preserve">
-    <value>Неделя</value>
-  </data>
-  <data name="Thursday" xml:space="preserve">
-    <value>Четвъртък</value>
-  </data>
-  <data name="Toggle navigation" xml:space="preserve">
-    <value>Включи навигацията</value>
-  </data>
-  <data name="Tuesday" xml:space="preserve">
-    <value>Вторник</value>
-  </data>
-  <data name="Useful information" xml:space="preserve">
-    <value>Полезна информация</value>
-  </data>
-  <data name="Useful links" xml:space="preserve">
-    <value>Полезни връзки</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Потребители</value>
-  </data>
-  <data name="Vidin" xml:space="preserve">
-    <value>Видин</value>
-  </data>
-  <data name="Wednesday" xml:space="preserve">
-    <value>Сряда</value>
-  </data>
-  <data name="Work with children program" xml:space="preserve">
-    <value>Програма за работа с деца</value>
+  <data name="WeekWorkTime" xml:space="preserve">
+    <value>9:00-12:00; 12:30-17:00</value>
   </data>
 </root>

@@ -155,7 +155,7 @@ namespace Library.Web.Controllers
         public IActionResult ForeignReadingRoom()
             => View();
 
-        public IActionResult ApcDepartment()
+        public IActionResult SrcDepartment()
             => View();
 
         public IActionResult Methodological()
