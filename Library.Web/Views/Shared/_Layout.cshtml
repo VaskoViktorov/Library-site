@@ -19,7 +19,7 @@
     <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
 
     <environment include="Development">
-        <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+        <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -32,7 +32,7 @@
 
     </environment>
     <environment exclude="Development">
-        <link async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+        <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -177,7 +177,7 @@
                 @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
                 {
                     <div class="row width-85pr text-center mr-0-auto">
-                        <div class="alert alert-success" style="position: absolute;width: inherit;padding-top: 20px;">
+                        <div class="alert alert-success alert-box">
                             @TempData[WebConstants.TempDataSuccessMessageKey]
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                 @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
                 {
                     <div class="row width-85pr text-center mr-0-auto">
-                        <div class="alert alert-warning" style="position: absolute;width: inherit;padding-top: 20px;">
+                        <div class="alert alert-warning alert-box">
                             @TempData[WebConstants.TempDataWarningMessageKey]
                         </div>
                     </div>

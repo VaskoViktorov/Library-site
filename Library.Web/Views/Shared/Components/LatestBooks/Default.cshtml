@@ -12,27 +12,32 @@
     }
 }
 <div class="row">
-    <img src="~/images/SiteImages/red.png" alt="цвят" style="width: 110%;position: absolute;height: 200px;border-bottom-right-radius: 20px;right: -16px;" />
+    <img class="color-panel" src="~/images/SiteImages/red.png" alt="@Localizer["color"]"/>
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-8" style="padding-left: 0; padding-right: 0px;display: inline-block;">
-                <div id="lib-latest-books" style="display: inline-block; padding-left: 1px;">
+            <div class="col-md-8 col-panel">
+                <div id="lib-latest-books">
                     <ul class="lib-new-book-ul rslides">
                         @foreach (var book in Model)
                         {
                             <li>
-                                <a class="second-color" asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id"><img src="@Url.Content(book.ImageUrl)" alt="@book.BookTitle"></a>
+                                <a class="second-color" asp-area="LibraryBlog" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">
+                                    <img src="@Url.Content(book.ImageUrl)" alt="@book.BookTitle">
+                                </a>
                             </li>
                         }
                     </ul>
-                    <h4 class="text-center" id="lib-new-book-h4"><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["View Latest Books"]</a></h4>
-
+                    <h4 class="text-center" id="lib-new-book-h4">
+                        <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["View Latest Books"]</a>
+                    </h4>
                 </div>
             </div>
             <div class="col-md-4" style=" padding-left: 15px;">
                 <div>
-                    <a class="second-color" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions"><img id="lib-subscr@(engType)" src="~/images/SiteImages/subscriptions@(engType).png" alt="@Localizer["Subscriptions"]" /></a>
+                    <a class="second-color" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">
+                        <img id="lib-subscr@(engType)" src="~/images/SiteImages/subscriptions@(engType).png" alt="@Localizer["Subscriptions"]"/>
+                    </a>
                 </div>
             </div>
         </div>

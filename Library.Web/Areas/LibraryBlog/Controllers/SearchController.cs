@@ -1,13 +1,12 @@
-﻿using System.Globalization;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using System.Threading.Tasks;
-    using Services.LibraryBlog;
-    using Models.Search;
     using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Models.Search;
+    using Services.LibraryBlog;
+    using System.Globalization;
+    using System.Threading.Tasks;
 
     using static WebConstants;
 
@@ -21,8 +20,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Search(string searchText,bool searchInBooks,
-            bool searchInArticles,bool searchInGalleries,bool searchInSubscriptions)
+        public async Task<IActionResult> Search(string searchText, bool searchInBooks,
+            bool searchInArticles, bool searchInGalleries, bool searchInSubscriptions)
         {
             if (StringExtensions.IsNullOrWhiteSpace(searchText))
             {

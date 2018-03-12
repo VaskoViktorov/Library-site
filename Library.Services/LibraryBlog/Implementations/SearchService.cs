@@ -1,17 +1,17 @@
 ﻿namespace Library.Services.LibraryBlog.Implementations
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure;
+    using Data;
+    using Data.Models;
+    using Microsoft.EntityFrameworkCore;
     using Models.Articles;
     using Models.Books;
     using Models.Galleries;
     using Models.Subscriptions;
-    using Microsoft.EntityFrameworkCore;
-    using Data;
-    using Common.Infrastructure;
-    using Data.Models;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     public class SearchService : ISearchService
     {
@@ -60,7 +60,7 @@
 
             return await this.db
                 .Galleries
-                .Where(g => g.Title.ToLower().Contains(searchText) && g.Images.Count >1 && g.Language == (Language)language.ParseLang())
+                .Where(g => g.Title.ToLower().Contains(searchText) && g.Images.Count > 1 && g.Language == (Language)language.ParseLang())
                 .ProjectTo<GalleryServiceModel>()
                 .ToListAsync();
         }

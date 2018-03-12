@@ -1,7 +1,8 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Surveys
 {
-    using System.ComponentModel.DataAnnotations;
     using Resources.Areas.LibraryBlog.Models.Surveys;
+    using System.ComponentModel.DataAnnotations;
+
     public class SurveyFormModel
     {
         public string id { get; set; }

@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Events
 {
-    using System.ComponentModel.DataAnnotations;
     using Resources.Areas.LibraryBlog.Models.Events;
+    using System.ComponentModel.DataAnnotations;
 
     public class EventFormModel
     {

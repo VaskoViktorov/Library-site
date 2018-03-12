@@ -10,9 +10,9 @@
     <div class="address-box">
         <p><span class="glyphicon glyphicon-home"></span><span class="bold"> @Localizer["Address"]:</span> @Localizer["\"Bdinci\" Square"] № 1</p>
         <p><span class="glyphicon glyphicon-phone"></span><span class="bold"> @Localizer["Phone"]:</span> 094/601-704</p>
-        <p style="margin: 0;"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> @Localizer["Email"]:</span> libvidin@vidin.net</p>
+        <p class="mr-0"><span class="glyphicon glyphicon-envelope"></span><span class="bold"> @Localizer["Email"]:</span> libvidin@vidin.net</p>
     </div>
-    <div id="map_canvas" class="google-box-height" style="border-radius: 30px; width: 85%; margin: 0 auto;"></div>
+    <div id="map_canvas" class="google-box"></div>
 </div>
 
 @section Scripts {
@@ -57,7 +57,7 @@
                     var workHrThree = "@Localizer["Sunday: Closed"]";
 
                     var infowindow = new google.maps.InfoWindow({
-                        content: "<div class='infoDiv text-center'><h3>" +
+                        content: "<div class='infoDiv text-center'><h2>" +
                         item.PlaceName +
                         "</h2>" +
                         "<div><img class='small-img' src='/images/SiteImages/Library.jpg' alt='@Localizer["R.L. Mihalaki Georgiev"]' /></div>" +
@@ -65,12 +65,11 @@
                         workHours +
                         "</h4><p>" +
                         workHrOne +
-                        "</p>" +
+                        "</p><p>" +
                         workHrTwo +
-                        "</p>" +
+                        "</p><p>" +
                         workHrThree +
-                        "</p>" +
-                        "</div></div>"
+                        "</p></div>"
                     });
 
                     var test = new google.maps.event.addListener(marker,

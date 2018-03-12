@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Models.Home
 {
-    using System.ComponentModel.DataAnnotations;
     using Resources.Models.Home;
+    using System.ComponentModel.DataAnnotations;
 
     public class AskFormModel
     {

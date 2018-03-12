@@ -1,9 +1,7 @@
-﻿using Library.Web.Resources.Models.Account;
-using Library.Web.Resources.Models.Manage;
-
-namespace Library.Web.Models.Account
+﻿namespace Library.Web.Models.Account
 {
     using System.ComponentModel.DataAnnotations;
+    using Resources.Models.Account;
 
     using static Data.DataConstants;
 

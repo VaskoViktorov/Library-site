@@ -52,6 +52,6 @@
         public const string ImageFolderName = "images";
         public const string GalleriesImageFolderName = "GalleryImages";
         public const string BooksImageFolderName = "BookCovers";
-       
+
     }
 }

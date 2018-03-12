@@ -1,6 +1,4 @@
-﻿
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -8,8 +6,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Models.Subscriptions;
     using Services.LibraryBlog;
-    using System.Threading.Tasks;
     using System.Globalization;
+    using System.Threading.Tasks;
 
     public class SubscriptionsController : BaseController
     {

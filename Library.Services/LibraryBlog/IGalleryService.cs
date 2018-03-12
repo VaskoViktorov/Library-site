@@ -17,7 +17,7 @@
 
         Task<GalleryServiceModel> Details(int id);
 
-        Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(string language,int page = 1);
+        Task<IEnumerable<GalleryServiceModel>> AllGalleriesAsync(string language, int page = 1);
 
         Task<int> TotalAsync(string language);
     }

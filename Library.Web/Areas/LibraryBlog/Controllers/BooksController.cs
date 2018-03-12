@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -10,6 +8,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
     using Services.Html;
     using Services.LibraryBlog;
     using System;
+    using System.Globalization;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -17,7 +16,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
     public class BooksController : BaseController
     {
-        private const string ModelName = "Книгата";       
+        private const string ModelName = "Книгата";
 
         private readonly IBookService books;
         private readonly IHtmlService html;
@@ -32,7 +31,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public async Task<IActionResult> Books(int page = 1)
         => this.View(new BookListingViewModel
         {
-            Books = await this.books.AllBooksAsync(CurrentCulture(),page),
+            Books = await this.books.AllBooksAsync(CurrentCulture(), page),
             TotalBooks = await this.books.TotalAsync(CurrentCulture()),
             CurrentPage = page
         });
@@ -41,7 +40,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public async Task<IActionResult> BooksForKids(int page = 1)
             => this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksForChildrenAsync(CurrentCulture(),page),
+                Books = await this.books.AllBooksForChildrenAsync(CurrentCulture(), page),
                 TotalBooks = await this.books.TotalForKidsAsync(CurrentCulture()),
                 CurrentPage = page
             });
@@ -50,7 +49,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public async Task<IActionResult> BooksForLand(int page = 1)
             => this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksForLandLandAsync(CurrentCulture(),page),
+                Books = await this.books.AllBooksForLandLandAsync(CurrentCulture(), page),
                 TotalBooks = await this.books.TotalForLandAsync(CurrentCulture()),
                 CurrentPage = page
             });
@@ -152,7 +151,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             if (model.ImageUrl != null)
             {
-                var path = Path.Combine(ImageFolderName, BooksImageFolderName, $"{Guid.NewGuid()}.jpg");               
+                var path = Path.Combine(ImageFolderName, BooksImageFolderName, $"{Guid.NewGuid()}.jpg");
 
                 if (!ImageDownloaderExtensions.Download(model.ImageUrl, path))
                 {
@@ -167,7 +166,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             }
 
             model.BookDescription = this.html.Sanitize(model.BookDescription);
-            
+
             await this.books.EditAsync(
                 id,
                 model.AuthorName,

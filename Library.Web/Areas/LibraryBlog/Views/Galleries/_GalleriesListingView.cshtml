@@ -7,7 +7,7 @@
     var count = gallery.Images.Count;
 
     <div class="col-md-4 text-center gallery-col">
-        <p class="lib-gallery-h word-wrap">@gallery.Title</p>
+        <p class="lib-gallery-h word-break">@gallery.Title</p>
         @if (count != 0)
         {
             <a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">

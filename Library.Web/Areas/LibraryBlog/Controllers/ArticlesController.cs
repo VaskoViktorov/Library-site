@@ -9,9 +9,9 @@
     using Services.LibraryBlog;
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Threading.Tasks;
-    using System.Globalization;
 
     using static WebConstants;
 
@@ -59,7 +59,7 @@
             {
                 return Content("files not selected");
             }
-               
+
             var gallery = new List<string>();
 
             foreach (var file in model.Files)

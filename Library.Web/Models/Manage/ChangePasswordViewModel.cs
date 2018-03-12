@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Models.Manage
 {
-    using System.ComponentModel.DataAnnotations;
     using Resources.Models.Manage;
+    using System.ComponentModel.DataAnnotations;
 
     public class ChangePasswordViewModel
     {

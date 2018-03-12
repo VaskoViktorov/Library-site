@@ -3,8 +3,7 @@
     using Services.LibraryBlog.Models.Galleries;
 
     public class GalleryViewModel
-
     {
-    public GalleryServiceModel Gallery { get; set; }
+        public GalleryServiceModel Gallery { get; set; }
     }
 }

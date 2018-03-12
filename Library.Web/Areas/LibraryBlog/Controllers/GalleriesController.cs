@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -10,6 +8,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
     using Services.LibraryBlog;
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Threading.Tasks;
 
@@ -30,7 +29,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public async Task<IActionResult> Galleries(int page = 1)
             => this.View(new GalleryListingViewModel
             {
-                Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(),page),
+                Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(), page),
                 TotalGalleries = await this.galleries.TotalAsync(CurrentCulture()),
                 CurrentPage = page
             });
@@ -53,7 +52,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             {
                 return Content("files not selected");
             }
-               
+
             var imgPaths = new List<string>();
 
             foreach (var file in model.Files)

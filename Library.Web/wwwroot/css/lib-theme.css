@@ -487,6 +487,10 @@ ul#worktime-menu.dropdown-menu {
     padding-top: 5px;
     padding-bottom: 2px;
 }
+#lib-latest-books {
+    display: inline-block;
+    padding-left: 1px;
+}
 #lib-latest-books:hover * {
     background-color: #660B0B;
     border-color: #660B0B !important;
@@ -681,7 +685,7 @@ ul.lib-footer-ul li a:hover {
     padding: 5px;
     color: #FFEDD8;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.9em;
     margin: 10px auto 0 auto;
     width: 187px;
     border-top-left-radius: 20px;
@@ -721,7 +725,7 @@ ul.lib-footer-ul li a:hover {
     z-index: 2;
 }
 #lib-search form #SearchText {
-    width: 415px;
+    width: 444px;
     padding-left: 25px;
 }
 #lib-search > div > form > div > button:hover, #lib-search-footer-box > form > div > button:hover {
@@ -782,4 +786,13 @@ ul.lib-footer-ul li a:hover {
     display: inline-block;
     text-align: right;
     width: 109px;
+}
+.lib-search-p {
+    top: 28px;
+    left: 5px;
+    margin: 0
+}
+.lib-search-div {
+    margin-bottom: 8px;
+    margin-left: 6px;
 }

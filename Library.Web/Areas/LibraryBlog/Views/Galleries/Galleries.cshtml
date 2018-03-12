@@ -13,11 +13,11 @@
     }
 }
 <div class="row hidden-xs">
-    <div class="mr-0-auto col-md-offset-6" style="width: 30px">
+    <div class="mr-0-auto col-md-offset-6 width-30">
         <div id="lib-search" class="third-color-b dropdown">
-            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false" style="font-size: 25px;padding-top: 10px;padding-left: 16px;"></a>
-            <span class="second-color" style="padding-left: 10px;">@Localizer["Search"]</span>
-            <div class="first-color-b dropdown-menu drop" style="width: 475px; height: 120px; padding: 10px; border-radius: 20px;position: absolute;top: -96px;left: -200px;">
+            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer search-box-ico" data-toggle="dropdown" aria-expanded="false"></a>
+            <span class="second-color p-l-10 ">@Localizer["Search"]</span>
+            <div class="first-color-b dropdown-menu drop search-box">
                 @await Component.InvokeAsync("Search")
             </div>
         </div>

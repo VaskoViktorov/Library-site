@@ -5,18 +5,18 @@
     ViewData["Description"] = Localizer["The \"Mihalaki Georgiev\" Regional Library in Vidin is currently housed in the building of the former Party House on the central city square \"Bdintsi\" No 1 (tel.:94-22673). Today, the library is the largest public library in the Vidin District."];
 }
 <div class="row hidden-xs">
-    <div class="mr-0-auto col-md-offset-6" style="width: 30px">
+    <div class="mr-0-auto col-md-offset-6 width-30">
         <div id="lib-search" class="third-color-b dropdown">
-            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false" style="font-size: 25px;padding-top: 10px;padding-left: 16px;"></a>
-            <span class="second-color" style="padding-left: 10px;">@Localizer["Search"]</span>
-            <div class="first-color-b dropdown-menu drop" style="width: 475px; height: 120px; padding: 10px; border-radius: 20px;position: absolute;top: -96px;left: -200px;">
+            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer search-box-ico" data-toggle="dropdown" aria-expanded="false"></a>
+            <span class="second-color p-l-10 ">@Localizer["Search"]</span>
+            <div class="first-color-b dropdown-menu drop search-box">
                 @await Component.InvokeAsync("Search")
             </div>
         </div>
     </div>
 </div>
 <div class="row text-center mr-l-1">
-    <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles" style="text-decoration: none">
+    <a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">
         <h1 class="text-center" id="carosel-h1">@Localizer["Latest news"]</h1>
     </a>
     <div id="myCarousel" class="carousel slide carousel-custom-settings" data-ride="carousel" data-interval="6000">
@@ -26,7 +26,7 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ul>
-        <div class="carousel-inner" role="listbox" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px">
+        <div class="carousel-inner" role="listbox">
             @{
                 var count = 0;
                 foreach (var article in Model.Articles)
@@ -34,11 +34,11 @@
                     if (count == 0)
                     {
                         <div class="item active">
-                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;" />
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive bor-bot-rad-50" />
                             <div class="carousel-caption" role="option">
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>
-                                    <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                    <a class="carosel-span second-color" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                         @Localizer["Read more"]
                                     </a>
                                 </p>
@@ -49,11 +49,11 @@
                     else
                     {
                         <div class="item">
-                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive" style="border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;" />
+                            <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" alt="@article.Title" class="img-responsive bor-bot-rad-50"/>
                             <div class="carousel-caption" role="option">
                                 <p class="carosel-p">
                                     <span class="carosel-span-0">@article.Title</span>
-                                    <a class="carosel-span" style="text-decoration: none; color: #fff" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
+                                    <a class="carosel-span second-color" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Details" asp-route-id="@article.Id">
                                         @Localizer["Read more"]
                                     </a>
                                 </p>
@@ -64,11 +64,11 @@
                 }
             }
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="border-bottom-left-radius: 50px;">
+        <a class="left carousel-control bor-bot-l-rad-50" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">@Localizer["Previous"]</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="border-bottom-right-radius: 50px;">
+        <a class="right carousel-control bor-bot-r-rad-50" href="#myCarousel" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">@Localizer["Next"]</span>
         </a>

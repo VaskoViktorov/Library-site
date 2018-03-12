@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
-
-namespace Library.Data.Migrations
+﻿namespace Library.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class LanguageType : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

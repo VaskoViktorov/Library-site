@@ -1,8 +1,8 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Books
 {
     using Data.Models;
-    using System.ComponentModel.DataAnnotations;
     using Resources.Areas.LibraryBlog.Models.Books;
+    using System.ComponentModel.DataAnnotations;
 
     using static Data.DataConstants;
 
@@ -39,7 +39,7 @@
         [Display(Name = "Department", ResourceType = typeof(BookFormModelResx))]
         public DepartmentType Department { get; set; }
 
-        [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessageResourceName= "DateError", ErrorMessageResourceType = typeof(BookFormModelResx))]
+        [RegularExpression(@"^18\d{2}|19\d{2}|20\d{2}|0$", ErrorMessageResourceName = "DateError", ErrorMessageResourceType = typeof(BookFormModelResx))]
         [Display(Name = "Date", ResourceType = typeof(BookFormModelResx))]
         public int PublishDate { get; set; }
 
@@ -60,7 +60,7 @@
 
         [MinLength(BookImageUrlMinLength)]
         [MaxLength(BookImageUrlMaxLength)]
-        [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$",ErrorMessageResourceName = "UrlError", ErrorMessageResourceType = typeof(BookFormModelResx))]
+        [RegularExpression(@"^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?(.jpg|.gif|.png|.JPG|.PNG|.GIF)$", ErrorMessageResourceName = "UrlError", ErrorMessageResourceType = typeof(BookFormModelResx))]
         [Display(Name = "Url", ResourceType = typeof(BookFormModelResx))]
         public string ImageUrl { get; set; }
 

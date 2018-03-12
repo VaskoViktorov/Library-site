@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Events
 {
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
 
     using static Services.ServicesConstants;
 

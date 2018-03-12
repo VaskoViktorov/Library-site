@@ -5,15 +5,15 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Models.Surveys;
-    using System.IO;
     using System.Globalization;
+    using System.IO;
 
     using static WebConstants;
 
     public class SurveysController : BaseController
     {
         private const string ModelName = "Анкетата";
-    
+
         [AllowAnonymous]
         public IActionResult Survey(string id)
         {
@@ -60,7 +60,7 @@
 
         private string GetSurveysJsonPath()
         {
-            var currCulture= CultureInfo.CurrentCulture.Name;
+            var currCulture = CultureInfo.CurrentCulture.Name;
 
             if (currCulture == BulgarianCulture)
             {

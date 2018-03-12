@@ -7,7 +7,7 @@
     {
         [AllowAnonymous]
         public IViewComponentResult Invoke()
-        {          
+        {
             return this.View();
         }
     }

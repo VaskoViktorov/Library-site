@@ -126,7 +126,7 @@
             return article;
         }
 
-        public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(string language,int page = 1)
+        public async Task<IEnumerable<ArticleListingServiceModel>> AllArticlesAsync(string language, int page = 1)
         {
             var articles = await this.db
                 .Articles

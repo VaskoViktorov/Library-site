@@ -1,6 +1,7 @@
 ﻿namespace Library.Services.ViewComponents.Implementations
 {
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure;
     using Data;
     using Data.Models;
     using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using Common.Infrastructure;
+
     using static ServicesConstants;
 
     public class LatestBooksService : ILatestBooksService

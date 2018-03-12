@@ -8,6 +8,5 @@
         Check = 3,
         Art = 4,
         Land = 5
-
     }
 }

@@ -9,12 +9,12 @@
     public interface IArticleService
     {
         Task CreateAsync(
-            string title, 
-            string description, 
+            string title,
+            string description,
             DateTime releaseDate,
-            DepartmentType type, 
-            string authorName, 
-            List<string> gallery, 
+            DepartmentType type,
+            string authorName,
+            List<string> gallery,
             Language language);
 
         Task EditAsync(

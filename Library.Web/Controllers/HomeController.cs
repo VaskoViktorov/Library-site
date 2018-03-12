@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Library.Web.Controllers
+﻿namespace Library.Web.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -13,6 +11,7 @@ namespace Library.Web.Controllers
     using Services.Html;
     using System;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Threading.Tasks;
 
     using static WebConstants;
@@ -31,7 +30,7 @@ namespace Library.Web.Controllers
             this.html = html;
             this.home = home;
         }
-       
+
         public async Task<IActionResult> Index()
             => View(new ArticleListingHomeViewModel
             {

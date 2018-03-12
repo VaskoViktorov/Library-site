@@ -116,6 +116,6 @@
         }
 
         private string NewFormatDate(string date)
-        => date.Replace("T", " ") + ":00";        
+        => date.Replace("T", " ") + ":00";
     }
 }

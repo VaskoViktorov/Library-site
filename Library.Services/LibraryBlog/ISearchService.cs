@@ -1,11 +1,11 @@
 ﻿namespace Library.Services.LibraryBlog
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using Models.Articles;
     using Models.Books;
     using Models.Galleries;
     using Models.Subscriptions;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public interface ISearchService
     {

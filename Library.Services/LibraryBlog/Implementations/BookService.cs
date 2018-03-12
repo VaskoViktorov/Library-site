@@ -1,8 +1,7 @@
-﻿using Library.Common.Infrastructure;
-
-namespace Library.Services.LibraryBlog.Implementations
+﻿namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure;
     using Common.Infrastructure.Extensions;
     using Data;
     using Data.Models;
@@ -120,7 +119,7 @@ namespace Library.Services.LibraryBlog.Implementations
                 .ProjectTo<BookServiceModel>()
                 .FirstOrDefaultAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(string language,int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksAsync(string language, int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)
@@ -130,7 +129,7 @@ namespace Library.Services.LibraryBlog.Implementations
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language,int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language, int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)
@@ -140,7 +139,7 @@ namespace Library.Services.LibraryBlog.Implementations
                 .ProjectTo<BookListingServiceModel>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language,int page = 1)
+        public async Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language, int page = 1)
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Date)

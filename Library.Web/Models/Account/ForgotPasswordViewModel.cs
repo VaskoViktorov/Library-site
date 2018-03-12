@@ -1,7 +1,7 @@
 ﻿namespace Library.Web.Models.Account
 {
-    using System.ComponentModel.DataAnnotations;
     using Resources.Models.Account;
+    using System.ComponentModel.DataAnnotations;
 
     public class ForgotPasswordViewModel
     {

@@ -1,8 +1,7 @@
-﻿using Library.Common.Infrastructure;
-
-namespace Library.Services.LibraryBlog.Implementations
+﻿namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
+    using Common.Infrastructure;
     using Common.Infrastructure.Extensions;
     using Data;
     using Data.Models;

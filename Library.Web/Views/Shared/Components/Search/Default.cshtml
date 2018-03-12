@@ -1,24 +1,24 @@
 ﻿@inject IViewLocalizer Localizer
 
 <form asp-area="LibraryBlog" asp-controller="Search" asp-action="Search" method="post">
-    <div class="form-group" style="margin-bottom: 8px;display: inline-block;margin-left: 6px;">
-        <p class="glyphicon glyphicon-search first-color" style="top: 28px;left: 5px;margin: 0"></p>
+    <div class="form-group disp-inl-bl">
+        <p class="glyphicon glyphicon-search first-color lib-search-p"></p>
         <input type="text" id="SearchText" name="searchText" class="form-control" placeholder="@Localizer["Write here"]" />
     </div>
-    <div id="lib-search-form-second" class="form-group" style="display: inline-block">
-        <label for="searchInBooks" class="second-color" style="padding-left: 5px;">@Localizer["Books"]</label>
+    <div id="lib-search-form-second" class="form-group disp-inl-bl">
+        <label for="searchInBooks" class="second-color p-l-5">@Localizer["Books"]</label>
         @Html.CheckBox("searchInBooks", true)
     </div>
-    <div id="lib-search-form-third"  class="form-group" style="display: inline-block">
-        <label for="searchInArticles" class="second-color" style="padding-left: 5px;">@Localizer["Articles"]</label>
+    <div id="lib-search-form-third"  class="form-group disp-inl-bl">
+        <label for="searchInArticles" class="second-color p-l-5">@Localizer["Articles"]</label>
         @Html.CheckBox("searchInArticles", true)
     </div>   
-    <div id="lib-search-form-fourth" class="form-group" style="display: inline-block">
-        <label for="searchInGalleries" class="second-color" style="padding-left: 5px;">@Localizer["Galleries"]</label>
+    <div id="lib-search-form-fourth" class="form-group disp-inl-bl">
+        <label for="searchInGalleries" class="second-color p-l-5">@Localizer["Galleries"]</label>
         @Html.CheckBox("searchInGalleries",true)
     </div>
-    <div id="lib-search-form-fifth" class="form-group" style="display: inline-block">
-        <label for="searchInSubscriptions" class="second-color" style="padding-left: 5px;">@Localizer["Subscriptions"]</label>
+    <div id="lib-search-form-fifth" class="form-group disp-inl-bl">
+        <label for="searchInSubscriptions" class="second-color p-l-5">@Localizer["Subscriptions"]</label>
         @Html.CheckBox("searchInSubscriptions", true)
     </div>
     <div class="lib-inl-b">

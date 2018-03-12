@@ -2,8 +2,8 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Services.ViewComponents;
-    using System.Threading.Tasks;
     using System.Globalization;
+    using System.Threading.Tasks;
 
     public class LatestBooksViewComponent : ViewComponent
     {

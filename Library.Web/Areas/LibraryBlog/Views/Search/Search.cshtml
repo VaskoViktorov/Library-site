@@ -7,11 +7,11 @@
 }
 
 <div class="row hidden-xs">
-    <div class="mr-0-auto col-md-offset-6" style="width: 30px">
+    <div class="mr-0-auto col-md-offset-6 width-30">
         <div id="lib-search" class="third-color-b dropdown">
-            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer" data-toggle="dropdown" aria-expanded="false" style="font-size: 25px;padding-top: 10px;padding-left: 16px;"></a>
-            <span class="second-color" style="padding-left: 10px;">@Localizer["Search"]</span>
-            <div class="first-color-b dropdown-menu drop" style="width: 475px; height: 120px; padding: 10px; border-radius: 20px;position: absolute;top: -96px;left: -200px;">
+            <a class="glyphicon glyphicon-search second-color dropdown-toggle cr-pointer search-box-ico" data-toggle="dropdown" aria-expanded="false"></a>
+            <span class="second-color p-l-10 ">@Localizer["Search"]</span>
+            <div class="first-color-b dropdown-menu drop search-box">
                 @await Component.InvokeAsync("Search")
             </div>
         </div>
@@ -20,11 +20,11 @@
 <div id="search-head" class="row text-center">
     <h2>@ViewData["Title"] @Localizer["for"]:</h2>
 </div>
-<div class="row text-center mr-t-20" style="padding-left: 40px;">
+<div class="row text-center mr-t-20 p-l-40">
     <h4>"@Model.SearchedText"</h4>
 </div>
 <div class="row text-center">
-    <div class="col-md-12 " style="padding-left: 50px;">
+    <div class="col-md-12 p-l-50">
         @{
             if (Model.SearchInBook != null)
             {
@@ -132,6 +132,6 @@
         }
     </div>
 </div>
-<div class="row text-center mr-t-b-25" style="padding-left: 40px;">
+<div class="row text-center mr-t-b-25 p-l-40">
     <a class="lib-btn" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Back"]</a>
 </div>
