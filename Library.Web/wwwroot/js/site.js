@@ -231,3 +231,11 @@ $(document).ready(function () {
     //Fire it when the page first loads:
     alterClass();
 });
+//panorama
+$(".panorama").panorama_viewer({
+    repeat: true,
+    direction: "horizontal",
+    animationTime: 1200,
+    easing: "ease-out",
+    overlay: true
+});

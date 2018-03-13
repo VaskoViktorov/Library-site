@@ -194,6 +194,8 @@
         el.find(".pv-pano").hide()
       
       
+    }).each(function () {
+        if (this.complete || this.complete === undefined) { $(this).load(); } //needed for potential cached images
     });
     
   }

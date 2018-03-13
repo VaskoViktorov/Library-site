@@ -29,7 +29,7 @@ li.dropdown.lib-menu:hover > .dropdown-menu {
     max-width: 45%;
 }
 .panorama {
-    max-height: 179px;
+    max-height: 400px;
 }
 html {
     position: relative;
