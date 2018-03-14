@@ -120,6 +120,9 @@
   <data name="Art" xml:space="preserve">
     <value>Изкуство</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
   <data name="Book borrowing" xml:space="preserve">
     <value>Заемна</value>
   </data>

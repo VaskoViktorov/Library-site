@@ -29,7 +29,7 @@
 <div class="row text-center mr-t-b-25">
     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
     {
-    <a class="btn-sm btn-success" asp-area="LibraryBlog" asp-controller="Books" asp-action="Create">@Localizer["Create"]</a>
+    <a class="btn-sm btn-success mr-l-25" asp-area="LibraryBlog" asp-controller="Books" asp-action="Create">@Localizer["Create"]</a>
     }
 </div>
 <div class="row hidden-sm">
