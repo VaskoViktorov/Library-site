@@ -710,6 +710,234 @@ ol {
             -moz-border-radius: 6px 0 6px 6px;
             border-radius: 6px 0 6px 6px;
         }
+/*Map*/
+#building-map {
+    display: block;
+}
+
+#ff1 {
+    display: block;
+    position: absolute;
+    top: 125px;
+    left: 138px;
+    width: 121px;
+    height: 83px;
+}
+
+    #ff1:hover #ff1p1 {
+        display: block;
+    }
+
+    #ff1:hover #ff1p2 {
+        top: -171px;
+    }
+
+#ff1p1 {
+    display: none;
+    width: 47px;
+    top: -43px;
+    position: relative;
+    left: -29px;
+}
+
+#ff1p2 {
+    position: relative;
+    top: -75px;
+    width: 351px;
+    left: -13px;
+}
+
+#sf1 {
+    display: block;
+    position: absolute;
+    top: 446px;
+    left: 245px;
+    width: 69px;
+    height: 92px;
+}
+
+    #sf1:hover #sf1p1 {
+        display: block;
+    }
+
+    #sf1:hover #sf1p2 {
+        top: -672px;
+    }
+
+#sf1p1 {
+    display: none;
+    width: 75px;
+    top: -326px;
+    position: relative;
+    left: 35px;
+}
+
+#sf1p2 {
+    position: relative;
+    top: -347px;
+    width: 109px;
+    left: 109px;
+}
+
+#sf2 {
+    display: block;
+    position: absolute;
+    top: 446px;
+    left: 316px;
+    width: 69px;
+    height: 92px;
+}
+
+    #sf2:hover #sf2p1 {
+        display: block;
+    }
+
+    #sf2:hover #sf2p2 {
+        top: -646px;
+    }
+
+#sf2p1 {
+    display: none;
+    width: 65px;
+    top: -298px;
+    position: relative;
+    left: -26px;
+}
+
+#sf2p2 {
+    position: relative;
+    top: -318px;
+    width: 190px;
+    left: 34px;
+}
+
+#sf3 {
+    display: block;
+    position: absolute;
+    top: 446px;
+    left: 608px;
+    width: 272px;
+    height: 92px;
+}
+
+    #sf3:hover #sf3p1 {
+        display: block;
+    }
+
+    #sf3:hover #sf3p2 {
+        top: -565px;
+    }
+
+#sf3p1 {
+    display: none;
+    width: 436px;
+    top: -257px;
+    position: relative;
+    left: -309px;
+}
+
+#sf3p2 {
+    position: relative;
+    top: -283px;
+    width: 149px;
+    left: -253px;
+}
+
+#sf4 {
+    display: block;
+    position: absolute;
+    top: 392px;
+    left: 34px;
+    width: 149px;
+    height: 139px;
+}
+
+    #sf4:hover #sf4p1 {
+        display: block;
+    }
+
+    #sf4:hover #sf4p2 {
+        top: -429px;
+    }
+
+#sf4p1 {
+    display: none;
+    width: 214px;
+    top: -189px;
+    position: relative;
+    left: 101px;
+}
+
+#sf4p2 {
+    position: relative;
+    top: -200px;
+    width: 159px;
+    left: 322px;
+}
+
+#sf5 {
+    display: block;
+    position: absolute;
+    top: 267px;
+    left: 36px;
+    width: 149px;
+    height: 123px;
+}
+
+    #sf5:hover #sf5p1 {
+        display: block;
+    }
+
+    #sf5:hover #sf5p2 {
+        top: -111px;
+    }
+
+#sf5p1 {
+    display: none;
+    width: 242px;
+    top: -37px;
+    position: relative;
+    left: 75px;
+}
+
+#sf5p2 {
+    position: relative;
+    top: -48px;
+    width: 218px;
+    left: 320px;
+}
+
+#sf6 {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 36px;
+    width: 149px;
+    height: 237px;
+}
+
+    #sf6:hover #sf6p1 {
+        display: block;
+    }
+
+    #sf6:hover #sf6p2 {
+        top: 116px;
+    }
+
+#sf6p1 {
+    display: none;
+    width: 226px;
+    top: 130px;
+    position: relative;
+    left: 89px;
+}
+
+#sf6p2 {
+    position: relative;
+    top: 217px;
+    width: 158px;
+    left: 320px;
+}
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
