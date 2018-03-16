@@ -1,62 +1,90 @@
 ﻿@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = Localizer["Structure"];
-    ViewData["Description"] = Localizer["Structure of the departments in the Regional Library \"Mihalaki Georgiev\"  - Vidin."];
+    ViewData["Description"] = Localizer["metadata"];
 }
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
 </div>
 <div class="row">
     <div class="col-md-12 mr-t-b-25">
-        <div class="max-w-300 mr-0-auto text-justify p-l-45">
+        <div class="max-w-750 mr-0-auto text-justify p-l-45">
             <ul class="lib-footer-ul">
-                <li><a asp-area="" asp-controller="Home" asp-action="BookBorrowing">@Localizer["Lending department for adults"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Children">@Localizer["\"Children's\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["\"Reading rooms - branch of scholarship, exact and applied sciences, periodicals\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="InformationCenter">@Localizer["Information and reference-bibliographic services center"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="ForeignReadingRoom">@Localizer["\"Foreign language reading room\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Art">@Localizer["\"Art\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Homeland">@Localizer["\"Local history\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="SrcDepartment">@Localizer["\"Supplying, registration and cataloging\" department"]</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Methodological">@Localizer["\"Methodological\" department"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="BookBorrowing">@Localizer["Lending"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Children">@Localizer["Children"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["ReadingRooms"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="InformationCenter">@Localizer["InfoCenter"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="ForeignReadingRoom">@Localizer["Foreign"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Art">@Localizer["Art"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Homeland">@Localizer["LocalHistory"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="SrcDepartment">@Localizer["SRC"]</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Methodological">@Localizer["Methodological"]</a></li>
             </ul>
         </div>
     </div>
-
     <div class="col-md-12">
-        <img src="/images/SiteImages/FirstFloor.png" style="width: 449px; display: block;" />
-
+        <img src="~/images/SiteImages/@Localizer["FirstFloor"]" alt="@Localizer["altMapFirst"]" class="ffimg"/>
         <div id="ff1">
-            <img id="ff1p1" src="/images/SiteImages/FF1arrow.png" />
-            <img id="ff1p2" src="/images/SiteImages/FF1.png" />
+            <img id="ff1p1" src="~/images/SiteImages/FF1arrow.png" alt="@Localizer["arrow"]" />
+            <img id="ff1p2" src="~/images/SiteImages/@Localizer["FF1"]" alt="@Localizer["POI"]" />
         </div>
     </div>
-    <div id="building-map" class="col-md-12">
-        <img src="/images/SiteImages/SecondFloor.png" style="width: 877px; display: block;" />
+    <div class="col-md-12">
+        <img src="~/images/SiteImages/@Localizer["SecondFloor"]" alt="@Localizer["altMapSecond"]" class="sfimg"/>
         <div id="sf1">
-            <img id="sf1p1" src="/images/SiteImages/SF1arrow.png" />
-            <img id="sf1p2" src="/images/SiteImages/SF1.png" />
+            <img id="sf1p1" src="~/images/SiteImages/SF1arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf1p2" src="~/images/SiteImages/@Localizer["SF1"]" alt="@Localizer["POI"]" />
         </div>
         <div id="sf2">
-            <img id="sf2p1" src="/images/SiteImages/SF2arrow.png" />
-            <img id="sf2p2" src="/images/SiteImages/SF2.png" />
+            <img id="sf2p1" src="~/images/SiteImages/SF2arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf2p2" src="~/images/SiteImages/@Localizer["SF2"]" alt="@Localizer["POI"]" />
         </div>
         <div id="sf3">
-            <img id="sf3p1" src="/images/SiteImages/SF3arrow.png" />
-            <img id="sf3p2" src="/images/SiteImages/SF3.png" />
+            <img id="sf3p1" src="~/images/SiteImages/SF3arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf3p2" src="~/images/SiteImages/@Localizer["SF3"]" alt="@Localizer["POI"]" />
         </div>
         <div id="sf4">
-            <img id="sf4p1" src="/images/SiteImages/SF4arrow.png" />
-            <img id="sf4p2" src="/images/SiteImages/SF4.png" />
+            <img id="sf4p1" src="~/images/SiteImages/SF4arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf4p2" src="~/images/SiteImages/@Localizer["SF4"]" alt="@Localizer["POI"]" />
         </div>
         <div id="sf5">
-            <img id="sf5p1" src="/images/SiteImages/SF5arrow.png" />
-            <img id="sf5p2" src="/images/SiteImages/SF5.png" />
+            <img id="sf5p1" src="~/images/SiteImages/SF5arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf5p2" src="~/images/SiteImages/@Localizer["SF5"]" alt="@Localizer["POI"]" />
         </div>
         <div id="sf6">
-            <img id="sf6p1" src="/images/SiteImages/SF6arrow.png" />
-            <img id="sf6p2" src="/images/SiteImages/SF6.png" />
+            <img id="sf6p1" src="~/images/SiteImages/SF6arrow.png" alt="@Localizer["arrow"]" />
+            <img id="sf6p2" src="~/images/SiteImages/@Localizer["SF6"]" alt="@Localizer["POI"]" />
         </div>
+    </div>
+    <div class="col-md-12">
+        <img src="~/images/SiteImages/@Localizer["ThirdFloor"]" alt="@Localizer["altMapThird"]" class="sfimg"/>
+        <div id="tf1">
+            <img id="tf1p1" src="~/images/SiteImages/TF1arrow.png" alt="@Localizer["arrow"]" />
+            <img id="tf1p2" src="~/images/SiteImages/@Localizer["TF1"]" alt="@Localizer["POI"]" />
+        </div>
+        <div id="tf2">
+            <img id="tf2p1" src="~/images/SiteImages/TF2arrow.png" alt="@Localizer["arrow"]"  />
+            <img id="tf2p2" src="~/images/SiteImages/@Localizer["TF2"]" alt="@Localizer["POI"]" />
+        </div>
+        <div id="tf3">
+            <img id="tf3p1" src="~/images/SiteImages/TF3arrow.png" alt="@Localizer["arrow"]" />
+            <img id="tf3p2" src="~/images/SiteImages/@Localizer["TF3"]" alt="@Localizer["POI"]" />
+        </div>
+        <div id="tf4">
+            <img id="tf4p1" src="~/images/SiteImages/TF4arrow.png" alt="@Localizer["arrow"]" />
+            <img id="tf4p2" src="~/images/SiteImages/@Localizer["TF4"]" alt="@Localizer["POI"]" />
+        </div>
+    </div>
+    <div class="max-w-750 mr-10-auto popup-gallery gallery-box map-box">
+        <a href="~/images/SiteImages/@Localizer["FirstFloor"]" Title="@Localizer["altMapFirst"]">
+            <img src="~/images/SiteImages/@Localizer["FirstFloor"]" class="width-150 img-border gallery-img" alt="@Localizer["altMapFirst"]" />
+        </a>
+        <a href="~/images/SiteImages/@Localizer["SecondFloor"]" Title="@Localizer["altMapSecond"]">
+            <img src="~/images/SiteImages/@Localizer["SecondFloor"]" class="width-150 img-border gallery-img" alt="@Localizer["altMapSecond"]" />
+        </a>
+        <a href="~/images/SiteImages/@Localizer["ThirdFloor"]" Title="@Localizer["altMapThird"]">
+            <img src="~/images/SiteImages/@Localizer["ThirdFloor"]" class="width-150 img-border gallery-img" alt="@Localizer["altMapThird"]" />
+        </a>       
     </div>
 </div>
 

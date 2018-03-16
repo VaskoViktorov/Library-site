@@ -711,17 +711,25 @@ ol {
             border-radius: 6px 0 6px 6px;
         }
 /*Map*/
-#building-map {
+.map-box {
+    display: none;
+}
+.ffimg {
+    width: 673px; 
+    display: block;
+}
+.sfimg {
+    width: 877px;
     display: block;
 }
 
 #ff1 {
     display: block;
     position: absolute;
-    top: 125px;
-    left: 138px;
-    width: 121px;
-    height: 83px;
+    top: 151px;
+    left: 312px;
+    width: 139px;
+    height: 89px;
 }
 
     #ff1:hover #ff1p1 {
@@ -729,7 +737,7 @@ ol {
     }
 
     #ff1:hover #ff1p2 {
-        top: -171px;
+        top: -187px;
     }
 
 #ff1p1 {
@@ -742,9 +750,9 @@ ol {
 
 #ff1p2 {
     position: relative;
-    top: -75px;
-    width: 351px;
-    left: -13px;
+    top: -91px;
+    width: 395px;
+    left: -17px;
 }
 
 #sf1 {
@@ -825,7 +833,7 @@ ol {
     }
 
     #sf3:hover #sf3p2 {
-        top: -565px;
+        top: -564px;
     }
 
 #sf3p1 {
@@ -935,8 +943,122 @@ ol {
 #sf6p2 {
     position: relative;
     top: 217px;
-    width: 158px;
+    width: 159px;
     left: 320px;
+}
+
+#tf1 {
+    display: block;
+    position: absolute;
+    top: 351px;
+    left: 531px;
+    width: 62px;
+    height: 92px;
+}
+
+#tf1:hover #tf1p1 {
+    display: block;
+}
+
+#tf1:hover #tf1p2 {
+    top: -409px;
+}
+
+#tf1p1 {
+    display: none;
+    width: 267px;
+    top: -176px;
+    position: relative;
+    left: -257px;
+}
+
+#tf1p2 {
+    position: relative;
+    top: -199px;
+    width: 205px;
+    left: -235px;
+}
+#tf2 {
+    display: block;
+    position: absolute;
+    top: 211px;
+    left: 606px;
+    width: 70px;
+    height: 71px;
+}
+
+#tf2:hover #tf2p1 {
+    display: block;
+}
+#tf2:hover #tf2p2 {
+    top: -175px;
+}
+#tf2p1 {
+    display: none;
+    width: 379px;
+    top: -19px;
+    position: relative;
+    left: -325px;
+}
+#tf2p2 {
+    position: relative;
+    top: -31px;
+    width: 293px;
+    left: -308px;
+}
+#tf3 {
+    display: block;
+    position: absolute;
+    top: 78px;
+    left: 659px;
+    width: 114px;
+    height: 108px;
+}
+#tf3:hover #tf3p1 {
+    display: block;
+}
+#tf3:hover #tf3p2 {
+    top: 48px;
+}
+#tf3p1 {
+    display: none;
+    width: 157px;
+    top: 61px;
+    position: relative;
+    left: -82px;
+}
+#tf3p2 {
+    position: relative;
+    top: 137px;
+    width: 273px;
+    left: -360px;
+}
+#tf4 {
+    display: block;
+    position: absolute;
+    top: 38px;
+    left: 550px;
+    width: 108px;
+    height: 130px;
+}
+#tf4:hover #tf4p1 {
+    display: block;
+}
+#tf4:hover #tf4p2 {
+    top: 66px;
+}
+#tf4p1 {
+    display: none;
+    width: 172px;
+    top: 84px;
+    position: relative;
+    left: -82px;
+}
+#tf4p2 {
+    position: relative;
+    top: 211px;
+    width: 177px;
+    left: -251px;
 }
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
@@ -1243,7 +1365,14 @@ ol {
         background-position: 80% 45px;
     }
 }
-
+@media (max-width: 918px) {
+    #ff1, #sf1, #sf2, #sf3, #sf4, #sf5, #sf6, #tf1, #tf2, #tf3, #tf4 {
+        display: none;
+    }
+    .ffimg,.sfimg {
+        width: 100%;
+    }
+}
 @media (max-width: 855px) {
     .parallax {
         min-height: 346px;
@@ -1259,6 +1388,12 @@ ol {
 @media (max-width: 609px) {
     .parallax {
         min-height: 244px;
+    }
+    .ffimg, .sfimg {
+        display: none;
+    }
+    .map-box {
+        display: block;
     }
 }
 

@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="altMapFirst" xml:space="preserve">
-    <value>Карта на първи етаж</value>
+    <value>First floor map</value>
   </data>
   <data name="altMapSecond" xml:space="preserve">
-    <value>Карта на втори етаж</value>
+    <value>Second floor map</value>
   </data>
   <data name="altMapThird" xml:space="preserve">
-    <value>Карта на трети етаж</value>
+    <value>Third floor map</value>
   </data>
   <data name="arrow" xml:space="preserve">
-    <value>стрелка</value>
+    <value>arrow</value>
   </data>
   <data name="Art" xml:space="preserve">
-    <value>Отдел „Изкуство”</value>
+    <value>"Art" department</value>
   </data>
   <data name="Children" xml:space="preserve">
-    <value>Отдел „Детски”</value>
+    <value>"Children's" department</value>
   </data>
   <data name="FF1" xml:space="preserve">
-    <value>FF1.png</value>
+    <value>FF1En.png</value>
   </data>
   <data name="FirstFloor" xml:space="preserve">
-    <value>FirstFloor.png</value>
+    <value>FirstFloorEn.png</value>
   </data>
   <data name="Foreign" xml:space="preserve">
-    <value>Отдел „Чуждоезикова читалня”</value>
+    <value>"Foreign language reading room" department</value>
   </data>
   <data name="InfoCenter" xml:space="preserve">
-    <value>Център за информационно и справочно-библиографско обслужване</value>
+    <value>Information and reference-bibliographic services center</value>
   </data>
   <data name="Lending" xml:space="preserve">
-    <value>Отдел „Заемна за възрастни”</value>
+    <value>Lending department for adults</value>
   </data>
   <data name="LocalHistory" xml:space="preserve">
-    <value>Отдел „Краезнание”</value>
+    <value>"Local history" department</value>
   </data>
   <data name="metadata" xml:space="preserve">
-    <value>Структура на отделите в Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
+    <value>Structure of the departments in the Regional Library "Mihalaki Georgiev"  - Vidin.</value>
   </data>
   <data name="Methodological" xml:space="preserve">
-    <value>Отдел „Методичен”</value>
+    <value>"Methodological" department</value>
   </data>
   <data name="POI" xml:space="preserve">
-    <value>точка</value>
+    <value>POI</value>
   </data>
   <data name="ReadingRooms" xml:space="preserve">
-    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
+    <value>"Reading rooms - branch of scholarship, exact and applied sciences, periodicals" department</value>
   </data>
   <data name="SecondFloor" xml:space="preserve">
-    <value>SecondFloor.png</value>
+    <value>SecondFloorEn.png</value>
   </data>
   <data name="SF1" xml:space="preserve">
-    <value>SF1.png</value>
+    <value>SF1En.png</value>
   </data>
   <data name="SF2" xml:space="preserve">
-    <value>SF2.png</value>
+    <value>SF2En.png</value>
   </data>
   <data name="SF3" xml:space="preserve">
-    <value>SF3.png</value>
+    <value>SF3En.png</value>
   </data>
   <data name="SF4" xml:space="preserve">
-    <value>SF4.png</value>
+    <value>SF4En.png</value>
   </data>
   <data name="SF5" xml:space="preserve">
-    <value>SF5.png</value>
+    <value>SF5En.png</value>
   </data>
   <data name="SF6" xml:space="preserve">
-    <value>SF6.png</value>
+    <value>SF6En.png</value>
   </data>
   <data name="SRC" xml:space="preserve">
-    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
+    <value>"Supplying, registration and cataloging" department</value>
   </data>
   <data name="Structure" xml:space="preserve">
-    <value>Структура</value>
+    <value>Structure</value>
   </data>
   <data name="TF1" xml:space="preserve">
-    <value>TF1.png</value>
+    <value>TF1En.png</value>
   </data>
   <data name="TF2" xml:space="preserve">
-    <value>TF2.png</value>
+    <value>TF2En.png</value>
   </data>
   <data name="TF3" xml:space="preserve">
-    <value>TF3.png</value>
+    <value>TF3En.png</value>
   </data>
   <data name="TF4" xml:space="preserve">
-    <value>TF4.png</value>
+    <value>TF4En.png</value>
   </data>
   <data name="ThirdFloor" xml:space="preserve">
-    <value>ThirdFloor.png</value>
+    <value>ThirdFloorEn.png</value>
   </data>
 </root>
