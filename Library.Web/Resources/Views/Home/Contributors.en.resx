@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="audio" xml:space="preserve">
+    <value>audio tapes</value>
+  </data>
+  <data name="computer" xml:space="preserve">
+    <value>computer equipment</value>
+  </data>
+  <data name="Contributors" xml:space="preserve">
+    <value>Contributors</value>
+  </data>
+  <data name="Donation" xml:space="preserve">
+    <value>Donation</value>
+  </data>
+  <data name="EighteenO" xml:space="preserve">
+    <value>Railway Station - Vidin</value>
+  </data>
+  <data name="EighteenP" xml:space="preserve">
+    <value>Natalia Krachunova</value>
+  </data>
+  <data name="EightO" xml:space="preserve">
+    <value>American University - Blagoevgrad</value>
+  </data>
+  <data name="EightP" xml:space="preserve">
+    <value>Christina Ilieva</value>
+  </data>
+  <data name="ElevenO" xml:space="preserve">
+    <value>BRC Vidin</value>
+  </data>
+  <data name="ElevenP" xml:space="preserve">
+    <value>Ivan Ivanov</value>
+  </data>
+  <data name="FifteenO" xml:space="preserve">
+    <value>RIPCPH Vidin</value>
+  </data>
+  <data name="FifteenP" xml:space="preserve">
+    <value>Tsetska Stoyanova</value>
+  </data>
+  <data name="FifthO" xml:space="preserve">
+    <value>Ministry of Culture</value>
+  </data>
+  <data name="FiftyEightP" xml:space="preserve">
+    <value>Vesela Mikova</value>
+  </data>
+  <data name="FiftyFiveP" xml:space="preserve">
+    <value>Dimitrina Pancheva</value>
+  </data>
+  <data name="FiftyFourP" xml:space="preserve">
+    <value>Karamfila Petrova</value>
+  </data>
+  <data name="FiftyNineP" xml:space="preserve">
+    <value>Mitanka Todorova</value>
+  </data>
+  <data name="FiftyOneP" xml:space="preserve">
+    <value>Antonia Makaveeva</value>
+  </data>
+  <data name="FiftyP" xml:space="preserve">
+    <value>Alexander Milanov</value>
+  </data>
+  <data name="FiftySevenP" xml:space="preserve">
+    <value>Lachezar Elenkov</value>
+  </data>
+  <data name="FiftySixP" xml:space="preserve">
+    <value>Simeon Ivanov</value>
+  </data>
+  <data name="FiftyThreeP" xml:space="preserve">
+    <value>Emily Slavcheva</value>
+  </data>
+  <data name="FiftyTwoP" xml:space="preserve">
+    <value>Milena Gergova</value>
+  </data>
+  <data name="FirstO" xml:space="preserve">
+    <value>British Council</value>
+  </data>
+  <data name="FiveP" xml:space="preserve">
+    <value>Marcho Dimitrov</value>
+  </data>
+  <data name="FourP" xml:space="preserve">
+    <value>The parents of Mitko Lachev, who donated from his personal library in his memory</value>
+  </data>
+  <data name="FourteenO" xml:space="preserve">
+    <value>Association of Traders in Craiova</value>
+  </data>
+  <data name="FourteenP" xml:space="preserve">
+    <value>Yotko Ivanov from Sofia</value>
+  </data>
+  <data name="FourthO" xml:space="preserve">
+    <value>Open Society Foundation</value>
+  </data>
+  <data name="FourtyEightP" xml:space="preserve">
+    <value>Nina Yosifova</value>
+  </data>
+  <data name="FourtyFiveP" xml:space="preserve">
+    <value>Vladislava Dimitrova</value>
+  </data>
+  <data name="FourtyFourP" xml:space="preserve">
+    <value>Olga Ivanova</value>
+  </data>
+  <data name="FourtyNineP" xml:space="preserve">
+    <value>Alexander Rudenko</value>
+  </data>
+  <data name="FourtyOneP" xml:space="preserve">
+    <value>Lilia Yovcheva</value>
+  </data>
+  <data name="FourtyP" xml:space="preserve">
+    <value>Boyan Bratkov</value>
+  </data>
+  <data name="FourtySevenP" xml:space="preserve">
+    <value>Ludmil Nikolov</value>
+  </data>
+  <data name="FourtySixP" xml:space="preserve">
+    <value>Desislava Dimitrova</value>
+  </data>
+  <data name="FourtyThreeP" xml:space="preserve">
+    <value>Peter Petrov</value>
+  </data>
+  <data name="FourtyTwoP" xml:space="preserve">
+    <value>Pepa Angelova</value>
+  </data>
+  <data name="Individuals" xml:space="preserve">
+    <value>Donations from Individuals</value>
+  </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The page contains a list with names of contributors to the Regional Library  "Mihalaki Georgiev ".</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NineP" xml:space="preserve">
+    <value>Pavlina Hristova</value>
+  </data>
+  <data name="NineteenO" xml:space="preserve">
+    <value>Chitalishte "Tsvyat"</value>
+  </data>
+  <data name="NineteenP" xml:space="preserve">
+    <value>Hr. and D. Nikolovi</value>
+  </data>
+  <data name="NinthO" xml:space="preserve">
+    <value>Ed. Sl. Nikolov &amp; Co - Shumen</value>
+  </data>
+  <data name="OneP" xml:space="preserve">
+    <value>Verka Monova from Dunavtsi</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="organizations" xml:space="preserve">
+    <value>Donations from Organizations</value>
+  </data>
+  <data name="records" xml:space="preserve">
+    <value>record labels</value>
+  </data>
+  <data name="SecondO" xml:space="preserve">
+    <value>National Library "St. Cyril and Methodius"</value>
+  </data>
+  <data name="SevenP" xml:space="preserve">
+    <value>Hristo Blazev</value>
+  </data>
+  <data name="SeventeenO" xml:space="preserve">
+    <value>Cultural representation of the United States</value>
+  </data>
+  <data name="SeventeenP" xml:space="preserve">
+    <value>Asparuh Lisov</value>
+  </data>
+  <data name="SeventhO" xml:space="preserve">
+    <value>Metrology Center - Vidin</value>
+  </data>
+  <data name="SixP" xml:space="preserve">
+    <value>Dr. V. Kuseva</value>
+  </data>
+  <data name="SixteenO" xml:space="preserve">
+    <value>Balkanbank Vidin</value>
+  </data>
+  <data name="SixteenP" xml:space="preserve">
+    <value>Mariela Brankova</value>
+  </data>
+  <data name="SixthO" xml:space="preserve">
+    <value>America for Bulgaria Foundation</value>
+  </data>
+  <data name="SixtyP" xml:space="preserve">
+    <value>Tsvetana Zaharieva</value>
+  </data>
+  <data name="t" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="TenO" xml:space="preserve">
+    <value>Ed. Abagar</value>
+  </data>
+  <data name="TenP" xml:space="preserve">
+    <value>Michael Burton</value>
+  </data>
+  <data name="ThirdO" xml:space="preserve">
+    <value>Embassy of the United States</value>
+  </data>
+  <data name="ThirteenO" xml:space="preserve">
+    <value>BAS</value>
+  </data>
+  <data name="ThirteenP" xml:space="preserve">
+    <value>Georgi Evstatiev</value>
+  </data>
+  <data name="ThirtyEightP" xml:space="preserve">
+    <value>Stanka Stankova</value>
+  </data>
+  <data name="ThirtyFiveP" xml:space="preserve">
+    <value>Atanas Panchev</value>
+  </data>
+  <data name="ThirtyFourO" xml:space="preserve">
+    <value>Negotin National Library</value>
+  </data>
+  <data name="ThirtyFourP" xml:space="preserve">
+    <value>Daniela Kechashka</value>
+  </data>
+  <data name="ThirtyNineP" xml:space="preserve">
+    <value>Vladimir Ivanov</value>
+  </data>
+  <data name="ThirtyO" xml:space="preserve">
+    <value>Ed. Sineva</value>
+  </data>
+  <data name="ThirtyOneO" xml:space="preserve">
+    <value>Kindergarten "Arabela"</value>
+  </data>
+  <data name="ThirtyOneP" xml:space="preserve">
+    <value>Asparuh Lisov</value>
+  </data>
+  <data name="ThirtyP" xml:space="preserve">
+    <value>Gabriela Ivanova</value>
+  </data>
+  <data name="ThirtySevenP" xml:space="preserve">
+    <value>Valentin Dimitrov</value>
+  </data>
+  <data name="ThirtySixP" xml:space="preserve">
+    <value>Krasimira Panteva</value>
+  </data>
+  <data name="ThirtyThreeO" xml:space="preserve">
+    <value>Komunitas Foundation</value>
+  </data>
+  <data name="ThirtyThreeP" xml:space="preserve">
+    <value>Tihomir Slavchev</value>
+  </data>
+  <data name="ThirtyTwoO" xml:space="preserve">
+    <value>SWU Blagoevgrad</value>
+  </data>
+  <data name="ThirtyTwoP" xml:space="preserve">
+    <value>Vasilka Ivanova</value>
+  </data>
+  <data name="ThreeP" xml:space="preserve">
+    <value>Venka Lalova</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>List of the biggest contributors to Regional Library "Mihalaki Georgiev" for the period 1991 - 2018</value>
+  </data>
+  <data name="TwelveO" xml:space="preserve">
+    <value>Newspaper Group Bulgaria Ltd.</value>
+  </data>
+  <data name="TwelveP" xml:space="preserve">
+    <value>Ivanka Nedyalkova</value>
+  </data>
+  <data name="TwentyEightO" xml:space="preserve">
+    <value>Matacz library Zajecar</value>
+  </data>
+  <data name="TwentyEightP" xml:space="preserve">
+    <value>Boryana Dikova</value>
+  </data>
+  <data name="TwentyFiveO" xml:space="preserve">
+    <value>State Archive - Vidin</value>
+  </data>
+  <data name="TwentyFiveP" xml:space="preserve">
+    <value>Belogradchik's Bishop Polycarp</value>
+  </data>
+  <data name="TwentyFourO" xml:space="preserve">
+    <value>Ed. "Labor and Law"</value>
+  </data>
+  <data name="TwentyFourP" xml:space="preserve">
+    <value>Krasimir Kirilov</value>
+  </data>
+  <data name="TwentyNineO" xml:space="preserve">
+    <value>NDF "13 Centuries Bulgaria"</value>
+  </data>
+  <data name="TwentyNineP" xml:space="preserve">
+    <value>Dr. Todor Valov</value>
+  </data>
+  <data name="TwentyO" xml:space="preserve">
+    <value>NDF "13 Centuries Bulgaria"</value>
+  </data>
+  <data name="TwentyOneO" xml:space="preserve">
+    <value>Bulvest 2000</value>
+  </data>
+  <data name="TwentyOneP" xml:space="preserve">
+    <value>Tsvetana Tosheva</value>
+  </data>
+  <data name="TwentyP" xml:space="preserve">
+    <value>Vanya Ivanova</value>
+  </data>
+  <data name="TwentySevenO" xml:space="preserve">
+    <value>Supreme Bar Council</value>
+  </data>
+  <data name="TwentySevenP" xml:space="preserve">
+    <value>Venetka Stefanova</value>
+  </data>
+  <data name="TwentySixO" xml:space="preserve">
+    <value>Ed. "Era"</value>
+  </data>
+  <data name="TwentySixP" xml:space="preserve">
+    <value>Georgi Lyubenov</value>
+  </data>
+  <data name="TwentyThreeO" xml:space="preserve">
+    <value>Sofia City Library</value>
+  </data>
+  <data name="TwentyThreeP" xml:space="preserve">
+    <value>Snezhina Nikolova</value>
+  </data>
+  <data name="TwentyTwoO" xml:space="preserve">
+    <value>Padme International Foundation</value>
+  </data>
+  <data name="TwentyTwoP" xml:space="preserve">
+    <value>Svetoslav Traykov</value>
+  </data>
+  <data name="TwoP" xml:space="preserve">
+    <value>Ilina Gergova from Vidin</value>
+  </data>
+</root>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A1" xml:space="preserve">
+    <value>Община Видин</value>
+  </data>
+  <data name="A2" xml:space="preserve">
+    <value>Област Видин</value>
+  </data>
+  <data name="A3" xml:space="preserve">
+    <value>Информационен портал - Видин</value>
+  </data>
+  <data name="A4" xml:space="preserve">
+    <value>Административен съд - Видин</value>
+  </data>
+  <data name="A5" xml:space="preserve">
+    <value>РДВР - Видин</value>
+  </data>
+  <data name="Administation" xml:space="preserve">
+    <value>Административни услуги</value>
+  </data>
+  <data name="CI1" xml:space="preserve">
+    <value>Държавен куклен театър - Видин</value>
+  </data>
+  <data name="CI2" xml:space="preserve">
+    <value>АНПТ „Дунав”</value>
+  </data>
+  <data name="CI3" xml:space="preserve">
+    <value>Художествена галерия “Никола Петров” – Видин</value>
+  </data>
+  <data name="CI4" xml:space="preserve">
+    <value>Симфониета – Видин</value>
+  </data>
+  <data name="CI5" xml:space="preserve">
+    <value>Градски духов оркестър</value>
+  </data>
+  <data name="CI6" xml:space="preserve">
+    <value>Общински драматичен театър</value>
+  </data>
+  <data name="CI7" xml:space="preserve">
+    <value>Регионален исторически музей</value>
+  </data>
+  <data name="CI8" xml:space="preserve">
+    <value>Исторически музей - Белоградчик</value>
+  </data>
+  <data name="CI9" xml:space="preserve">
+    <value>Държавен архив – Видин</value>
+  </data>
+  <data name="CommunityCentre" xml:space="preserve">
+    <value>Читалища в Област Видин</value>
+  </data>
+  <data name="Culture" xml:space="preserve">
+    <value>Културни институции</value>
+  </data>
+  <data name="E1" xml:space="preserve">
+    <value>СУ “Цар Симеон Велики”- Видин</value>
+  </data>
+  <data name="E10" xml:space="preserve">
+    <value>ОУ "Свети Климент Охридски" – Видин</value>
+  </data>
+  <data name="E11" xml:space="preserve">
+    <value>ОУ "Отец Паисий" – Видин</value>
+  </data>
+  <data name="E2" xml:space="preserve">
+    <value>Гимназия с преподаване на чужди езици "Йордан Радичков" – Видин</value>
+  </data>
+  <data name="E3" xml:space="preserve">
+    <value>ППМГ „Екзарх Антим I“ - Видин</value>
+  </data>
+  <data name="E4" xml:space="preserve">
+    <value>ПГ "Проф. д-р Асен Златаров"- Видин</value>
+  </data>
+  <data name="E5" xml:space="preserve">
+    <value>ПГ по туризъм "Михалаки Георгиев"- Видин</value>
+  </data>
+  <data name="E6" xml:space="preserve">
+    <value>Професионална Техническа Гимназия "Васил Левски"- Видин</value>
+  </data>
+  <data name="E7" xml:space="preserve">
+    <value>ОУ "Иван Вазов"- Видин</value>
+  </data>
+  <data name="E8" xml:space="preserve">
+    <value>СУ „Любен Каравелов“– Видин</value>
+  </data>
+  <data name="E9" xml:space="preserve">
+    <value>СУ "П. Р. Славейков" – Видин</value>
+  </data>
+  <data name="Education" xml:space="preserve">
+    <value>Образование</value>
+  </data>
+  <data name="Libraries" xml:space="preserve">
+    <value>Библиотеките в областта</value>
+  </data>
+  <data name="links" xml:space="preserve">
+    <value>Полезни връзки</value>
+  </data>
+  <data name="meta" xml:space="preserve">
+    <value>Полезни връзки с институциите в област Видин</value>
+  </data>
+  <data name="Paragraph1Part1" xml:space="preserve">
+    <value>Информация за читалищата и читалищните библиотеки в област Видин можете да получите на</value>
+  </data>
+  <data name="Paragraph1Part2" xml:space="preserve">
+    <value>информационния сайт</value>
+  </data>
+  <data name="Paragraph1Part3" xml:space="preserve">
+    <value>за българските читалища</value>
+  </data>
+  <data name="Paragraph2" xml:space="preserve">
+    <value>Народните читалища са неразделна част от историята и културата на населените места на област Видин и съдействат за социалната комуникация на ползвателите и подпомагат процеса на образованието и самообразованието.</value>
+  </data>
+  <data name="Paragraph3" xml:space="preserve">
+    <value>По данни на Министерство на културата в област Видин функционират 60 читалищни библиотеки, които обслужват население от 41476 души. Общият библиотечен фонд на читалищните библиотеки в областта възлиза на 623 648 библиотечни единици. В 41 читалищни библиотеки има обособени 135 компютъризирани работни места. 86 от тях са за потребители. В 27 библиотеки са организирани информационни центрове. Материалната и технологична база на голяма част от читалищните библиотеки е недостатъчна и отдавна остаряла. В същото време, в такава обстановка се осъществява богата и разнообразна дейност – срещи, семинари, дискусии, обсъждания на книги, музикални вечери, творчески срещи.</value>
+  </data>
+  <data name="Paragraph4Part1" xml:space="preserve">
+    <value>Повече информация за библитеките в областта може да получите на сайта в</value>
+  </data>
+  <data name="Paragraph4Part2" xml:space="preserve">
+    <value>Регистъра на Обществените библиотеки</value>
+  </data>
+</root>

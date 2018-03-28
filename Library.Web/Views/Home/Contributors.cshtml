@@ -1,172 +1,174 @@
-﻿@{
-    ViewData["Title"] = "Дарители";
-    ViewData["Description"] = "Страница с имаената на всички юридически и физически дарители на Регионална библиотека \"Михалаки Георгиев\" -гр. Видин.";
+﻿@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Contributors"];
+    ViewData["Description"] = Localizer["metadata"];
 }
 
 <div class="row text-center">
     <h2>@ViewData["Title"]</h2>
 </div>
 <div id="scroll-id1" class="row p-10-table">
-    <h3 class="text-center">Списък на най-големите дарители на Регионална библиотека „Михалаки Георгиев” за периода 1991 – 2016 година</h3>
+    <h3 class="text-center">@Localizer["title"]</h3>
     <div class="col-md-5">
         <table class="table table-responsive table-hover mr-t-b-25">
             <thead>
                 <tr>
-                    <th colspan="2" class="text-center">Дарения от Организации</th>
+                    <th colspan="2" class="text-center">@Localizer["organizations"]</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th class="text-center first-color-b second-color">Организация</th>
-                    <th class="text-center first-color-b second-color">Дарение</th>
+                    <th class="text-center first-color-b second-color">@Localizer["Organization"]</th>
+                    <th class="text-center first-color-b second-color">@Localizer["Donation"]</th>
                 </tr>
                 <tr>
-                    <td class="vertical-align-middle" rowspan="2">Британски съвет</td>
-                    <td>990 т.</td>
+                    <td class="vertical-align-middle" rowspan="2">@Localizer["FirstO"]</td>
+                    <td>990 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td class="lib-cell-corrector">136 аудиокасети</td>
+                    <td class="lib-cell-corrector">136 @Localizer["audio"]</td>
                 </tr>
                 <tr>
-                    <td>Национална библиотека „Св.св. Кирил и Методий”</td>
-                    <td>688 т.</td>
+                    <td>@Localizer["SecondO"]</td>
+                    <td>688 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Посолство на САЩ</td>
-                    <td>669 т.</td>
+                    <td>@Localizer["ThirdO"]</td>
+                    <td>669 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td class="vertical-align-middle" rowspan="4">Фондация „Отворено общество”</td>
-                    <td>461 т.</td>
+                    <td class="vertical-align-middle" rowspan="4">@Localizer["FourthO"]</td>
+                    <td>461 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td class="lib-cell-corrector">164 грамофонни плочи</td>
+                    <td class="lib-cell-corrector">164 @Localizer["records"]</td>
                 </tr>
                 <tr>
-                    <td class="lib-cell-corrector">81 аудиокасети</td>
+                    <td class="lib-cell-corrector">81 @Localizer["audio"]</td>
                 </tr>
                 <tr>
-                    <td class="lib-cell-corrector">компютърна техника</td>
+                    <td class="lib-cell-corrector">@Localizer["computer"]</td>
                 </tr>
                 <tr>
-                    <td>Министерство на културата</td>
-                    <td>635 т.</td>
+                    <td>@Localizer["FifthO"]</td>
+                    <td>635 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Фондация „Америка за България“</td>
-                    <td>452 т.</td>
+                    <td>@Localizer["SixthO"]</td>
+                    <td>452 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>РЦ „Метрология” – Видин</td>
-                    <td>385 т.</td>
+                    <td>@Localizer["SeventhO"]</td>
+                    <td>385 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Американски университет в Благоевград</td>
-                    <td>350 т.</td>
+                    <td>@Localizer["EightO"]</td>
+                    <td>350 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Изд. Сл. Николов и сие – Шумен</td>
-                    <td>250 т.</td>
+                    <td>@Localizer["NinthO"]</td>
+                    <td>250 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Изд. Абагар</td>
-                    <td>228 т.</td>
+                    <td>@Localizer["TenO"]</td>
+                    <td>228 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>БЧК Видин</td>
-                    <td>157 т.</td>
+                    <td>@Localizer["ElevenO"]</td>
+                    <td>157 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Вестникарска група България ООД</td>
-                    <td>156 т.</td>
+                    <td>@Localizer["TwelveO"]</td>
+                    <td>156 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>БАН</td>
-                    <td>154 т.</td>
+                    <td>@Localizer["ThirteenO"]</td>
+                    <td>154 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Председателство на Асоциацията на търговците в Крайова</td>
-                    <td>136 т.</td>
+                    <td>@Localizer["FourteenO"]</td>
+                    <td>136 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>РИОКОЗ Видин</td>
-                    <td>125 т.</td>
+                    <td>@Localizer["FifteenO"]</td>
+                    <td>125 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Балканбанк Видин</td>
-                    <td>113 т.</td>
+                    <td>@Localizer["SixteenO"]</td>
+                    <td>113 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Културно представителство на САЩ</td>
-                    <td>111 т.</td>
+                    <td>@Localizer["SeventeenO"]</td>
+                    <td>111 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>ЖП гара – Видин</td>
-                    <td>106 т.</td>
+                    <td>@Localizer["EighteenO"]</td>
+                    <td>106 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Читалище „Цвят”</td>
-                    <td>100 т.</td>
+                    <td>@Localizer["NineteenO"]</td>
+                    <td>100 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>НДФ „13 века България“</td>
-                    <td>60 т.</td>
+                    <td>@Localizer["TwentyO"]</td>
+                    <td>60 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Булвест 2000</td>
-                    <td>52 т.</td>
+                    <td>@Localizer["TwentyOneO"]</td>
+                    <td>52 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Международна фондация „Падме“</td>
-                    <td>45 т.</td>
+                    <td>@Localizer["TwentyTwoO"]</td>
+                    <td>45 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Софийска градска библиотека </td>
-                    <td>34 т.</td>
+                    <td>@Localizer["TwentyThreeO"]</td>
+                    <td>34 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>ИК „Труд и право“</td>
-                    <td>34 т.</td>
+                    <td>@Localizer["TwentyFourO"]</td>
+                    <td>34 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Държавен архив - Видин </td>
-                    <td>27 т.</td>
+                    <td>@Localizer["TwentyFiveO"]</td>
+                    <td>27 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Изд. "Ера" </td>
-                    <td>27 т.</td>
+                    <td>@Localizer["TwentySixO"]</td>
+                    <td>27 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Висш адвокатски съвет</td>
-                    <td>26 т.</td>
+                    <td>@Localizer["TwentySevenO"]</td>
+                    <td>26 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Матачна библиотека Зайчар</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["TwentyEightO"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>НДФ „13 века България“</td>
-                    <td>60 т.</td>
+                    <td>@Localizer["TwentyNineO"]</td>
+                    <td>60 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Изд. синева</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["ThirtyO"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>ЦДГ „Арабела“</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["ThirtyOneO"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>ЮЗУ Благоевград</td>
-                    <td>12 т.</td>
+                    <td>@Localizer["ThirtyTwoO"]</td>
+                    <td>12 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Фондация "Комунитас"</td>
-                    <td>12 т.</td>
+                    <td>@Localizer["ThirtyThreeO"]</td>
+                    <td>12 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Народна библиотека Неготин</td>
-                    <td>11 т.</td>
+                    <td>@Localizer["ThirtyFourO"]</td>
+                    <td>11 @Localizer["t"].</td>
                 </tr>
             </tbody>
         </table>
@@ -176,264 +178,264 @@
         <table class="table table-responsive table-hover mr-t-b-25">
             <thead>
                 <tr>
-                    <th colspan="2" class="text-center">Дарения от Частни лица</th>
+                    <th colspan="2" class="text-center">@Localizer["Individuals"]</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th class="text-center first-color-b second-color">Име</th>
-                    <th class="text-center first-color-b second-color">Дарение</th>
+                    <th class="text-center first-color-b second-color">@Localizer["Name"]</th>
+                    <th class="text-center first-color-b second-color">@Localizer["Donation"]</th>
                 </tr>
                 <tr>
-                    <td class="vertical-align-middle">Верка Монова от гр. Дунавци</td>
-                    <td>1027 грамофонни плочи</td>
+                    <td class="vertical-align-middle">@Localizer["OneP"]</td>
+                    <td>1027 @Localizer["records"]</td>
                 </tr>
                 <tr>
-                    <td>Илина Гергова от гр. Видин</td>
-                    <td>900 т.</td>
+                    <td>@Localizer["TwoP"]</td>
+                    <td>900 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Венка Лалова</td>
-                    <td>812 т.</td>
+                    <td>@Localizer["ThreeP"]</td>
+                    <td>812 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Родителите на Митко Лачев, дарили от личната му библиотека в негова памет</td>
-                    <td>806 т.</td>
+                    <td>@Localizer["FourP"]</td>
+                    <td>806 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Марчо Димитров</td>
-                    <td>450 т.</td>
+                    <td>@Localizer["FiveP"]</td>
+                    <td>450 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Д-р В. Кузева</td>
-                    <td>416 т.</td>
+                    <td>@Localizer["SixP"]</td>
+                    <td>416 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Христо Блажев</td>
-                    <td>246 т.</td>
+                    <td>@Localizer["SevenP"]</td>
+                    <td>246 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Кристина Илиева</td>
-                    <td>197 т.</td>
+                    <td>@Localizer["EightP"]</td>
+                    <td>197 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Павлина Христова</td>
-                    <td>193 т.</td>
+                    <td>@Localizer["NineP"]</td>
+                    <td>193 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Майкъл Бъртън</td>
-                    <td>177 т.</td>
+                    <td>@Localizer["TenP"]</td>
+                    <td>177 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Иван Иванов</td>
-                    <td>140 т.</td>
+                    <td>@Localizer["ElevenP"]</td>
+                    <td>140 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Иванка Недялкова</td>
-                    <td>117 т.</td>
+                    <td>@Localizer["TwelveP"]</td>
+                    <td>117 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Георги Евстатиев</td>
-                    <td>121 т.</td>
+                    <td>@Localizer["ThirteenP"]</td>
+                    <td>121 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Йотко Иванов от София</td>
-                    <td>102 т.</td>
+                    <td>@Localizer["FourteenP"]</td>
+                    <td>102 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Цецка Стоянова</td>
-                    <td>140 т.</td>
+                    <td>@Localizer["FifteenP"]</td>
+                    <td>140 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Мариела Бранкова</td>
-                    <td>101 т.</td>
+                    <td>@Localizer["SixteenP"]</td>
+                    <td>101 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td rowspan="3" class="vertical-align-middle">Аспарух Лисов</td>
-                    <td>84 грамофонни плочи</td>
+                    <td rowspan="3" class="vertical-align-middle">@Localizer["SeventeenP"]</td>
+                    <td>84 @Localizer["records"]</td>
                 </tr>
                 <tr>
-                    <td class="lib-cell-corrector">19 т.</td>
+                    <td class="lib-cell-corrector">19 @Localizer["t"].</td>
                 </tr>
                 <tr>
                     <td class="lib-cell-corrector">27 CD</td>
                 </tr>
                 <tr>
-                    <td>Наталия Крачунова</td>
-                    <td>67 т.</td>
+                    <td>@Localizer["EighteenP"]</td>
+                    <td>67 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Хр. и Д. Николови</td>
-                    <td>61 т.</td>
+                    <td>@Localizer["NineteenP"]</td>
+                    <td>61 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Ваня Иванова</td>
-                    <td>61 т.</td>
+                    <td>@Localizer["TwentyP"]</td>
+                    <td>61 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Цветана Тошева</td>
-                    <td>55 т.</td>
+                    <td>@Localizer["TwentyOneP"]</td>
+                    <td>55 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Светослав Трайков</td>
-                    <td>47 т.</td>
+                    <td>@Localizer["TwentyTwoP"]</td>
+                    <td>47 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Снежина Николова</td>
-                    <td>42 т.</td>
+                    <td>@Localizer["TwentyThreeP"]</td>
+                    <td>42 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Красимир Кирилов</td>
-                    <td>40 т.</td>
+                    <td>@Localizer["TwentyFourP"]</td>
+                    <td>40 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Белоградчишки епископ Поликарп</td>
-                    <td>38 т.</td>
+                    <td>@Localizer["TwentyFiveP"]</td>
+                    <td>38 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Георги Любенов</td>
-                    <td>37 т.</td>
+                    <td>@Localizer["TwentySixP"]</td>
+                    <td>37 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Венетка Стефанова</td>
-                    <td>36 т.</td>
+                    <td>@Localizer["TwentySevenP"]</td>
+                    <td>36 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Боряна Дикова</td>
-                    <td>35 т.</td>
+                    <td>@Localizer["TwentyEightP"]</td>
+                    <td>35 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Д-р Тодор Вълов</td>
-                    <td>35 т.</td>
+                    <td>@Localizer["TwentyNineP"]</td>
+                    <td>35 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Габриела Иванова</td>
-                    <td>31 т.</td>
+                    <td>@Localizer["ThirtyP"]</td>
+                    <td>31 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Аспарух Лисов</td>
-                    <td>31 т.</td>
+                    <td>@Localizer["ThirtyOneP"]</td>
+                    <td>31 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Василка Иванова</td>
-                    <td>30 т.</td>
+                    <td>@Localizer["ThirtyTwoP"]</td>
+                    <td>30 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Тихомир Славчев</td>
-                    <td>30 т.</td>
+                    <td>@Localizer["ThirtyThreeP"]</td>
+                    <td>30 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Даниела Кечашка</td>
-                    <td>30 т.</td>
+                    <td>@Localizer["ThirtyFourP"]</td>
+                    <td>30 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Атанас Панчев</td>
-                    <td>30 т.</td>
+                    <td>@Localizer["ThirtyFiveP"]</td>
+                    <td>30 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Красимира Пантева</td>
-                    <td>29 т.</td>
+                    <td>@Localizer["ThirtySixP"]</td>
+                    <td>29 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Валентин Димитров</td>
-                    <td>28 т.</td>
+                    <td>@Localizer["ThirtySevenP"]</td>
+                    <td>28 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Станка Станкова</td>
-                    <td>27 т.</td>
+                    <td>@Localizer["ThirtyEightP"]</td>
+                    <td>27 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Владимир Иванов</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["ThirtyNineP"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Боян Братков</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["FourtyP"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Лилия Йовчева</td>
-                    <td>22 т.</td>
+                    <td>@Localizer["FourtyOneP"]</td>
+                    <td>22 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Пепа Ангелова</td>
-                    <td>21 т.</td>
+                    <td>@Localizer["FourtyTwoP"]</td>
+                    <td>21 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Петър Петров</td>
-                    <td>21 т.</td>
+                    <td>@Localizer["FourtyThreeP"]</td>
+                    <td>21 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Олга Иванова</td>
-                    <td>20 т.</td>
+                    <td>@Localizer["FourtyFourP"]</td>
+                    <td>20 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Владислава Димитрова</td>
-                    <td>19 т.</td>
+                    <td>@Localizer["FourtyFiveP"]</td>
+                    <td>19 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Десислава Димитрова</td>
-                    <td>19 т.</td>
+                    <td>@Localizer["FourtySixP"]</td>
+                    <td>19 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Людмил Николов</td>
-                    <td>19 т.</td>
+                    <td>@Localizer["FourtySevenP"]</td>
+                    <td>19 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Нина Йосифова</td>
-                    <td>18 т.</td>
+                    <td>@Localizer["FourtyEightP"]</td>
+                    <td>18 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Александър Руденко</td>
-                    <td>17 т.</td>
+                    <td>@Localizer["FourtyNineP"]</td>
+                    <td>17 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Александър Миланов</td>
-                    <td>15 т.</td>
+                    <td>@Localizer["FiftyP"]</td>
+                    <td>15 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Антония Макавеева</td>
-                    <td>15 т.</td>
+                    <td>@Localizer["FiftyOneP"]</td>
+                    <td>15 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Милена Гергова</td>
-                    <td>15 т.</td>
+                    <td>@Localizer["FiftyTwoP"]</td>
+                    <td>15 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Емили Славчева</td>
-                    <td>14 т.</td>
+                    <td>@Localizer["FiftyThreeP"]</td>
+                    <td>14 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Карамфила Петрова</td>
-                    <td>14 т.</td>
+                    <td>@Localizer["FiftyFourP"]</td>
+                    <td>14 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Димитрина Панчева</td>
-                    <td>13 т.</td>
+                    <td>@Localizer["FiftyFiveP"]</td>
+                    <td>13 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Симеон Иванов</td>
-                    <td>13 т.</td>
+                    <td>@Localizer["FiftySixP"]</td>
+                    <td>13 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Лъчезар Еленков</td>
-                    <td>12 т.</td>
+                    <td>@Localizer["FiftySevenP"]</td>
+                    <td>12 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Весела Микова</td>
-                    <td>12 т.</td>
+                    <td>@Localizer["FiftyEightP"]</td>
+                    <td>12 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td> Митанка Тодорова</td>
-                    <td>12 т.</td>
+                    <td>@Localizer["FiftyNineP"]</td>
+                    <td>12 @Localizer["t"].</td>
                 </tr>
                 <tr>
-                    <td>Цветана Захариева</td>
-                    <td>10 т.</td>
+                    <td>@Localizer["SixtyP"]</td>
+                    <td>10 @Localizer["t"].</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-    <div class="row text-center">
-        <a id="link1" href="#"><p class="lib-arrow-up glyphicon glyphicon-arrow-up text-center"></p></a>
-    </div>
+<div class="row text-center">
+    <a id="link1" href="#"><p class="lib-arrow-up glyphicon glyphicon-arrow-up text-center"></p></a>
+</div>
