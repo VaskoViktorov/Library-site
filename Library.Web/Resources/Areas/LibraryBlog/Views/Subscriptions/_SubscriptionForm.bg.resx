@@ -135,6 +135,9 @@
   <data name="English" xml:space="preserve">
     <value>Английски</value>
   </data>
+  <data name="Foreign" xml:space="preserve">
+    <value>Чуждоезиков</value>
+  </data>
   <data name="Homeland" xml:space="preserve">
     <value>Краезнание</value>
   </data>

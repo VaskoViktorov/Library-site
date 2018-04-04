@@ -61,11 +61,11 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Department.
+        ///   Looks up a localized string similar to Author.
         /// </summary>
-        public static string Department {
+        public static string Author {
             get {
-                return ResourceManager.GetString("Department", resourceCulture);
+                return ResourceManager.GetString("Author", resourceCulture);
             }
         }
         
@@ -75,6 +75,15 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Gallery.
+        /// </summary>
+        public static string Gallery {
+            get {
+                return ResourceManager.GetString("Gallery", resourceCulture);
             }
         }
         

@@ -28,6 +28,9 @@
         <div class="row mr-l-0">
             @(Html.RadioButtonFor(m => m.Department, DepartmentType.Land))@Localizer["Homeland"]
         </div>
+        <div class="row mr-l-0">
+            @(Html.RadioButtonFor(m => m.Department, DepartmentType.Foreign))@Localizer["Foreign"]
+        </div>
         <span asp-validation-for="Department" class="text-danger"></span>
     </div>
     <div class="form-group">

@@ -38,7 +38,7 @@
 
 	// define the parameters with the default values of the function
 	$.fn.eventCalendar.defaults = {
-	    eventsjson: 'lib/jquery/dist/events.json',
+        eventsjson: '/json/EventsDb.json',
 		eventsLimit: 4,
 		locales: {
 			locale: "en",

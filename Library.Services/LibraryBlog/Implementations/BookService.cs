@@ -26,7 +26,7 @@
         }
 
         public async Task CreateAsync(string authorName, string bookTitle, string bookDescription, string cityIssued,
-            string press, DepartmentType department, int publishDate, DateTime date, int pages, int size, string genre, string imageUrl, Language language)
+            string press, DepartmentType department, int publishDate, DateTime date, int pages, string genre, string imageUrl, Language language)
         {
             var book = new Book
             {
@@ -39,7 +39,6 @@
                 PublishDate = publishDate,
                 Date = date,
                 Pages = pages,
-                Size = size,
                 Genre = genre,
                 ImageUrl = imageUrl,
                 Language = language
@@ -60,7 +59,7 @@
         }
 
         public async Task EditAsync(int id, string authorName, string bookTitle, string bookDescription, string cityIssued,
-            string press, DepartmentType department, int publishDate, int pages, int size, string genre, string imageUrl, Language language)
+            string press, DepartmentType department, int publishDate, int pages, string genre, string imageUrl, Language language)
         {
             var book = await this.db.Books.FindAsync(id);
 
@@ -77,7 +76,6 @@
             book.Department = department;
             book.PublishDate = publishDate;
             book.Pages = pages;
-            book.Size = size;
             book.Genre = genre;
             book.Language = language;
 

@@ -23,17 +23,22 @@
         [Display(Name = "Description", ResourceType = typeof(ArticleFormModelResx))]
         public string Description { get; set; }
 
+        [MinLength(ArticleAuthorNameMinLength)]
+        [MaxLength(ArticleAuthorNameMaxLength)]
+        [Display(Name = "Author", ResourceType = typeof(ArticleFormModelResx))]
+        public string Author { get; set; }
+
         [DataType(DataType.Date)]
         [Display(Name = "Release", ResourceType = typeof(ArticleFormModelResx))]
         public DateTime ReleaseDate { get; set; }
 
         [Required]
-        [Display(Name = "Department", ResourceType = typeof(ArticleFormModelResx))]
-        public DepartmentType Type { get; set; }
-
-        [Required]
         [Display(Name = "Language", ResourceType = typeof(ArticleFormModelResx))]
         public Language Language { get; set; }
+
+        [Required]
+        [Display(Name = "Gallery", ResourceType = typeof(ArticleFormModelResx))]
+        public bool AddGallery { get; set; }
 
         public List<IFormFile> Files { get; set; } = new List<IFormFile>();
     }

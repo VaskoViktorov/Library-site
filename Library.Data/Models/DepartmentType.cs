@@ -7,6 +7,7 @@
         Read = 2,
         Check = 3,
         Art = 4,
-        Land = 5
+        Land = 5,
+        Foreign = 6
     }
 }

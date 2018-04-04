@@ -27,7 +27,8 @@
             var galleryy = new Gallery()
             {
                 Title = title,
-                Language = language
+                Language = language,
+                Show = true
             };
 
             foreach (var path in gallery)
@@ -45,7 +46,7 @@
             await this.db.SaveChangesAsync();
         }
 
-        public async Task EditAsync(int id, string title, Language language)
+        public async Task EditAsync(int id, string title, Language language, bool show)
         {
             var gallery = await this.db.Galleries.FindAsync(id);
 
@@ -56,6 +57,7 @@
 
             gallery.Title = title;
             gallery.Language = language;
+            gallery.Show = show;
 
             await this.db.SaveChangesAsync();
         }

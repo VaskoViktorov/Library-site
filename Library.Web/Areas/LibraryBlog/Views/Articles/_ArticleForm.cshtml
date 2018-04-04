@@ -9,37 +9,18 @@
     </div>
     <div class="form-group">
         <label asp-for="Description"></label>
-        <textarea id="summernote" asp-for="Description" class="form-control" ></textarea>
+        <textarea id="summernote" asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author"></label>
+        <input asp-for="Author" class="form-control"/>
+        <span asp-validation-for="Author" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ReleaseDate"></label>
         <input asp-for="ReleaseDate" class="form-control" />
         <span asp-validation-for="ReleaseDate" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <div class="row mr-l-0">
-            <label asp-for="Type"></label>
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Kids))@Localizer["Children's"]
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Rent))@Localizer["Book borrowing"]
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Read))@Localizer["Reading rooms"]
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Check))@Localizer["Information center"]
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Art))@Localizer["Art"]
-        </div>
-        <div class="row mr-l-0">
-            @(Html.RadioButtonFor(m => m.Type, DepartmentType.Land))@Localizer["Homeland"]
-        </div>      
-        <span asp-validation-for="Type" class="text-danger"></span>
     </div>
     <div class="form-group">
         <div class="row mr-l-0">
@@ -52,6 +33,11 @@
             @(Html.RadioButtonFor(l => l.Language, Language.En))@Localizer["English"]
         </div>
         <span asp-validation-for="Language" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AddGallery"></label>
+        <input type="checkbox" asp-for="AddGallery"/>
+        <span asp-validation-for="AddGallery" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input asp-for="Files" class="form-control" name="files" multiple />

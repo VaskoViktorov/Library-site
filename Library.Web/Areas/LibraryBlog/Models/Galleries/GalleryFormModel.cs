@@ -22,5 +22,9 @@
         [Display(Name = "Files", ResourceType = typeof(GalleryFormModelResx))]
         public List<IFormFile> Files { get; set; }
             = new List<IFormFile>();
+
+        [Required]
+        [Display(Name = "Show", ResourceType = typeof(GalleryFormModelResx))]
+        public bool Show { get; set; }
     }
 }

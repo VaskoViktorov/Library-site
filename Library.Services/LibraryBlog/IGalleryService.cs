@@ -9,7 +9,7 @@
     {
         Task CreateAsync(string title, List<string> gallery, Language language);
 
-        Task EditAsync(int id, string title, Language language);
+        Task EditAsync(int id, string title, Language language, bool show);
 
         Task DeleteAsync(int id);
 

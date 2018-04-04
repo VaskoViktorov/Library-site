@@ -53,8 +53,6 @@
         {
             model.Description = this.html.Sanitize(model.Description);
 
-            var userName = User.Identity.Name;
-
             if (model.Files == null || model.Files.Count == 0)
             {
                 return Content("files not selected");
@@ -80,8 +78,8 @@
                 model.Title,
                 model.Description,
                 model.ReleaseDate,
-                model.Type,
-                userName,
+                model.Author,
+                model.AddGallery,
                 gallery,
                 model.Language
               );
@@ -105,7 +103,6 @@
                 Title = article.Title,
                 Description = article.Description,
                 ReleaseDate = article.ReleaseDate,
-                Type = article.Type,
                 Language = article.Language
             });
         }
@@ -115,16 +112,13 @@
         public async Task<IActionResult> Edit(int id, ArticleFormModel model)
         {
             model.Description = this.html.Sanitize(model.Description);
-
-            var userName = User.Identity.Name;
-
+            
             await this.articles.EditAsync(
                 id,
                 model.Title,
                 model.Description,
                 model.ReleaseDate,
-                model.Type,
-                userName,
+                model.Author,
                 model.Language
                 );
 

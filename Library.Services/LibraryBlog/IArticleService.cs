@@ -12,8 +12,8 @@
             string title,
             string description,
             DateTime releaseDate,
-            DepartmentType type,
             string authorName,
+            bool addGallery,
             List<string> gallery,
             Language language);
 
@@ -22,7 +22,6 @@
             string title,
             string description,
             DateTime releaseDate,
-            DepartmentType type,
             string authorName,
             Language language);
 

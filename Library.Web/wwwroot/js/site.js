@@ -133,9 +133,9 @@ $(document).ready(function () {
     $('.open').hide();
 
     var d = new Date();
-    var dayOfWeek = d.getDay();
-    var hour = d.getHours();
-    var mins = d.getMinutes();
+    var dayOfWeek = d.getUTCDay();
+    var hour = d.getUTCHours();
+    var mins = d.getUTCMinutes();
     var status = 'open';
 
     if (dayOfWeek !== 6 && dayOfWeek !== 0 && hour >= 9 && hour < 18) {
@@ -165,7 +165,7 @@ $(document).ready(function () {
 //calendar
 $(document).ready(function () {
     $("#eventCalendarLocaleFile").eventCalendar({
-        eventsjson: '/lib/jquery/dist/EventsDb.json',
+        eventsjson: '/json/EventsDb.json',
         locales: {
             locale: "bg",
             monthNames: [

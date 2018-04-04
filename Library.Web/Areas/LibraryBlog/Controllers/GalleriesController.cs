@@ -36,10 +36,23 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
-            => this.View(new GalleryViewModel
+        {
+            var gallery = await this.galleries.Details(id);
+
+            var user = User.IsInRole(WebConstants.LibrarianAuthorRole);
+
+            if (gallery.Show || user)
             {
-                Gallery = await this.galleries.Details(id)
-            });
+                return this.View(new GalleryViewModel
+                {
+                    Gallery = gallery
+                });
+
+            }
+
+            return RedirectToAction("Galleries", "Galleries");
+        }
+
 
         public IActionResult Create()
             => this.View();
@@ -102,7 +115,8 @@
             await this.galleries.EditAsync(
                 id,
                 model.Title,
-                model.Language
+                model.Language,
+                model.Show
             );
 
             this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterA));

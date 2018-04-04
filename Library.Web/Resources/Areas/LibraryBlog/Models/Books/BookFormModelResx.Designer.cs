@@ -151,15 +151,6 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Books {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sizes.
-        /// </summary>
-        public static string Sizes {
-            get {
-                return ResourceManager.GetString("Sizes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {

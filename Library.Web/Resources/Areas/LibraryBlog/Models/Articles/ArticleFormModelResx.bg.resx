@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Department" xml:space="preserve">
-    <value>Отдел</value>
+  <data name="Author" xml:space="preserve">
+    <value>Автор</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Съдържание</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Създай и галерия</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Език</value>

@@ -48,10 +48,6 @@
         [Display(Name = "Pages", ResourceType = typeof(BookFormModelResx))]
         public int Pages { get; set; }
 
-        [Range(0, int.MaxValue)]
-        [Display(Name = "Sizes", ResourceType = typeof(BookFormModelResx))]
-        public int Size { get; set; }
-
         [Required]
         [MinLength(BookGenreMinLength)]
         [MaxLength(BookGenreMaxLength)]

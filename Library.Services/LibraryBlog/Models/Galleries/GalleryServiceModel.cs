@@ -12,6 +12,8 @@
 
         public List<Image> Images { get; set; } = new List<Image>();
 
+        public bool Show { get; set; }
+
         public Language Language { get; set; }
     }
 }

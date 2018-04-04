@@ -18,7 +18,6 @@
             int publishDate,
             DateTime date,
             int pages,
-            int size,
             string genre,
             string imageUrl,
             Language language);
@@ -35,7 +34,6 @@
             DepartmentType department,
             int publishDate,
             int pages,
-            int size,
             string genre,
             string imageUrl,
             Language language);

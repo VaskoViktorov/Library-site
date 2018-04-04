@@ -46,6 +46,8 @@
                     return "Изкуство";
                 case DepartmentType.Land:
                     return "Краезнание";
+                case DepartmentType.Foreign:
+                    return "Чуждоезиков";
             }
 
             return String.Empty;

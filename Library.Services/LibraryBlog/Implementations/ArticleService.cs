@@ -24,12 +24,13 @@
         }
 
         public async Task CreateAsync(string title, string description, DateTime releaseDate,
-             DepartmentType type, string authorName, List<string> gallery, Language language)
+            string authorName,bool addGallery, List<string> gallery, Language language)
         {
             var galleryy = new Gallery()
             {
                 Title = title,
-                Language = language
+                Language = language,
+                Show = addGallery
             };
 
             foreach (var path in gallery)
@@ -43,16 +44,13 @@
 
                 galleryy.Images.Add(image);
             }
-
-            this.db.Add(galleryy);
-
+            
             var article = new Article
             {
                 Title = title,
                 Description = description,
                 ReleaseDate = releaseDate,
                 CreateDate = DateTime.UtcNow,
-                Type = type,
                 AuthorName = authorName,
                 Gallery = galleryy,
                 Language = language
@@ -64,7 +62,7 @@
         }
 
         public async Task EditAsync(int id, string title, string description, DateTime releaseDate,
-            DepartmentType type, string authorName, Language language)
+            string authorName, Language language)
         {
             var article = await this.db.Articles.FindAsync(id);
 
@@ -76,7 +74,6 @@
             article.Title = title;
             article.Description = description;
             article.ReleaseDate = releaseDate;
-            article.Type = type;
             article.AuthorName = authorName;
             article.Language = language;
 
@@ -86,24 +83,26 @@
         public async Task DeleteAsync(int id)
         {
             var article = await this.db.Articles.FindAsync(id);
-
+           
             if (article == null)
             {
                 return;
             }
 
             await this.db.Galleries.ToListAsync();
-
             await LoadImages(article.Gallery.Id);
 
-            this.db.Articles.Remove(article);
+            var gallery = await this.db.Galleries.FindAsync(article.Gallery.Id);
+                  
+            this.db.Articles.Remove(article);    
+            this.db.Galleries.Remove(gallery);
 
             await this.db.SaveChangesAsync();
 
             foreach (var img in article.Gallery.Images)
             {
                 FileExtensions.DeleteImage(img.ImagePath);
-            }
+            }           
         }
 
         public async Task<ArticleServiceModel> ByIdAsync(int id)
@@ -131,7 +130,8 @@
             var articles = await this.db
                 .Articles
                 .Where(a => a.Language == (Language)language.ParseLang())
-                .OrderByDescending(b => b.ReleaseDate)
+                .OrderByDescending(a => a.ReleaseDate)
+                .ThenByDescending(a => a.CreateDate)
                 .Skip((page - 1) * ArticlesPageSize)
                 .Take(ArticlesPageSize)
                 .ProjectTo<ArticleListingServiceModel>()

@@ -108,7 +108,6 @@
                 model.PublishDate,
                 DateTime.UtcNow,
                 model.Pages,
-                model.Size,
                 model.Genre,
                 savePath,
                 model.Language);
@@ -136,8 +135,7 @@
                 Press = book.Press,
                 Department = book.Department,
                 PublishDate = book.PublishDate,
-                Pages = book.Pages,
-                Size = book.Size,
+                Pages = book.Pages,               
                 Genre = book.Genre,
                 Language = book.Language
             });
@@ -177,7 +175,6 @@
                 model.Department,
                 model.PublishDate,
                 model.Pages,
-                model.Size,
                 model.Genre,
                 savePath,
                 model.Language);
