@@ -141,4 +141,7 @@
   <data name="WeekWorkTime" xml:space="preserve">
     <value>9:00-12:00; 12:30-17:00</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The department supplies the library fund, following the basic principals – considering the profile of the library and the region – the economics and social composition of the users and the readers’ interests.</value>
+  </data>
 </root>

@@ -7,18 +7,6 @@
 //    flag = true;
 //}
 
-//img popup
-$(document).ready(function () {
-
-    $('.image-popup-vertical-fit').magnificPopup({
-        type: 'image',
-        closeOnContentClick: true,
-        mainClass: 'mfp-img-mobile',
-        image: {
-            verticalFit: true
-        }
-    });
-});
 //img popup gallery 
 $(document).ready(function () {
     $('.popup-gallery').magnificPopup({
@@ -133,9 +121,9 @@ $(document).ready(function () {
     $('.open').hide();
 
     var d = new Date();
-    var dayOfWeek = d.getUTCDay();
-    var hour = d.getUTCHours();
-    var mins = d.getUTCMinutes();
+    var dayOfWeek = d.getDay();
+    var hour = d.getHours();
+    var mins = d.getMinutes();
     var status = 'open';
 
     if (dayOfWeek !== 6 && dayOfWeek !== 0 && hour >= 9 && hour < 18) {

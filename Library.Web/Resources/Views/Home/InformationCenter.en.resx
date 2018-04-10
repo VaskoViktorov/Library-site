@@ -126,6 +126,9 @@
   <data name="InfoCenter" xml:space="preserve">
     <value>Information and reference-bibliographic services center</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The center has modern computer equipment – 10 configurations, provided by “Global libraries – Bulgaria”. It provides access to information services, based on new information technologies and internet.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>
   </data>

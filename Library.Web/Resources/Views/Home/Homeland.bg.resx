@@ -132,6 +132,9 @@
   <data name="Homeland" xml:space="preserve">
     <value>Отдел „Краезнание”</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>Архив на ръкописни, печатни и електронни материали за природните условия и богатства, местната история, стопанското развитие, духовния и културен живот на гр. Видин и областта в цялото му многообразие.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Понеделник - Петък</value>
   </data>

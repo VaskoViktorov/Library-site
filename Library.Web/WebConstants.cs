@@ -41,7 +41,7 @@
             <p style = 'text-align: left;'><span style='font-weight: bold'> Име: </span>{3}</p>
             </div>";
 
-        public const string CallendarJasonDbPath = "{0}\\wwwroot\\lib\\jquery\\dist\\EventsDb.json";
+        public const string CallendarJasonDbPath = "{0}\\wwwroot\\json\\EventsDb.json";
         public const string SurveysJasonDbPath = "{0}\\wwwroot\\json\\SurveysDb.json";
         public const string SurveysEnJasonDbPath = "{0}\\wwwroot\\json\\SurveysEnDb.json";
         public const string DefaultImagePath = "/images/BookCovers/default.jpg";

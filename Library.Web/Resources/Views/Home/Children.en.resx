@@ -126,6 +126,9 @@
   <data name="FirstParagraph" xml:space="preserve">
     <value>The Children’s Department of the Regional Library “Mihalaki Georgiev” has a rich book-stock of children’s fiction and a popular science fiction, encyclopedias, children’s newspapers and magazines. The department consists of lending section and reading room.It’s for children up to 14 years old. Here the librarians organize educational activities, competitions, exhibitions, holiday’s activities, presenting new books etc..</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The Children’s Department of the Regional Library “Mihalaki Georgiev” has a rich book-stock of children’s fiction and a popular science fiction, encyclopedias, children’s newspapers and magazines.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>
   </data>

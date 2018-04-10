@@ -117,37 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Art" xml:space="preserve">
-    <value>"Art" department</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
+  <data name="FirstHeading" xml:space="preserve">
+    <value>Какво представляват бисквитките?</value>
   </data>
   <data name="FirstParagraph" xml:space="preserve">
-    <value>The department is differentiated in 1986. It serves all categories of readers with art expert’s fund, running into 13 138 units. The “Art” Department has rich and esteemed collections of graphic publications, musical materials, CD, DVD and slides.</value>
+    <value>За да ти предоставим възможно най-доброто потребителско изживяване, понякога използваме така наречените "бисквитки" ("cookies"). Научи какво представляват и за какво ги използваме.</value>
   </data>
-  <data name="metadata" xml:space="preserve">
-    <value>The department is differentiated in 1986. It serves all categories of readers with art expert’s fund, running into 13 138 units. The “Art” Department has rich and esteemed collections of graphic publications, musical materials, CD, DVD and slides.</value>
+  <data name="FirstTableHead" xml:space="preserve">
+    <value>Категория на употреба</value>
   </data>
-  <data name="MondayFriday" xml:space="preserve">
-    <value>Monday-Friday</value>
+  <data name="FirstTableRowOne" xml:space="preserve">
+    <value>Процеси</value>
   </data>
-  <data name="OpeningHours" xml:space="preserve">
-    <value>Opening Hours</value>
+  <data name="FirstTableRowTwo" xml:space="preserve">
+    <value>Позволяват гладкото функциониране на сайта и неговите функции.</value>
   </data>
-  <data name="Saturday" xml:space="preserve">
-    <value>Saturday</value>
+  <data name="FourthHeading" xml:space="preserve">
+    <value>Как да контролираш бисквитките?</value>
   </data>
-  <data name="SaturdayWorkTime" xml:space="preserve">
-    <value>Closed</value>
+  <data name="FourthParagraph" xml:space="preserve">
+    <value>Можеш да изтриеш всички бисквитки, които вече са запазени на твоя компютър, а също така можеш да настроиш повечето браузъри да ги блокират. Ако направиш това обаче, може да се наложи ръчно да настройваш някои параметри всеки път, когато посещаваш даден сайт, а освен това е възможно някои услуги и функции да не работят.</value>
+  </data>
+  <data name="FourthTableRowOne" xml:space="preserve">
+    <value>Google Анализ</value>
+  </data>
+  <data name="FourthTableRowTwo" xml:space="preserve">
+    <value>Google Анализ е аналитичен инструмент на Google, който помага на собствениците на уебсайтове и приложения да разберат как посетителите им се ангажират с техните собствености. Той може да използва набор от „бисквитки“, за да събира информация и да отчита статистически данни за употребата на даден уебсайт, без да идентифицира лично отделните посетители на Google.</value>
+  </data>
+  <data name="meta" xml:space="preserve">
+    <value>Информация за  използваните бисквитки във сайта.</value>
+  </data>
+  <data name="SecondHeading" xml:space="preserve">
+    <value>По какъв начин използваме бисквитките?</value>
   </data>
   <data name="SecondParagraph" xml:space="preserve">
-    <value>There are 14 periodical publications in the sphere of art and culture.</value>
+    <value>Бисквитките са малки текстови файлове, които се запазват на твоя компютър или мобилно устройство, когато посещаваш даден уебсайт. Те позволяват на уебсайта да запаметява твоите действия и предпочитания (като например потребителско име, език, размер на шрифта и други настройки за показване) за определен период от време, за да не се налага да ги въвеждаш всеки път, когато посещаваш сайта или преминаваш от една страница към друга.</value>
+  </data>
+  <data name="SecondTableHead" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="SecondTableRowOne" xml:space="preserve">
+    <value>Предпочитания</value>
+  </data>
+  <data name="SecondTableRowTwo" xml:space="preserve">
+    <value>Тези „бисквитки“ позволяват на уебсайтовете ни да запомнят информация, която променя начина, по който се държи или изглежда сайтът, като предпочитания от теб език или региона, в който се намираш.</value>
+  </data>
+  <data name="ThirdHeading" xml:space="preserve">
+    <value>Посещаването на този сайт може да създаде бисквитки със следните цели:</value>
   </data>
   <data name="ThirdParagraph" xml:space="preserve">
-    <value>The “Art” Department” joined with the “Foreign Language Reading Room” organizes a club “Give a joy”. It works with children from the “Daily Centre for children with injuries” – weekly care to “The unique children of Vidin”. In this creative workshop our little readers show skills to make different objects of paper and natural materials.</value>
+    <value>Можеш да контролираш и/или изтриваш бисквитки, когато пожелаеш - за повече информация виж</value>
   </data>
-  <data name="WeekWorkTime" xml:space="preserve">
-    <value>9:00-12:00; 12:30-17:00</value>
+  <data name="ThirdTableRowOne" xml:space="preserve">
+    <value>Сигурност</value>
+  </data>
+  <data name="ThirdTableRowTwo" xml:space="preserve">
+    <value>Използваме „бисквитки“ за сигурност с цел удостоверяване на потребителите, за предотвратяване на измамническо използване на идентификационни данни за вход, както и за защита на потребителската информация от неупълномощени страни.</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Политика за използване на бисквитки</value>
   </data>
 </root>

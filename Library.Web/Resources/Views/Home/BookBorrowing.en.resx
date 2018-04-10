@@ -132,6 +132,9 @@
   <data name="LendingDepartment" xml:space="preserve">
     <value>Lending department for adults</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>It offers library services, information and documents for home use. All kinds of readers over the age of 14 are served and registered here. The fund of the department is universal. The users have free access to more than 100 thousand books from all the knowledge departments.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>
   </data>

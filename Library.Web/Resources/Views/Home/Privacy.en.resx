@@ -117,37 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Art" xml:space="preserve">
-    <value>"Art" department</value>
-  </data>
-  <data name="Back" xml:space="preserve">
-    <value>Back</value>
+  <data name="FirstHeading" xml:space="preserve">
+    <value>What are "cookies"?</value>
   </data>
   <data name="FirstParagraph" xml:space="preserve">
-    <value>The department is differentiated in 1986. It serves all categories of readers with art expert’s fund, running into 13 138 units. The “Art” Department has rich and esteemed collections of graphic publications, musical materials, CD, DVD and slides.</value>
+    <value>In order to provide you with the best possible user experience, we sometimes use so-called "cookies". Learn what they are and what we use them for.</value>
   </data>
-  <data name="metadata" xml:space="preserve">
-    <value>The department is differentiated in 1986. It serves all categories of readers with art expert’s fund, running into 13 138 units. The “Art” Department has rich and esteemed collections of graphic publications, musical materials, CD, DVD and slides.</value>
+  <data name="FirstTableHead" xml:space="preserve">
+    <value>Category of use</value>
   </data>
-  <data name="MondayFriday" xml:space="preserve">
-    <value>Monday-Friday</value>
+  <data name="FirstTableRowOne" xml:space="preserve">
+    <value>Processes</value>
   </data>
-  <data name="OpeningHours" xml:space="preserve">
-    <value>Opening Hours</value>
+  <data name="FirstTableRowTwo" xml:space="preserve">
+    <value>Allows smooth operation of the site and its functions.</value>
   </data>
-  <data name="Saturday" xml:space="preserve">
-    <value>Saturday</value>
+  <data name="FourthHeading" xml:space="preserve">
+    <value>How to control cookies?</value>
   </data>
-  <data name="SaturdayWorkTime" xml:space="preserve">
-    <value>Closed</value>
+  <data name="FourthParagraph" xml:space="preserve">
+    <value>You can delete all the cookies already saved on your computer, and you can also set most browsers to block them. However, if you do, you may need to manually adjust some parameters each time you visit a site, and some services and features may not work.</value>
+  </data>
+  <data name="FourthTableRowOne" xml:space="preserve">
+    <value>Google Analytics</value>
+  </data>
+  <data name="FourthTableRowTwo" xml:space="preserve">
+    <value>Google Analytics is an analytics tool that helps website owners and apps understand how their visitors engage with their properties. It can use a set of "cookies" to collect information and report usage statistics on a website without personally identifying individual Google visitors.</value>
+  </data>
+  <data name="meta" xml:space="preserve">
+    <value>Information about the "cookies" used in the site.</value>
+  </data>
+  <data name="SecondHeading" xml:space="preserve">
+    <value>How do we use "cookies"?</value>
   </data>
   <data name="SecondParagraph" xml:space="preserve">
-    <value>There are 14 periodical publications in the sphere of art and culture.</value>
+    <value>Cookies are small text files that are saved on your computer or mobile device when you visit a website. They allow the website to store your actions and preferences (such as username, language, font size, and other display settings) for a certain amount of time, so you do not have to enter them every time you visit the site or go from one page to another.</value>
+  </data>
+  <data name="SecondTableHead" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SecondTableRowOne" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="SecondTableRowTwo" xml:space="preserve">
+    <value>These "cookies" allow the website to remember information that changes the way it behaves or appear, like your preferred language or the region you are in.</value>
+  </data>
+  <data name="ThirdHeading" xml:space="preserve">
+    <value>Visiting this site may create cookies for the following purposes:</value>
   </data>
   <data name="ThirdParagraph" xml:space="preserve">
-    <value>The “Art” Department” joined with the “Foreign Language Reading Room” organizes a club “Give a joy”. It works with children from the “Daily Centre for children with injuries” – weekly care to “The unique children of Vidin”. In this creative workshop our little readers show skills to make different objects of paper and natural materials.</value>
+    <value>You can control and / or delete cookies whenever you want - for more information see</value>
   </data>
-  <data name="WeekWorkTime" xml:space="preserve">
-    <value>9:00-12:00; 12:30-17:00</value>
+  <data name="ThirdTableRowOne" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="ThirdTableRowTwo" xml:space="preserve">
+    <value>We use security "cookies" to authenticate users, prevent fraudulent use of login credentials, and protect user information from unauthorized parties.</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Cookie Policy</value>
   </data>
 </root>

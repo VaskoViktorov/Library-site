@@ -14,12 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] | @Localizer["Regional Library \"Mihalaki Georgiev\"-Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
-    <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">    
-    <link href="~/lib/jquery/dist/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />
+    <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
+    <link href="~/json/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />    
     <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
 
     <environment include="Development">
         <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -28,10 +29,20 @@
         <link rel="stylesheet" href="~/css/panorama_viewer.css">
         <link rel="stylesheet" href="~/css/magnific-popup.css">
         <link rel="stylesheet" href="~/css/eventCalendar.css">
-        <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">      
+        <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.css">
     </environment>
     <environment exclude="Development">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117272624-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-117272624-1');
+        </script>
         <link rel="stylesheet" async href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
         <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -72,7 +83,7 @@
                     </div>
                 </div>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
-                <a href="//178.239.224.218/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
+                <a href="//libvidin.eu:8080/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
                 <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
@@ -137,7 +148,7 @@
                             @Localizer["E-Library"]<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a href="http://178.239.224.218/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                            <li><a href="//libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["New books"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
                             <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
@@ -168,27 +179,27 @@
         <div class="lib-nav-container">
             <a asp-area="" asp-controller="Home" asp-Action="Index"><img class="panel-logo" src="~/images/SiteImages/panel-logo@(engType).png" alt="panel" /> </a>
         </div>
+        @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
+        {
+            <div class="row max-width text-center mr-0-auto">
+                <div class="alert alert-success alert-box">
+                    @TempData[WebConstants.TempDataSuccessMessageKey]
+                </div>
+            </div>
+        }
+        @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
+        {
+            <div class="row max-width text-center mr-0-auto">
+                <div class="alert alert-warning alert-box">
+                    @TempData[WebConstants.TempDataWarningMessageKey]
+                </div>
+            </div>
+        }
     </div>
     <div class="container body-content">
         <div class="row pb-20">
             <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
-            <div class="col-md-8">
-                @if (TempData.ContainsKey(WebConstants.TempDataSuccessMessageKey))
-                {
-                    <div class="row width-85pr text-center mr-0-auto">
-                        <div class="alert alert-success alert-box">
-                            @TempData[WebConstants.TempDataSuccessMessageKey]
-                        </div>
-                    </div>
-                }
-                @if (TempData.ContainsKey(WebConstants.TempDataWarningMessageKey))
-                {
-                    <div class="row width-85pr text-center mr-0-auto">
-                        <div class="alert alert-warning alert-box">
-                            @TempData[WebConstants.TempDataWarningMessageKey]
-                        </div>
-                    </div>
-                }
+            <div class="col-md-8">                
                 @RenderBody()
             </div>
             <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenu")</div>
@@ -212,7 +223,7 @@
                     <ul class="lib-footer-ul">
                         <li><a asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
-                        <li><a href="//178.239.224.218/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                        <li><a href="//libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Links">@Localizer["Useful links"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Our Services"]</a></li>
                     </ul>
@@ -220,15 +231,16 @@
                 <div class="col-md-3 mr-0-auto">
                     <div id="lib-search-footer-box" class="first-color-b">
                         @await Component.InvokeAsync("Search")
-                        </div>
-                    </div>
-                    <div class="col-md-2 text-right">                       
-                            @await Html.PartialAsync("_SelectLanguagePartial")               
-                        <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
                     </div>
                 </div>
+                <div class="col-md-2 text-right">
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                    <p class="text-center">&copy; 2018 - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"]</p>
+                </div>
+            </div>
         </footer>
     </div>
+    
     <environment include="Development">
         <script src="//code.jquery.com/jquery-2.2.4.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
@@ -243,6 +255,7 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
         <script src="~/lib/jquery/dist/moment.min.js"></script>
@@ -266,6 +279,7 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery/dist/responsiveslides.min.js"></script>
         <script src="~/lib/jquery/dist/moment.min.js"></script>
@@ -278,3 +292,25 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#29739e",
+                    "text": "#ffedd8"
+                },
+                "button": {
+                    "background": "#8f4d4d",
+                    "text": "#ffedd8"
+                }
+            },
+            "content": {
+                "message": "@Localizer["This site uses cookies to give the best user experience."]",
+            "dismiss": "@Localizer["I Accept"]",
+            "link": "@Localizer["Read More"]",
+            "href": "/home/privacy"
+        }
+    });
+});
+</script>

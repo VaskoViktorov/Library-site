@@ -1,6 +1,7 @@
 ﻿@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = Localizer["ChildrensDepartment"];
+    ViewData["Description"] = Localizer["metadata"];
 
     var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
 }

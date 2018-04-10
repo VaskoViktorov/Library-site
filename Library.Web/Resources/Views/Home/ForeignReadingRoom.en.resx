@@ -124,13 +124,16 @@
     <value>The “Art” Department” joined with the “Foreign Language Reading Room” organizes a club “Give a joy”. It works with children from the “Daily Centre for children with injuries” – weekly care to “The unique children of Vidin”. In this creative workshop our little readers show skills to make different objects of paper and natural materials.</value>
   </data>
   <data name="FirstParagraph" xml:space="preserve">
-    <value>This department preserves and gives up for using fiction and specialized literature in English, German, French and other languages. It has a rich fund of books, encyclopedias, dictionaries, magazines in English, German and Bulgarian language such as National Geographic, Tour.bg, Vagabond. It preserves a foreign language education. The department has tests SAT and TOEFL.</value>
+    <value>This department preserves and loans fiction and specialized literature in English, German, French and other languages. It has a rich fund of books, encyclopedias, dictionaries, magazines in English, German and Bulgarian language such as National Geographic, Tour.bg, Vagabond. It preserves a foreign language education. The department has tests SAT and TOEFL.</value>
   </data>
   <data name="ForeignReadingRoom" xml:space="preserve">
     <value>"Foreign language reading room" department</value>
   </data>
   <data name="FourthParagraph" xml:space="preserve">
     <value>Traditionally the Department celebrates 9 of May – Day of Europe, 26 of September – Day of European languages and foreign holidays such as St. Valentin, Halloween and the Thanksgiving Day.  The department’s activities also include club “Young ecologist” (joined with “Art” Department and Children’s Department) and clubs for English and Russian languages in the summer. By these activities the pupils show what they learned, enrich their knowledge and show skills to orient in different situations and in the reading room’s information materials. The pupils really enjoy the games prepared especially for them.</value>
+  </data>
+  <data name="metadata" xml:space="preserve">
+    <value>This department preserves and loans fiction and specialized literature in English, German, French and other languages.</value>
   </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>

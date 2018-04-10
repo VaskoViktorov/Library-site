@@ -123,6 +123,9 @@
   <data name="FirstParagraph" xml:space="preserve">
     <value>The department organizes, preserves, holds up and gives an opportunity for using of a rich book-stock: books and reference books in the sphere of science, philosophy, psychology, sociology, politics, economy, jurisprudence, pedagogy , ethnography, history, technical, medicine and agricultural sciences, multimedia formats: CD and DVD; maps and atlases from different science’s areas.</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The department organizes, preserves, holds up and gives an opportunity for using of a rich book-stock.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>
   </data>

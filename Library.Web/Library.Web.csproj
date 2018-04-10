@@ -349,6 +349,12 @@
     <EmbeddedResource Update="Resources\Views\Home\Methodological.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Privacy.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Privacy.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\SrcDepartment.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

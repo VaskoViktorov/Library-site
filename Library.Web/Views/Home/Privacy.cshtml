@@ -1,0 +1,45 @@
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"];
+    ViewData["Description"] = Localizer["metadata"];
+}
+<div class="row text-center">
+    <h2>@Localizer["title"]</h2>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <p>@Localizer["FirstParagraph"]</p>
+        <h3>@Localizer["FirstHeading"]</h3>
+        <p>@Localizer["SecondParagraph"]</p>
+        <h3>@Localizer["SecondHeading"]</h3>
+        <p>@Localizer["ThirdHeading"]</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="p-10">@Localizer["FirstTableHead"]</th>
+                    <th class="text-center">@Localizer["SecondTableHead"]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-0-3">@Localizer["FirstTableRowOne"]</td>
+                    <td class="p-0-3">@Localizer["FirstTableRowTwo"]</td>
+                </tr>
+                <tr>
+                    <td class="p-0-3">@Localizer["SecondTableRowOne"]</td>
+                    <td class="p-0-3">@Localizer["SecondTableRowTwo"]</td>
+                </tr>
+                <tr>
+                    <td class="p-0-3">@Localizer["ThirdTableRowOne"]</td>
+                    <td class="p-0-3">@Localizer["ThirdTableRowTwo"]</td>
+                </tr>
+                <tr>
+                    <td class="p-0-3">@Localizer["FourthTableRowOne"]</td>
+                    <td class="p-0-3">@Localizer["FourthTableRowTwo"]</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>@Localizer["FourthHeading"]</h3>
+        <p>@Localizer["ThirdParagraph"] <a href="https://aboutcookies.org">aboutcookies.org</a>. @Localizer["FourthParagraph"]</p>
+    </div>
+</div>

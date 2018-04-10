@@ -132,6 +132,9 @@
   <data name="Homeland" xml:space="preserve">
     <value>“Local history” department</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The department is an archive of handwritten, printed and electronic materials about the natural conditions and resources, the local history, the economics, spiritual and cultural life in Vidin and the region in all its diversity.</value>
+  </data>
   <data name="MondayFriday" xml:space="preserve">
     <value>Monday-Friday</value>
   </data>

@@ -270,4 +270,13 @@
   <data name="Work with children program" xml:space="preserve">
     <value>Програма за работа с деца</value>
   </data>
+  <data name="I Accept" xml:space="preserve">
+    <value>Съгласен съм</value>
+  </data>
+  <data name="Read More" xml:space="preserve">
+    <value>Повече информация</value>
+  </data>
+  <data name="This site uses cookies to give the best user experience." xml:space="preserve">
+    <value>Сайтът използва \"бисквитки\", за да предостави възможно най-доброто потребителско изживяване.</value>
+  </data>
 </root>

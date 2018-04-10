@@ -160,6 +160,12 @@
         public IActionResult Methodological()
             => View();
 
+        public IActionResult Donations()
+            => View();
+
+        public IActionResult Privacy()
+            => View();
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
