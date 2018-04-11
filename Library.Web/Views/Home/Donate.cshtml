@@ -1,0 +1,19 @@
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"];
+    ViewData["Description"] = Localizer["metadata"];
+}
+<div class="row text-center">
+    <h2>@Localizer["title"]</h2>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <p class="bold text-justify">@Localizer["paragraph"]</p>
+        <h3>@Localizer["info"]</h3>
+        <ul>
+            <li class="p-10">@Localizer["name"]: <span class="bold">@Localizer["library"]</span></li>
+            <li class="p-10">@Localizer["address"]: <span class="bold">@Localizer["addr"]</span></li>
+            <li class="p-10">IBAN: <span class="bold">BG23A32123124</span></li>
+        </ul>
+    </div>
+</div>

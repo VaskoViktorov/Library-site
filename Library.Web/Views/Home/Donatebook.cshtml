@@ -1,0 +1,35 @@
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"];
+    ViewData["Description"] = Localizer["metadata"];
+}
+
+<div class="row text-center">
+    <h2>@Localizer["title"]</h2>
+</div>
+
+<div class="row mr-t-b-25">
+    <div class="col-md-8 col-md-offset-2">
+        <p class="text-justify">@Localizer["ParagraphFirstPartOne"] <a class="bold" asp-area="" asp-controller="Home" asp-action="SrcDepartment">@Localizer["ParagraphFirstPartTwo"]</a>, @Localizer["ParagraphFirstPartThree"]</p>
+        <h3>@Localizer["HeadingFirst"]?</h3>
+        <p class="text-justify">@Localizer["ParagraphSecond"]</p>
+        <h3>@Localizer["HeadingSecond"]?</h3>
+        <ul>
+            <li>@Localizer["liFirst"]</li>
+            <li>@Localizer["liSecond"]</li>
+            <li>@Localizer["liThird"]</li>
+            <li>@Localizer["liFourth"]</li>
+            <li>@Localizer["liFifth"]</li>
+            <li>@Localizer["liSixth"]</li>
+        </ul>
+        <h3>@Localizer["HeadingThird"]?</h3>
+        <p class="text-justify">@Localizer["ParagraphThirdPartOne"] <a class="bold" asp-area="" asp-controller="Home" asp-action="SrcDepartment">@Localizer["ParagraphFirstPartTwo"]</a>, @Localizer["ParagraphThirdPartThree"] <a asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["ParagraphThirdPartFour"]</a> @Localizer["ParagraphThirdPartFive"].</p>
+        <h3>@Localizer["HeadingFourth"]</h3>
+        <p class="text-justify">@Localizer["ParagraphFourth"]</p>
+        <ul>
+            <li>@Localizer["liSeventh"]</li>
+            <li>@Localizer["liEighth"]</li>
+            <li>@Localizer["liNinth"]</li>
+        </ul>
+    </div>
+</div>

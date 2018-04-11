@@ -1,0 +1,24 @@
+User-Agent: *
+Disallow: 
+Disallow: /admin
+Disallow: /manage
+Disallow: /account
+Disallow: /libraryblog/events
+Disallow: /libraryblog/articles/create
+Disallow: /libraryblog/articles/edit
+Disallow: /libraryblog/articles/delete
+Disallow: /libraryblog/articles/destroy
+Disallow: /libraryblog/galleries/create
+Disallow: /libraryblog/galleries/edit
+Disallow: /libraryblog/galleries/delete
+Disallow: /libraryblog/galleries/destroy
+Disallow: /libraryblog/books/create
+Disallow: /libraryblog/books/edit
+Disallow: /libraryblog/books/delete
+Disallow: /libraryblog/books/destroy
+Disallow: /libraryblog/subscriptions/create
+Disallow: /libraryblog/subscriptions/edit
+Disallow: /libraryblog/subscriptions/delete
+Disallow: /libraryblog/subscriptions/destroy
+
+Sitemap: http://libvidin.eu/sitemap.xml

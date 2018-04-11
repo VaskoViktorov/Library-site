@@ -1,13 +1,24 @@
 ﻿@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Make donation";
-    ViewData["Description"] = "How to make a donation to the library.";
+    ViewData["Title"] = Localizer["title"];
+    ViewData["Description"] = Localizer["metadata"];
 }
 <div class="row text-center">
-    <h2>Make donation</h2>
+    <h2>@Localizer["title"]</h2>
 </div>
-<div class="row text-center">
-    <h1>Coming soon!</h1>
-</div>
+<div class="row mr-t-45">
 
+    <div class="col-md-12 text-center">
+        <div class="disp-inl-bl mr-0-auto">
+            <a class="box-don effect-1" asp-area="" asp-controller="Home" asp-action="Donatebook">
+                <img class="img-1" src="/images/SiteImages/books.jpg" alt="@Localizer["material"]" />
+                <p>@Localizer["material"]</p>
+            </a>
+            <a class="box-don effect-1" asp-area="" asp-controller="Home" asp-action="Donate">
+                <img class="img-2" src="/images/SiteImages/money.png" alt="@Localizer["financial"]" />
+                <p>@Localizer["financial"]</p>
+            </a>
+        </div>
+    </div>
+</div>
 

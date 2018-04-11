@@ -114,16 +114,19 @@
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            //Limits requests
             app.UseIpRateLimiting();
             app.UseClientRateLimiting();
+
             //For HTTPS, uncomment
             //var options = new RewriteOptions()
             //  .AddRedirectToHttps();
-
             //app.UseRewriter(options);
 
+            //migrations
             app.UseDatabaseMigration();
 
+            //localization
             app.UseRequestLocalization();
 
             if (env.IsDevelopment())
@@ -143,6 +146,18 @@
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    "Robots",
+                    "Robots.txt",
+                    new { controller = "Home", action = "Robots" }
+                );
+
+                routes.MapRoute(
+                    "Sitemap",
+                    "sitemap.xml",
+                    new { controller = "Home", action = "SiteMap" }
+                );
+
                 routes.MapRoute(
                     name: "viewEvent",
                     template: "libraryblog/events/events",

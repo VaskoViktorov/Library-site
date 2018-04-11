@@ -163,8 +163,20 @@
         public IActionResult Donations()
             => View();
 
+        public IActionResult Donatebook()
+            => View();
+
+        public IActionResult Donate()
+            => View();
+
         public IActionResult Privacy()
             => View();
+
+        public IActionResult SiteMap()
+            =>  this.Content("\\wwwroot\\sitemap.xml", "text/xml");
+
+        public IActionResult Robots()
+            => this.Content("\\wwwroot\\Robots.txt", "text/xml");
 
         public IActionResult Error()
         {

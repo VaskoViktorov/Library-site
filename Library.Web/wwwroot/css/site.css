@@ -651,17 +651,49 @@ ol {
     opacity: 0;
     cursor: pointer;
 }
-
+/*Donations page*/
+.box-don {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 50px 20px 0 20px;
+    border: 5px solid #337ab7;
+    border-radius: 170px;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+}
+.box-don .img-1 {
+    border-radius: 100px;
+    width: 240px;
+    height: 278px;
+}
+.box-don p {
+    width: 311px;
+    height: 311px;
+    color: #FFEDD8;
+    font-weight: bold;
+    background: #337ab7;
+    text-align: center;
+    border-radius: 94px;
+    padding: 140px 18px 0 0;
+    font-size: 2.5em;
+}
+.box-don .img-2 {
+    width: 294px;
+    height: 292px;
+    margin-left: -2px;
+}
 /** Transition effects **/
 .effect-1 p {
     transition: opacity 0.01s;
 }
 
-    .effect-1 p:hover {
+.effect-1 p:hover {
         transition: opacity 0.01s;
         opacity: 0.8;
         cursor: pointer;
-    }
+}
 /* Submenu*/
 .dropdown-submenu {
     position: relative;
