@@ -117,17 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="addr" xml:space="preserve">
-    <value>пл. "Бдинци" № 1</value>
+  <data name="bank" xml:space="preserve">
+    <value>"Търговска банка Д" АД</value>
   </data>
-  <data name="address" xml:space="preserve">
-    <value>Адрес</value>
+  <data name="bankname" xml:space="preserve">
+    <value>Име на банката</value>
   </data>
   <data name="info" xml:space="preserve">
     <value>Информация за банков превод</value>
   </data>
   <data name="library" xml:space="preserve">
-    <value>Регионална Библиотека "Михалаки Георгиев" - гр. Видин</value>
+    <value>Регионална библиотека "Михалаки Георгиев" - гр. Видин</value>
   </data>
   <data name="meta" xml:space="preserve">
     <value>Ако обичате библиотеката и искате да покажете вашата подкрепа, това е вашият шанс! Паричните дарения осигуряват финансиране за програмите на библиотеката, услуги за общността, материали, технологии и капиталови подобрения извън обсега на бюджета на библиотеката.</value>

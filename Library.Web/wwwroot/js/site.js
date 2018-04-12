@@ -7,6 +7,18 @@
 //    flag = true;
 //}
 
+//img popup
+$(document).ready(function () {
+
+    $('.image-popup-vertical-fit').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: true
+        }
+    });
+});
 //img popup gallery 
 $(document).ready(function () {
     $('.popup-gallery').magnificPopup({

@@ -6,6 +6,7 @@
     ViewData["Description"] = Model.Article.Title + "- " + Localizer["Find more at Regional Library \"Mihalaki Georgiev\" - Vidin."].Value;
 
     var count = Model.Article.Gallery.Images.Count;
+    var lenght = Model.Article.AuthorName;
 }
 
 <div class="row text-center">
@@ -23,7 +24,10 @@
             <div class="text-justify">@Html.Raw(Model.Article.Description)</div>
             <div class="text-left float-right">
                 <p>@Localizer["Publish Date"]: @Model.Article.ReleaseDate.ToShortDateString()</p>
-                <p>@Localizer["Author"]: <span class="author-text">@Model.Article.AuthorName</span></p>
+                @if (!String.IsNullOrEmpty(lenght))
+                {
+                    <p>@Localizer["Author"]: <span class="author-text">@Model.Article.AuthorName</span></p>
+                }            
             </div>
         </div>
         @if (count >= 2)
