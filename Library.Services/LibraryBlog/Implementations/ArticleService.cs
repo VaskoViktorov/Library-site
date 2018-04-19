@@ -120,6 +120,11 @@
                 .ProjectTo<ArticleServiceModel>()
                 .FirstOrDefaultAsync();
 
+            if (article == null)
+            {
+                return null;
+            }
+
             await LoadImages(article.Gallery.Id);
 
             return article;

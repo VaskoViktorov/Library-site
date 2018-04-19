@@ -366,18 +366,12 @@ h3 {
     border: 2px solid #29739E;
     border-radius: 20px;
 }
-
-div > ul > li.page-item.active > a {
-    background-color: #29739E;
-    border-color: #29739E;
+.pagination > #current > a {
+    background-color: #29739E !important;
+    border-color: #29739E !important;
+    color: #ffedd8;
     opacity: 0.9;
 }
-
-    div > ul > li.page-item.active > a:hover {
-        background-color: #660B0B;
-        border-color: #660B0B;
-    }
-
 ul.pagination > li:last-child a {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;

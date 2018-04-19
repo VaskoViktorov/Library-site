@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using Library.Services;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -27,20 +29,40 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Galleries(int page = 1)
-            => this.View(new GalleryListingViewModel
+        {
+            var totalPages = galleries.TotalAsync(CurrentCulture()).Result / ServicesConstants.GalleriesPageSize;
+
+            if (totalPages == 0)
+            {
+                totalPages++;
+            }
+
+            if (page > totalPages || page <= 0)
+            {
+                return this.RedirectToAction("Galleries");
+            }
+
+            return this.View(new GalleryListingViewModel
             {
                 Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(), page),
                 TotalGalleries = await this.galleries.TotalAsync(CurrentCulture()),
                 CurrentPage = page
             });
+        }
+        
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var gallery = await this.galleries.Details(id);
 
-            var user = User.IsInRole(WebConstants.LibrarianAuthorRole);
+            if (gallery == null)
+            {
+                return RedirectToAction("Galleries", "Galleries");
+            }
 
+            var user = User.IsInRole(LibrarianAuthorRole);
+            
             if (gallery.Show || user)
             {
                 return this.View(new GalleryViewModel

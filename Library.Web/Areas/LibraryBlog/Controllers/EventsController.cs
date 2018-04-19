@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using Library.Services;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -52,11 +54,23 @@
         {
             var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
             var events = ObjToJsonConverterExtensions.ListofEventsInJsonFile(filePath).OrderByDescending(e => e.date);
+            var totalEvents = events.Count();
+            var eventsPerPage = totalEvents / ServicesConstants.EventsPageSize;
+
+            if (totalEvents > 0)
+            {
+                eventsPerPage++;
+            }
+
+            if (page > eventsPerPage || page <= 0)
+            {
+                return this.RedirectToAction("Events");
+            }
 
             return this.View(new EventListingViewModel
             {
                 Events = events,
-                TotalEvents = events.Count(),
+                TotalEvents = totalEvents,
                 CurrentPage = page
             });
         }

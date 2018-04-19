@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using Library.Services;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -30,19 +32,44 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Articles(int page = 1)
-            => this.View(new ArticleListingViewModel
+        {
+            var totalPages = articles.TotalAsync(CurrentCulture()).Result/ServicesConstants.ArticlesPageSize;
+
+            if (totalPages == 0)
+            {
+                totalPages++;
+            }
+
+            if (page > totalPages || page <= 0)
+            {
+                return this.RedirectToAction("Articles");
+            }
+
+            return this.View(new ArticleListingViewModel
             {
                 Articles = await this.articles.AllArticlesAsync(CurrentCulture(), page),
                 TotalArticles = await this.articles.TotalAsync(CurrentCulture()),
                 CurrentPage = page
             });
+        }
+
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
-            => this.View(new ArticleViewModel
+        {
+            var article = await this.articles.Details(id);
+
+            if (article != null)
             {
-                Article = await this.articles.Details(id)
-            });
+                return this.View(new ArticleViewModel
+                {
+                    Article = article
+                });
+            }
+
+            return this.RedirectToAction("Articles");
+        }
+
 
         public IActionResult Create()
             => this.View();

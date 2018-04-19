@@ -1,4 +1,6 @@
-﻿namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿using Library.Services;
+
+namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
@@ -29,38 +31,93 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Books(int page = 1)
-        => this.View(new BookListingViewModel
         {
-            Books = await this.books.AllBooksAsync(CurrentCulture(), page),
-            TotalBooks = await this.books.TotalAsync(CurrentCulture()),
-            CurrentPage = page
-        });
+            var totalPages = books.TotalAsync(CurrentCulture()).Result / ServicesConstants.BooksPageSize;
+
+            if (totalPages == 0)
+            {
+                totalPages++;
+            }
+
+            if (page > totalPages || page <= 0)
+            {
+                return this.RedirectToAction("Books");
+            }
+
+            return this.View(new BookListingViewModel
+            {
+                Books = await this.books.AllBooksAsync(CurrentCulture(), page),
+                TotalBooks = await this.books.TotalAsync(CurrentCulture()),
+                CurrentPage = page
+            });
+        }
+
 
         [AllowAnonymous]
         public async Task<IActionResult> BooksForKids(int page = 1)
-            => this.View(new BookListingViewModel
+        {
+            var totalPages = books.TotalForKidsAsync(CurrentCulture()).Result / ServicesConstants.BooksPageSize;
+
+            if (totalPages == 0)
+            {
+                totalPages++;
+            }
+
+            if (page > totalPages || page <= 0)
+            {
+                return this.RedirectToAction("BooksForKids");
+            }
+
+            return this.View(new BookListingViewModel
             {
                 Books = await this.books.AllBooksForChildrenAsync(CurrentCulture(), page),
                 TotalBooks = await this.books.TotalForKidsAsync(CurrentCulture()),
                 CurrentPage = page
             });
+        }
+
 
         [AllowAnonymous]
         public async Task<IActionResult> BooksForLand(int page = 1)
-            => this.View(new BookListingViewModel
+        {
+            var totalPages = books.TotalForLandAsync(CurrentCulture()).Result / ServicesConstants.BooksPageSize;
+
+            if (totalPages == 0)
+            {
+                totalPages++;
+            }
+
+            if (page > totalPages || page <= 0)
+            {
+                return this.RedirectToAction("BooksForLand");
+            }
+
+            return this.View(new BookListingViewModel
             {
                 Books = await this.books.AllBooksForLandLandAsync(CurrentCulture(), page),
                 TotalBooks = await this.books.TotalForLandAsync(CurrentCulture()),
                 CurrentPage = page
             });
+        }
+
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
-            => this.View(new BookViewModel
-            {
-                Book = await this.books.ByIdAsync(id)
-            });
+        {
+            var book = await this.books.ByIdAsync(id);
 
+            if (book != null)
+            {
+               return this.View(new BookViewModel
+                {
+                    Book = book
+                });
+            }
+
+            return this.RedirectToAction("Books");
+
+        }
+     
 
         public IActionResult Create()
             => this.View();
@@ -135,7 +192,7 @@
                 Press = book.Press,
                 Department = book.Department,
                 PublishDate = book.PublishDate,
-                Pages = book.Pages,               
+                Pages = book.Pages,
                 Genre = book.Genre,
                 Language = book.Language
             });

@@ -95,6 +95,11 @@
                 .ProjectTo<GalleryServiceModel>()
                 .FirstOrDefaultAsync();
 
+            if (gallery == null)
+            {
+                return null;
+            }
+
             await LoadImages(gallery.Id);
 
             return gallery;
