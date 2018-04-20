@@ -28,10 +28,11 @@
         @{
             if (Model.SearchInBook != null)
             {
-                <h3 class="text-center">@Localizer["New Books"]</h3>
+
 
                 if (Model.SearchInBook.Any())
                 {
+                    <h3 class="text-center">@Localizer["New Books"]</h3>
                     <div class="row">
                         <ul class="lib-footer-ul">
                             @foreach (var book in Model.SearchInBook)
@@ -53,11 +54,13 @@
                     </div>
                 }
             }
+            <hr class="width-150 lib-hr-col" />
             if (Model.SearchInArticle != null)
             {
-                <h3 class="text-center">@Localizer["News"]</h3>
+
                 if (Model.SearchInArticle.Any())
                 {
+                    <h3 class="text-center">@Localizer["News"]</h3>
                     <div class="row">
                         <ul class="lib-footer-ul">
                             @foreach (var article in Model.SearchInArticle)
@@ -74,11 +77,13 @@
                     <p>@Localizer["No news were found"].</p>
                 }
             }
+            <hr class="width-150 lib-hr-col" />
             if (Model.SearchInGallery != null)
             {
-                <h3 class="text-center">@Localizer["Galleries"]</h3>
+
                 if (Model.SearchInGallery.Any())
                 {
+                    <h3 class="text-center">@Localizer["Galleries"]</h3>
                     <div class="row">
                         <ul class="lib-footer-ul">
                             @foreach (var gallery in Model.SearchInGallery)
@@ -96,11 +101,13 @@
                     <p>@Localizer["No galleries were found"].</p>
                 }
             }
+            <hr class="width-150 lib-hr-col" />
             if (Model.SearchInSubscription != null)
             {
-                <h3 class="text-center">@Localizer["Subscriptions"]</h3>
+
                 if (Model.SearchInSubscription.Any())
                 {
+                    <h3 class="text-center">@Localizer["Subscriptions"]</h3>
                     <div class="row">
                         <ul class="lib-footer-ul">
                             @foreach (var subscription in Model.SearchInSubscription)

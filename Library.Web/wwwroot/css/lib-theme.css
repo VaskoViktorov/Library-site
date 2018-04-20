@@ -244,7 +244,9 @@ footer {
 #u_0_0 > tbody > tr:nth-child(1) > td > table > tbody > tr > td._51m-._2pir._51mw #u_0_3 {
     color: #FFEDD8;
 }
-
+.lib-hr-col {
+    border-color: #29739E;
+}
 .address-box {
     background-color: #29739E;
     margin: 0 auto 10px auto;
@@ -270,6 +272,9 @@ h2 {
     font-weight: bold !important;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 
 h3 {
@@ -279,6 +284,9 @@ h3 {
     padding: 15px;
     border-radius: 20px;
     font-weight: bold;
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 
 .lib-logout-btn {
@@ -302,7 +310,10 @@ h3 {
     background-color: #FFEDD8;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 
     .lib-lang-box a:hover {
@@ -318,6 +329,9 @@ h3 {
     opacity: 0.9;
     padding: 10px;
     margin: 20px auto;
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 
     .lib-btn:hover {
@@ -337,6 +351,9 @@ h3 {
     padding: 9px;
     margin: 20px auto;
     border-style: none;
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 
     .lib-btn-invrt:hover {

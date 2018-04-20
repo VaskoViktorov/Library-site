@@ -34,70 +34,74 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
+        <p class="font-size-1k4em text-justify">@Localizer["List of active subscriptions to newspapers and magazines that the library supports. If you want to read a newspaper or a magazine, come to the"] <a asp-area="" asp-controller="Home" asp-action="ReadingRooms">"@Localizer["Reading rooms"]"</a> @Localizer["department of the library"].</p>
         <table class="table table-responsive table-hover">
             <thead>
-                <tr>
-                    <th colspan="@thCols" class="bold text-center">@Localizer["Newspapers"]</th>
-                </tr>
+            <tr>
+                <th colspan="@thCols" class="bold text-center">@Localizer["Newspapers"]</th>
+            </tr>
             </thead>
             <tbody>
+            <tr>
+                <th class="first-color-b second-color text-center">@Localizer["Name"]</th>
+                <th class="first-color-b second-color text-center">@Localizer["Distributed in"]:</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                {
+                    <th class="first-color-b second-color text-center">@Localizer["Actions"]:</th>
+                }
+            </tr>
+            @foreach (var newspaper in Model.Newspapers)
+            {
                 <tr>
-                    <th class="first-color-b second-color text-center">@Localizer["Name"]</th>
-                    <th class="first-color-b second-color text-center">@Localizer["Distributed in"]:</th>
+                    <td class="lib-cell-corrector">@newspaper.Name</td>
+                    <td>
+                        @Localizer["Department"]
+                        "
+                        @{
+                            if (currentCulture == "bg-BG")
+                            {
+                                @newspaper.Department.DepartmentsToBgLang()
+                            }
+                            else
+                            {
+                                @newspaper.Department
+                            }
+                        }
+                        "
+                    </td>
                     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                     {
-                        <th class="first-color-b second-color text-center">@Localizer["Actions"]:</th>
+                        <td class="text-center">
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">@Localizer["Edit"]</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">@Localizer["Delete"]</a>
+                        </td>
                     }
                 </tr>
-                @foreach (var newspaper in Model.Newspapers)
-                {
-                    <tr>
-                        <td class="lib-cell-corrector">@newspaper.Name</td>
-                        <td>
-                            @Localizer["Department"]
-                            "@{
-                                if (currentCulture == "bg-BG")
-                                {
-                                    @newspaper.Department.DepartmentsToBgLang()
-                                }
-                                else
-                                {
-                                    @newspaper.Department
-                                }
-                            }"
-                        </td>
-                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                        {
-                            <td class="text-center">
-                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">@Localizer["Edit"]</a>
-                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@newspaper.Id" asp-route-title="@newspaper.Name.ToFriendlyUrl()">@Localizer["Delete"]</a>
-                            </td>
-                        }
-                    </tr>
-                }
+            }
             </tbody>
         </table>
         <table class="table table-responsive table-hover">
             <thead>
-                <tr>
-                    <th colspan="@thCols" class="bold text-center">@Localizer["Magazines"]</th>
-                </tr>
+            <tr>
+                <th colspan="@thCols" class="bold text-center">@Localizer["Magazines"]</th>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="first-color-b second-color text-center">@Localizer["Name"]:</th>
-                    <th class="first-color-b second-color text-center">@Localizer["Distributed in"]:</th>
-                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                    {
-                        <th class="first-color-b second-color text-center">@Localizer["Actions"]:</th>
-                    }
-                </tr>
-                @foreach (var magazine in Model.Magazines)
+            <tr>
+                <th class="first-color-b second-color text-center">@Localizer["Name"]:</th>
+                <th class="first-color-b second-color text-center">@Localizer["Distributed in"]:</th>
+                @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
                 {
-                    <tr>
-                        <td class="lib-cell-corrector">@magazine.Name</td>
-                        <td>
-                            @Localizer["Department"] "@{
+                    <th class="first-color-b second-color text-center">@Localizer["Actions"]:</th>
+                }
+            </tr>
+            @foreach (var magazine in Model.Magazines)
+            {
+                <tr>
+                    <td class="lib-cell-corrector">@magazine.Name</td>
+                    <td>
+                        @Localizer["Department"] "
+                        @{
                             if (currentCulture == "bg-BG")
                             {
                                 @magazine.Department.DepartmentsToBgLang()
@@ -106,17 +110,18 @@
                             {
                                 @magazine.Department
                             }
-                            }"
-                        </td>
-                        @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
-                        {
-                            <td class="text-center">
-                                <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">@Localizer["Edit"]</a>
-                                <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">@Localizer["Delete"]</a>
-                            </td>
                         }
-                    </tr>
-                }
+                        "
+                    </td>
+                    @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))
+                    {
+                        <td class="text-center">
+                            <a class="btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Edit" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">@Localizer["Edit"]</a>
+                            <a class="btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Delete" asp-route-id="@magazine.Id" asp-route-title="@magazine.Name.ToFriendlyUrl()">@Localizer["Delete"]</a>
+                        </td>
+                    }
+                </tr>
+            }
             </tbody>
         </table>
     </div>

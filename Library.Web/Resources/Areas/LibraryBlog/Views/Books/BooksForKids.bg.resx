@@ -120,8 +120,8 @@
   <data name="Create" xml:space="preserve">
     <value>Създай</value>
   </data>
-  <data name="New books for kids in the &quot;Kids&quot; department of Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone." xml:space="preserve">
-    <value>Нови детски книги в отдел "Детски" на Регионална библиотека "Михалаки Георгиев" - гр. Видин.</value>
+  <data name="New books for kids in the &quot;Kids&quot; department of Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone. Page:" xml:space="preserve">
+    <value>Нови детски книги в отдел "Детски" на Регионална библиотека "Михалаки Георгиев" - гр. Видин. Страница:</value>
   </data>
   <data name="New Books in &quot;Kids&quot; Department" xml:space="preserve">
     <value>Нови книги за деца</value>

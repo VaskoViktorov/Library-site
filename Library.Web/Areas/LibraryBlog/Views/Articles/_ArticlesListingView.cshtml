@@ -12,7 +12,7 @@
             @if (count != 0)
             {
                 <a class="image-popup-vertical-fit" href="@article.Gallery.Images.First().ImagePath" Title="@article.Title">
-                    <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" class="img-border width-60pr" alt="@article.Title" />
+                    <img src="@Url.Content(article.Gallery.Images.First().ImagePath)" class="img-border width-60pr box-shadow-type-two" alt="@article.Title" />
                 </a>
             }
             <p class="mr-0-auto width-60pr text-right p-t-5">@article.ReleaseDate.ToShortDateString()</p>

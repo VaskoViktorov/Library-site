@@ -12,7 +12,9 @@ li.dropdown.lib-menu:hover > .dropdown-menu {
 .open.lib-menu > .dropdown-menu {
     display: none !important;
 }
-
+.font-size-1k4em {
+    font-size: 1.4em;
+}
 .parallax {
     /* The image used */
     background-image: url("/images/siteimages/backgroundImg-16-10.jpg");
@@ -55,6 +57,16 @@ footer {
     height: 200px;
     width: 100%;
     overflow: hidden;
+}
+.box-shaddow-type-one {
+    -webkit-box-shadow: -15px 24px 21px -17px rgba(0,0,0,0.64);
+    -moz-box-shadow: -15px 24px 21px -17px rgba(0,0,0,0.64);
+    box-shadow: -15px 24px 21px -17px rgba(0,0,0,0.64);
+}
+.box-shadow-type-two {
+    -webkit-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
+    box-shadow: -3px 11px 18px -4px rgba(0,0,0,0.64);
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -1244,6 +1256,7 @@ ol {
         text-align: center;
         background-color: transparent;
         padding-right: 50px;
+        box-shadow: none;
     }
 
     .navbar-header {

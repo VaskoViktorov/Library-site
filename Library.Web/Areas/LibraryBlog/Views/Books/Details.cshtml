@@ -2,7 +2,7 @@
 @inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = Model.Book.BookTitle;
-    ViewData["Description"] = Localizer["Take the book \""].Value + Model.Book.BookTitle +" "+ Localizer["\" now! In Regional Library \"Mihalaki Georgiev\" - Vidin"].Value;
+    ViewData["Description"] = Localizer["Take the book \""].Value + Model.Book.BookTitle + "\" " + Localizer["now! In Regional Library \"Mihalaki Georgiev\" - Vidin"].Value;
     var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
 }
 <div class="row text-center">
@@ -12,7 +12,7 @@
     <div class="col-md-2"></div>
     <div class="col-md-8 mr-l-10">
         <a class="image-popup-vertical-fit" href="@Url.Content(Model.Book.ImageUrl)" title="@Model.Book.BookTitle">
-            <img src="@Url.Content(Model.Book.ImageUrl)" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10" alt="@Model.Book.BookTitle" />
+            <img src="@Url.Content(Model.Book.ImageUrl)" class="width-46pr img-border float-left mr-r-15 max-w-300 mr-l-10 box-shadow-type-two" alt="@Model.Book.BookTitle" />
         </a>
 
         <p class="author-text mr-t-10">@Localizer["Author"]: @Model.Book.AuthorName</p>
@@ -29,7 +29,7 @@
             }"
             </p>
         <table class="table-condensed mr-t-40">
-            <tbody>
+            <tbody class="box-shadow-type-two">
                 <tr class="br-t">
                     <th class="first-color-b second-color">@Localizer["Publisher"]</th>
                     <td>@Model.Book.Press</td>
@@ -90,6 +90,7 @@
             <a class="btn btn-sm btn-warning" asp-area="LibraryBlog" asp-controller="Books" asp-action="Edit">@Localizer["Edit"]</a>
             <a class="btn btn-sm btn-danger" asp-area="LibraryBlog" asp-controller="Books" asp-action="Delete">@Localizer["Delete"]</a>
             }
+            <a class="lib-btn-invrt" asp-area="" asp-controller="Home" asp-action="Faq">@Localizer["I want the book"]</a>
             <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
         </div>
     </div>

@@ -12,7 +12,7 @@
     }
 }
 <div class="row">
-    <img class="color-panel" src="~/images/SiteImages/red.png" alt="@Localizer["color"]"/>
+    <img class="color-panel box-shaddow-type-one" src="~/images/SiteImages/red.png" alt="@Localizer["color"]"/>
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="row">
@@ -28,7 +28,7 @@
                             </li>
                         }
                     </ul>
-                    <h4 class="text-center" id="lib-new-book-h4">
+                    <h4 class="text-center box-shaddow-type-one" id="lib-new-book-h4">
                         <a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["View Latest Books"]</a>
                     </h4>
                 </div>
@@ -36,13 +36,13 @@
             <div class="col-md-4" style=" padding-left: 15px;">
                 <div>
                     <a class="second-color" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">
-                        <img id="lib-subscr@(engType)" src="~/images/SiteImages/subscriptions@(engType).png" alt="@Localizer["Subscriptions"]"/>
+                        <img class="box-shaddow-type-one" id="lib-subscr@(engType)" src="~/images/SiteImages/subscriptions@(engType).png" alt="@Localizer["Subscriptions"]"/>
                     </a>
                 </div>
             </div>
         </div>
         <div class="row @(hidden)">
-            <div id="eventCalendarLocaleFile" class="width-300 mr-t-40"></div>
+            <div id="eventCalendarLocaleFile" class="width-300 mr-t-40 box-shaddow-type-one"></div>
         </div>
     </div>
 </div>

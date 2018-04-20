@@ -3,7 +3,7 @@
 <form asp-area="LibraryBlog" asp-controller="Search" asp-action="Search" method="post">
     <div class="form-group disp-inl-bl">
         <p class="glyphicon glyphicon-search first-color lib-search-p"></p>
-        <input type="text" id="SearchText" name="searchText" class="form-control" placeholder="@Localizer["Write here"]" />
+        <input type="text" id="SearchText" name="searchText" class="form-control box-shadow-type-two" placeholder="@Localizer["Write here"]" />
     </div>
     <div id="lib-search-form-second" class="form-group disp-inl-bl">
         <label for="searchInBooks" class="second-color p-l-5">@Localizer["Books"]</label>
@@ -22,6 +22,6 @@
         @Html.CheckBox("searchInSubscriptions", true)
     </div>
     <div class="lib-inl-b">
-    <button class="btn third-color-b second-color">@Localizer["Search"]</button>
+    <button class="btn third-color-b second-color box-shadow-type-two">@Localizer["Search"]</button>
     </div>
 </form>

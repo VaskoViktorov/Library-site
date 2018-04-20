@@ -123,8 +123,8 @@
   <data name="New Books" xml:space="preserve">
     <value>Нови книги</value>
   </data>
-  <data name="New books in Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone." xml:space="preserve">
-    <value>Нови книги в Регионална библиотека "Михалаки Георгиев" - гр. Видин, достъпни за всички.</value>
+  <data name="New books in Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone. Page:" xml:space="preserve">
+    <value>Нови книги в Регионална библиотека "Михалаки Георгиев" - гр. Видин, достъпни за всички. Страница: </value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Следваща</value>

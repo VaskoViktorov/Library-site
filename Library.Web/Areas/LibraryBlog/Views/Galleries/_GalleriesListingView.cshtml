@@ -17,7 +17,7 @@
             }
 
             <div class="row text-center mr-0-auto">
-                <p class="lib-gallery-b">@Localizer["Pics count"]: @count</p>
+                <p class="lib-gallery-b box-shadow-type-two">@Localizer["Pics count"]: @count</p>
                 <div class="p-t-10">
                     <a class="lib-btn" asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Details" asp-route-id="@gallery.Id">@Localizer["See more"]</a>
                     @if (User.IsInRole(WebConstants.LibrarianAuthorRole) || User.IsInRole(WebConstants.AdministratorRole))

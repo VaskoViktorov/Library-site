@@ -129,11 +129,17 @@
   <data name="Department" xml:space="preserve">
     <value>Отдел</value>
   </data>
+  <data name="department of the library" xml:space="preserve">
+    <value>на библиотеката</value>
+  </data>
   <data name="Distributed in" xml:space="preserve">
     <value>Получава се в</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Редактирай</value>
+  </data>
+  <data name="List of active subscriptions to newspapers and magazines that the library supports. If you want to read a newspaper or a magazine, come to the" xml:space="preserve">
+    <value>Списък с активните абонаменти на вестници и списания, които библиотеката поддържа. Ако желаете да прочетете даден вестник или списание, заповядайте в отдел</value>
   </data>
   <data name="List of newspapers and magazines available for reading in Regional Library &quot;Mihalaki Georgiev&quot; - Vidin." xml:space="preserve">
     <value>Разгледайте списъка с абонаменти за весници и списания на Регионална библиотека "Михалаки Георгиев" - гр. Видин</value>
@@ -146,6 +152,9 @@
   </data>
   <data name="Newspapers" xml:space="preserve">
     <value>Вестници</value>
+  </data>
+  <data name="Reading rooms" xml:space="preserve">
+    <value>Читални</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Търси</value>
