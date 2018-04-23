@@ -117,97 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="altMapFirst" xml:space="preserve">
-    <value>First floor map</value>
-  </data>
-  <data name="altMapSecond" xml:space="preserve">
-    <value>Second floor map</value>
-  </data>
-  <data name="altMapThird" xml:space="preserve">
-    <value>Third floor map</value>
-  </data>
-  <data name="arrow" xml:space="preserve">
-    <value>arrow</value>
-  </data>
-  <data name="Art" xml:space="preserve">
-    <value>"Art" department</value>
-  </data>
-  <data name="Children" xml:space="preserve">
-    <value>"Children's" department</value>
-  </data>
-  <data name="FF1" xml:space="preserve">
-    <value>FF1En.png</value>
-  </data>
-  <data name="FirstFloor" xml:space="preserve">
-    <value>FirstFloorEn.png</value>
-  </data>
-  <data name="Foreign" xml:space="preserve">
-    <value>"Foreign language reading room" department</value>
-  </data>
-  <data name="InfoCenter" xml:space="preserve">
-    <value>Information and reference-bibliographic services center</value>
-  </data>
-  <data name="Lending" xml:space="preserve">
-    <value>Lending department for adults</value>
-  </data>
-  <data name="LocalHistory" xml:space="preserve">
-    <value>"Local history" department</value>
-  </data>
-  <data name="metadata" xml:space="preserve">
-    <value>Structure of the departments in the Regional Library "Mihalaki Georgiev"  - Vidin.</value>
-  </data>
-  <data name="Methodological" xml:space="preserve">
-    <value>"Methodological" department</value>
-  </data>
-  <data name="POI" xml:space="preserve">
-    <value>POI</value>
-  </data>
-  <data name="ReadingRooms" xml:space="preserve">
-    <value>"Reading rooms - branch of scholarship, exact and applied sciences, periodicals" department</value>
-  </data>
-  <data name="SecondFloor" xml:space="preserve">
-    <value>SecondFloorEn.png</value>
-  </data>
-  <data name="SF1" xml:space="preserve">
-    <value>SF1En.png</value>
-  </data>
-  <data name="SF2" xml:space="preserve">
-    <value>SF2En.png</value>
-  </data>
-  <data name="SF3" xml:space="preserve">
-    <value>SF3En.png</value>
-  </data>
-  <data name="SF4" xml:space="preserve">
-    <value>SF4En.png</value>
-  </data>
-  <data name="SF5" xml:space="preserve">
-    <value>SF5En.png</value>
-  </data>
-  <data name="SF6" xml:space="preserve">
-    <value>SF6En.png</value>
-  </data>
-  <data name="SRC" xml:space="preserve">
-    <value>"Supplying, registration and cataloging" department</value>
-  </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Structure</value>
-  </data>
-  <data name="TF1" xml:space="preserve">
-    <value>TF1En.png</value>
-  </data>
-  <data name="TF2" xml:space="preserve">
-    <value>TF2En.png</value>
-  </data>
-  <data name="TF3" xml:space="preserve">
-    <value>TF3En.png</value>
-  </data>
-  <data name="TF4" xml:space="preserve">
-    <value>TF4En.png</value>
-  </data>
-  <data name="ThirdFloor" xml:space="preserve">
-    <value>ThirdFloorEn.png</value>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
   </data>
   <data name="EventsRoom" xml:space="preserve">
     <value>Event hall</value>
+  </data>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>The event hall hosts meetings витх book authors, exhibitions, trainings and many other events. If you want to organize an event,</value>
+  </data>
+  <data name="meta" xml:space="preserve">
+    <value>The event hall hosts meetings витх book authors, exhibitions, trainings and many other events.</value>
+  </data>
+  <data name="MondayFriday" xml:space="preserve">
+    <value>Monday-Friday</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening Hours</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="SaturdayWorkTime" xml:space="preserve">
+    <value>Depending on upcoming events</value>
+  </data>
+  <data name="SecondParagraph" xml:space="preserve">
+    <value>please contact us.</value>
+  </data>
+  <data name="WeekWorkTime" xml:space="preserve">
+    <value>Depending on upcoming events</value>
   </data>
 </root>

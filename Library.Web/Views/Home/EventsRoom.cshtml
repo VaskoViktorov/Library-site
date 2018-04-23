@@ -1,0 +1,40 @@
+﻿
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["EventsRoom"];
+    ViewData["Description"] = Localizer["metadata"];
+}
+<div class="text-center row">
+    <h2>@Localizer["EventsRoom"]</h2>
+</div>
+<div class="max-w-500 mr-10-auto">
+    <table class="table-hover max-width">
+        <thead>
+        <tr>
+            <th colspan="2" class="text-center">@Localizer["OpeningHours"]</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="p-0-3 text-left">@Localizer["MondayFriday"]</td>
+            <td class="p-0-3 text-left">@Localizer["WeekWorkTime"]</td>
+        </tr>
+        <tr>
+            <td class="p-0-3 text-left">@Localizer["Saturday"]</td>
+            <td class="p-0-3 text-left">@Localizer["SaturdayWorkTime"]</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="panorama">
+        <img src="~/images/SiteImages/events.jpg" alt="@Localizer["EventsRoom"]">
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="text-justify max-w-750 mr-0-auto">
+        <p>@Localizer["FirstParagraph"] <a asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["SecondParagraph"]</a></p>
+
+    </div>
+    <div class="text-center mr-t-b-25">
+        <a class="lib-btn" href="javascript:history.go(-1)">@Localizer["Back"]</a>
+    </div>
+</div>

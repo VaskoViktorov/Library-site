@@ -33,12 +33,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Articles(int page = 1)
         {
-            var totalPages = articles.TotalAsync(CurrentCulture()).Result/ServicesConstants.ArticlesPageSize;
-
-            if (totalPages == 0)
-            {
-                totalPages++;
-            }
+            var totalPages = (int)Math.Ceiling((double)articles.TotalAsync(CurrentCulture()).Result / ServicesConstants.ArticlesPageSize);
 
             if (page > totalPages || page <= 0)
             {
@@ -48,11 +43,10 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             return this.View(new ArticleListingViewModel
             {
                 Articles = await this.articles.AllArticlesAsync(CurrentCulture(), page),
-                TotalArticles = await this.articles.TotalAsync(CurrentCulture()),
+                TotalPages = totalPages,
                 CurrentPage = page
             });
         }
-
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
@@ -139,7 +133,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         public async Task<IActionResult> Edit(int id, ArticleFormModel model)
         {
             model.Description = this.html.Sanitize(model.Description);
-            
+
             await this.articles.EditAsync(
                 id,
                 model.Title,

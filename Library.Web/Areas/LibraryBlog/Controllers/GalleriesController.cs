@@ -1,7 +1,6 @@
-﻿using Library.Services;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
+    using Services;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
@@ -30,12 +29,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Galleries(int page = 1)
         {
-            var totalPages = galleries.TotalAsync(CurrentCulture()).Result / ServicesConstants.GalleriesPageSize;
-
-            if (totalPages == 0)
-            {
-                totalPages++;
-            }
+            var totalPages = (int) Math.Ceiling((double) galleries.TotalAsync(CurrentCulture()).Result /
+                                                ServicesConstants.GalleriesPageSize);               
 
             if (page > totalPages || page <= 0)
             {
@@ -45,12 +40,11 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             return this.View(new GalleryListingViewModel
             {
                 Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(), page),
-                TotalGalleries = await this.galleries.TotalAsync(CurrentCulture()),
+                TotalPages = totalPages,
                 CurrentPage = page
             });
         }
         
-
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {

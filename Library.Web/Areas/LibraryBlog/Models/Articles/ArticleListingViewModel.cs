@@ -1,20 +1,14 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Articles
 {
     using Services.LibraryBlog.Models.Articles;
-    using System;
     using System.Collections.Generic;
-
-    using static Services.ServicesConstants;
 
     public class ArticleListingViewModel
     {
         public IEnumerable<ArticleListingServiceModel> Articles { get; set; }
 
-        public int TotalArticles { get; set; }
-
-        public int TotalPages
-            => (int)Math.Ceiling((double)this.TotalArticles / ArticlesPageSize);
-
+        public int TotalPages { get; set; }
+        
         public int CurrentPage { get; set; }
 
         public int PreviousPage

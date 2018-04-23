@@ -160,6 +160,9 @@
         public IActionResult Methodological()
             => View();
 
+        public IActionResult EventsRoom()
+            => View();
+
         public IActionResult Donations()
             => View();
 

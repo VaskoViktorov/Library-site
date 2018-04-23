@@ -1,4 +1,6 @@
-﻿namespace Library.Web
+﻿using Library.Web.Infrastructure.Rules;
+
+namespace Library.Web
 {
     using Microsoft.AspNetCore.Rewrite;
     using AspNetCoreRateLimit;
@@ -118,10 +120,12 @@
             app.UseIpRateLimiting();
             app.UseClientRateLimiting();
 
+            var options = new RewriteOptions();
             //For HTTPS, uncomment
-            //var options = new RewriteOptions()
             //  .AddRedirectToHttps();
-            //app.UseRewriter(options);
+
+            options.Rules.Add(new NonWwwRule());
+            app.UseRewriter(options);
 
             //migrations
             app.UseDatabaseMigration();

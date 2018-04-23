@@ -55,12 +55,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             var filePath = string.Format(CallendarJasonDbPath, Directory.GetCurrentDirectory());
             var events = ObjToJsonConverterExtensions.ListofEventsInJsonFile(filePath).OrderByDescending(e => e.date);
             var totalEvents = events.Count();
-            var eventsPerPage = totalEvents / ServicesConstants.EventsPageSize;
-
-            if (totalEvents > 0)
-            {
-                eventsPerPage++;
-            }
+            var eventsPerPage = (int)Math.Ceiling((double)totalEvents / ServicesConstants.EventsPageSize);
 
             if (page > eventsPerPage || page <= 0)
             {
@@ -70,7 +65,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
             return this.View(new EventListingViewModel
             {
                 Events = events,
-                TotalEvents = totalEvents,
+                TotalPages = eventsPerPage,
                 CurrentPage = page
             });
         }

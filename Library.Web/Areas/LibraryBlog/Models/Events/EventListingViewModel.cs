@@ -1,18 +1,12 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Models.Events
 {
-    using System;
     using System.Collections.Generic;
-
-    using static Services.ServicesConstants;
 
     public class EventListingViewModel
     {
         public IEnumerable<EventFormModel> Events { get; set; }
 
-        public int TotalEvents { get; set; }
-
-        public int TotalPages
-            => (int)Math.Ceiling((double)this.TotalEvents / EventsPageSize);
+        public int TotalPages { get; set; }
 
         public int CurrentPage { get; set; }
 

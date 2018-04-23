@@ -207,4 +207,7 @@
   <data name="ThirdFloor" xml:space="preserve">
     <value>ThirdFloor.png</value>
   </data>
+  <data name="EventsRoom" xml:space="preserve">
+    <value>Зала за събития</value>
+  </data>
 </root>
