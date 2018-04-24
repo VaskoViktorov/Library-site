@@ -144,7 +144,7 @@
   <data name="FourthTableRowTwo" xml:space="preserve">
     <value>Google Analytics is an analytics tool that helps website owners and apps understand how their visitors engage with their properties. It can use a set of "cookies" to collect information and report usage statistics on a website without personally identifying individual Google visitors.</value>
   </data>
-  <data name="meta" xml:space="preserve">
+  <data name="metadata" xml:space="preserve">
     <value>Information about the "cookies" used in the site.</value>
   </data>
   <data name="SecondHeading" xml:space="preserve">

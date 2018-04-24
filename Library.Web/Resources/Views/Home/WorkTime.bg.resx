@@ -168,4 +168,7 @@
   <data name="Saturday" xml:space="preserve">
     <value>Събота</value>
   </data>
+  <data name="Opening hours of all departments in the 'Mihalaki Georgiev' Regional Library - Vidin" xml:space="preserve">
+    <value>Работно време на всички отдели в Регионална библиотека 'Михалаки Георгиев' - гр. Видин</value>
+  </data>
 </root>

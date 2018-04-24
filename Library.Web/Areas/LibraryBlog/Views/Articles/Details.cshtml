@@ -2,8 +2,8 @@
 @inject IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = $"{Model.Article.Title} - {Localizer["article"].Value}";
-    ViewData["Description"] = Model.Article.Title + "- " + Localizer["Find more at Regional Library \"Mihalaki Georgiev\" - Vidin."].Value;
+    ViewData["Title"] = Model.Article.Title;
+    ViewData["Description"] = Model.Article.Description.StripHtml().TruncateWords(200, "...");
 
     var count = Model.Article.Gallery.Images.Count;
     var lenght = Model.Article.AuthorName;

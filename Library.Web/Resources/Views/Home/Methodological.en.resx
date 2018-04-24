@@ -123,6 +123,9 @@
   <data name="FirstParagraph" xml:space="preserve">
     <value>The department administers and helps the libraries from Vidin region with expert-consultancy assistance. The specialist in the department coordinates and professionally assists the activities of the librarians from Vidin district. He collects and analyzes the information about the work and the situation of the libraries in the region. The main users of the department are librarians and students.</value>
   </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The department administers and helps the libraries from Vidin region with expert-consultancy assistance. The specialist in the department coordinates and professionally assists the activities of the librarians from Vidin district.</value>
+  </data>
   <data name="Methodological" xml:space="preserve">
     <value>Methodological department</value>
   </data>

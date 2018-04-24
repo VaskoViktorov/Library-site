@@ -144,7 +144,7 @@
   <data name="FourthTableRowTwo" xml:space="preserve">
     <value>Google Анализ е аналитичен инструмент на Google, който помага на собствениците на уебсайтове и приложения да разберат как посетителите им се ангажират с техните собствености. Той може да използва набор от „бисквитки“, за да събира информация и да отчита статистически данни за употребата на даден уебсайт, без да идентифицира лично отделните посетители на Google.</value>
   </data>
-  <data name="meta" xml:space="preserve">
+  <data name="metadata" xml:space="preserve">
     <value>Информация за  използваните бисквитки във сайта.</value>
   </data>
   <data name="SecondHeading" xml:space="preserve">
