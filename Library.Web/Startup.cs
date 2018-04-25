@@ -1,6 +1,4 @@
-﻿using Library.Web.Infrastructure.Rules;
-
-namespace Library.Web
+﻿namespace Library.Web
 {
     using Microsoft.AspNetCore.Rewrite;
     using AspNetCoreRateLimit;
@@ -23,6 +21,7 @@ namespace Library.Web
     using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
+    using Infrastructure.Rules;
 
     using static WebConstants;
 

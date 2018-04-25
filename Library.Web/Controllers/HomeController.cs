@@ -18,7 +18,8 @@
 
     public class HomeController : Controller
     {
-        private const string ModelName = "Въпросът";
+        private const string AskModelName = "Въпросът";
+        private const string ExtendPeriodModelName = "Заявката";
 
         private readonly IEmailSender emailSender;
         private readonly IHtmlService html;
@@ -46,16 +47,34 @@
         {
             model.Description = this.html.Sanitize(model.Description);
 
-            this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, ""));
+            this.TempData.AddSuccessMessage(string.Format(TempDataSendEmailText, AskModelName, ""));
 
             var email = EmailReceiverForAsk;
 
-            var htmlString = string.Format(EmailReceiverHtmlText, model.Description, model.Phone, model.Email, model.UserInfo);
+            var htmlString = string.Format(EmailReceiverHtmlTextAsk, model.Description, model.Phone, model.Email, model.UserInfo);
 
-            emailSender.SendEmailWithQuestionAsync(email, htmlString);
+            emailSender.SendEmailWithQuestionAsync(email, htmlString, EmailHeadingForAsk);
+
             return this.RedirectToAction(nameof(this.Index));
         }
 
+        public IActionResult ExtendPeriod()
+            => View();
+
+        [HttpPost]
+        [ValidateModelState]
+        public IActionResult ExtendPeriod(ExtendPeriodFormModel model)
+        {            
+            var email = EmailReceiverForAsk;
+
+            var htmlString = string.Format(EmailReceiverHtmlTextExtendPeriod, model.BookInfo, model.CardNumber, model.Email, model.UserName);
+
+            emailSender.SendEmailWithQuestionAsync(email, htmlString, EmailHeadingForExtendPeriod);
+
+            this.TempData.AddSuccessMessage(string.Format(TempDataSendEmailText, ExtendPeriodModelName, "a"));
+
+            return this.RedirectToAction(nameof(this.Index));
+        }
 
         public IActionResult SetLanguage(string id)
         {

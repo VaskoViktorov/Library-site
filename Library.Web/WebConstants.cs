@@ -31,14 +31,28 @@
         public const string BulgarianCulture = "bg-BG";
         public const string EnglishCulture = "en-US";
 
+        public const string TempDataSendEmailText = "{0} е изпратен{1} успешно.";
+
         public const string EmailReceiverForAsk = "rbmg@abv.bg";
-        public const string EmailReceiverHtmlText = @"<div style='width: 500px;'>
+        public const string EmailHeadingForAsk = "Въпрос от \"Попитай библиотекаря\"";
+        public const string EmailReceiverHtmlTextAsk = @"<div style='width: 500px;'>
             <p style = 'font-weight: bold; text-align: left; margin-bottom: 15px;'> Въпрос </ p >
             <p style='text-align: justify;margin-bottom: 30px;'>{0}</p>
             <p style = 'font-weight: bold; text-align: left;margin-bottom: 15px;'> Информация за обратна връзка</p>
             <p style = 'text-align: left;margin-bottom: 5px;'><span style='font-weight: bold' > Телефон: </span>{1}</p>
             <p style = 'text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Имейл:  </span>{2}</p>
             <p style = 'text-align: left;'><span style='font-weight: bold'> Име: </span>{3}</p>
+            </div>";
+
+        public const string EmailRecieverForExtendPeriod = "zaemna_vidin@abv.bg";
+        public const string EmailHeadingForExtendPeriod = "Заявка за презаписване";
+        public const string EmailReceiverHtmlTextExtendPeriod = @" <div style='width: 500px;'>
+            <p style='font-weight: bold; text-align: left; margin-bottom: 15px;'>Информация за презаписване:</p>
+            <p style='text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Номер на карта: </span>{1}</p>
+            <p style='text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Инв. номер, Книга, Автор: </span>{0}</p>
+            <p style='font-weight: bold; text-align: left;margin-bottom: 15px;margin-top: 15px;'>Информация за обратна връзка:</p>            
+            <p style='text-align: left;'><span style='font-weight: bold'>Име: </span>{3}</p>
+            <p style='text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Имейл: </span>{2}</p>  
             </div>";
 
         public const string CallendarJasonDbPath = "{0}\\wwwroot\\json\\EventsDb.json";

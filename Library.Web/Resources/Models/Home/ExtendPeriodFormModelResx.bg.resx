@@ -117,28 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Ask the librarian" xml:space="preserve">
-    <value>Попитай Библиотекаря</value>
+  <data name="BookInfo" xml:space="preserve">
+    <value>Инвентарен номер, заглавие на книгата, автор</value>
   </data>
-  <data name="Become volunteer" xml:space="preserve">
-    <value>Стани Доброволец</value>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Номер на библиотечна карта (след нулите)</value>
   </data>
-  <data name="Join survey" xml:space="preserve">
-    <value>Участвай в анкета</value>
+  <data name="Email" xml:space="preserve">
+    <value>Имейл</value>
   </data>
-  <data name="LibraryPost" xml:space="preserve">
-    <value>БиблиоПоща</value>
-  </data>
-  <data name="Make donation" xml:space="preserve">
-    <value>Направи Дарение</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонамент</value>
-  </data>
-  <data name="View latest books" xml:space="preserve">
-    <value>Най-новите книги</value>
-  </data>
-  <data name="Еxtend book borrow period" xml:space="preserve">
-    <value>Презапиши книга</value>
+  <data name="UserName" xml:space="preserve">
+    <value>Име, фамилия</value>
   </data>
 </root>

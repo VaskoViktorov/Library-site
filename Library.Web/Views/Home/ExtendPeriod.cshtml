@@ -1,0 +1,44 @@
+﻿@model ExtendPeriodFormModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+    ViewData["Description"] = Localizer["metadata"];
+}
+<div class="row text-center">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<div class="row width-60pr mr-0-auto">
+    <p class="font-size-1k4em mr-t-b-25">@Localizer["Paragraph"]</p>
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="CardNumber"></label>
+            <input asp-for="CardNumber" class="form-control" placeholder="1421" />
+            <span asp-validation-for="CardNumber" class="text-danger"></span>
+        </div>
+       
+        <div class="form-group">
+            <label asp-for="BookInfo"></label>
+            <input asp-for="BookInfo" class="form-control" placeholder="525589, @Localizer["placeholder"]" />
+            <span asp-validation-for="BookInfo" class="text-danger"></span>
+            <span class="author-text">*@Localizer["inventoryNumber"]. @Localizer["example"]:  
+                <a class="image-popup-vertical-fit" href="/images/SiteImages/inventoryNumber.jpg" Title="@Localizer["inventoryNumber"]">
+                    <img class="img-border" style="width: 20px;" src="/images/SiteImages/inventoryNumber.jpg" alt="@Localizer["inventoryNumber"]" />
+                </a>
+            </span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <button type="submit" class="lib-btn-invrt">@Localizer["Send"]</button>
+        <a class="lib-btn" asp-controller="Home" asp-action="Index">@Localizer["Back"]</a>
+    </form>
+</div>
+

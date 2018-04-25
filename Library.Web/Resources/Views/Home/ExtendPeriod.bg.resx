@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Ask the librarian" xml:space="preserve">
-    <value>Попитай Библиотекаря</value>
+  <data name="Back" xml:space="preserve">
+    <value>Обратно</value>
   </data>
-  <data name="Become volunteer" xml:space="preserve">
-    <value>Стани Доброволец</value>
+  <data name="example" xml:space="preserve">
+    <value>Пример</value>
   </data>
-  <data name="Join survey" xml:space="preserve">
-    <value>Участвай в анкета</value>
+  <data name="inventoryNumber" xml:space="preserve">
+    <value>Инвентарния номер се намира на първите страници на книгата</value>
   </data>
-  <data name="LibraryPost" xml:space="preserve">
-    <value>БиблиоПоща</value>
+  <data name="metadata" xml:space="preserve">
+    <value>Заявете удължаване на срока на заетата от вас книга с 20 дни.</value>
   </data>
-  <data name="Make donation" xml:space="preserve">
-    <value>Направи Дарение</value>
+  <data name="Paragraph" xml:space="preserve">
+    <value>Срокът за заемане на книга, може да бъде удължен &lt;span class="bold"&gt;еднократно&lt;/span&gt;, за период от 20 дни.</value>
   </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Абонамент</value>
+  <data name="placeholder" xml:space="preserve">
+    <value>Властелинът на пръстените, Дж.Р.Р. Толкин</value>
   </data>
-  <data name="View latest books" xml:space="preserve">
-    <value>Най-новите книги</value>
+  <data name="Send" xml:space="preserve">
+    <value>Изпрати</value>
   </data>
-  <data name="Еxtend book borrow period" xml:space="preserve">
+  <data name="Title" xml:space="preserve">
     <value>Презапиши книга</value>
   </data>
 </root>

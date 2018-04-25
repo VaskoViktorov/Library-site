@@ -12,9 +12,9 @@ namespace Library.Web.Infrastructure.Extensions
                 $"Моля потвърдете акаунта си: <a href='{HtmlEncoder.Default.Encode(link)}'>link</a>");
         }
 
-        public static Task SendEmailWithQuestionAsync(this IEmailSender emailSender, string email, string html)
+        public static Task SendEmailWithQuestionAsync(this IEmailSender emailSender, string email, string html, string heading)
         {
-            return emailSender.SendEmailAsync(email, "Vupros ot \"Popitai bibliotekara\"", html);
+            return emailSender.SendEmailAsync(email, heading, html);
         }
     }
 }

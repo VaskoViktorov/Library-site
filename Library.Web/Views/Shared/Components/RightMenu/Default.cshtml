@@ -18,6 +18,11 @@
         </a>
     </div>
     <div>
+        <a asp-area="" asp-controller="Home" asp-action="ExtendPeriod">
+            <p class="lib-sidebar-p1 box-shaddow-type-one">@Localizer["Еxtend book borrow period"]</p>
+        </a>
+    </div>   
+    <div>
         <a asp-area="LibraryBlog" asp-controller="Surveys" asp-action="Survey" asp-route-id="@Model.Surveys.Last().id">
             <p class="lib-sidebar-p1 box-shaddow-type-one">@Localizer["Become volunteer"]</p>
         </a>
