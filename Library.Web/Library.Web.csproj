@@ -82,6 +82,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>RegisterViewModelResx.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Models\Home\AskFormModelResx.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AskFormModelResx.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Models\Home\ExtendPeriodFormModelResx.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -285,7 +290,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RegisterViewModelResx.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Models\Home\AskFormModelResx.en.resx">
+    <EmbeddedResource Update="Resources\Models\Home\AskFormModelResx.resx">
       <LastGenOutput>AskFormModelResx.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
@@ -384,6 +389,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Links.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Map.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Map.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Methodological.bg.resx">
@@ -498,6 +509,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\Components\Search\Default.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_Layout.bg.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\_LoginPartial.bg.resx">

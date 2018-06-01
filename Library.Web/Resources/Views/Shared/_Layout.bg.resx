@@ -217,10 +217,7 @@
     <value>Издания</value>
   </data>
   <data name="Regional Library &quot;Mihalaki Georgiev&quot; - Vidin" xml:space="preserve">
-    <value>Регионална Библиотека "Михалаки Георгиев"-гр. Видин</value>
-  </data>
-  <data name="Regional Library &quot;Mihalaki Georgiev&quot;-Vidin" xml:space="preserve">
-    <value>Р.Б. "Михалаки Георгиев"-гр. Видин</value>
+    <value>Регионална Библиотека "Михалаки Георгиев"- гр. Видин</value>
   </data>
   <data name="Safe internet" xml:space="preserve">
     <value>Безопасен интернет</value>
@@ -278,5 +275,11 @@
   </data>
   <data name="This site uses cookies to give the best user experience." xml:space="preserve">
     <value>Сайтът използва \"бисквитки\", за да предостави възможно най-доброто потребителско изживяване.</value>
+  </data>
+  <data name="Cookie policy" xml:space="preserve">
+    <value>Бисквитки</value>
+  </data>
+  <data name="Site map" xml:space="preserve">
+    <value>Карта на сайта</value>
   </data>
 </root>

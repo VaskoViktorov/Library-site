@@ -117,25 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Email" xml:space="preserve">
-    <value>Имейл</value>
+  <data name="AboutUs" xml:space="preserve">
+    <value>За нас</value>
   </data>
-  <data name="MaxLengthErrorMsg" xml:space="preserve">
-    <value>Полето трябва да съдържа не повече от  {1} знака.</value>
+  <data name="Art" xml:space="preserve">
+    <value>Отдел „Изкуство”</value>
   </data>
-  <data name="MinLengthErrorMsg" xml:space="preserve">
-    <value>Полето трябва да съдържа поне {1} знака.</value>
+  <data name="AskTheLibrarian" xml:space="preserve">
+    <value>Попитай Библиотекаря</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Име, Фамилия</value>
+  <data name="Children" xml:space="preserve">
+    <value>Отдел „Детски”</value>
   </data>
-  <data name="Phone" xml:space="preserve">
-    <value>Телефон</value>
+  <data name="Contacts" xml:space="preserve">
+    <value>Контакти</value>
   </data>
-  <data name="Question" xml:space="preserve">
-    <value>Въпрос</value>
+  <data name="Contributors" xml:space="preserve">
+    <value>Дарители</value>
   </data>
-  <data name="RequiredErrorMsg" xml:space="preserve">
-    <value>Полето {0} е задължително.</value>
+  <data name="ELibrary" xml:space="preserve">
+    <value>Е-Библиотека</value>
+  </data>
+  <data name="EventsRoom" xml:space="preserve">
+    <value>Зала за събития</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>Въпроси</value>
+  </data>
+  <data name="financial" xml:space="preserve">
+    <value>Дари средства</value>
+  </data>
+  <data name="FindUs" xml:space="preserve">
+    <value>Къде се намираме</value>
+  </data>
+  <data name="Foreign" xml:space="preserve">
+    <value>Отдел „Чуждоезикова читалня”</value>
+  </data>
+  <data name="ForTheCurious" xml:space="preserve">
+    <value>За любителя</value>
+  </data>
+  <data name="ForTheStudent" xml:space="preserve">
+    <value>За ученика</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Функции</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Галерия</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="Homeland" xml:space="preserve">
+    <value>Роден край</value>
+  </data>
+  <data name="InfoCenter" xml:space="preserve">
+    <value>Център за информационно и справочно-библиографско обслужване</value>
+  </data>
+  <data name="KidsWorld" xml:space="preserve">
+    <value>Детски свят</value>
+  </data>
+  <data name="Lending" xml:space="preserve">
+    <value>Отдел „Заемна за възрастни”</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Библиотека</value>
+  </data>
+  <data name="LibraryInfo" xml:space="preserve">
+    <value>За библиотеката</value>
+  </data>
+  <data name="LibraryPost" xml:space="preserve">
+    <value>БиблиоПоща</value>
+  </data>
+  <data name="LocalHistory" xml:space="preserve">
+    <value>Отдел „Краезнание”</value>
+  </data>
+  <data name="MakeDonation" xml:space="preserve">
+    <value>Направи Дарение</value>
+  </data>
+  <data name="material" xml:space="preserve">
+    <value>Дари книга</value>
+  </data>
+  <data name="metadata" xml:space="preserve">
+    <value>Картата на сайта позволява лесен достъп до почти всяка част от сайта.</value>
+  </data>
+  <data name="Methodological" xml:space="preserve">
+    <value>Отдел „Методичен”</value>
+  </data>
+  <data name="MihalakiGeorgiev" xml:space="preserve">
+    <value>За Михалаки Георгиев</value>
+  </data>
+  <data name="NewBooks" xml:space="preserve">
+    <value>Нови книги</value>
+  </data>
+  <data name="NewChildrenBooks" xml:space="preserve">
+    <value>Нови детски книги</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Новини</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Работно време</value>
+  </data>
+  <data name="OtherECatalouges" xml:space="preserve">
+    <value>Други Е-Каталози</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Услуги</value>
+  </data>
+  <data name="Partners" xml:space="preserve">
+    <value>Партньори</value>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>Ценоразпис</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>Издания</value>
+  </data>
+  <data name="ReadingRooms" xml:space="preserve">
+    <value>Отдел „Читални - хуманитарни науки, точни и приложни науки, периодика”</value>
+  </data>
+  <data name="SafeInternet" xml:space="preserve">
+    <value>Безопасен интернет</value>
+  </data>
+  <data name="SRC" xml:space="preserve">
+    <value>Отдел „Комплектуване, обработка и каталогизация”</value>
+  </data>
+  <data name="Structure" xml:space="preserve">
+    <value>Структура</value>
+  </data>
+  <data name="Subscriptions" xml:space="preserve">
+    <value>Абонаменти</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Карта на сайта</value>
+  </data>
+  <data name="UsefulInformation" xml:space="preserve">
+    <value>Полезна информация</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Полезни връзки</value>
+  </data>
+  <data name="Vidin" xml:space="preserve">
+    <value>Видин</value>
+  </data>
+  <data name="WorkWithChildrenProgram" xml:space="preserve">
+    <value>Програма за работа с деца</value>
+  </data>
+  <data name="ЕxtendBookBorrowPeriod" xml:space="preserve">
+    <value>Презапиши книга</value>
   </data>
 </root>

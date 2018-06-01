@@ -102,7 +102,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 model.Author,
                 model.AddGallery,
                 gallery,
-                model.Language
+                model.Language,
+                model.ShowAtFrontPage
               );
 
             this.TempData.AddSuccessMessage(string.Format(TempDataCreateCommentText, ModelName, EndingLetterA));
@@ -124,7 +125,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 Title = article.Title,
                 Description = article.Description,
                 ReleaseDate = article.ReleaseDate,
-                Language = article.Language
+                Language = article.Language,
+                ShowAtFrontPage = article.ShowAtFrontPage
             });
         }
 
@@ -140,7 +142,8 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 model.Description,
                 model.ReleaseDate,
                 model.Author,
-                model.Language
+                model.Language,
+                model.ShowAtFrontPage
                 );
 
             this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterA));

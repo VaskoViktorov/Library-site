@@ -86,7 +86,7 @@
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                 //For HTTPS, uncomment
-                //options.Filters.Add<RequireHttpsAttribute>();
+                options.Filters.Add<RequireHttpsAttribute>();
             })
               .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
               .AddDataAnnotationsLocalization();
@@ -119,9 +119,9 @@
             app.UseIpRateLimiting();
             app.UseClientRateLimiting();
 
-            var options = new RewriteOptions();
+            var options = new RewriteOptions()
             //For HTTPS, uncomment
-            //  .AddRedirectToHttps();
+              .AddRedirectToHttps();
 
             options.Rules.Add(new NonWwwRule());
             app.UseRewriter(options);

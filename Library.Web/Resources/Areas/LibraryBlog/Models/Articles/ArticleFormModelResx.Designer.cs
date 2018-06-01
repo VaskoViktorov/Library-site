@@ -79,7 +79,7 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Gallery.
+        ///   Looks up a localized string similar to Show Gallery.
         /// </summary>
         public static string Gallery {
             get {
@@ -102,6 +102,15 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         public static string Release {
             get {
                 return ResourceManager.GetString("Release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show At Front Page.
+        /// </summary>
+        public static string ShowAtFrontPage {
+            get {
+                return ResourceManager.GetString("ShowAtFrontPage", resourceCulture);
             }
         }
         

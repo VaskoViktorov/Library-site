@@ -17,5 +17,7 @@
         public Gallery Gallery { get; set; }
 
         public Language Language { get; set; }
+
+        public bool ShowAtFrontPage { get; set; }
     }
 }

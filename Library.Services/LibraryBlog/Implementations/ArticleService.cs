@@ -24,7 +24,7 @@
         }
 
         public async Task CreateAsync(string title, string description, DateTime releaseDate,
-            string authorName,bool addGallery, List<string> gallery, Language language)
+            string authorName,bool addGallery, List<string> gallery, Language language, bool showAtFrontPage)
         {
             var galleryy = new Gallery()
             {
@@ -53,7 +53,8 @@
                 CreateDate = DateTime.UtcNow,
                 AuthorName = authorName,
                 Gallery = galleryy,
-                Language = language
+                Language = language,
+                ShowAtFrontPage = showAtFrontPage
             };
 
             this.db.Add(article);
@@ -62,7 +63,7 @@
         }
 
         public async Task EditAsync(int id, string title, string description, DateTime releaseDate,
-            string authorName, Language language)
+            string authorName, Language language, bool showAtFrontPage)
         {
             var article = await this.db.Articles.FindAsync(id);
 
@@ -76,6 +77,7 @@
             article.ReleaseDate = releaseDate;
             article.AuthorName = authorName;
             article.Language = language;
+            article.ShowAtFrontPage = showAtFrontPage;
 
             await this.db.SaveChangesAsync();
         }

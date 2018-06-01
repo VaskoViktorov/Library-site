@@ -88,6 +88,33 @@ namespace Library.Web.Resources.Models.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The field must contain no more than  {1} characters..
+        /// </summary>
+        public static string MaxLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MaxLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field must contain at least {1} characters..
+        /// </summary>
+        public static string MinLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MinLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} field is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First name, Last name.
         /// </summary>
         public static string UserName {

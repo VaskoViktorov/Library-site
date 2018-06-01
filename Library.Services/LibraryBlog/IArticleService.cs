@@ -15,7 +15,8 @@
             string authorName,
             bool addGallery,
             List<string> gallery,
-            Language language);
+            Language language,
+            bool showAtFrontPage);
 
         Task EditAsync(
             int id,
@@ -23,7 +24,8 @@
             string description,
             DateTime releaseDate,
             string authorName,
-            Language language);
+            Language language,
+            bool showAtFrontPage);
 
         Task DeleteAsync(int id);
 

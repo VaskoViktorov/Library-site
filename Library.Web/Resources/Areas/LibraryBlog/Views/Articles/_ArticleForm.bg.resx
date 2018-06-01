@@ -141,6 +141,9 @@
   <data name="Homeland" xml:space="preserve">
     <value>Краезнание</value>
   </data>
+  <data name="If the gallery has less than two pictures, it will be auto hidden" xml:space="preserve">
+    <value>Ако галерията съдържа по - малко от две снимки, ще бъде скрита абтоматично</value>
+  </data>
   <data name="Information center" xml:space="preserve">
     <value>Справочен</value>
   </data>

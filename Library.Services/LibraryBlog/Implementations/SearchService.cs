@@ -31,7 +31,9 @@
 
             return await this.db
                   .Books
-                  .Where(b => b.BookTitle.ToLower().Contains(searchText) && b.Language == (Language)language.ParseLang())
+                  .Where(b =>
+                    (b.BookTitle.ToLower().Contains(searchText) || b.AuthorName.ToLower().Contains(searchText)) &&
+                    b.Language == (Language)language.ParseLang())
                   .ProjectTo<BookListingServiceModel>()
                   .ToListAsync();
         }

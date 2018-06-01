@@ -126,6 +126,15 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="MaxLengthErrorMsg" xml:space="preserve">
+    <value>The field must contain no more than  {1} characters.</value>
+  </data>
+  <data name="MinLengthErrorMsg" xml:space="preserve">
+    <value>The field must contain at least {1} characters.</value>
+  </data>
+  <data name="RequiredErrorMsg" xml:space="preserve">
+    <value>{0} field is required.</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>First name, Last name</value>
   </data>

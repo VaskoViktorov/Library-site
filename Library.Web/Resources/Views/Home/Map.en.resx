@@ -117,25 +117,157 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Email" xml:space="preserve">
-    <value>Имейл</value>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About us</value>
   </data>
-  <data name="MaxLengthErrorMsg" xml:space="preserve">
-    <value>Полето трябва да съдържа не повече от  {1} знака.</value>
+  <data name="Art" xml:space="preserve">
+    <value>"Art" department</value>
   </data>
-  <data name="MinLengthErrorMsg" xml:space="preserve">
-    <value>Полето трябва да съдържа поне {1} знака.</value>
+  <data name="AskTheLibrarian" xml:space="preserve">
+    <value>Ask the librarian</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Име, Фамилия</value>
+  <data name="Children" xml:space="preserve">
+    <value>"Children's" department</value>
   </data>
-  <data name="Phone" xml:space="preserve">
-    <value>Телефон</value>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contacts</value>
   </data>
-  <data name="Question" xml:space="preserve">
-    <value>Въпрос</value>
+  <data name="Contributors" xml:space="preserve">
+    <value>Contributors</value>
   </data>
-  <data name="RequiredErrorMsg" xml:space="preserve">
-    <value>Полето {0} е задължително.</value>
+  <data name="ELibrary" xml:space="preserve">
+    <value>E-Library</value>
+  </data>
+  <data name="EventsRoom" xml:space="preserve">
+    <value>Event hall</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="financial" xml:space="preserve">
+    <value>Financial Donation</value>
+  </data>
+  <data name="FindUs" xml:space="preserve">
+    <value>Find us</value>
+  </data>
+  <data name="Foreign" xml:space="preserve">
+    <value>"Foreign language reading room" department</value>
+  </data>
+  <data name="ForTheCurious" xml:space="preserve">
+    <value>For the curious</value>
+  </data>
+  <data name="ForTheStudent" xml:space="preserve">
+    <value>For the student</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Homeland" xml:space="preserve">
+    <value>Homeland</value>
+  </data>
+  <data name="InfoCenter" xml:space="preserve">
+    <value>Information and reference-bibliographic services center</value>
+  </data>
+  <data name="KidsWorld" xml:space="preserve">
+    <value>Kids World</value>
+  </data>
+  <data name="Lending" xml:space="preserve">
+    <value>Lending department for adults</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="LibraryInfo" xml:space="preserve">
+    <value>Library info</value>
+  </data>
+  <data name="LibraryPost" xml:space="preserve">
+    <value>LibraryPost</value>
+  </data>
+  <data name="LocalHistory" xml:space="preserve">
+    <value>"Local history" department</value>
+  </data>
+  <data name="MakeDonation" xml:space="preserve">
+    <value>Make Donation</value>
+  </data>
+  <data name="material" xml:space="preserve">
+    <value>Material Donation</value>
+  </data>
+  <data name="metadata" xml:space="preserve">
+    <value>The site map gives you easy access to almost every page on the site.</value>
+  </data>
+  <data name="Methodological" xml:space="preserve">
+    <value>"Methodological" department</value>
+  </data>
+  <data name="MihalakiGeorgiev" xml:space="preserve">
+    <value>Mihalaki Georgiev</value>
+  </data>
+  <data name="NewBooks" xml:space="preserve">
+    <value>New books</value>
+  </data>
+  <data name="NewChildrenBooks" xml:space="preserve">
+    <value>New children books</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="OpeningHours" xml:space="preserve">
+    <value>Opening hours</value>
+  </data>
+  <data name="OtherECatalouges" xml:space="preserve">
+    <value>Other E-Catalouges</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Partners" xml:space="preserve">
+    <value>Partners</value>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>Price list</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>Publications</value>
+  </data>
+  <data name="ReadingRooms" xml:space="preserve">
+    <value>"Reading rooms - branch of scholarship, exact and applied sciences, periodicals" department</value>
+  </data>
+  <data name="SafeInternet" xml:space="preserve">
+    <value>Safe internet</value>
+  </data>
+  <data name="SRC" xml:space="preserve">
+    <value>"Supplying, registration and cataloging" department</value>
+  </data>
+  <data name="Structure" xml:space="preserve">
+    <value>Structure</value>
+  </data>
+  <data name="Subscriptions" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Site map</value>
+  </data>
+  <data name="UsefulInformation" xml:space="preserve">
+    <value>Useful information</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Useful links</value>
+  </data>
+  <data name="Vidin" xml:space="preserve">
+    <value>Vidin</value>
+  </data>
+  <data name="WorkWithChildrenProgram" xml:space="preserve">
+    <value>Work with children program</value>
+  </data>
+  <data name="ЕxtendBookBorrowPeriod" xml:space="preserve">
+    <value>Еxtend book borrow period</value>
   </data>
 </root>

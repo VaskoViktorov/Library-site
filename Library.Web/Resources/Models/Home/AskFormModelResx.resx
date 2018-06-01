@@ -120,6 +120,12 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="MaxLengthErrorMsg" xml:space="preserve">
+    <value>The field must contain no more than  {1} characters.</value>
+  </data>
+  <data name="MinLengthErrorMsg" xml:space="preserve">
+    <value>The field must contain at least {1} characters.</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name, Last Name</value>
   </data>
@@ -128,5 +134,8 @@
   </data>
   <data name="Question" xml:space="preserve">
     <value>Question</value>
+  </data>
+  <data name="RequiredErrorMsg" xml:space="preserve">
+    <value>{0} field is required.</value>
   </data>
 </root>

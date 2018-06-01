@@ -14,7 +14,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Author"></label>
-        <input asp-for="Author" class="form-control"/>
+        <input asp-for="Author" class="form-control" />
         <span asp-validation-for="Author" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -35,10 +35,17 @@
         <span asp-validation-for="Language" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <label asp-for="ShowAtFrontPage"></label>
+        <input type="checkbox" asp-for="ShowAtFrontPage" />
+        <span asp-validation-for="ShowAtFrontPage" class="text-danger"></span>
+    </div>
+    <span class="author-text">*@Localizer["If the gallery has less than two pictures, it will be auto hidden"]</span>
+    <div class="form-group">
         <label asp-for="AddGallery"></label>
-        <input type="checkbox" asp-for="AddGallery"/>
+        <input type="checkbox" asp-for="AddGallery" />
         <span asp-validation-for="AddGallery" class="text-danger"></span>
     </div>
+   
     <div class="form-group">
         <input asp-for="Files" class="form-control" name="files" multiple />
     </div>

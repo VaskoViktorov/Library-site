@@ -126,6 +126,15 @@
   <data name="Email" xml:space="preserve">
     <value>Имейл</value>
   </data>
+  <data name="MaxLengthErrorMsg" xml:space="preserve">
+    <value>Полето трябва да съдържа не повече от  {1} знака.</value>
+  </data>
+  <data name="MinLengthErrorMsg" xml:space="preserve">
+    <value>Полето трябва да съдържа поне {1} знака.</value>
+  </data>
+  <data name="RequiredErrorMsg" xml:space="preserve">
+    <value>Полето {0} е задължително.</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>Име, фамилия</value>
   </data>

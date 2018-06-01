@@ -54,7 +54,7 @@ $(window).scroll(function () {
     var winScrollTop = $(window).scrollTop();
     //var winHeight = $(window).height();
     var floaterHeight = $('#floater').outerHeight(true);
-    var fromBottom = 210;
+    var fromBottom = 185;
     var top = winScrollTop - floaterHeight + fromBottom;
     $('#floater').css({ 'top': top + 'px' });
 });
@@ -173,10 +173,10 @@ $(document).ready(function () {
                 "Юли", "Август", "Септмври", "Октомври", "Ноември", "Декември"
             ],
             dayNames: [
-                'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
-                'Петък', 'Събота', 'Неделя'
+                'Неделя', 'Понеделник', 'Вторник', 'Сряда',
+                'Четвъртък', 'Петък', 'Събота'
             ],
-            dayNamesShort: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+            dayNamesShort: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
             txt_noEvents: "Няма събития",
             txt_SpecificEvents_prev: "",
             txt_SpecificEvents_after: "Събития:",
@@ -197,8 +197,8 @@ $(document).ready(function () {
                     'Понеделник', 'Вторник', 'Сряда', 'Четвъртък',
                     'Петък', 'Събота', 'Неделя'
                 ],
-                "weekdaysShort": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
-                "weekdaysMin": ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'],
+                "weekdaysShort": ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                "weekdaysMin": ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
                 "longDateFormat": {
                     "LT": "H:mm",
                     "LTS": "LT:ss",

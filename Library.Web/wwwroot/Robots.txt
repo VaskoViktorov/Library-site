@@ -21,4 +21,4 @@ Disallow: /libraryblog/subscriptions/edit
 Disallow: /libraryblog/subscriptions/delete
 Disallow: /libraryblog/subscriptions/destroy
 
-Sitemap: http://libvidin.eu/sitemap.xml
+Sitemap: https://libvidin.eu/sitemap.xml

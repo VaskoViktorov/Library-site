@@ -7,12 +7,13 @@
         engType = "-en";
     }
 }
+
 <!DOCTYPE html>
 <html lang="@Localizer["en"]">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] | @Localizer["Regional Library \"Mihalaki Georgiev\"-Vidin"] </title>
+    <title>@ViewData["Title"] - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
     <link href="~/json/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />    
@@ -148,10 +149,10 @@
                             @Localizer["E-Library"]<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a href="//libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                            <li><a href="http://libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["New books"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
-                            <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
+                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
                         </ul>
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole) || User.IsInRole(WebConstants.LibrarianAuthorRole))
@@ -217,15 +218,17 @@
                         <li><a asp-area="" asp-controller="Home" asp-action="PriceList">@Localizer["Price list"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Find us"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Faq">@Localizer["FAQ"]</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">@Localizer["Cookie policy"]</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 footer-box-3">
                     <ul class="lib-footer-ul">
                         <li><a asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
-                        <li><a href="//libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                        <li><a href="http://libvidin.eu:8080/absw/abs.htm">@Localizer["E-Library"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Links">@Localizer["Useful links"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Our Services"]</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Map">@Localizer["Site map"]</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mr-0-auto">

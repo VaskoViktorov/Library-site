@@ -61,7 +61,7 @@ namespace Library.Web.Resources.Models.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Имейл.
+        ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {
             get {
@@ -70,7 +70,25 @@ namespace Library.Web.Resources.Models.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Име, Фамилия.
+        ///   Looks up a localized string similar to The field must contain no more than  {1} characters..
+        /// </summary>
+        public static string MaxLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MaxLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field must contain at least {1} characters..
+        /// </summary>
+        public static string MinLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MinLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name, Last Name.
         /// </summary>
         public static string Name {
             get {
@@ -79,7 +97,7 @@ namespace Library.Web.Resources.Models.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Телефон.
+        ///   Looks up a localized string similar to Phone.
         /// </summary>
         public static string Phone {
             get {
@@ -88,11 +106,20 @@ namespace Library.Web.Resources.Models.Home {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Въпрос.
+        ///   Looks up a localized string similar to Question.
         /// </summary>
         public static string Question {
             get {
                 return ResourceManager.GetString("Question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} field is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
             }
         }
     }

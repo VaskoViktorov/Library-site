@@ -23,7 +23,7 @@
         {
             var articles = await this.db
                 .Articles
-                .Where(a => a.Language == (Language)language.ParseLang())
+                .Where(a => a.Language == (Language)language.ParseLang() && a.ShowAtFrontPage)
                 .OrderByDescending(a => a.ReleaseDate)
                 .Take(4)
                 .ProjectTo<ArticleListingHomeServiceModel>()

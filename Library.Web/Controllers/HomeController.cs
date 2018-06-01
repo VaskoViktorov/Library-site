@@ -150,6 +150,9 @@
         public IActionResult Library()
             => View();
 
+        public IActionResult Map()
+            => View();
+
         //Departments static pages
 
         public IActionResult Art()

@@ -37,6 +37,10 @@
         public Language Language { get; set; }
 
         [Required]
+        [Display(Name = "ShowAtFrontPage", ResourceType = typeof(ArticleFormModelResx))]
+        public bool ShowAtFrontPage { get; set; }
+
+        [Required]
         [Display(Name = "Gallery", ResourceType = typeof(ArticleFormModelResx))]
         public bool AddGallery { get; set; }
 
