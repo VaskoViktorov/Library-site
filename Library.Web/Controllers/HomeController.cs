@@ -64,7 +64,7 @@
         [HttpPost]
         [ValidateModelState]
         public IActionResult ExtendPeriod(ExtendPeriodFormModel model)
-        {            
+        {
             var email = EmailReceiverForAsk;
 
             var htmlString = string.Format(EmailReceiverHtmlTextExtendPeriod, model.BookInfo, model.CardNumber, model.Email, model.UserName);
@@ -86,6 +86,12 @@
 
             return this.RedirectToAction(nameof(this.Index));
         }
+
+        public IActionResult ViewPdf(string name)
+         => View(new PdfViewModel
+         {
+             Name = name
+         });
 
         public IActionResult Contact()
             => View();
@@ -198,7 +204,7 @@
             => View();
 
         public IActionResult SiteMap()
-            =>  this.Content("\\wwwroot\\sitemap.xml", "text/xml");
+            => this.Content("\\wwwroot\\sitemap.xml", "text/xml");
 
         public IActionResult Robots()
             => this.Content("\\wwwroot\\Robots.txt", "text/xml");

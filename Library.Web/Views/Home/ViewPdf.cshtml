@@ -1,0 +1,15 @@
+﻿@model PdfViewModel
+@{
+    ViewData["Title"] = "ViewPdf";
+}
+<div class="row text-center">
+    <h2>@Model.Name</h2>
+</div>
+<div class="row ">
+    <div class="col-md-10 col-md-offset-1">
+        <div class='embed-responsive' style='padding-bottom:80%'>
+            <object data='~/other/@(Model.Name).pdf' type='application/pdf' width='80%' height='80%'></object>
+        </div>
+    </div>
+</div>
+
