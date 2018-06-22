@@ -37,6 +37,16 @@
                 return this.RedirectToAction("Galleries");
             }
 
+            if (User.IsInRole(AdministratorRole))
+            {
+                return this.View(new GalleryListingViewModel
+                {
+                    Galleries = await this.galleries.AllGalleriesAdminAsync(CurrentCulture(), page),
+                    TotalPages = totalPages,
+                    CurrentPage = page
+                });
+            }
+
             return this.View(new GalleryListingViewModel
             {
                 Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(), page),

@@ -135,4 +135,16 @@
   <data name="ThirdParagraph" xml:space="preserve">
     <value>The library is working in partnership with civic associations and non-governmental organizations, educational institutions, informal youth organizations and communities to provide an extremely varied and dynamic program in benefit of the local community. The library is a important center for work with children and young people, it initiates a large number of activities in the field, often with the help of other similar structures at local, national and international level. The funding of the library's initiatives is supported by contributory campaigns and projects.</value>
   </data>
+  <data name="FirstBook" xml:space="preserve">
+    <value>135 years Regional Library "Mihalaki Georgiev" - Chronicle</value>
+  </data>
+  <data name="SecondBook" xml:space="preserve">
+    <value>145 years Regional Library "Mihalaki Georgiev" - Chronicle</value>
+  </data>
+  <data name="SecondHeading" xml:space="preserve">
+    <value>Books published by Regional Library "Mihalaki Georgiev" - Vidin</value>
+  </data>
+  <data name="ThirdBook" xml:space="preserve">
+    <value>A treasure trove of written word and human memory</value>
+  </data>
 </root>
