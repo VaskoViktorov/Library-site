@@ -755,6 +755,9 @@ table {
 table tbody tr:hover {
     background-color: #eaf2fb !important;
 }
+table tbody tr:hover td.highlight {
+    background-color: #eaf2fb !important;
+}
 /*Lists style*/
 .lib-footer-ul {
     list-style: none;

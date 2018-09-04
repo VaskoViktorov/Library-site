@@ -16,7 +16,7 @@
     <title>@ViewData["Title"] - @Localizer["Regional Library \"Mihalaki Georgiev\" - Vidin"] </title>
     <meta name="description" content="@ViewData["Description"]">
     <link rel="shortcut icon" href="~/images/SiteImages/favicon.ico">
-    <link href="~/json/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />    
+    <link href="~/json/EventsDb.json" asp-append-version="true" rel="search" content="no-cache" />
     <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyBlMDYqckff9Y3FJBnEQD3Q-X_nJl4qDQ4"></script>
 
     <environment include="Development">
@@ -54,6 +54,19 @@
         <link rel="stylesheet" href="~/css/eventCalendar.css">
         <link rel="stylesheet" href="~/css/eventCalendar_theme_responsive.min.css">
     </environment>
+
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
+    </script>
+    <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -243,20 +256,8 @@
             </div>
         </footer>
     </div>
-    
-    <environment include="Development">
-        <script src="//code.jquery.com/jquery-2.2.4.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
-        </script>
-        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
+    <environment include="Development">        
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
@@ -264,23 +265,10 @@
         <script src="~/lib/jquery/dist/moment.min.js"></script>
         <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
-        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
         <script src="~/js/site.js"></script>
-
     </environment>
     <environment exclude="Development">
-        <script src="//code.jquery.com/jquery-2.2.4.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=">
-        </script>
-        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
+        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.magnific-popup.min.js" asp-append-version="true"></script>
@@ -288,7 +276,6 @@
         <script src="~/lib/jquery/dist/moment.min.js"></script>
         <script src="~/lib/jquery/dist/snowfall.jquery.min.js"></script>
         <script src="~/lib/jquery/dist/jquery.eventCalendar.min.js"></script>
-        <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
         <script src="~/js/site.min.js"></script>
 
     </environment>

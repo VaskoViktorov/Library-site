@@ -162,4 +162,7 @@
   <data name="Subscriptions" xml:space="preserve">
     <value>Абонаменти</value>
   </data>
+  <data name="Fast search" xml:space="preserve">
+    <value>Бързо търсене</value>
+  </data>
 </root>

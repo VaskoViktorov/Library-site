@@ -232,10 +232,12 @@ $(document).ready(function () {
     alterClass();
 });
 //panorama
-$(".panorama").panorama_viewer({
-    repeat: true,
-    direction: "horizontal",
-    animationTime: 1200,
-    easing: "ease-out",
-    overlay: true
+$(document).ready(function () {
+    $(".panorama").panorama_viewer({
+        repeat: true,
+        direction: "horizontal",
+        animationTime: 1200,
+        easing: "ease-out",
+        overlay: true
+    })
 });
