@@ -15,6 +15,9 @@ li.dropdown.lib-menu:hover > .dropdown-menu {
 .font-size-1k4em {
     font-size: 1.4em;
 }
+.overflow {
+    overflow: inherit;
+}
 .parallax {
     /* The image used */
     background-image: url("/images/siteimages/backgroundImg-16-10.jpg");
@@ -1104,6 +1107,7 @@ ol {
     width: 177px;
     left: -251px;
 }
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
@@ -1408,6 +1412,9 @@ ol {
         background-image: url("/images/siteimages/backgroundImg1.jpg");
         min-height: 350px;
         background-position: 80% 45px;
+    }
+    .overflow {
+        overflow: auto;
     }
 }
 @media (max-width: 918px) {

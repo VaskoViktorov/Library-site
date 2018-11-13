@@ -34,7 +34,7 @@
 
             if (page > totalPages || page <= 0)
             {
-                return this.RedirectToAction("Galleries");
+                return this.RedirectToAction(nameof(this.Galleries));
             }
 
             if (User.IsInRole(AdministratorRole))
@@ -62,7 +62,7 @@
 
             if (gallery == null)
             {
-                return RedirectToAction("Galleries", "Galleries");
+                return RedirectToAction(nameof(this.Galleries));
             }
 
             var user = User.IsInRole(LibrarianAuthorRole);
@@ -76,7 +76,7 @@
 
             }
 
-            return RedirectToAction("Galleries", "Galleries");
+            return RedirectToAction(nameof(this.Galleries));
         }
 
 

@@ -37,7 +37,7 @@
             {
                 var image = new Image()
                 {
-                    ImagePath = path,
+                    ImagePath = path
                 };
 
                 this.db.Add(image);

@@ -10,13 +10,15 @@
     /// </summary>
     public class ValidateModelStateAttribute : Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute
     {
+        private const string Model = "model";
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             if (!context.ModelState.IsValid)
             {
                 var controller = context.Controller as Controller;
 
-                var model = context.ActionArguments.FirstOrDefault(a => a.Key.ToLower().Contains("model")).Value;
+                var model = context.ActionArguments.FirstOrDefault(a => a.Key.ToLower().Contains(Model)).Value;
 
                 if (controller == null || model == null)
                 {

@@ -7,13 +7,15 @@
 
     public class AutoMapperProfile : Profile
     {
+        private const string Library = "Library";
+
         public AutoMapperProfile()
         {
 
             var allTypes = AppDomain
                 .CurrentDomain
                 .GetAssemblies()
-                .Where(a => a.GetName().Name.Contains("Library"))
+                .Where(a => a.GetName().Name.Contains(Library))
                 .SelectMany(a => a.GetTypes());
 
             allTypes

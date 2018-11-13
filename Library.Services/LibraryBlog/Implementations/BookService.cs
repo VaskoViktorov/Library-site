@@ -1,4 +1,6 @@
-﻿namespace Library.Services.LibraryBlog.Implementations
+﻿using System.Globalization;
+
+namespace Library.Services.LibraryBlog.Implementations
 {
     using AutoMapper.QueryableExtensions;
     using Common.Infrastructure;
@@ -164,5 +166,18 @@
                .Books
                .Where(b => b.Department == DepartmentType.Land && b.Language == (Language)language.ParseLang())
                .CountAsync();
+
+        public int TotalPages(Func<string, Task<int>> input)
+        {
+            var a = (double) input(CultureInfo.CurrentCulture.Name).Result;
+            var b = BooksPageSize;
+            var result =(int)Math.Ceiling(a / b);
+
+
+            return result;
+        }
+        //(int)Math.Ceiling((double)input(CultureInfo.CurrentCulture.Name).Result / BooksPageSize);
+
+
     }
 }

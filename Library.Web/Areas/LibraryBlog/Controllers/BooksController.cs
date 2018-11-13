@@ -7,12 +7,12 @@
     using Models.Books;
     using Services.Html;
     using Services.LibraryBlog;
+    using Services.LibraryBlog.Models.Books;
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
     using System.Threading.Tasks;
-    using Services;
-
     using static WebConstants;
 
     public class BooksController : BaseController
@@ -29,34 +29,56 @@
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Books(int page = 1)
+        public async Task<IActionResult> Books(int page = 1, string filter = "Books")
         {
-            var totalPages = (int) Math.Ceiling((double) this.books.TotalAsync(CurrentCulture()).Result /
-                                                ServicesConstants.BooksPageSize);
+            int totalPages;
+            IEnumerable<BookListingServiceModel> filterType;
 
-            if (page > totalPages || page <= 0)
+            switch (filter)
             {
-                return this.RedirectToAction("Books");
+                case "BooksForKids":
+                    totalPages = this.books.TotalPages(this.books.TotalForKidsAsync);
+                    if (page > totalPages || page <= 0)
+                    {
+                        return this.RedirectToAction(nameof(this.Books));
+                    }
+                    filterType = await this.books.AllBooksForChildrenAsync(CurrentCulture(), page);
+                    break;
+                case "BooksForLand":
+                    totalPages = this.books.TotalPages(this.books.TotalForLandAsync);
+                    if (page > totalPages || page <= 0)
+                    {
+                        return this.RedirectToAction(nameof(this.Books));
+                    }
+                    filterType = await this.books.AllBooksForLandLandAsync(CurrentCulture(), page);
+                    break;
+                default:
+                    totalPages = this.books.TotalPages(this.books.TotalAsync);
+                    if (page > totalPages || page <= 0)
+                    {
+                        return this.RedirectToAction(nameof(this.Books));
+                    }
+                    filterType = await this.books.AllBooksAsync(CurrentCulture(), page);
+                    break;
             }
+
 
             return this.View(new BookListingViewModel
             {
-                Books = await this.books.AllBooksAsync(CurrentCulture(), page),
+                Books = filterType,
                 TotalPages = totalPages,
                 CurrentPage = page
             });
         }
 
-
         [AllowAnonymous]
         public async Task<IActionResult> BooksForKids(int page = 1)
         {
-            var totalPages = (int)Math.Ceiling((double)books.TotalForKidsAsync(CurrentCulture()).Result /
-                                               ServicesConstants.BooksPageSize);
+            var totalPages = this.books.TotalPages(this.books.TotalForKidsAsync);
 
             if (page > totalPages || page <= 0)
             {
-                return this.RedirectToAction("BooksForKids");
+                return this.RedirectToAction(nameof(this.BooksForKids));
             }
 
             return this.View(new BookListingViewModel
@@ -67,16 +89,14 @@
             });
         }
 
-
         [AllowAnonymous]
         public async Task<IActionResult> BooksForLand(int page = 1)
         {
-            var totalPages = (int)Math.Ceiling((double)books.TotalForLandAsync(CurrentCulture()).Result /
-                                               ServicesConstants.BooksPageSize);
+            var totalPages = this.books.TotalPages(this.books.TotalForLandAsync);
 
             if (page > totalPages || page <= 0)
             {
-                return this.RedirectToAction("BooksForLand");
+                return this.RedirectToAction(nameof(this.BooksForLand));
             }
 
             return this.View(new BookListingViewModel
@@ -94,15 +114,15 @@
 
             if (book != null)
             {
-               return this.View(new BookViewModel
+                return this.View(new BookViewModel
                 {
                     Book = book
                 });
             }
 
-            return this.RedirectToAction("Books");
+            return this.RedirectToAction(nameof(this.Books));
 
-        }    
+        }
 
         public IActionResult Create()
             => this.View();

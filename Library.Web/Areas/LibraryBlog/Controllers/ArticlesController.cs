@@ -1,12 +1,11 @@
-﻿using Library.Services;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Models.Articles;
+    using Services;
     using Services.Html;
     using Services.LibraryBlog;
     using System;
@@ -37,7 +36,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             if (page > totalPages || page <= 0)
             {
-                return this.RedirectToAction("Articles");
+                return this.RedirectToAction(nameof(this.Articles));
             }
 
             return this.View(new ArticleListingViewModel
@@ -61,7 +60,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
                 });
             }
 
-            return this.RedirectToAction("Articles");
+            return this.RedirectToAction(nameof(this.Articles));
         }
 
 

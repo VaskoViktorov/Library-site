@@ -55,7 +55,7 @@
 
             this.TempData.AddSuccessMessage(string.Format(TempDataEditCommentText, ModelName, EndingLetterO));
 
-            return this.RedirectToAction("Articles", "Articles");
+            return this.RedirectToAction("Articles", nameof(ArticlesController.Articles));
         }
 
         private string GetSurveysJsonPath()

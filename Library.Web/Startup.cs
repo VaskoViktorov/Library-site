@@ -85,7 +85,6 @@
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
-                //For HTTPS, uncomment
                 options.Filters.Add<RequireHttpsAttribute>();
             })
               .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
@@ -120,7 +119,6 @@
             app.UseClientRateLimiting();
 
             var options = new RewriteOptions()
-            //For HTTPS, uncomment
               .AddRedirectToHttps();
 
             options.Rules.Add(new NonWwwRule());

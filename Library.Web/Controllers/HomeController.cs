@@ -71,7 +71,7 @@
 
             emailSender.SendEmailWithQuestionAsync(email, htmlString, EmailHeadingForExtendPeriod);
 
-            this.TempData.AddSuccessMessage(string.Format(TempDataSendEmailText, ExtendPeriodModelName, "a"));
+            this.TempData.AddSuccessMessage(string.Format(TempDataSendEmailText, ExtendPeriodModelName, EndingLetterA));
 
             return this.RedirectToAction(nameof(this.Index));
         }

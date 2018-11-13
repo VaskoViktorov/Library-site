@@ -24,7 +24,6 @@
 
         public const string AdminAreaName = "Admin";
         public const string LibraryAreaName = "LibraryBlog";
-        public const string EnglishAreaName = "En";
 
         public const string BulgarianLanguage = "bg";
         public const string EnglishLanguage = "en";

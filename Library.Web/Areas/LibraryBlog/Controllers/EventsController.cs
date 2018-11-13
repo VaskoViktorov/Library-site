@@ -1,9 +1,8 @@
-﻿using Library.Services;
-
-namespace Library.Web.Areas.LibraryBlog.Controllers
+﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
+    using Services;
     using Microsoft.AspNetCore.Mvc;
     using Models.Events;
     using Services.Html;
@@ -59,7 +58,7 @@ namespace Library.Web.Areas.LibraryBlog.Controllers
 
             if (page > eventsPerPage || page <= 0)
             {
-                return this.RedirectToAction("Events");
+                return this.RedirectToAction(nameof(this.Events));
             }
 
             return this.View(new EventListingViewModel
