@@ -13,39 +13,42 @@
     using System.Globalization;
     using System.IO;
     using System.Threading.Tasks;
+
     using static WebConstants;
 
     public class BooksController : BaseController
     {
-        private const string ModelName = "Книгата";
+        private const string ModelName = BookBgModelName;
 
         private readonly IBookService books;
         private readonly IHtmlService html;
+        private readonly IPageService pages;
 
-        public BooksController(IBookService books, IHtmlService html)
+        public BooksController(IBookService books, IHtmlService html, IPageService pages)
         {
             this.books = books;
             this.html = html;
+            this.pages = pages;
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Books(int page = 1, string filter = "Books")
+        public async Task<IActionResult> Books(int page = 1, string filter = BooksFilter)
         {
             int totalPages;
             IEnumerable<BookListingServiceModel> filterType;
 
             switch (filter)
             {
-                case "BooksForKids":
-                    totalPages = this.books.TotalPages(this.books.TotalForKidsAsync);
+                case BooksForKidsFilter:
+                    totalPages = this.pages.TotalPages(this.books.TotalForKidsAsync);
                     if (page > totalPages || page <= 0)
                     {
                         return this.RedirectToAction(nameof(this.Books));
                     }
                     filterType = await this.books.AllBooksForChildrenAsync(CurrentCulture(), page);
                     break;
-                case "BooksForLand":
-                    totalPages = this.books.TotalPages(this.books.TotalForLandAsync);
+                case BooksForLandFilter:
+                    totalPages = this.pages.TotalPages(this.books.TotalForLandAsync);
                     if (page > totalPages || page <= 0)
                     {
                         return this.RedirectToAction(nameof(this.Books));
@@ -53,7 +56,7 @@
                     filterType = await this.books.AllBooksForLandLandAsync(CurrentCulture(), page);
                     break;
                 default:
-                    totalPages = this.books.TotalPages(this.books.TotalAsync);
+                    totalPages = this.pages.TotalPages(this.books.TotalAsync);
                     if (page > totalPages || page <= 0)
                     {
                         return this.RedirectToAction(nameof(this.Books));
@@ -62,7 +65,6 @@
                     break;
             }
 
-
             return this.View(new BookListingViewModel
             {
                 Books = filterType,
@@ -70,43 +72,7 @@
                 CurrentPage = page
             });
         }
-
-        [AllowAnonymous]
-        public async Task<IActionResult> BooksForKids(int page = 1)
-        {
-            var totalPages = this.books.TotalPages(this.books.TotalForKidsAsync);
-
-            if (page > totalPages || page <= 0)
-            {
-                return this.RedirectToAction(nameof(this.BooksForKids));
-            }
-
-            return this.View(new BookListingViewModel
-            {
-                Books = await this.books.AllBooksForChildrenAsync(CurrentCulture(), page),
-                TotalPages = totalPages,
-                CurrentPage = page
-            });
-        }
-
-        [AllowAnonymous]
-        public async Task<IActionResult> BooksForLand(int page = 1)
-        {
-            var totalPages = this.books.TotalPages(this.books.TotalForLandAsync);
-
-            if (page > totalPages || page <= 0)
-            {
-                return this.RedirectToAction(nameof(this.BooksForLand));
-            }
-
-            return this.View(new BookListingViewModel
-            {
-                Books = await this.books.AllBooksForLandLandAsync(CurrentCulture(), page),
-                TotalPages = totalPages,
-                CurrentPage = page
-            });
-        }
-
+        
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
@@ -153,7 +119,7 @@
                 }
                 path = path.Replace("\\", "/");
 
-                savePath = $"/{path}";
+                savePath = string.Format(SavePath,path);
             }
             else
             {

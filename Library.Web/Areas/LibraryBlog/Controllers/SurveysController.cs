@@ -12,7 +12,7 @@
 
     public class SurveysController : BaseController
     {
-        private const string ModelName = "Анкетата";
+        private const string ModelName = SurveyBgModelName;
 
         [AllowAnonymous]
         public IActionResult Survey(string id)

@@ -1,6 +1,5 @@
 ﻿namespace Library.Web.Areas.LibraryBlog.Controllers
 {
-    using Services;
     using Infrastructure.Extensions;
     using Infrastructure.Filters;
     using Microsoft.AspNetCore.Authorization;
@@ -17,39 +16,34 @@
 
     public class GalleriesController : BaseController
     {
-        private const string ModelName = "Галерията";
+        private const string ModelName = GalleryBgModelName;
 
         private readonly IGalleryService galleries;
+        private readonly IPageService pages;
 
-        public GalleriesController(IGalleryService galleries)
+        public GalleriesController(IGalleryService galleries, IPageService pages)
         {
             this.galleries = galleries;
+            this.pages = pages;
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Galleries(int page = 1)
         {
-            var totalPages = (int) Math.Ceiling((double) galleries.TotalAsync(CurrentCulture()).Result /
-                                                ServicesConstants.GalleriesPageSize);               
-
+            var totalPages = this.pages.TotalPages(this.galleries.TotalAsync);
+            
             if (page > totalPages || page <= 0)
             {
                 return this.RedirectToAction(nameof(this.Galleries));
             }
 
-            if (User.IsInRole(AdministratorRole))
-            {
-                return this.View(new GalleryListingViewModel
-                {
-                    Galleries = await this.galleries.AllGalleriesAdminAsync(CurrentCulture(), page),
-                    TotalPages = totalPages,
-                    CurrentPage = page
-                });
-            }
+          var currentGalleries = User.IsInRole(AdministratorRole) ?
+                this.galleries.AllGalleriesAdminAsync(CurrentCulture(), page) :
+                this.galleries.AllGalleriesAsync(CurrentCulture(), page);
 
             return this.View(new GalleryListingViewModel
             {
-                Galleries = await this.galleries.AllGalleriesAsync(CurrentCulture(), page),
+                Galleries = await currentGalleries,
                 TotalPages = totalPages,
                 CurrentPage = page
             });
@@ -89,7 +83,7 @@
         {
             if (model.Files == null || model.Files.Count == 0)
             {
-                return Content("files not selected");
+                return Content(NoSelectedFiles);
             }
 
             var imgPaths = new List<string>();
@@ -105,7 +99,7 @@
                 }
 
                 path = path.Replace("\\", "/");
-                imgPaths.Add($"/{path}");
+                imgPaths.Add(string.Format(SavePath,path));
             }
 
             await this.galleries.CreateAsync(

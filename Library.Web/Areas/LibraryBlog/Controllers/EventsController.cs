@@ -14,13 +14,13 @@
 
     public class EventsController : BaseController
     {
-        private const string ModelName = "Събитието";
+        private const string ModelName = EventBgModelName;
 
         private readonly IHtmlService html;
 
         public EventsController(IHtmlService html)
         {
-            this.html = html;
+            this.html = html;          
         }
 
         public IActionResult Create()

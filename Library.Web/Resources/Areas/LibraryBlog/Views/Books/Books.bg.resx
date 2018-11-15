@@ -117,14 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Books from Bulgaria" xml:space="preserve">
+    <value>Нови книги в отдел "Краезнание"</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Създай</value>
   </data>
   <data name="New Books" xml:space="preserve">
     <value>Нови книги</value>
   </data>
-  <data name="New books in Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone. Page:" xml:space="preserve">
-    <value>Нови книги в Регионална библиотека "Михалаки Георгиев" - гр. Видин, достъпни за всички. Страница: </value>
+  <data name="in Regional Library &quot;Mihalaki Georgiev&quot; - Vidin, available for everyone. Page:" xml:space="preserve">
+    <value>в Регионална библиотека "Михалаки Георгиев" - гр. Видин, достъпни за всички. Страница: </value>
+  </data>
+  <data name="New Books in &quot;Kids&quot; Department" xml:space="preserve">
+    <value>Нови книги за деца</value>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Следваща</value>

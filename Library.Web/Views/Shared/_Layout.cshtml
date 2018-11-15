@@ -137,8 +137,8 @@
                             @Localizer["Kids World"]<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">@Localizer["New children books"]</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">@Localizer["Work with children program"]</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" asp-route-filter="@WebConstants.BooksForKidsFilter">@Localizer["New children books"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids" >@Localizer["Work with children program"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">@Localizer["Safe internet"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">@Localizer["For the student"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">@Localizer["For the curious"]</a></li>
@@ -152,7 +152,7 @@
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">@Localizer["Mihalaki Georgiev"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Vidin">@Localizer["Vidin"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Editions">@Localizer["Publications"]</a></li>
-                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">@Localizer["New books"]</a></li>
+                            <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" asp-route-filter="@WebConstants.BooksForLandFilter">@Localizer["New books"]</a></li>
                         </ul>
                     </li>
                     <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">@Localizer["News"]</a></li>

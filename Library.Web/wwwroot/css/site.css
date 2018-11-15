@@ -192,6 +192,7 @@ footer {
 /* Pagination*/
 ul.pagination li.page-item a.disabled {
     pointer-events: none !important;
+    cursor: default !important;
 }
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {

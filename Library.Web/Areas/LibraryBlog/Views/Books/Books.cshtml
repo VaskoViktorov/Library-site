@@ -1,8 +1,25 @@
 ﻿@model BookListingViewModel
 @inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = Localizer["New Books"];
-    ViewData["Description"] = Localizer["New books in Regional Library \"Mihalaki Georgiev\" - Vidin, available for everyone. Page:"].Value + Model.CurrentPage;
+    string filter = string.Join("",Context.Request.QueryString.Value.Skip(8));
+
+    switch (filter)
+    {
+        case "BooksForKids":
+            ViewData["Title"] = Localizer["New Books in \"Kids\" Department"];
+            ViewData["Description"] = Localizer["New Books in \"Kids\" Department"].Value;
+            break;
+        case "BooksForLand":
+            ViewData["Title"] = Localizer["Books from Bulgaria"];
+            ViewData["Description"] = Localizer["Books from Bulgaria"].Value;
+            break;
+        default:
+            ViewData["Title"] = Localizer["New Books"];
+            ViewData["Description"] = Localizer["New Books"].Value;
+            break;
+    }
+
+    ViewData["Description"] += " " + Localizer["in Regional Library \"Mihalaki Georgiev\" - Vidin, available for everyone. Page:"].Value + Model.CurrentPage;
 
     var previousDisabled = Model.CurrentPage == 1 ? "disabled" : string.Empty;
     var nextDisabled = Model.TotalPages == Model.CurrentPage ? "disabled" : string.Empty;

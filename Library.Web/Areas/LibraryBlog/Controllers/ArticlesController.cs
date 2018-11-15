@@ -5,7 +5,6 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Models.Articles;
-    using Services;
     using Services.Html;
     using Services.LibraryBlog;
     using System;
@@ -18,21 +17,23 @@
 
     public class ArticlesController : BaseController
     {
-        private const string ModelName = "Статията";
+        private const string ModelName = ArticleBgModelName;
 
         private readonly IArticleService articles;
         private readonly IHtmlService html;
+        private readonly IPageService pages;
 
-        public ArticlesController(IArticleService articles, IHtmlService html)
+        public ArticlesController(IArticleService articles, IHtmlService html, IPageService pages)
         {
             this.articles = articles;
             this.html = html;
+            this.pages = pages;
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Articles(int page = 1)
         {
-            var totalPages = (int)Math.Ceiling((double)articles.TotalAsync(CurrentCulture()).Result / ServicesConstants.ArticlesPageSize);
+            var totalPages = this.pages.TotalPages(articles.TotalAsync);
 
             if (page > totalPages || page <= 0)
             {
@@ -63,7 +64,6 @@
             return this.RedirectToAction(nameof(this.Articles));
         }
 
-
         public IActionResult Create()
             => this.View();
 
@@ -75,7 +75,7 @@
 
             if (model.Files == null || model.Files.Count == 0)
             {
-                return Content("files not selected");
+                return Content(NoSelectedFiles);
             }
 
             var gallery = new List<string>();
@@ -91,7 +91,7 @@
                 }
 
                 path = path.Replace("\\", "/");
-                gallery.Add($"/{path}");
+                gallery.Add(String.Format(SavePath,path));
             }
 
             await this.articles.CreateAsync(

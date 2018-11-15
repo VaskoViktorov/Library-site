@@ -53,7 +53,5 @@
         Task<IEnumerable<BookListingServiceModel>> AllBooksForChildrenAsync(string language, int page = 1);
 
         Task<IEnumerable<BookListingServiceModel>> AllBooksForLandLandAsync(string language, int page = 1);
-
-        int TotalPages(Func<string, Task<int>> input);
     }
 }

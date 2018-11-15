@@ -180,13 +180,6 @@
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Books\Books.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Books\BooksForKids.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Books\BooksForLand.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>BooksForLand.bg.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Areas\LibraryBlog\Views\Books\Create.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

@@ -18,8 +18,8 @@
 
     public class HomeController : Controller
     {
-        private const string AskModelName = "Въпросът";
-        private const string ExtendPeriodModelName = "Заявката";
+        private const string AskModelName = AskBgModelName;
+        private const string ExtendPeriodModelName = ExtendPeriodBgModelName;
 
         private readonly IEmailSender emailSender;
         private readonly IHtmlService html;
@@ -204,10 +204,10 @@
             => View();
 
         public IActionResult SiteMap()
-            => this.Content("\\wwwroot\\sitemap.xml", "text/xml");
+            => this.Content(SitemapPath, TextOrXmlFileType);
 
         public IActionResult Robots()
-            => this.Content("\\wwwroot\\Robots.txt", "text/xml");
+            => this.Content(RobotsPath, TextOrXmlFileType);
 
         public IActionResult Error()
         {

@@ -9,9 +9,11 @@
     using System.Globalization;
     using System.Threading.Tasks;
 
+    using static WebConstants;
+
     public class SubscriptionsController : BaseController
     {
-        private const string ModelName = "Абонамента";
+        private const string ModelName = SubscriptionBgModelName;
 
         private readonly ISubscriptionService subscriptions;
 
