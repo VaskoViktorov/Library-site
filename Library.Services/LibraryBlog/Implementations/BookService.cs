@@ -18,7 +18,7 @@
     class BookService : IBookService
     {
         private readonly LibraryDbContext db;
-        private const string DefaultImagePath = "/images/BookCovers/default.jpg";
+        private const string DefaultImagePath = DefaultBookCoverBg;
 
         public BookService(LibraryDbContext db)
         {

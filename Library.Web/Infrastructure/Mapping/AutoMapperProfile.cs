@@ -5,9 +5,11 @@
     using System;
     using System.Linq;
 
+    using static WebConstants;
+
     public class AutoMapperProfile : Profile
     {
-        private const string Library = "Library";
+        private const string Library = AppDomainName;
 
         public AutoMapperProfile()
         {

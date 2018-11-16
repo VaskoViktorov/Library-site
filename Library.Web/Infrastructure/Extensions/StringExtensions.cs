@@ -6,6 +6,8 @@
     using System.Text;
     using System.Text.RegularExpressions;
 
+    using static WebConstants;
+
     /// <summary>
     /// changes the url text to user friendly url(only words, digits and dashes)
     /// </summary>
@@ -35,19 +37,19 @@
             switch (text)
             {
                 case DepartmentType.Kids:
-                    return "Детски";
+                    return KidsDepartment;
                 case DepartmentType.Rent:
-                    return "Заемна";
+                    return RentDepartment;
                 case DepartmentType.Read:
-                    return "Читални";
+                    return ReadDepartment;
                 case DepartmentType.Check:
-                    return "Справочен";
+                    return CheckDepartment;
                 case DepartmentType.Art:
-                    return "Изкуство";
+                    return ArtDepartment;
                 case DepartmentType.Land:
-                    return "Краезнание";
+                    return LandDepartment;
                 case DepartmentType.Foreign:
-                    return "Чуждоезиков";
+                    return ForeignDepartment;
             }
 
             return String.Empty;

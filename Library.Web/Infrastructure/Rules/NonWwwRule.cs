@@ -4,9 +4,11 @@
     using Microsoft.AspNetCore.Rewrite;
     using System.Text;
 
+    using static WebConstants;
+
     public class NonWwwRule : IRule
     {
-        private const string Www = "www.";
+        private const string Www = WwwName;
 
         public void ApplyRule(RewriteContext context)
         {

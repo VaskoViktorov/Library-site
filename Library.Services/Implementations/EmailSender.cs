@@ -7,6 +7,8 @@
     using System.Net.Mail;
     using System.Threading.Tasks;
 
+    using static ServicesConstants;
+
     public class EmailSender : IEmailSender
     {
         public EmailSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
@@ -34,7 +36,7 @@
 
                 MailMessage mail = new MailMessage()
                 {
-                    From = new MailAddress(Options.UsernameEmail, "RB \"Mihalaki Georgiev\", Vidin")
+                    From = new MailAddress(Options.UsernameEmail, SenderInformation)
                 };
 
                 mail.To.Add(new MailAddress(toEmail));
@@ -51,8 +53,7 @@
                 }
             }
             catch (Exception)
-            {
-                //do something here
+            {               
             }
         }
     }

@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Reflection;
 
+    using static WebConstants;
+
     /// <summary>
     /// Service injector.
     /// </summary>
@@ -15,10 +17,10 @@
             Assembly
                 .GetAssembly(typeof(IService))
                 .GetTypes()
-                .Where(t => t.IsClass && t.GetInterfaces().Any(i => i.Name == $"I{t.Name}"))
+                .Where(t => t.IsClass && t.GetInterfaces().Any(i => i.Name == string.Format(InterfaceName,t.Name)))
                 .Select(t => new
                 {
-                    Interface = t.GetInterface($"I{t.Name}"),
+                    Interface = t.GetInterface(string.Format(InterfaceName, t.Name)),
                     Implementation = t
                 })
                 .ToList()

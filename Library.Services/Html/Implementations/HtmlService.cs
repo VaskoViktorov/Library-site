@@ -2,9 +2,11 @@
 {
     using Ganss.XSS;
 
+    using static ServicesConstants;
+
     class HtmlService : IHtmlService
     {
-        private const string ClassAttribute = "class";
+        private const string ClassAttribute = ClassAttributeType;
 
         private readonly HtmlSanitizer htmlSanitizer;
 

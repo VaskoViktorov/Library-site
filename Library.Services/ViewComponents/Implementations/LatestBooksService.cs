@@ -25,7 +25,7 @@
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Id)
-                .Where(b => b.ImageUrl != "\\images\\BookCovers\\default.jpg" && b.Language == (Language)language.ParseLang())
+                .Where(b => b.ImageUrl != DefaultBookCoverBg && b.Language == (Language)language.ParseLang())
                 .Take(LatestBooksAmount)
                 .ProjectTo<LatestBookServiceModel>()
                 .ToListAsync();
@@ -34,7 +34,7 @@
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Id)
-                .Where(b => b.ImageUrl != "\\images\\BookCovers\\default-en.jpg" && b.Language == Language.En)
+                .Where(b => b.ImageUrl != DefaultBookCoverEn && b.Language == Language.En)
                 .Take(LatestBooksAmount)
                 .ProjectTo<LatestBookServiceModel>()
                 .ToListAsync();

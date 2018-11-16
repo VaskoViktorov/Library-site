@@ -11,12 +11,12 @@
         {
             byte[] imageBytes;
 
-            if (imageUrl.ToLower().EndsWith(".jpg") || imageUrl.ToLower().EndsWith(".gif") || imageUrl.ToLower().EndsWith(".png"))
+            if (imageUrl.ToLower().EndsWith(JpgType) || imageUrl.ToLower().EndsWith(GifType) || imageUrl.ToLower().EndsWith(PngType))
             {
                 HttpWebRequest imageRequest = (HttpWebRequest)WebRequest.Create(imageUrl);
 
                 imageRequest.Timeout = 1200; // miliseconds
-                imageRequest.Method = "GET";
+                imageRequest.Method = GetMethodRequest;
 
                 try
                 {

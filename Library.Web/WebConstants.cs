@@ -1,4 +1,6 @@
-﻿namespace Library.Web
+﻿using Library.Data.Models;
+
+namespace Library.Web
 {
     public class WebConstants
     {
@@ -9,6 +11,25 @@
         //Role names
         public const string AdministratorRole = "Administrator";
         public const string LibrarianAuthorRole = "Librarian";
+
+        //UserController strings
+        public const string ErrorMsgInvalidIdentity = "Invalid identity details.";
+        public const string AddRequestKey = "add";
+        public const string RemoveRequestKey = "remove";
+        public const string WarrningUserAlreadyInRole = "User {0} is already in {1} role.";
+        public const string SuccessUserAddedToRole = "User {0} successfully added to the {1} role.";
+        public const string WarrningUserNotInRole = "User {0} is not in {1} role.";
+        public const string SuccessUserRemovedFromRole = "User {0} is no longer {1}.";
+
+
+        //Department names
+        public const string KidsDepartment = "Детски";
+        public const string RentDepartment = "Заемна";
+        public const string ReadDepartment = "Читални";
+        public const string CheckDepartment = "Справочен";
+        public const string ArtDepartment = "Изкуство";
+        public const string LandDepartment = "Краезнание";
+        public const string ForeignDepartment = "Чуждоезиков";
 
         //Culture short/long name
         public const string BulgarianLanguage = "bg";
@@ -40,6 +61,10 @@
             <p style='text-align: left;margin-bottom: 5px;'><span style='font-weight: bold'>Имейл: </span>{2}</p>  
             </div>";
 
+        //Sent email info for account activation
+        public const string EmailReceiverConfirmation = "Confirm your email";
+        public const string EmailReceiverMessage = "Моля потвърдете акаунта си: <a href='{0}'>link</a>";
+
         //Directory paths
         public const string CallendarJasonDbPath = "{0}\\wwwroot\\json\\EventsDb.json";
         public const string SurveysJasonDbPath = "{0}\\wwwroot\\json\\SurveysDb.json";
@@ -57,6 +82,9 @@
 
         //File types
         public const string TextOrXmlFileType = "text/xml";
+        public const string JpgType = ".jpg";
+        public const string GifType = ".gif";
+        public const string PngType = ".png";
 
         //Error messages
         public const string NoSelectedFiles = "Files not selected.";
@@ -98,5 +126,12 @@
         public const string TempDataAlreadyExistsText = "{0} с име {1}, вече съществува.";
         public const string TempDataWrongUrlText = "{0} НЕ е създадена, поради грешен URL адрес.";
         public const string TempDataSendEmailText = "{0} е изпратен{1} успешно.";
+
+        //Other
+        public const string GetMethodRequest = "GET";
+        public const string InterfaceName = "I{0}";
+        public const string ModelName = "model";
+        public const string AppDomainName = "Library";
+        public const string WwwName = "www.";
     }
 }

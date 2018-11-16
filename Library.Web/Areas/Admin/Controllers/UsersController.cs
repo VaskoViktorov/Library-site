@@ -11,6 +11,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using static WebConstants;
+
     public class UsersController : BaseController
     {
         private readonly IAdminUserService users;
@@ -57,7 +59,7 @@
 
             if (!roleExists || !userExists)
             {
-                this.ModelState.AddModelError(string.Empty, "Invalid identity details.");
+                this.ModelState.AddModelError(string.Empty, ErrorMsgInvalidIdentity);
             }
 
             if (!this.ModelState.IsValid)
@@ -65,32 +67,32 @@
                 this.RedirectToAction(nameof(this.Index));
             }
 
-            if (this.Request.Form.ContainsKey("add"))
+            if (this.Request.Form.ContainsKey(AddRequestKey))
             {
                 if (await this.userManager.IsInRoleAsync(user, model.Role))
                 {
-                    this.TempData.AddWarningMessage($"User {user.UserName} is already in {model.Role} role.");
+                    this.TempData.AddWarningMessage(string.Format(WarrningUserAlreadyInRole, user.UserName, model.Role));
 
                     return this.RedirectToAction(nameof(this.Index));
                 }
 
                 await this.userManager.AddToRoleAsync(user, model.Role);
 
-                this.TempData.AddSuccessMessage($"User {user.UserName} successfully added to the {model.Role} role.");
+                this.TempData.AddSuccessMessage(string.Format(SuccessUserAddedToRole, user.UserName, model.Role));
             }
 
-            if (this.Request.Form.ContainsKey("remove"))
+            if (this.Request.Form.ContainsKey(RemoveRequestKey))
             {
                 if (!await this.userManager.IsInRoleAsync(user, model.Role))
                 {
-                    this.TempData.AddWarningMessage($"User {user.UserName} is not in {model.Role} role.");
+                    this.TempData.AddWarningMessage(string.Format(WarrningUserNotInRole, user.UserName, model.Role));
 
                     return this.RedirectToAction(nameof(this.Index));
                 }
 
                 await this.userManager.RemoveFromRoleAsync(user, model.Role);
 
-                this.TempData.AddSuccessMessage($"User {user.UserName} is no longer {model.Role}.");
+                this.TempData.AddSuccessMessage(string.Format(SuccessUserRemovedFromRole, user.UserName, model.Role));
             }
 
             return this.RedirectToAction(nameof(this.Index));
