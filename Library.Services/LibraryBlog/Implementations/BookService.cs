@@ -18,7 +18,6 @@
     class BookService : IBookService
     {
         private readonly LibraryDbContext db;
-        private const string DefaultImagePath = DefaultBookCoverBg;
 
         public BookService(LibraryDbContext db)
         {
@@ -81,7 +80,7 @@
 
             if (imageUrl != null)
             {
-                if (imageUrl != DefaultImagePath)
+                if (imageUrl != DefaultBookCoverImagePathBg)
                 {
                     FileExtensions.DeleteImage(book.ImageUrl);
                 }
@@ -104,7 +103,7 @@
             this.db.Books.Remove(book);
             await this.db.SaveChangesAsync();
 
-            if (book.ImageUrl != DefaultImagePath)
+            if (book.ImageUrl != DefaultBookCoverImagePathBg)
             {
                 FileExtensions.DeleteImage(book.ImageUrl);
             }

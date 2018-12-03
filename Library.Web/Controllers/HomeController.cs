@@ -33,11 +33,13 @@
         }
 
         public async Task<IActionResult> Index()
-            => View(new ArticleListingHomeViewModel
+        => View(new ArticleListingHomeViewModel
             {
                 Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
             });
-
+        
+            
+     
         public IActionResult Ask()
             => View();
 

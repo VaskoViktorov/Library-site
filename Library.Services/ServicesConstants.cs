@@ -10,8 +10,8 @@
         public const int LatestBooksAmount = 10;
 
         //Default Book Covers
-        public const string DefaultBookCoverBg = "\\images\\BookCovers\\default.jpg";
-        public const string DefaultBookCoverEn = "\\images\\BookCovers\\default-en.jpg";
+        public const string DefaultBookCoverImagePathBg = "/images/BookCovers/default.jpg";
+        public const string DefaultBookCoverEn = "/images/BookCovers/default-en.jpg";
 
         //Email senter information
         public const string  SenderInformation = "RB \"Mihalaki Georgiev\", Vidin";

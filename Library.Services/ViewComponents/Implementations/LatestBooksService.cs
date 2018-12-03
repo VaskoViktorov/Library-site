@@ -25,7 +25,7 @@
             => await this.db
                 .Books
                 .OrderByDescending(b => b.Id)
-                .Where(b => b.ImageUrl != DefaultBookCoverBg && b.Language == (Language)language.ParseLang())
+                .Where(b => b.ImageUrl != DefaultBookCoverImagePathBg && b.Language == (Language)language.ParseLang())
                 .Take(LatestBooksAmount)
                 .ProjectTo<LatestBookServiceModel>()
                 .ToListAsync();
