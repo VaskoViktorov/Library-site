@@ -79,6 +79,33 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Galleries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be longer than {1} symbols..
+        /// </summary>
+        public static string MaxLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MaxLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be shorter than {1} symbols..
+        /// </summary>
+        public static string MinLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MinLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show.
         /// </summary>
         public static string Show {

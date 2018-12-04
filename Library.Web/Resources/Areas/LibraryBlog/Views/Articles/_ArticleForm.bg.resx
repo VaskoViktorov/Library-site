@@ -142,7 +142,7 @@
     <value>Краезнание</value>
   </data>
   <data name="If the gallery has less than two pictures, it will be auto hidden" xml:space="preserve">
-    <value>Ако галерията съдържа по - малко от две снимки, ще бъде скрита абтоматично</value>
+    <value>Ако галерията съдържа по - малко от две снимки, ще бъде скрита автоматично.</value>
   </data>
   <data name="Information center" xml:space="preserve">
     <value>Справочен</value>
@@ -152,5 +152,11 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Запази</value>
+  </data>
+  <data name="The first uploaded picture, will be used for main pic." xml:space="preserve">
+    <value>Първата качена снимка, става заглавна за новината.</value>
+  </data>
+  <data name="To upload several pictures, mark the ones you want, before hitting the open button." xml:space="preserve">
+    <value>За качване на няколко снимки, маркирайте желаните снимки, преди да натиснете бутона за отваряне.</value>
   </data>
 </root>

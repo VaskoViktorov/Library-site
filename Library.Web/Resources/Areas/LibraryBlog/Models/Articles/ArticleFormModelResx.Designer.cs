@@ -97,11 +97,38 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be longer than {1} symbols..
+        /// </summary>
+        public static string MaxLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MaxLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be shorter than {1} symbols..
+        /// </summary>
+        public static string MinLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MinLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Release date.
         /// </summary>
         public static string Release {
             get {
                 return ResourceManager.GetString("Release", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
             }
         }
         
@@ -120,6 +147,15 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Articles {
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid {0}. The {0} can&apos;t be in future..
+        /// </summary>
+        public static string ValidateArticleReleaseDate {
+            get {
+                return ResourceManager.GetString("ValidateArticleReleaseDate", resourceCulture);
             }
         }
     }

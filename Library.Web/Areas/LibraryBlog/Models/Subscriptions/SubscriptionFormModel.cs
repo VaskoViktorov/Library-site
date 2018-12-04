@@ -8,21 +8,21 @@
 
     public class SubscriptionFormModel
     {
-        [Required]
-        [MinLength(SubscriptionNameMinLength)]
-        [MaxLength(SubscriptionNameMaxLength)]
+        [Required(ErrorMessageResourceName = "RequiredErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
+        [MinLength(SubscriptionNameMinLength, ErrorMessageResourceName = "MinLengthErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
+        [MaxLength(SubscriptionNameMaxLength, ErrorMessageResourceName = "MaxLengthErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
         [Display(Name = "Name", ResourceType = typeof(SubscriptionFormModelResx))]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "RequiredErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
         [Display(Name = "Department", ResourceType = typeof(SubscriptionFormModelResx))]
         public DepartmentType Department { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "RequiredErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
         [Display(Name = "Type", ResourceType = typeof(SubscriptionFormModelResx))]
         public SubscriptionType Type { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "RequiredErrorMsg", ErrorMessageResourceType = typeof(SubscriptionFormModelResx))]
         [Display(Name = "Language", ResourceType = typeof(SubscriptionFormModelResx))]
         public Language Language { get; set; }
     }

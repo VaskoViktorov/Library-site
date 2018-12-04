@@ -282,4 +282,7 @@
   <data name="Site map" xml:space="preserve">
     <value>Карта на сайта</value>
   </data>
+  <data name="Significant people" xml:space="preserve">
+    <value>Известни личности</value>
+  </data>
 </root>

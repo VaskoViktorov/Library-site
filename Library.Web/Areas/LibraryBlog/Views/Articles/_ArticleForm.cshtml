@@ -44,8 +44,10 @@
         <label asp-for="AddGallery"></label>
         <input type="checkbox" asp-for="AddGallery" />
         <span asp-validation-for="AddGallery" class="text-danger"></span>
-    </div>
-   
+    </div>   
+    <span class="author-text">*@Localizer["To upload several pictures, mark the ones you want, before hitting the open button."]</span>
+    <br />
+    <span class="author-text">*@Localizer["The first uploaded picture, will be used for main pic."]</span>
     <div class="form-group">
         <input asp-for="Files" class="form-control" name="files" multiple />
     </div>

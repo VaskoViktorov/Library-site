@@ -1,42 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Често задавани въпроси";
-    ViewData["Description"] = "Списък със често задавани въпроси. Ако имате допълнителни въпроси, свържете се с нас!";
+﻿@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["FAQRL"];
+    ViewData["Description"] = Localizer["Description"];
 }
 <div class="row text-center">
-    <h2>@ViewData["Title"]</h2>
+    <h2>@Localizer["FAQ"]</h2>
 </div>
 
 <div class="row p-10 width-85pr mr-0-auto">
-    <p class="bold font-size-1k4em">Как да стана читател?</p>
-    <p class="text-justify">
-        Можете да се регистрирате при нас с документ за самоличност за срок от една година или един/пет дни.
-        За повече информация вижте нашия <a asp-controller="Home" asp-action="PriceList">ценоразпис</a>.
+    <p class="bold font-size-1k4em">@Localizer["BecomeReader"]</p>
+    <p class="text-justify">@Localizer["FirstParagraph"] 
+        <a asp-controller="Home" asp-action="PriceList">@Localizer["Pricelist"]</a>.
     </p>
     <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">Как да проверя, дали книгата е налична?</p>
-    <p>1. Влезте в <a href="//libvidin.eu:8000/absw/abs.htm">Е-Библиотека</a></p>
-    <p>2. Напишете заглавието на книгата в полето за търсене.</p>
-    <p>3. В резултата от търсенето под всяка книга, ще Ви изпише нейния статус: налична/заета.</p>
+    <p class="bold font-size-1k4em">@Localizer["BookAvailable"]</p>
+    <p>@Localizer["SecondParagraphPartOne"]<a href="//libvidin.eu:8000/absw/abs.htm">@Localizer["ELibrary"]</a></p>
+    <p>@Localizer["SecondParagraphPartTwo"]</p>
+    <p>@Localizer["SecondParagraphPartThree"]</p>
     <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">Как да взема книга?</p>
-    <p>
-        Заповядайте на място в библиотеката, където след представяне на лична читателска карта, ще получите желаната от Вас книга,
-        за ползване на място или за ползване вкъщи /за срок от 20 дни с опция за удължаване на срока/.
+    <p class="bold font-size-1k4em">@Localizer["HowToBorrowBook"]</p>
+    <p>@Localizer["ThirdParagraph"]</p>
+    <hr class="lib-hr" />
+    <p class="bold font-size-1k4em">@Localizer["HowToRebook"]</p>
+    <p>@Localizer["FourthParagraphPartOne"]
+        <a asp-controller="Home" asp-action="ExtendPeriod">@Localizer["FourthParagraphPartTwo"]</a>, @Localizer["FourthParagraphPartThree"]
     </p>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">Как да презапиша книга?</p>
-    <p>Можете да презапишете книга на място в библиотеката или <a asp-controller="Home" asp-action="ExtendPeriod">директно през сайта</a>, еднократно за срок от 20 дни.</p>
-    <p>Презаписването може да бъде отказано когато:</p>
+    <p>@Localizer["FourthParagraphPartFour"]:</p>
     <ul>
-        <li>Книгата е резервирана от друг читател.</li>
-        <li>Вече сте презаписали книгата веднъж.</li>
+        <li>@Localizer["FourthParagraphPartFive"].</li>
+        <li>@Localizer["FourthParagraphPartSix"].</li>
     </ul>
-   <hr class="lib-hr"/>
-    <p class="bold font-size-1k4em">Как да поръчам книга от друга библиотека?</p>
+    <hr class="lib-hr" />
+    <p class="bold font-size-1k4em">@Localizer["HowToOrderBook"]?</p>
     <p>
-        Библиотеката предлага услугата Междубиблиотечно заемане. За да се възползвате от тази услуга се обърнете към отдел <a asp-area="" asp-controller="Home" asp-action="ReadingRooms">„Читални”.</a> Пишете ни на <a>rbmg@abv.bg</a> или се обадете на тел. 087 9940 277
+        @Localizer["FifthParagraphpartOne"]
+        <a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["FifthParagraphpartTwo"].</a> 
+        @Localizer["FifthParagraphpartThree"] <a>rbmg@abv.bg</a> 
+        @Localizer["FifthParagraphpartFour"] 087 9940 277.
     </p>
-    <hr class="lib-hr"/>
-    <p class="bold font-size-1k4em">Как да ви намеря?</p>
-    <p>Обадете ни се на телефон 094/601 704, 094/604 702, пишете на e-mail <a>rbmg@abv.bg</a> или  <a asp-controller="Home" asp-action="Contact">елате на място</a>.</p>
+    <hr class="lib-hr" />
+    <p class="bold font-size-1k4em">@Localizer["HowCanIFindYou"]</p>
+    <p>@Localizer["SixthParagraphPartOne"] 094/601 704, 094/604 702, @Localizer["SixthParagraphPartTwo"] e-mail <a>rbmg@abv.bg</a> @Localizer["SixthParagraphPartThree"]  <a asp-controller="Home" asp-action="Contact">@Localizer["SixthParagraphPartFour"]</a>.</p>
 </div>

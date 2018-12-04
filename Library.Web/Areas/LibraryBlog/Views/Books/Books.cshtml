@@ -1,7 +1,7 @@
 ﻿@model BookListingViewModel
 @inject IViewLocalizer Localizer
 @{
-    string filter = string.Join("", Context.Request.QueryString.Value.Skip(8));
+    string filter = Model.Filter;
 
     switch (filter)
     {
@@ -63,11 +63,19 @@
     <div class="text-center">
         <ul class="pagination">
             <li class="page-item @previousDisabled">
-                <a class="page-link @previousDisabled" asp-route-page="@Model.PreviousPage" aria-label="Previous">
+                <a class="page-link @previousDisabled" asp-route-filter="@filter" asp-route-page="@Model.PreviousPage" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">@Localizer["Previous"]</span>
                 </a>
             </li>
+            @if (Model.CurrentPage > 2)
+            {
+                <li class="page-item 1"><a class="page-link" asp-route-page="1">1</a></li>
+                if (Model.CurrentPage == Model.TotalPages)
+                {
+                    <li class="page-item disabled"><a class="bold first-color disabled">...</a></li>
+                }
+            }
             @if (Model.CurrentPage > 1)
             {
                 <li class="page-item @(Model.PreviousPage)"><a class="page-link" asp-route-filter="@filter" asp-route-page="@Model.PreviousPage">@Model.PreviousPage</a></li>
@@ -81,7 +89,7 @@
             {
                 if (Model.CurrentPage < Model.TotalPages - 2)
                 {
-                    <li class="page-item disabled"><a class="bold first-color">...</a></li>
+                    <li class="page-item disabled"><a class="bold first-color disabled">...</a></li>
                 }
                 <li class="page-item @(Model.TotalPages)"><a class="page-link" asp-route-filter="@filter" asp-route-page="@Model.TotalPages">@Model.TotalPages</a></li>
             }
@@ -99,11 +107,11 @@
     <script>
         $(document).ready(function () {
             if (getCookie("BookView") === false) {
-                document.cookie = "BookView=List";
-                changeClass();
+                document.cookie = "BookView=Large;path=/";
+                ChangeClass();
             }
 
-            rearangeByClass();
+            RearangeByClass();
         });
 
         function getCookie(name) {
@@ -118,27 +126,23 @@
             return false;
         }
 
-        function changeClass() {
+        function ChangeClass() {
+            if (getCookie("BookView") === "List") {
+                document.cookie = "BookView=Large;path=/";
+            } else {
+                document.cookie = "BookView=List;path=/";
+            }
 
+            RearangeByClass();
+        }
+
+        function RearangeByClass() {
+            var elements = document.getElementsByClassName("min-h-150");
             var item = document.getElementById("glyph-change");
 
             if (getCookie("BookView") === "List") {
                 item.classList.remove('glyphicon-th-large');
                 item.classList.add('glyphicon-th-list');
-                document.cookie = "BookView=Large";
-            } else {
-                item.classList.remove('glyphicon-th-list');
-                item.classList.add('glyphicon-th-large');
-                document.cookie = "BookView=List";
-            }
-
-            rearangeByClass();
-        }
-
-        function rearangeByClass() {
-            var elements = document.getElementsByClassName("min-h-150");
-
-            if (getCookie("BookView") === "List") {
 
                 for (var i = 0, len = elements.length; i < len; i++) {
 
@@ -148,9 +152,11 @@
                     }
                 }
             } else {
+                item.classList.remove('glyphicon-th-list');
+                item.classList.add('glyphicon-th-large');
 
                 for (var j = 0, leng = elements.length; j < leng; j++) {
-
+                    
                     if (elements[j].classList.contains('col-md-6')) {
                         elements[j].classList.remove('col-md-6');
                         elements[j].classList.add('col-md-12');

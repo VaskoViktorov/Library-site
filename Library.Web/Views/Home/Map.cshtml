@@ -60,7 +60,7 @@
 <li>
     @Localizer["KidsWorld"]
 <ul>
-    <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForKids">@Localizer["NewChildrenBooks"]</a></li>
+    <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" asp-route-filter="@WebConstants.BooksForKidsFilter">@Localizer["NewChildrenBooks"]</a></li>
     <li><a asp-area="" asp-controller="Home" asp-action="ProgramForKids">@Localizer["WorkWithChildrenProgram"]</a></li>
     <li><a asp-area="" asp-controller="Home" asp-action="Internet">@Localizer["SafeInternet"]</a></li>
     <li><a asp-area="" asp-controller="Home" asp-action="ForTheStudents">@Localizer["ForTheStudent"]</a></li>
@@ -73,19 +73,20 @@
     <li><a asp-area="" asp-controller="Home" asp-action="MihalakiGeorgiev">@Localizer["MihalakiGeorgiev"]</a></li>
     <li><a asp-area="" asp-controller="Home" asp-action="Vidin">@Localizer["Vidin"]</a></li>
     <li><a asp-area="" asp-controller="Home" asp-action="Editions">@Localizer["Publications"]</a></li>
-    <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="BooksForLand">@Localizer["NewBooks"]</a></li>
+    <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" asp-route-filter="@WebConstants.BooksForLandFilter">@Localizer["NewBooks"]</a></li>
 </ul>
 </li>
 <li><a asp-area="LibraryBlog" asp-controller="Articles" asp-action="Articles">@Localizer["News"]</a></li>
 <li><a asp-area="LibraryBlog" asp-controller="Galleries" asp-action="Galleries">@Localizer["Gallery"]</a></li>
 <li>
     @Localizer["ELibrary"]
-<ul>
-    <li><a href="//libvidin.eu:8000/absw/abs.htm">@Localizer["ELibrary"]</a></li>
-    <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["NewBooks"]</a></li>
-    <li><a asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
-    <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["OtherECatalouges"]</a></li>
-</ul>
+    <ul>
+        <li><a href="http://libvidin.eu:8000/absw/abs.htm">@Localizer["ELibrary"]</a></li>
+        <li><a asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["NewBooks"]</a></li>
+        <li><a asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
+        <li><a href="http://libvidin.eu:8081/libvidin/public/">@Localizer["SignificantPeople"]</a></li>
+        <li><a href="//www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["OtherECatalouges"]</a></li>
+    </ul>
 </li>
 </ul>
 <ul class="text-left mr-t-b-25">

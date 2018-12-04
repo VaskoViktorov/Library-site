@@ -270,4 +270,7 @@
   <data name="ЕxtendBookBorrowPeriod" xml:space="preserve">
     <value>Презапиши книга</value>
   </data>
+  <data name="SignificantPeople" xml:space="preserve">
+    <value>Известни личности</value>
+  </data>
 </root>

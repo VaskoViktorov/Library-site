@@ -123,6 +123,15 @@
   <data name="Language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="MaxLengthErrorMsg" xml:space="preserve">
+    <value>The {0} field can't be longer than {1} symbols.</value>
+  </data>
+  <data name="MinLengthErrorMsg" xml:space="preserve">
+    <value>The {0} field can't be shorter than {1} symbols.</value>
+  </data>
+  <data name="RequiredErrorMsg" xml:space="preserve">
+    <value>The {0} is required.</value>
+  </data>
   <data name="Show" xml:space="preserve">
     <value>Show</value>
   </data>

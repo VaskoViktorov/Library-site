@@ -86,12 +86,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://libvidin.eu/libraryblog/books/booksforkids</loc>
-  <lastmod>2018-08-31T11:13:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://libvidin.eu/home/programforkids</loc>
   <lastmod>2018-08-31T11:13:39+00:00</lastmod>
   <changefreq>weekly</changefreq>
@@ -133,12 +127,7 @@
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://libvidin.eu/libraryblog/books/booksforland</loc>
-  <lastmod>2018-08-31T11:13:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
-</url>
+
 <url>
   <loc>https://libvidin.eu/libraryblog/articles/articles</loc>
   <lastmod>2018-08-31T11:13:39+00:00</lastmod>
@@ -434,12 +423,6 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://libvidin.eu/libraryblog/books/booksforkids?page=1</loc>
-  <lastmod>2018-08-31T11:13:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://libvidin.eu/libraryblog/books/details/225</loc>
   <lastmod>2018-08-31T11:13:39+00:00</lastmod>
   <changefreq>weekly</changefreq>
@@ -498,14 +481,7 @@
   <lastmod>2018-08-31T11:13:39+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://libvidin.eu/libraryblog/books/booksforland?page=1</loc>
-  <lastmod>2018-08-31T11:13:39+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
+</url><url>
   <loc>https://libvidin.eu/libraryblog/articles/details/35</loc>
   <lastmod>2018-08-31T11:13:39+00:00</lastmod>
   <changefreq>weekly</changefreq>

@@ -16,5 +16,7 @@
 
         public int NextPage
             => this.CurrentPage == this.TotalPages ? this.TotalPages : this.CurrentPage + 1;
+
+        public string Filter { get; set; }
     }
 }

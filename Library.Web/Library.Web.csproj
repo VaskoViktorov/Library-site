@@ -366,6 +366,12 @@
     <EmbeddedResource Update="Resources\Views\Home\ExtendPeriod.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Faq.bg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Faq.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\ForTheStudents.bg.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

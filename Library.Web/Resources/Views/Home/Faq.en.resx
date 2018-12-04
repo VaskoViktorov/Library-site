@@ -117,160 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutUs" xml:space="preserve">
-    <value>About us</value>
+  <data name="BecomeReader" xml:space="preserve">
+    <value>How can I become a reader at the library?</value>
   </data>
-  <data name="Art" xml:space="preserve">
-    <value>"Art" department</value>
+  <data name="BookAvailable" xml:space="preserve">
+    <value>How do I check if a book is available?</value>
   </data>
-  <data name="AskTheLibrarian" xml:space="preserve">
-    <value>Ask the librarian</value>
-  </data>
-  <data name="Children" xml:space="preserve">
-    <value>"Children's" department</value>
-  </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Contacts</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Contributors</value>
+  <data name="Description" xml:space="preserve">
+    <value>List with frequently asked questions in Regional Library "Mihalaki Georgiev" - Vidin. If you have additional question, please contact us!</value>
   </data>
   <data name="ELibrary" xml:space="preserve">
     <value>E-Library</value>
   </data>
-  <data name="EventsRoom" xml:space="preserve">
-    <value>Event hall</value>
-  </data>
   <data name="FAQ" xml:space="preserve">
     <value>FAQ</value>
   </data>
-  <data name="financial" xml:space="preserve">
-    <value>Financial Donation</value>
+  <data name="FAQRL" xml:space="preserve">
+    <value>FAQ Regional Library "Mihalaki Georgiev" - Vidin</value>
   </data>
-  <data name="FindUs" xml:space="preserve">
-    <value>Find us</value>
+  <data name="FifthParagraphpartFour" xml:space="preserve">
+    <value>or call </value>
   </data>
-  <data name="Foreign" xml:space="preserve">
-    <value>"Foreign language reading room" department</value>
+  <data name="FifthParagraphpartOne" xml:space="preserve">
+    <value>The Library offers Interlibrary borrowing. To take advantage of this service, contact </value>
   </data>
-  <data name="ForTheCurious" xml:space="preserve">
-    <value>For the curious</value>
+  <data name="FifthParagraphpartThree" xml:space="preserve">
+    <value>Write to us at</value>
   </data>
-  <data name="ForTheStudent" xml:space="preserve">
-    <value>For the student</value>
+  <data name="FifthParagraphpartTwo" xml:space="preserve">
+    <value>"Reading room" dep</value>
   </data>
-  <data name="Functions" xml:space="preserve">
-    <value>Functions</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>You can register in the library as a readear, for a period of one year or one / five days,with an ID. For more information, please see our</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Gallery</value>
+  <data name="FourthParagraphPartFive" xml:space="preserve">
+    <value>The book is reserved by another reader</value>
   </data>
-  <data name="History" xml:space="preserve">
-    <value>History</value>
+  <data name="FourthParagraphPartFour" xml:space="preserve">
+    <value>The re-booking can be denied when</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="FourthParagraphPartOne" xml:space="preserve">
+    <value>You can re-book in the library or</value>
   </data>
-  <data name="Homeland" xml:space="preserve">
-    <value>Homeland</value>
+  <data name="FourthParagraphPartSix" xml:space="preserve">
+    <value>You have already reserved the book once</value>
   </data>
-  <data name="InfoCenter" xml:space="preserve">
-    <value>Information and reference-bibliographic services center</value>
+  <data name="FourthParagraphPartThree" xml:space="preserve">
+    <value>once for a period of 20 days.</value>
   </data>
-  <data name="KidsWorld" xml:space="preserve">
-    <value>Kids World</value>
+  <data name="FourthParagraphPartTwo" xml:space="preserve">
+    <value>directly from the site</value>
   </data>
-  <data name="Lending" xml:space="preserve">
-    <value>Lending department for adults</value>
+  <data name="HowCanIFindYou" xml:space="preserve">
+    <value>How can I find you?</value>
   </data>
-  <data name="Library" xml:space="preserve">
-    <value>Library</value>
+  <data name="HowToBorrowBook" xml:space="preserve">
+    <value>How to borrow a book?</value>
   </data>
-  <data name="LibraryInfo" xml:space="preserve">
-    <value>Library info</value>
+  <data name="HowToOrderBook" xml:space="preserve">
+    <value>How to order a book from another library</value>
   </data>
-  <data name="LibraryPost" xml:space="preserve">
-    <value>LibraryPost</value>
+  <data name="HowToRebook" xml:space="preserve">
+    <value>How do you re-book?</value>
   </data>
-  <data name="LocalHistory" xml:space="preserve">
-    <value>"Local history" department</value>
+  <data name="Pricelist" xml:space="preserve">
+    <value>pricelist</value>
   </data>
-  <data name="MakeDonation" xml:space="preserve">
-    <value>Make Donation</value>
+  <data name="SecondParagraphPartOne" xml:space="preserve">
+    <value>1. Open </value>
   </data>
-  <data name="material" xml:space="preserve">
-    <value>Material Donation</value>
+  <data name="SecondParagraphPartThree" xml:space="preserve">
+    <value>3. In the search result under each book, it will display its status: Available / Unavailable.</value>
   </data>
-  <data name="metadata" xml:space="preserve">
-    <value>The site map gives you easy access to almost every page on the site.</value>
+  <data name="SecondParagraphPartTwo" xml:space="preserve">
+    <value>2. Write the title of the book in the search box.</value>
   </data>
-  <data name="Methodological" xml:space="preserve">
-    <value>"Methodological" department</value>
+  <data name="SixthParagraphPartFour" xml:space="preserve">
+    <value>come in the library</value>
   </data>
-  <data name="MihalakiGeorgiev" xml:space="preserve">
-    <value>Mihalaki Georgiev</value>
+  <data name="SixthParagraphPartOne" xml:space="preserve">
+    <value>Call us on phone</value>
   </data>
-  <data name="NewBooks" xml:space="preserve">
-    <value>New books</value>
+  <data name="SixthParagraphPartThree" xml:space="preserve">
+    <value>or</value>
   </data>
-  <data name="NewChildrenBooks" xml:space="preserve">
-    <value>New children books</value>
+  <data name="SixthParagraphPartTwo" xml:space="preserve">
+    <value>write to</value>
   </data>
-  <data name="News" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="OpeningHours" xml:space="preserve">
-    <value>Opening hours</value>
-  </data>
-  <data name="OtherECatalouges" xml:space="preserve">
-    <value>Other E-Catalouges</value>
-  </data>
-  <data name="OurServices" xml:space="preserve">
-    <value>Our Services</value>
-  </data>
-  <data name="Partners" xml:space="preserve">
-    <value>Partners</value>
-  </data>
-  <data name="PriceList" xml:space="preserve">
-    <value>Price list</value>
-  </data>
-  <data name="Publications" xml:space="preserve">
-    <value>Publications</value>
-  </data>
-  <data name="ReadingRooms" xml:space="preserve">
-    <value>"Reading rooms - branch of scholarship, exact and applied sciences, periodicals" department</value>
-  </data>
-  <data name="SafeInternet" xml:space="preserve">
-    <value>Safe internet</value>
-  </data>
-  <data name="SRC" xml:space="preserve">
-    <value>"Supplying, registration and cataloging" department</value>
-  </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Structure</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Subscriptions</value>
-  </data>
-  <data name="title" xml:space="preserve">
-    <value>Site map</value>
-  </data>
-  <data name="UsefulInformation" xml:space="preserve">
-    <value>Useful information</value>
-  </data>
-  <data name="UsefulLinks" xml:space="preserve">
-    <value>Useful links</value>
-  </data>
-  <data name="Vidin" xml:space="preserve">
-    <value>Vidin</value>
-  </data>
-  <data name="WorkWithChildrenProgram" xml:space="preserve">
-    <value>Work with children program</value>
-  </data>
-  <data name="ЕxtendBookBorrowPeriod" xml:space="preserve">
-    <value>Еxtend book borrow period</value>
-  </data>
-  <data name="SignificantPeople" xml:space="preserve">
-    <value>Significant people</value>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>You should come to the library where, after presenting a personal reader card, you will receive the book you want to read on site or at home / for a period of 20 days with an option to extend the term.</value>
   </data>
 </root>

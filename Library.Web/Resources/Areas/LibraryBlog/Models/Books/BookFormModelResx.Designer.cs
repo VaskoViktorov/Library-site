@@ -133,6 +133,24 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Books {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be longer than {1} symbols..
+        /// </summary>
+        public static string MaxLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MaxLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field can&apos;t be shorter than {1} symbols..
+        /// </summary>
+        public static string MinLengthErrorMsg {
+            get {
+                return ResourceManager.GetString("MinLengthErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pages.
         /// </summary>
         public static string Pages {
@@ -147,6 +165,24 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Books {
         public static string Publisher {
             get {
                 return ResourceManager.GetString("Publisher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field must be between {1} and {2}..
+        /// </summary>
+        public static string RangeErrorMsg {
+            get {
+                return ResourceManager.GetString("RangeErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
             }
         }
         

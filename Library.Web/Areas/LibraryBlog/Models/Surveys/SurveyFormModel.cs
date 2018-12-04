@@ -7,7 +7,7 @@
     {
         public string id { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "RequiredErrorMsg", ErrorMessageResourceType = typeof(SurveyFormModelResx))]
         [Display(Name = "Url", ResourceType = typeof(SurveyFormModelResx))]
         public string url { get; set; }
     }

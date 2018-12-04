@@ -123,6 +123,15 @@
   <data name="Language" xml:space="preserve">
     <value>Език</value>
   </data>
+  <data name="MaxLengthErrorMsg" xml:space="preserve">
+    <value>Полето "{0}" не може да е по - дълго от {1} символа.</value>
+  </data>
+  <data name="MinLengthErrorMsg" xml:space="preserve">
+    <value>Полето "{0}" не може да е по - кратко от {1} символа.</value>
+  </data>
+  <data name="RequiredErrorMsg" xml:space="preserve">
+    <value>Полето "{0}", е задължително.</value>
+  </data>
   <data name="Show" xml:space="preserve">
     <value>Покажи</value>
   </data>

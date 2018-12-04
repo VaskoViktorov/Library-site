@@ -69,7 +69,8 @@
             {
                 Books = filterType,
                 TotalPages = totalPages,
-                CurrentPage = page
+                CurrentPage = page,
+                Filter = filter
             });
         }
         

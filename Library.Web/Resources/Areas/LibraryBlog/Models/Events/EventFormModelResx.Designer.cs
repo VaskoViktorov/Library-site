@@ -79,6 +79,15 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Events {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string Title {

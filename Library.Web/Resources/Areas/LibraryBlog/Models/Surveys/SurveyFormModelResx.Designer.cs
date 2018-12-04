@@ -61,6 +61,15 @@ namespace Library.Web.Resources.Areas.LibraryBlog.Models.Surveys {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} is required..
+        /// </summary>
+        public static string RequiredErrorMsg {
+            get {
+                return ResourceManager.GetString("RequiredErrorMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Url.
         /// </summary>
         public static string Url {

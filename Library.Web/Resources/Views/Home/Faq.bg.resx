@@ -117,160 +117,95 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutUs" xml:space="preserve">
-    <value>About us</value>
+  <data name="BecomeReader" xml:space="preserve">
+    <value>Как да стана читател?</value>
   </data>
-  <data name="Art" xml:space="preserve">
-    <value>"Art" department</value>
+  <data name="BookAvailable" xml:space="preserve">
+    <value>Как да проверя, дали книгата е налична?</value>
   </data>
-  <data name="AskTheLibrarian" xml:space="preserve">
-    <value>Ask the librarian</value>
-  </data>
-  <data name="Children" xml:space="preserve">
-    <value>"Children's" department</value>
-  </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Contacts</value>
-  </data>
-  <data name="Contributors" xml:space="preserve">
-    <value>Contributors</value>
+  <data name="Description" xml:space="preserve">
+    <value>Списък със често задавани въпроси в Р.Б. "Михалаки Георгиев" - Видин. Ако имате допълнителни въпроси, свържете се с нас!</value>
   </data>
   <data name="ELibrary" xml:space="preserve">
-    <value>E-Library</value>
-  </data>
-  <data name="EventsRoom" xml:space="preserve">
-    <value>Event hall</value>
+    <value>Е-Библиотека</value>
   </data>
   <data name="FAQ" xml:space="preserve">
-    <value>FAQ</value>
+    <value>Често задавани въпроси</value>
   </data>
-  <data name="financial" xml:space="preserve">
-    <value>Financial Donation</value>
+  <data name="FAQRL" xml:space="preserve">
+    <value>Често задавани въпроси в Р.Б. "Михалаки Георгиев" - Видин</value>
   </data>
-  <data name="FindUs" xml:space="preserve">
-    <value>Find us</value>
+  <data name="FifthParagraphpartFour" xml:space="preserve">
+    <value>или се обадете на тел.</value>
   </data>
-  <data name="Foreign" xml:space="preserve">
-    <value>"Foreign language reading room" department</value>
+  <data name="FifthParagraphpartOne" xml:space="preserve">
+    <value>Библиотеката предлага услугата Междубиблиотечно заемане. За да се възползвате от тази услуга се обърнете към отдел</value>
   </data>
-  <data name="ForTheCurious" xml:space="preserve">
-    <value>For the curious</value>
+  <data name="FifthParagraphpartThree" xml:space="preserve">
+    <value>Пишете ни на</value>
   </data>
-  <data name="ForTheStudent" xml:space="preserve">
-    <value>For the student</value>
+  <data name="FifthParagraphpartTwo" xml:space="preserve">
+    <value>„Читални”</value>
   </data>
-  <data name="Functions" xml:space="preserve">
-    <value>Functions</value>
+  <data name="FirstParagraph" xml:space="preserve">
+    <value>Можете да се регистрирате при нас с документ за самоличност за срок от една година или един/пет дни. За повече информация вижте нашия</value>
   </data>
-  <data name="Gallery" xml:space="preserve">
-    <value>Gallery</value>
+  <data name="FourthParagraphPartFive" xml:space="preserve">
+    <value>Книгата е резервирана от друг читател</value>
   </data>
-  <data name="History" xml:space="preserve">
-    <value>History</value>
+  <data name="FourthParagraphPartFour" xml:space="preserve">
+    <value>Презаписването може да бъде отказано когато</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="FourthParagraphPartOne" xml:space="preserve">
+    <value>Можете да презапишете книга на място в библиотеката или</value>
   </data>
-  <data name="Homeland" xml:space="preserve">
-    <value>Homeland</value>
+  <data name="FourthParagraphPartSix" xml:space="preserve">
+    <value>Вече сте презаписали книгата веднъж</value>
   </data>
-  <data name="InfoCenter" xml:space="preserve">
-    <value>Information and reference-bibliographic services center</value>
+  <data name="FourthParagraphPartThree" xml:space="preserve">
+    <value>еднократно за срок от 20 дни.</value>
   </data>
-  <data name="KidsWorld" xml:space="preserve">
-    <value>Kids World</value>
+  <data name="FourthParagraphPartTwo" xml:space="preserve">
+    <value>директно през сайта</value>
   </data>
-  <data name="Lending" xml:space="preserve">
-    <value>Lending department for adults</value>
+  <data name="HowCanIFindYou" xml:space="preserve">
+    <value>Как да ви намеря?</value>
   </data>
-  <data name="Library" xml:space="preserve">
-    <value>Library</value>
+  <data name="HowToBorrowBook" xml:space="preserve">
+    <value>Как да взема книга?</value>
   </data>
-  <data name="LibraryInfo" xml:space="preserve">
-    <value>Library info</value>
+  <data name="HowToOrderBook" xml:space="preserve">
+    <value>Как да поръчам книга от друга библиотека</value>
   </data>
-  <data name="LibraryPost" xml:space="preserve">
-    <value>LibraryPost</value>
+  <data name="HowToRebook" xml:space="preserve">
+    <value>Как да презапиша книга?</value>
   </data>
-  <data name="LocalHistory" xml:space="preserve">
-    <value>"Local history" department</value>
+  <data name="Pricelist" xml:space="preserve">
+    <value>ценоразпис</value>
   </data>
-  <data name="MakeDonation" xml:space="preserve">
-    <value>Make Donation</value>
+  <data name="SecondParagraphPartOne" xml:space="preserve">
+    <value>1. Влезте в</value>
   </data>
-  <data name="material" xml:space="preserve">
-    <value>Material Donation</value>
+  <data name="SecondParagraphPartThree" xml:space="preserve">
+    <value>3. В резултата от търсенето под всяка книга, ще Ви изпише нейния статус: налична/заета.</value>
   </data>
-  <data name="metadata" xml:space="preserve">
-    <value>The site map gives you easy access to almost every page on the site.</value>
+  <data name="SecondParagraphPartTwo" xml:space="preserve">
+    <value>2. Напишете заглавието на книгата в полето за търсене.</value>
   </data>
-  <data name="Methodological" xml:space="preserve">
-    <value>"Methodological" department</value>
+  <data name="SixthParagraphPartFour" xml:space="preserve">
+    <value>елате на място</value>
   </data>
-  <data name="MihalakiGeorgiev" xml:space="preserve">
-    <value>Mihalaki Georgiev</value>
+  <data name="SixthParagraphPartOne" xml:space="preserve">
+    <value>Обадете ни се на телефон</value>
   </data>
-  <data name="NewBooks" xml:space="preserve">
-    <value>New books</value>
+  <data name="SixthParagraphPartThree" xml:space="preserve">
+    <value>или</value>
   </data>
-  <data name="NewChildrenBooks" xml:space="preserve">
-    <value>New children books</value>
+  <data name="SixthParagraphPartTwo" xml:space="preserve">
+    <value>пишете на</value>
   </data>
-  <data name="News" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="OpeningHours" xml:space="preserve">
-    <value>Opening hours</value>
-  </data>
-  <data name="OtherECatalouges" xml:space="preserve">
-    <value>Other E-Catalouges</value>
-  </data>
-  <data name="OurServices" xml:space="preserve">
-    <value>Our Services</value>
-  </data>
-  <data name="Partners" xml:space="preserve">
-    <value>Partners</value>
-  </data>
-  <data name="PriceList" xml:space="preserve">
-    <value>Price list</value>
-  </data>
-  <data name="Publications" xml:space="preserve">
-    <value>Publications</value>
-  </data>
-  <data name="ReadingRooms" xml:space="preserve">
-    <value>"Reading rooms - branch of scholarship, exact and applied sciences, periodicals" department</value>
-  </data>
-  <data name="SafeInternet" xml:space="preserve">
-    <value>Safe internet</value>
-  </data>
-  <data name="SRC" xml:space="preserve">
-    <value>"Supplying, registration and cataloging" department</value>
-  </data>
-  <data name="Structure" xml:space="preserve">
-    <value>Structure</value>
-  </data>
-  <data name="Subscriptions" xml:space="preserve">
-    <value>Subscriptions</value>
-  </data>
-  <data name="title" xml:space="preserve">
-    <value>Site map</value>
-  </data>
-  <data name="UsefulInformation" xml:space="preserve">
-    <value>Useful information</value>
-  </data>
-  <data name="UsefulLinks" xml:space="preserve">
-    <value>Useful links</value>
-  </data>
-  <data name="Vidin" xml:space="preserve">
-    <value>Vidin</value>
-  </data>
-  <data name="WorkWithChildrenProgram" xml:space="preserve">
-    <value>Work with children program</value>
-  </data>
-  <data name="ЕxtendBookBorrowPeriod" xml:space="preserve">
-    <value>Еxtend book borrow period</value>
-  </data>
-  <data name="SignificantPeople" xml:space="preserve">
-    <value>Significant people</value>
+  <data name="ThirdParagraph" xml:space="preserve">
+    <value>Заповядайте на място в библиотеката, където след представяне на лична читателска карта, ще получите желаната от Вас книга,
+        за ползване на място или за ползване вкъщи /за срок от 20 дни с опция за удължаване на срока/.</value>
   </data>
 </root>
