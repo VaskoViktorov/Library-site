@@ -28,5 +28,11 @@
             await file.CopyToAsync(filestream);
             return filestream.ToArray();
         }
+
+        public static string ReadTxtFile(string path)
+        {
+            path = string.Format(path, Directory.GetCurrentDirectory());
+          return File.ReadAllText(path);
+        }
     }
 }

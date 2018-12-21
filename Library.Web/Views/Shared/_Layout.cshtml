@@ -1,4 +1,6 @@
 ﻿@inject IViewLocalizer Localizer
+@inject IOptions<ApplicationConfigurations> OptionsApplicationConfiguration
+
 @{
     var currentCulture = Context.Features.Get<IRequestCultureFeature>().RequestCulture.UICulture.Name;
     var engType = "";
@@ -97,7 +99,7 @@
                     </div>
                 </div>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0-3 hidden-lg hidden-md ico-style"><img src="~/images/SiteImages/LogoRBMG.png" alt="logo" /></a>
-                <a href="http://libvidin.eu:8000/absw/abs.htm" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
+                <a href="@OptionsApplicationConfiguration.Value.BookCatalogueUrl" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon glyphicon-search ico-style"></a>
                 <a asp-area="" asp-controller="Home" asp-action="Contact" class="navbar-brand p-0-3 hidden-lg hidden-md glyphicon glyphicon-map-marker ico-style"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
@@ -138,7 +140,7 @@
                         </a>
                         <ul class="dropdown-menu drop">
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books" asp-route-filter="@WebConstants.BooksForKidsFilter">@Localizer["New children books"]</a></li>
-                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids" >@Localizer["Work with children program"]</a></li>
+                            <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ProgramForKids">@Localizer["Work with children program"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="Internet">@Localizer["Safe internet"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheStudents">@Localizer["For the student"]</a></li>
                             <li><a tabindex="-1" asp-area="" asp-controller="Home" asp-action="ForTheEnthusiasts">@Localizer["For the curious"]</a></li>
@@ -162,11 +164,11 @@
                             @Localizer["E-Library"]<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu drop">
-                            <li><a href="http://libvidin.eu:8000/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                            <li><a href="@OptionsApplicationConfiguration.Value.BookCatalogueUrl">@Localizer["E-Library"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Books" asp-action="Books">@Localizer["New books"]</a></li>
                             <li><a tabindex="-1" asp-area="LibraryBlog" asp-controller="Subscriptions" asp-action="Subscriptions">@Localizer["Subscriptions"]</a></li>
-                            <li><a href="http://libvidin.eu:8081/libvidin/public/">@Localizer["Significant people"]</a></li>
-                            <li><a href="http://www.pc-tm.com/docs/pc-tm-ic_08.htm">@Localizer["Other E-Catalouges"]</a></li>
+                            <li><a href="@OptionsApplicationConfiguration.Value.PersonsCatalogueUrl">@Localizer["Significant people"]</a></li>
+                            <li><a href="@OptionsApplicationConfiguration.Value.OtherCataloguesUrl">@Localizer["Other E-Catalouges"]</a></li>
                         </ul>
                     </li>
                     @if (User.IsInRole(WebConstants.AdministratorRole) || User.IsInRole(WebConstants.LibrarianAuthorRole))
@@ -214,7 +216,7 @@
     <div class="container body-content">
         <div class="row pb-20">
             <div class="col-md-2 hidden-sm hidden-xs" id="sidebar-left"> @await Component.InvokeAsync("LatestBooks") </div>
-            <div class="col-md-8">                
+            <div class="col-md-8">
                 @RenderBody()
             </div>
             <div class="col-md-2" id="sidebar-right">@await Component.InvokeAsync("RightMenu")</div>
@@ -239,7 +241,7 @@
                     <ul class="lib-footer-ul">
                         <li><a asp-area="" asp-controller="Home" asp-action="Functions">@Localizer["Functions"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Structure">@Localizer["Structure"]</a></li>
-                        <li><a href="http://libvidin.eu:8000/absw/abs.htm">@Localizer["E-Library"]</a></li>
+                        <li><a href="@OptionsApplicationConfiguration.Value.BookCatalogueUrl">@Localizer["E-Library"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Links">@Localizer["Useful links"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Services">@Localizer["Our Services"]</a></li>
                         <li><a asp-area="" asp-controller="Home" asp-action="Map">@Localizer["Site map"]</a></li>
@@ -257,7 +259,7 @@
             </div>
         </footer>
     </div>
-    <environment include="Development">        
+    <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.panorama_viewer.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>

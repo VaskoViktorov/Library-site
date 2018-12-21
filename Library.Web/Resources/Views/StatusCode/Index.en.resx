@@ -117,142 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Accounting and cash desk" xml:space="preserve">
-    <value>Каса и счетоводство</value>
+  <data name="Congrats" xml:space="preserve">
+    <value>Congratulations!</value>
   </data>
-  <data name="Administration" xml:space="preserve">
-    <value>Администрация</value>
+  <data name="Err" xml:space="preserve">
+    <value>Error</value>
   </data>
-  <data name="Adriana Tsvetkova" xml:space="preserve">
-    <value>Адрияна Цветкова</value>
+  <data name="Error404" xml:space="preserve">
+    <value>Error 404</value>
   </data>
-  <data name="Art" xml:space="preserve">
-    <value>Изкуство</value>
+  <data name="MissPage" xml:space="preserve">
+    <value>You have found a non-existent page.</value>
   </data>
-  <data name="Assembly, Processing and Cataloging" xml:space="preserve">
-    <value>Комплектуване, обработка и каталогизация</value>
+  <data name="NotWorking" xml:space="preserve">
+    <value>Apparently something is not working properly ...</value>
   </data>
-  <data name="Automation" xml:space="preserve">
-    <value>Автоматизация</value>
+  <data name="Please" xml:space="preserve">
+    <value>Please try one of the existing ones.</value>
   </data>
-  <data name="Book borrowing" xml:space="preserve">
-    <value>Заемна за възрастни</value>
-  </data>
-  <data name="Boriana Dikova" xml:space="preserve">
-    <value>Боряна Дикова</value>
-  </data>
-  <data name="Boris Ivanov" xml:space="preserve">
-    <value>Борис Иванов</value>
-  </data>
-  <data name="Center for information and referential-bibliographic services" xml:space="preserve">
-    <value>Център за информационно и справочно-библиографско обслужване</value>
-  </data>
-  <data name="Children department" xml:space="preserve">
-    <value>Детски отдел</value>
-  </data>
-  <data name="Contacts" xml:space="preserve">
-    <value>Информация за контакти</value>
-  </data>
-  <data name="Snejana Filipova" xml:space="preserve">
-    <value>Снежана Филипова</value>
-  </data>
-  <data name="Department" xml:space="preserve">
-    <value>Отдел</value>
-  </data>
-  <data name="Desislava Ivanova" xml:space="preserve">
-    <value>Десислава Иванова</value>
-  </data>
-  <data name="Desislava Krusteva" xml:space="preserve">
-    <value>Десислава Кръстева</value>
-  </data>
-  <data name="Dimitrina Dimitrova" xml:space="preserve">
-    <value>Димитрина Димитрова</value>
-  </data>
-  <data name="Director" xml:space="preserve">
-    <value>Директор</value>
-  </data>
-  <data name="Foreign languages reading room" xml:space="preserve">
-    <value>Чуждоезикова читалня</value>
-  </data>
-  <data name="Galina Stoianova" xml:space="preserve">
-    <value>Галина Стоянова</value>
-  </data>
-  <data name="head dep." xml:space="preserve">
-    <value>зав.отдел</value>
-  </data>
-  <data name="Homeland department" xml:space="preserve">
-    <value>Краезнание</value>
-  </data>
-  <data name="Irena Filipova" xml:space="preserve">
-    <value>Ирена Филипова</value>
-  </data>
-  <data name="Ivanka Ivanova" xml:space="preserve">
-    <value>Иванка Иванова</value>
-  </data>
-  <data name="Kristian Hristov" xml:space="preserve">
-    <value>Кристиян Христов</value>
-  </data>
-  <data name="Lidia Velkova" xml:space="preserve">
-    <value>Лидия Векова</value>
-  </data>
-  <data name="List with contact information for the staff of Regional Library 'Mihalaki Georgiev' - Vidin" xml:space="preserve">
-    <value>Списък на служителите на Регионална библиотека 'Михалаки Георгиев' - гр. Видин и информация за контакт с тях.</value>
-  </data>
-  <data name="Liudmila Siridonova" xml:space="preserve">
-    <value>Людмила Спиридонова</value>
-  </data>
-  <data name="Manuela Mitkova" xml:space="preserve">
-    <value>Мануела Миткова</value>
-  </data>
-  <data name="Mariana Petrova" xml:space="preserve">
-    <value>Мариана Петрова</value>
-  </data>
-  <data name="Maya Manolova" xml:space="preserve">
-    <value>Мая Миланова</value>
-  </data>
-  <data name="Methodological" xml:space="preserve">
-    <value>Методичен отдел</value>
-  </data>
-  <data name="Milena Gergova" xml:space="preserve">
-    <value>Милена Гергова</value>
-  </data>
-  <data name="Milena Ivanova" xml:space="preserve">
-    <value>Милена Иванова</value>
-  </data>
-  <data name="Name" xml:space="preserve">
-    <value>Име</value>
-  </data>
-  <data name="Natalia Nikolova" xml:space="preserve">
-    <value>Наталия Николова</value>
-  </data>
-  <data name="Phone and Email" xml:space="preserve">
-    <value>Телефон и Имейл</value>
-  </data>
-  <data name="Reading Rooms - Humanities, accurate and applied science, periodicals" xml:space="preserve">
-    <value>Читални - хуманитарни науки, точни и приложни науки, периодика</value>
-  </data>
-  <data name="Service units" xml:space="preserve">
-    <value>Обслужващи звена</value>
-  </data>
-  <data name="Specialized units" xml:space="preserve">
-    <value>Специализирани звена</value>
-  </data>
-  <data name="Tatiana Nikolova" xml:space="preserve">
-    <value>Татяна Николова</value>
-  </data>
-  <data name="Todor Mladenov" xml:space="preserve">
-    <value>Тодор Младенов</value>
-  </data>
-  <data name="Todorka Doncheva" xml:space="preserve">
-    <value>Тодорка Дончева</value>
-  </data>
-  <data name="Tsvetan Tsekov" xml:space="preserve">
-    <value>Цветан Цеков</value>
-  </data>
-  <data name="Valentina Vulcheva" xml:space="preserve">
-    <value>Валентина Вълчева</value>
-  </data>
-  <data name="Vasko Viktorov" xml:space="preserve">
-    <value>Васко Викторов</value>
+  <data name="TryOther" xml:space="preserve">
+    <value>Please try one of the other pages on the site.</value>
   </data>
 </root>

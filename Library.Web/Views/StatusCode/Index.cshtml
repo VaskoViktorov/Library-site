@@ -1,0 +1,31 @@
+﻿@model int
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Error";
+}
+@if (Model == 404)
+{
+    <div class="row text-center">
+        <h2>@Localizer["Congrats"]</h2>
+    </div>
+    <div class="row text-center">
+        <div>
+            <h3>@Localizer["MissPage"]</h3>
+        </div>
+        <img class="img-1 width-46pr" src="/images/SiteImages/error404.png" alt="@Localizer["Error404"]" />
+        <div><h3>@Localizer["Please"]</h3></div>
+    </div>
+
+}
+else
+{
+    <div class="row text-center">
+        <h2>@Localizer["Err"] @Model</h2>
+    </div>
+    <div class="row text-center">
+        <div>
+            <h3>@Localizer["NotWorking"]</h3>
+        </div>
+        <div><h3>@Localizer["TryOther"]</h3></div>
+    </div>
+}

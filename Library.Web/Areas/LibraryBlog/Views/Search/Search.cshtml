@@ -1,5 +1,6 @@
 ﻿@model SearchViewModel
 @inject IViewLocalizer Localizer
+@inject IOptions<ApplicationConfigurations> OptionsApplicationConfiguration
 @{
     ViewData["Title"] = Localizer["Results"];
 
@@ -50,7 +51,7 @@
                 {
                     <div>
                         <p>@Localizer["No new books were found"]. @Localizer["But we still might have the book"]. </p>
-                        <a class="lib-btn-invrt" href="http://libvidin.eu:8000/absw/abs.htm">@Localizer["Search in the E-catalogue"]</a>
+                        <a class="lib-btn-invrt" href="@OptionsApplicationConfiguration.Value.BookCatalogueUrl">@Localizer["Search in the E-catalogue"]</a>
                     </div>
                 }
             }

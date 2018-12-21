@@ -30,7 +30,6 @@
         public IActionResult Edit(string id)
         {
             var filePath = string.Format(GetSurveysJsonPath(), Directory.GetCurrentDirectory());
-
             var currSurvey = ObjToJsonConverterExtensions.FindSurveyInJsonFile(filePath, id);
 
             return this.View(new SurveyFormModel()

@@ -16,7 +16,6 @@
     using static WebConstants;
 
     [Authorize]
-    [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;

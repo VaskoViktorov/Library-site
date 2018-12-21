@@ -31,15 +31,13 @@
             this.html = html;
             this.home = home;
         }
-
+      
         public async Task<IActionResult> Index()
         => View(new ArticleListingHomeViewModel
-            {
-                Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
-            });
-        
-            
-     
+        {
+            Articles = await home.LatestFourArticlesAsync(CultureInfo.CurrentCulture.Name)
+        });
+
         public IActionResult Ask()
             => View();
 
@@ -95,12 +93,33 @@
              Name = name
          });
 
+        public IActionResult PriceList()
+        {
+            var rawHtml = FormFileExtensions.ReadTxtFile(PriceListPagePath);
+
+            return View(new RawHtmlViewModel
+            {
+                Html = rawHtml
+            });
+        }
+
+        public IActionResult ProgramForKids()
+        {
+            var rawHtml = FormFileExtensions.ReadTxtFile(ProgramForKidsPagePath);
+
+            return View(new RawHtmlViewModel
+            {
+                Html = rawHtml
+            });
+        }
+
         public IActionResult Contact()
             => View();
 
         public IActionResult History()
             => View();
 
+        //[ValidateLocalization("bg")]
         public IActionResult MihalakiGeorgiev()
             => View();
 
@@ -112,10 +131,7 @@
 
         public IActionResult WorkTime()
             => View();
-
-        public IActionResult PriceList()
-            => View();
-
+           
         public IActionResult Staff()
             => View();
 
@@ -138,9 +154,6 @@
             => View();
 
         public IActionResult ForTheEnthusiasts()
-            => View();
-
-        public IActionResult ProgramForKids()
             => View();
 
         public IActionResult Internet()

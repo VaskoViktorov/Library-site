@@ -1,4 +1,5 @@
 ﻿@inject IViewLocalizer Localizer
+@inject IOptions<ApplicationConfigurations> OptionsApplicationConfiguration
 @{
     ViewData["Title"] = Localizer["FAQRL"];
     ViewData["Description"] = Localizer["Description"];
@@ -9,36 +10,38 @@
 
 <div class="row p-10 width-85pr mr-0-auto">
     <p class="bold font-size-1k4em">@Localizer["BecomeReader"]</p>
-    <p class="text-justify">@Localizer["FirstParagraph"] 
-        <a asp-controller="Home" asp-action="PriceList">@Localizer["Pricelist"]</a>.
-    </p>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">@Localizer["BookAvailable"]</p>
-    <p>@Localizer["SecondParagraphPartOne"]<a href="//libvidin.eu:8000/absw/abs.htm">@Localizer["ELibrary"]</a></p>
-    <p>@Localizer["SecondParagraphPartTwo"]</p>
-    <p>@Localizer["SecondParagraphPartThree"]</p>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">@Localizer["HowToBorrowBook"]</p>
-    <p>@Localizer["ThirdParagraph"]</p>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">@Localizer["HowToRebook"]</p>
-    <p>@Localizer["FourthParagraphPartOne"]
-        <a asp-controller="Home" asp-action="ExtendPeriod">@Localizer["FourthParagraphPartTwo"]</a>, @Localizer["FourthParagraphPartThree"]
-    </p>
-    <p>@Localizer["FourthParagraphPartFour"]:</p>
-    <ul>
-        <li>@Localizer["FourthParagraphPartFive"].</li>
-        <li>@Localizer["FourthParagraphPartSix"].</li>
-    </ul>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">@Localizer["HowToOrderBook"]?</p>
-    <p>
-        @Localizer["FifthParagraphpartOne"]
-        <a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["FifthParagraphpartTwo"].</a> 
-        @Localizer["FifthParagraphpartThree"] <a>rbmg@abv.bg</a> 
-        @Localizer["FifthParagraphpartFour"] 087 9940 277.
-    </p>
-    <hr class="lib-hr" />
-    <p class="bold font-size-1k4em">@Localizer["HowCanIFindYou"]</p>
-    <p>@Localizer["SixthParagraphPartOne"] 094/601 704, 094/604 702, @Localizer["SixthParagraphPartTwo"] e-mail <a>rbmg@abv.bg</a> @Localizer["SixthParagraphPartThree"]  <a asp-controller="Home" asp-action="Contact">@Localizer["SixthParagraphPartFour"]</a>.</p>
+    <p class="text-justify">
+        @Localizer["FirstParagraph"]
+    <a asp-controller="Home" asp-action="PriceList">@Localizer["Pricelist"]</a>.
+</p>
+<hr class="lib-hr" />
+<p class="bold font-size-1k4em">@Localizer["BookAvailable"]</p>
+<p>@Localizer["SecondParagraphPartOne"]<a href="@OptionsApplicationConfiguration.Value.BookCatalogueUrl">@Localizer["ELibrary"]</a></p>
+<p>@Localizer["SecondParagraphPartTwo"]</p>
+<p>@Localizer["SecondParagraphPartThree"]</p>
+<hr class="lib-hr" />
+<p class="bold font-size-1k4em">@Localizer["HowToBorrowBook"]</p>
+<p>@Localizer["ThirdParagraph"]</p>
+<hr class="lib-hr" />
+<p class="bold font-size-1k4em">@Localizer["HowToRebook"]</p>
+<p>
+    @Localizer["FourthParagraphPartOne"]
+<a asp-controller="Home" asp-action="ExtendPeriod">@Localizer["FourthParagraphPartTwo"]</a>, @Localizer["FourthParagraphPartThree"]
+</p>
+<p>@Localizer["FourthParagraphPartFour"]:</p>
+<ul>
+    <li>@Localizer["FourthParagraphPartFive"].</li>
+    <li>@Localizer["FourthParagraphPartSix"].</li>
+</ul>
+<hr class="lib-hr" />
+<p class="bold font-size-1k4em">@Localizer["HowToOrderBook"]?</p>
+<p>
+    @Localizer["FifthParagraphpartOne"]
+    <a asp-area="" asp-controller="Home" asp-action="ReadingRooms">@Localizer["FifthParagraphpartTwo"].</a>
+    @Localizer["FifthParagraphpartThree"] <a>rbmg@abv.bg</a>
+    @Localizer["FifthParagraphpartFour"] 087 9940 277.
+</p>
+<hr class="lib-hr" />
+<p class="bold font-size-1k4em">@Localizer["HowCanIFindYou"]</p>
+<p>@Localizer["SixthParagraphPartOne"] 094/601 704, 094/604 702, @Localizer["SixthParagraphPartTwo"] e-mail <a>rbmg@abv.bg</a> @Localizer["SixthParagraphPartThree"]  <a asp-controller="Home" asp-action="Contact">@Localizer["SixthParagraphPartFour"]</a>.</p>
 </div>

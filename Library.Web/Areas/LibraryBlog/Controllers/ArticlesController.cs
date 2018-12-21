@@ -50,9 +50,9 @@
 
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
-        {
+        {            
             var article = await this.articles.Details(id);
-
+            
             if (article != null)
             {
                 return this.View(new ArticleViewModel

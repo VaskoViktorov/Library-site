@@ -1,17 +1,19 @@
 ﻿namespace Library.Web
 {
-    using Microsoft.AspNetCore.Rewrite;
     using AspNetCoreRateLimit;
     using AutoMapper;
     using Data;
     using Data.Models;
+    using Infrastructure.Configurations;
     using Infrastructure.Extensions;
+    using Infrastructure.Rules;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Localization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Razor;
+    using Microsoft.AspNetCore.Rewrite;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +23,6 @@
     using System.Collections.Generic;
     using System.Globalization;
     using System.IO;
-    using Infrastructure.Rules;
 
     using static WebConstants;
 
@@ -82,6 +83,9 @@
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
+            //Allows injecting configurations in razor views from json file
+            services.Configure<ApplicationConfigurations>(Configuration.GetSection("ApplicationConfigurations"));
+
             services.AddMvc(options =>
             {
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
@@ -102,10 +106,11 @@
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
                 options.RequestCultureProviders = new List<IRequestCultureProvider>
-                {
+                {                
                     new QueryStringRequestCultureProvider(),
                     new CookieRequestCultureProvider()
                 };
+
             });
         }
 
@@ -114,21 +119,23 @@
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            
+
             //Limits requests
             app.UseIpRateLimiting();
             app.UseClientRateLimiting();
 
+            //localization
+            app.UseRequestLocalization();
+
             var options = new RewriteOptions()
               .AddRedirectToHttps();
 
-            options.Rules.Add(new NonWwwRule());
+            options.Rules.Add(new NonWwwRule());            
             app.UseRewriter(options);
 
             //migrations
             app.UseDatabaseMigration();
-
-            //localization
-            app.UseRequestLocalization();
 
             if (env.IsDevelopment())
             {
@@ -140,6 +147,8 @@
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseStatusCodePagesWithReExecute("/StatusCode/{0}");
 
             app.UseStaticFiles();
 

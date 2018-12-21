@@ -73,6 +73,8 @@ namespace Library.Web
         public const string SavePath = "/{0}";
         public const string SitemapPath = "\\wwwroot\\sitemap.xml";
         public const string RobotsPath = "\\wwwroot\\Robots.txt";
+        public const string PriceListPagePath = "{0}\\wwwroot\\pages\\PriceListPageHtml.txt";
+        public const string ProgramForKidsPagePath = "{0}\\wwwroot\\pages\\ProgramForKidsPageHtml.txt";
 
         //Folder names
         public const string RootFolderName = "wwwroot";

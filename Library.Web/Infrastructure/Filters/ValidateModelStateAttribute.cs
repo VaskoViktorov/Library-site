@@ -10,7 +10,7 @@
     /// This action filter validates the model state, 
     /// when the action contains model, with the word "model" in its name.
     /// </summary>
-    public class ValidateModelStateAttribute : Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute
+    public class ValidateModelStateAttribute : ActionFilterAttribute
     {
         private const string Model = ModelName;
 

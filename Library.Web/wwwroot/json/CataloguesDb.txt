@@ -1,0 +1,2 @@
+@OptionsApplicationConfiguration.Value.BookCatalogueUrl
+http://libvidin.eu:8001

@@ -16,7 +16,6 @@
     using System.Threading.Tasks;
 
     [Authorize]
-    [Route("[controller]/[action]")]
     public class ManageController : Controller
     {
         private readonly UserManager<User> _userManager;
